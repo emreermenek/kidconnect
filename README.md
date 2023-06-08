@@ -1,16 +1,48 @@
-# bootcamp_f32
+# **Takım İsmi**
 
-A new Flutter project.
+Takım Flutter 32
 
-## Getting Started
+# Ürün İle İlgili Bilgiler
 
-This project is a starting point for a Flutter application.
+## Takım Elemanları
 
-A few resources to get you started if this is your first Flutter project:
+- Melike Çiydem: Scrum Master
+- Emine Betül Erdoğan: Team Member/ Software Developer
+- Emre Ermenek: Team Member/ Software Developer
+- Morteza Rezaeı: Team Member/ UI-UX Designer
+- Nil Sezer Şenaylar: Team Member/ UI-UX Designer
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+## Ürün İsmi
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+
+
+## Ürün Açıklaması
+
+
+
+## Ürün Özellikleri
+
+
+
+## Hedef Kitle
+
+
+
+## Product Backlog URL
+
+
+
+---
+
+# Sprint 1
+
+---
+
+# Sprint 2
+
+
+---
+
+# Sprint 3
+
+---

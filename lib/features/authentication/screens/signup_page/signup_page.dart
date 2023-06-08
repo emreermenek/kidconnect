@@ -135,23 +135,6 @@ class _SignupPageState extends ConsumerState<SignupPage> {
                 const SizedBox(height: 5),
                 const Text('VEYA'),
                 const SizedBox(height: 5),
-                SizedBox(
-                  width: double.infinity,
-                  child: OutlinedButton.icon(
-                    onPressed: () {
-                      _controller.signInWithGoogle();
-                    },
-                    icon: const Image(image: AssetImage('assets/logo/google_logo.png'),width: 20,),
-                    style: ElevatedButton.styleFrom(
-                        shape: const RoundedRectangleBorder(),
-                        foregroundColor: Colors.black,
-                        side: const BorderSide(color: Colors.black),
-                        padding: const EdgeInsets.symmetric(vertical: 16)
-                    ),
-                    label: const Text('Google ile giriş yap'),
-                  ),
-                ),
-                const SizedBox(height: 10,),
                 TextButton(
                   onPressed: () {
                     Navigator.of(context).pushReplacement(MaterialPageRoute(builder: (context) => const LoginPage(),));

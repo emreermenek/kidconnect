@@ -18,7 +18,7 @@ class AuthGate extends StatelessWidget {
         }else if(snapshot.hasError){
           return const Center(child: Text("Bir şeyler yanlış gitti!"),);
         }else if(snapshot.hasData){
-          return const Placeholder();
+          return const LoginPage();
         }else {
           return const LoginPage();
         }
