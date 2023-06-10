@@ -20,11 +20,6 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return ScreenUtilInit(
-        designSize: const Size(412, 732),
-    minTextAdapt: true,
-    splitScreenMode: true,
-    builder: (context , child) {
     return MaterialApp(
       navigatorKey: navigatorKey,
       debugShowCheckedModeBanner: false,
@@ -33,11 +28,9 @@ class MyApp extends StatelessWidget {
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         useMaterial3: true,
       ),
-      home: child,
+      home: const AuthGate(),
     );
-    },
-      child: const AuthGate()
-    );
+
   }
 }
 

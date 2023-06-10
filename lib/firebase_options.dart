@@ -17,10 +17,7 @@ import 'package:flutter/foundation.dart'
 class DefaultFirebaseOptions {
   static FirebaseOptions get currentPlatform {
     if (kIsWeb) {
-      throw UnsupportedError(
-        'DefaultFirebaseOptions have not been configured for web - '
-        'you can reconfigure this by running the FlutterFire CLI again.',
-      );
+      return web;
     }
     switch (defaultTargetPlatform) {
       case TargetPlatform.android:
@@ -49,6 +46,16 @@ class DefaultFirebaseOptions {
     }
   }
 
+  static const FirebaseOptions web = FirebaseOptions(
+    apiKey: 'AIzaSyA6JwsABndqSfsH8NJsKKU_jUgp6Hdee_8',
+    appId: '1:47725876053:web:5c5c22569dfda4adc2d5dc',
+    messagingSenderId: '47725876053',
+    projectId: 'f32-bootcamp',
+    authDomain: 'f32-bootcamp.firebaseapp.com',
+    storageBucket: 'f32-bootcamp.appspot.com',
+    measurementId: 'G-F9JNCLCRMH',
+  );
+
   static const FirebaseOptions android = FirebaseOptions(
     apiKey: 'AIzaSyB7b65C5dQopqcKdBPpqaiaeMmtjFYU-nY',
     appId: '1:47725876053:android:cde0298a3a2bd6c3c2d5dc',
@@ -63,6 +70,7 @@ class DefaultFirebaseOptions {
     messagingSenderId: '47725876053',
     projectId: 'f32-bootcamp',
     storageBucket: 'f32-bootcamp.appspot.com',
+    androidClientId: '47725876053-6dqqmhm8tqhl9nknkmlvf1sj9qfhdfsc.apps.googleusercontent.com',
     iosClientId: '47725876053-qfpd1tbv8c3iqvr9d07ba59k9n7b83el.apps.googleusercontent.com',
     iosBundleId: 'com.example.bootcampF32',
   );
