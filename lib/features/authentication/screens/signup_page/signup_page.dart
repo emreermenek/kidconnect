@@ -4,9 +4,13 @@ import 'package:flutter/services.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:flutter_facebook_auth/flutter_facebook_auth.dart';
-
+import 'package:cloud_firestore/cloud_firestore.dart';
 import '../../../../repository/authentication_repository/authentication_repository.dart';
 import '../login_page/login_page.dart';
+import 'package:bootcamp_f32/features/authentication/screens/signup_page/signup_page.dart';
+import 'package:lottie/lottie.dart';
+import '../../../../constants/colors.dart';
+import '../../../../repository/authentication_repository/authentication_repository.dart';
 
 class SignupPage extends ConsumerStatefulWidget {
   const SignupPage({Key? key}) : super(key: key);
@@ -55,12 +59,13 @@ class _SignupPageState extends ConsumerState<SignupPage> {
             Positioned(
                 left: 0,
                 bottom: 0,
-                child:
-                    Image(image: AssetImage('assets/singnup/Ellipse 6.png'))),
+                child: Image(
+                    image: AssetImage('assets/images/singnup/Ellipse 6.png'))),
             Positioned(
                 right: 0,
                 top: 0,
-                child: Image(image: AssetImage('assets/singnup/Vector.png'))),
+                child: Image(
+                    image: AssetImage('assets/images/singnup/Vector.png'))),
             Center(
               child: SingleChildScrollView(
                 child: Column(
@@ -240,7 +245,7 @@ class _SignupPageState extends ConsumerState<SignupPage> {
                                       IconButton(
                                         icon: const Image(
                                           image: AssetImage(
-                                              'assets/singnup/icons8-facebook-100.png'),
+                                              'assets/logo/facebook_logo.png'),
                                           width: 90,
                                           height: 90,
                                         ),
@@ -276,7 +281,7 @@ class _SignupPageState extends ConsumerState<SignupPage> {
                                         },
                                         icon: const Image(
                                           image: AssetImage(
-                                              'assets/singnup/icons8-google-100.png'),
+                                              'assets/logo/google_logo.png'),
                                           width: 90,
                                           height: 90,
                                         ),
