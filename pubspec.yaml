@@ -77,6 +77,13 @@ flutter:
     - assets/images/login_image/Ellipse 1.png
     - assets/images/login_image/Ellipse 2.png
     - assets/images/login_image/Ellipse 3.png
+    - assets/images/singnup/Vector2.png
+    - assets/images/singnup/icons8-google-100.png
+    - assets/images/singnup/icons8-facebook-100.png
+    - assets/images/singnup/Vector.png
+    - assets/images/singnup/Ellipse 5.png
+    - assets/images/singnup/Ellipse 6.png
+    - assets/images/singnup/Ellipse 7.png
 
   #   - images/a_dot_burr.jpeg
   #   - images/a_dot_ham.jpeg
