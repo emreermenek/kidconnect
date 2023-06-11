@@ -4,10 +4,8 @@ import 'package:flutter/material.dart';
 
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
-
 import 'package:google_fonts/google_fonts.dart';
 import 'package:lottie/lottie.dart';
-
 
 import '../../../../constants/colors.dart';
 import '../../../../repository/authentication_repository/authentication_repository.dart';
@@ -20,21 +18,21 @@ class LoginPage extends ConsumerStatefulWidget {
 }
 
 class _LoginPageState extends ConsumerState<LoginPage> {
-
-
   final _formKey = GlobalKey<FormState>();
   final _emailController = TextEditingController();
   final _passwordController = TextEditingController();
   bool obscureText = true;
   late AuthRepository _controller;
 
-
   @override
   void initState() {
     super.initState();
-    Future.delayed(const Duration(seconds: 0), () {
-      _controller = AuthRepository(ref: ref);
-    },);
+    Future.delayed(
+      const Duration(seconds: 0),
+      () {
+        _controller = AuthRepository(ref: ref);
+      },
+    );
   }
 
   @override
@@ -44,228 +42,263 @@ class _LoginPageState extends ConsumerState<LoginPage> {
 
     super.dispose();
   }
+
   @override
   Widget build(BuildContext context) {
-    var height = MediaQuery.of(context).size.height;
-    var width = MediaQuery.of(context).size.width;
-    final mq =
-    MediaQuery.of(context); //mediaQuery'i alıyoruz MyApp->Details içinden
-    final screenSize = mq.size; //screenSize'ı alıyoruz
-    final desiredWidth = 350.0; //hangi boyuta göre tasarladıysak onu veriyoruz.
-    final ratio = screenSize.width / desiredWidth; // oran buluyoruz
-    return SafeArea(
-      child: FractionallySizedBox(
-        widthFactor: 1 / ratio,
-        heightFactor: 1/ ratio,
-        child: Transform.scale(
-          scale: ratio,
-          child: MediaQuery(
-            data: mq.copyWith(
-              viewInsets: mq.viewInsets.copyWith(
-                bottom: mq.viewInsets.bottom/ratio
-              )
+    return Scaffold(
+      resizeToAvoidBottomInset: false,
+      body: SizedBox(
+        child: Stack(
+          key: _formKey,
+          children: [
+            // arka plandaki şekiller
+            const Positioned(
+              top: 0,
+              left: 0,
+              child: SizedBox(
+                  width: 65,
+                  child: Image(
+                    image:
+                        AssetImage('assets/images/login_image/Ellipse 4.png'),
+                  )),
             ),
-            child: Scaffold(
-              body: Form(
-                key: _formKey,
-                child: SingleChildScrollView(
-                  child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      AspectRatio(
-                        aspectRatio: 13/9,
-                        child: Stack(
-                          fit: StackFit.expand,
-                          children: [
-                            Positioned(
-                              top: 0,
-                              left: 0,
-                              child: SizedBox( width: 65,child: const Image(image: AssetImage('assets/images/login_image/Ellipse 4.png'),)),
-                            ),
-                            Positioned(
-                              top: 15,
-                              left: 60,
-                              child: Lottie.asset(
-                                'assets/animations/lottie_animations/book_animation.json',
-                                width: 200,
-                                fit: BoxFit.fill,
-                              ),
-                            ),
-                            Positioned(
-                              top: 170,
-                              left: 50,
-                              child: Text(
-                                'Hoşgeldiniz',
+            const Positioned(
+                left: 0,
+                bottom: 0,
+                child: Image(
+                    image:
+                        AssetImage('assets/images/login_image/Ellipse 1.png'))),
+            const Positioned(
+                right: 0,
+                bottom: 0,
+                child: Image(
+                    image:
+                        AssetImage('assets/images/login_image/Ellipse 3.png'))),
+            const Positioned(
+                left: 0,
+                bottom: 0,
+                child: Image(
+                    image:
+                        AssetImage('assets/images/login_image/Ellipse 2.png'))),
 
-                                style: GoogleFonts.gluten(
-                                  textStyle: TextStyle(color: tBlackColor, fontSize: 40,fontWeight: FontWeight.bold,),
-                                ),
-                              ),
-                            ),
-                          ],
+            Center(
+              child: SingleChildScrollView(
+                child: Column(
+                  children: [
+                    // kitab animasyon
+                    Lottie.asset(
+                      'assets/animations/lottie_animations/book_animation.json',
+                      width: 250,
+                    ),
+
+                    // hoşgeldin texti
+                    Text(
+                      'Giriş Yapın',
+                      style: GoogleFonts.gluten(
+                        textStyle: const TextStyle(
+                          color: tBlackColor,
+                          fontSize: 40,
+                          fontWeight: FontWeight.bold,
                         ),
                       ),
-                      Container(
-                        padding: EdgeInsets.symmetric(horizontal: 40,vertical: 5),
-                        child: SizedBox(
-                          height: 173,
-                          child: Column(
-                            children: [
-                              SizedBox(height: 3,),
-                              SizedBox(
-                                height: 50,
-                                child: TextFormField(  //email
-                                  controller: _emailController,
-                                  textInputAction: TextInputAction.next,
-                                  decoration: InputDecoration(
-                                    prefixIcon: const Icon(Icons.email_outlined,color: tBlackColor,),
-                                    labelText: 'Email',
-                                    hintText: 'Email',
-                                    errorStyle: TextStyle(fontSize: 10),
-                                    border: OutlineInputBorder(
-                                        borderRadius: BorderRadius.circular(25),
-                                        borderSide: const BorderSide(color: tBlackColor)
-                                    ),
+                    ),
 
-                                  ),
-                                  validator: (email) {
-                                    if(email !=null && !EmailValidator.validate(email)){
-                                      return 'Geçerli bir email girin';
-                                    }else{
-                                      return null;
-                                    }
-                                  },
+                    const SizedBox(height: 10),
+
+                    //TextFeildler
+                    SizedBox(
+                      width: 320,
+                      child: Column(
+                        children: [
+                          SizedBox(
+                            child: TextFormField(
+                              //email
+                              controller: _emailController,
+                              textInputAction: TextInputAction.next,
+                              decoration: InputDecoration(
+                                contentPadding: const EdgeInsets.symmetric(
+                                  vertical: 10,
+                                  horizontal: 20,
                                 ),
-                              ),
-                              SizedBox(height: 10,),
-                              SizedBox(
-                                height: 50,
-                                child: TextFormField(
-                                  controller: _passwordController,
-                                  textInputAction: TextInputAction.done,
-                                  obscureText: obscureText,
-                                  decoration: InputDecoration(
-                                      prefixIcon: const Icon(Icons.fingerprint, color: tBlackColor,),
-                                      hintText: 'Şifre',
-                                      labelText: 'Şifre',
-                                      border: OutlineInputBorder(
-                                          borderRadius: BorderRadius.circular(25),
-                                          borderSide: const BorderSide(color: tBlackColor)
-                                      ),
-                                      suffixIcon: IconButton(
-                                        onPressed: () {
-                                          setState(() {
-                                            obscureText = !obscureText;
-                                          });
-                                        },
-                                        icon: obscureText ? const Icon(Icons.visibility_off, color: tBlackColor,) : const Icon(Icons.visibility, color: tBlackColor,),
-                                      )
-                                  ),
+                                prefixIcon: const Icon(
+                                  Icons.email_outlined,
+                                  color: tBlackColor,
                                 ),
+                                labelText: 'Email',
+                                hintText: 'Email',
+                                errorStyle: const TextStyle(fontSize: 10),
+                                border: OutlineInputBorder(
+                                    borderRadius: BorderRadius.circular(25),
+                                    borderSide:
+                                        const BorderSide(color: tBlackColor)),
                               ),
-                              SizedBox(height: 10,),
-                              SizedBox(
-                                width: 80,
-                                height: 40,
-                                child: ElevatedButton(
+                              validator: (email) {
+                                if (email != null &&
+                                    !EmailValidator.validate(email)) {
+                                  return 'Geçerli bir email girin';
+                                } else {
+                                  return null;
+                                }
+                              },
+                            ),
+                          ),
+                          const SizedBox(height: 16),
+                          SizedBox(
+                            child: TextFormField(
+                              controller: _passwordController,
+                              textInputAction: TextInputAction.done,
+                              obscureText: obscureText,
+                              decoration: InputDecoration(
+                                contentPadding: const EdgeInsets.symmetric(
+                                  vertical: 10,
+                                  horizontal: 20,
+                                ),
+                                prefixIcon: const Icon(
+                                  Icons.fingerprint,
+                                  color: tBlackColor,
+                                ),
+                                hintText: 'Şifre',
+                                labelText: 'Şifre',
+                                border: OutlineInputBorder(
+                                    borderRadius: BorderRadius.circular(25),
+                                    borderSide:
+                                        const BorderSide(color: tBlackColor)),
+                                suffixIcon: IconButton(
                                   onPressed: () {
-                                    if(_formKey.currentState!.validate()){
-                                      _controller.signInWithEmailAndPassword(_emailController, _passwordController);
-                                    }
+                                    setState(
+                                      () {
+                                        obscureText = !obscureText;
+                                      },
+                                    );
                                   },
-                                  style: ElevatedButton.styleFrom(
-                                    shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(25)),
-                                    foregroundColor: tWhiteColor,
-                                    backgroundColor: tSecondaryColor,
-                                    padding: EdgeInsets.symmetric(vertical: 1),
-                                  ),
-                                  child: Text('Giriş',style: TextStyle(fontSize: 15),),
+                                  icon: obscureText
+                                      ? const Icon(
+                                          Icons.visibility_off,
+                                          color: tBlackColor,
+                                        )
+                                      : const Icon(
+                                          Icons.visibility,
+                                          color: tBlackColor,
+                                        ),
                                 ),
                               ),
-                              SizedBox(height: 10,),
+                            ),
+                          ),
+                          const SizedBox(
+                            height: 16,
+                          ),
+                          SizedBox(
+                            width: double
+                                .infinity, // Make the button take full width
+                            child: ElevatedButton(
+                              onPressed: () {
+                                if (_formKey.currentState!.validate()) {
+                                  _controller.signInWithEmailAndPassword(
+                                      _emailController, _passwordController);
+                                }
+                              },
+                              style: ElevatedButton.styleFrom(
+                                shape: RoundedRectangleBorder(
+                                  borderRadius: BorderRadius.circular(25),
+                                ),
+                                foregroundColor: tWhiteColor,
+                                backgroundColor: tSecondaryColor,
+                                padding:
+                                    const EdgeInsets.symmetric(vertical: 12),
+                              ),
+                              child: const Text(
+                                'Giriş',
+                                style: TextStyle(fontSize: 15),
+                              ),
+                            ),
+                          ),
+                        ],
+                      ),
+                    ),
+
+                    const SizedBox(height: 16),
+
+                    Text(
+                      'veya bunlarla giriş yap:',
+                      style: GoogleFonts.comfortaa(
+                          textStyle: const TextStyle(color: tBlackColor)),
+                    ),
+
+                    Row(
+                      crossAxisAlignment: CrossAxisAlignment.center,
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        InkWell(
+                          onTap: () {
+                            _controller.signInWithFacebook();
+                          },
+                          child: const SizedBox(
+                              width: 80,
+                              child: Image(
+                                image:
+                                    AssetImage('assets/logo/facebook_logo.png'),
+                              )),
+                        ),
+                        InkWell(
+                          onTap: () {
+                            _controller.signInWithGoogle();
+                          },
+                          child: const SizedBox(
+                              width: 80,
+                              child: Image(
+                                image:
+                                    AssetImage('assets/logo/google_logo.png'),
+                              )),
+                        ),
+                      ],
+                    ),
+
+                    const SizedBox(height: 16),
+
+                    SizedBox(
+                      width: 320,
+                      child: InkWell(
+                        onTap: () {
+                          Navigator.of(context)
+                              .pushReplacement(MaterialPageRoute(
+                            builder: (context) => const SignupPage(),
+                          ));
+                        },
+                        child: Padding(
+                          padding: const EdgeInsets.symmetric(horizontal: 20),
+                          child: Row(
+                            children: [
+                              const Expanded(
+                                child: Divider(
+                                  color: Colors.grey,
+                                  thickness: 1,
+                                ),
+                              ),
+                              const SizedBox(width: 10),
+                              Text(
+                                'Buradan kayıt ol',
+                                style: GoogleFonts.comfortaa(
+                                    textStyle:
+                                        const TextStyle(color: tBlackColor)),
+                              ),
+                              const SizedBox(width: 10),
+                              const Expanded(
+                                child: Divider(
+                                  color: Colors.grey,
+                                  thickness: 1,
+                                ),
+                              ),
                             ],
                           ),
                         ),
                       ),
-                      SizedBox(
-                        height: height*0.3,
-                        child: Stack(
-                          fit: StackFit.expand,
-                          children: [
-                            Positioned(
-                                height: height*0.1,
-                                left: 0,
-                                bottom: 0,
-                                child: const Image(image: AssetImage('assets/images/login_image/Ellipse 1.png'))
-                            ),
-                            Positioned(
-                                height: height*0.3,
-                                right: 0,
-                                bottom: 0,
-                                child: const Image(image: AssetImage('assets/images/login_image/Ellipse 3.png'))
-                            ),
-                            Positioned(
-                                left: 0,
-                                bottom: 0,
-                                child: const Image(image: AssetImage('assets/images/login_image/Ellipse 2.png'))
-                            ),
-                            Padding(
-                              padding: EdgeInsets.symmetric(horizontal: 40),
-                              child: Column(
-                                children: [
-                                  Text(
-                                    'veya bunlarla giriş yap:',
-                                    style: GoogleFonts.comfortaa(
-                                        textStyle: const TextStyle(color: tBlackColor)
-                                    ),
-                                  ),
-                                  Row(
-                                    crossAxisAlignment: CrossAxisAlignment.center,
-                                    mainAxisAlignment: MainAxisAlignment.center,
-                                    children: [
-                                      InkWell(
-                                        onTap: () {
-                                          _controller.signInWithFacebook();
-                                        },
-                                        child: SizedBox(
-                                            width: 80,
-                                            child: const Image(image: AssetImage('assets/logo/facebook_logo.png'),)
-                                        ),
-                                      ),
-                                      InkWell(
-                                        onTap: () {
-                                          _controller.signInWithGoogle();
-                                        },
-                                        child: SizedBox(
-                                            width: 80,
-                                            child: const Image(image: AssetImage('assets/logo/google_logo.png'),)
-                                        ),
-                                      ),
-                                    ],
-                                  ),
-                                  InkWell(
-                                    onTap: () {
-                                      Navigator.of(context).pushReplacement(MaterialPageRoute(builder: (context) => const SignupPage(),));
-                                    },
-                                    child: Text(
-                                      'Buradan kayıt ol',
-                                      style: GoogleFonts.comfortaa(
-                                          textStyle: const TextStyle(color: tBlackColor)
-                                      ),
-                                    ),
-                                  ),
-                                ],
-                              ),
-                            ),
-                          ],
-                        ),
-                      ),
-                    ],
-                  ),
+                    ),
+                    const SizedBox(height: 40),
+                  ],
                 ),
               ),
-            ),
-          ),
+            )
+          ],
         ),
       ),
     );
