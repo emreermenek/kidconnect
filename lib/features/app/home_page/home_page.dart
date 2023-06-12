@@ -24,26 +24,23 @@ class _HomePageState extends State<HomePage> {
       appBar: AppBar(
         toolbarHeight: 75,
         elevation: 0,
-        title: SizedBox(
-          child: ClipPath(
-              clipper: CustomClipPath(),
-              child: Container(
-                padding: const EdgeInsets.symmetric(vertical: 14),
-                color: tPrimaryColor,
-                child: const Center(child: Text('Hoşgeldin',style: TextStyle(fontWeight: FontWeight.bold),)),
-              )
-          ),
+        title: Row(
+          children: [
+            SizedBox(
+              width: 280,
+              child: ClipPath(
+                  clipper: CustomClipPath(),
+                  child: Container(
+                    padding: const EdgeInsets.symmetric(vertical: 14),
+                    color: tPrimaryColor,
+                    child: const Center(child: Text('Hoşgeldin',style: TextStyle(fontWeight: FontWeight.bold),)),
+                  )
+              ),
+            ),
+            const Image(image: AssetImage('assets/images/home_page_image/cute-tiger.png'),width: 100, ),
+          ],
         ),
-      actions: [
-        const Padding(
-          padding: EdgeInsets.only(right: 20,),
-          child: Image(image: AssetImage('assets/images/home_page_image/cute-tiger.png') ),
-        ),
-        Container(
-          width: 40,
-          color: Colors.white,
-        )
-      ],
+
       ),
       bottomNavigationBar: SizedBox(
         height: 85,
@@ -120,17 +117,18 @@ class _HomePageState extends State<HomePage> {
             padding: const EdgeInsets.symmetric(horizontal: 50,vertical: 20),
             scrollDirection: Axis.vertical,
             itemCount: 8,
-              gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
-                mainAxisExtent: 150,
-                  crossAxisCount: 2,
-                  crossAxisSpacing: 30,
-                  mainAxisSpacing: 30,
-
-              ),
+            gridDelegate: const SliverGridDelegateWithMaxCrossAxisExtent(
+              maxCrossAxisExtent:
+              240, //if you have a device with 300px width only one category is shown in a row if you have 500px then two categories are lied side by side in a row
+              childAspectRatio:
+              3 / 2, // for 200px width, I need 300px height (for extra spacing)
+              crossAxisSpacing: 20,
+              mainAxisSpacing: 20,
+            ),
               itemBuilder: (context, index) {
 
                 return Container(
-                  padding: const EdgeInsets.all(15),
+
                   margin: const EdgeInsets.all(2),
                   decoration: BoxDecoration(
                     boxShadow: [
@@ -150,7 +148,7 @@ class _HomePageState extends State<HomePage> {
                     children: [
                         Image(image: AssetImage(cards[index]),),
                         const SizedBox(height: 2,),
-                        Text(texts[index], style: const TextStyle(fontSize: 18),textScaleFactor: 1.0,),
+                        Text(texts[index], style: const TextStyle(fontSize: 16),textScaleFactor: 1.0,),
                     ],
                   ),
                 );
