@@ -35,7 +35,7 @@ class AuthRepository{
     navigatorKey.currentState!.popUntil((route) => route.isFirst);
   }
 
-  Future<void> createUserWithEmailAndPassword(TextEditingController email, TextEditingController password) async{
+  Future<void> createUserWithEmailAndPassword(TextEditingController email, TextEditingController password, TextEditingController name) async{
 
     showDialog(
       context: ref.context,
@@ -48,8 +48,38 @@ class AuthRepository{
           email: email.text.trim(),
           password: password.text.trim()
       );
+
+      final docUser = FirebaseFirestore.instance.collection('users').doc();
+      final json = {
+
+        'id': docUser.id,
+        'imageUrl': '',
+        'name': name.text.trim(),
+        'email': email.text.trim()
+
+      };
+      await docUser.set(json);
+
     } on FirebaseAuthException catch(e){
-      Utils.showSnackBar(e.message);
+      var content = '';
+
+      switch (e.code){
+        case "account-exists-with-different-credential":
+          content = 'bu hesap farklı oturum açma sağlayıcısı ile mevcut';
+          break;
+        case 'invalid-credantial':
+          content = 'Bilinmeyen bir hata oldu';
+          break;
+        case 'user-disabled':
+          content = 'Kullanılmaya çalışılan hesap devre dışı';
+          break;
+        case 'user-not-found':
+          content = 'Kullanıcı bulunamadı';
+          break;
+      }
+      Utils.showSnackBar(content);
+    } catch(e){
+      Utils.showSnackBar('Bilinmeyen bir hata oluştu');
     }
     navigatorKey.currentState!.popUntil((route) => route.isFirst);
   }

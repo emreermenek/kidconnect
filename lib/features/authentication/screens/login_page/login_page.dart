@@ -49,7 +49,6 @@ class _LoginPageState extends ConsumerState<LoginPage> {
       resizeToAvoidBottomInset: false,
       body: SizedBox(
         child: Stack(
-
           children: [
             // arka plandaki şekiller
             const Positioned(

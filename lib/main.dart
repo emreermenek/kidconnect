@@ -1,3 +1,4 @@
+import 'package:bootcamp_f32/features/app/home_page/home_page.dart';
 import 'package:bootcamp_f32/features/authentication/screens/auth_gate/auth_gate.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
@@ -28,7 +29,7 @@ class MyApp extends StatelessWidget {
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         useMaterial3: true,
       ),
-      home: const AuthGate(),
+      home: const HomePage(),
     );
 
   }

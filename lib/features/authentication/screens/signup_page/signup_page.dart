@@ -210,7 +210,8 @@ class _SignupPageState extends ConsumerState<SignupPage> {
                                             _controller
                                                 .createUserWithEmailAndPassword(
                                                     _emailController,
-                                                    _passwordController);
+                                                    _passwordController,
+                                                    _firstNameController);
                                           }
                                         },
                                         style: ElevatedButton.styleFrom(
@@ -230,7 +231,7 @@ class _SignupPageState extends ConsumerState<SignupPage> {
                                   const SizedBox(height: 20),
                                   Align(
                                       child: Text(
-                                        'veya unlarla giriş yapın',
+                                        'veya bunlarla giriş yapın',
                                         style: GoogleFonts.comfortaa(
                                             fontSize: 12,
                                             textStyle: TextStyle(
@@ -305,7 +306,7 @@ class _SignupPageState extends ConsumerState<SignupPage> {
                                                         235, 45, 46, 46))),
                                             children: [
                                               TextSpan(
-                                                text: 'Giriş yap',
+                                                text: ' Giriş yap',
                                                 style: GoogleFonts.comfortaa(
                                                     fontSize: 12,
                                                     textStyle: TextStyle(
