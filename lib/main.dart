@@ -1,10 +1,9 @@
-import 'package:bootcamp_f32/features/app/home_page/home_page.dart';
+import 'package:bootcamp_f32/features/app/first-page.dart';
 import 'package:bootcamp_f32/features/authentication/screens/auth_gate/auth_gate.dart';
+import 'package:bootcamp_f32/features/authentication/screens/login_page/login_page.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-
-
 
 import 'firebase_options.dart';
 
@@ -29,9 +28,7 @@ class MyApp extends StatelessWidget {
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         useMaterial3: true,
       ),
-      home: const HomePage(),
+      home: const FirstPage(),
     );
-
   }
 }
-
