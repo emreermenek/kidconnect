@@ -104,6 +104,11 @@ flutter:
     - assets/images/home_page_image/bottom_navigation_bar_images/home-big.png
     - assets/images/home_page_image/bottom_navigation_bar_images/settings-big.png
     - assets/images/home_page_image/bottom_navigation_bar_images/student-card -big.png
+    - assets/images/first-page/Rectangle 1.png
+    - assets/images/first-page/Rectangle 2.png
+    - assets/images/first-page/Vector 1.png
+    - assets/images/first-page/Vector 2.png
+    - assets/animations/lottie_animations/lf20_lc46h4dr.json
 
   #   - images/a_dot_burr.jpeg
   #   - images/a_dot_ham.jpeg
