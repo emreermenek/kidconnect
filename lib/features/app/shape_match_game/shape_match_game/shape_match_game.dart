@@ -7,6 +7,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_rating_bar/flutter_rating_bar.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:just_audio/just_audio.dart';
+import 'package:tutorial_coach_mark/tutorial_coach_mark.dart';
 import '../../../../common_widgets/alert_dialog_success.dart';
 import '../data/answer.dart';
 import '../data/offset.dart';
@@ -16,7 +17,11 @@ import '../data/shape_names.dart';
 import '../data/sound_level.dart';
 import '../services/data_change_notifier.dart';
 
-
+GlobalKey _shapeKey = GlobalKey();
+GlobalKey _backButtonKey = GlobalKey();
+GlobalKey _restartButtonKey = GlobalKey();
+GlobalKey _pointKey = GlobalKey();
+GlobalKey _soundKey = GlobalKey();
 
 class MatchImage extends ConsumerStatefulWidget {
   const MatchImage({Key? key}) : super(key: key);
@@ -105,9 +110,10 @@ class _MatchImageState extends ConsumerState<MatchImage> {
                           },
                         ),
                         const SizedBox(width: 20,),
-                        Text('Skor: ${dataRepo.points}/3',style: const TextStyle(fontWeight: FontWeight.bold,fontSize: 24),),
+                        Text(key: _pointKey,'Skor: ${dataRepo.points}/3',style: const TextStyle(fontWeight: FontWeight.bold,fontSize: 24),),
                         const SizedBox(width: 40,),
                         IconButton(
+                            key: _soundKey,
                             onPressed: ()
                             {
                               setState(() {
@@ -175,7 +181,7 @@ class _MatchImageState extends ConsumerState<MatchImage> {
                                               });
 
                                             },
-                                            child: Image(image: AssetImage(shapeLocation[dataRepo.currentLevel][0]),width: 100,)
+                                            child: Image(key: _shapeKey,image: AssetImage(shapeLocation[dataRepo.currentLevel][0]),width: 100,)
                                         ),
                                         const SizedBox(width: 75,),
                                         InkWell(
@@ -340,7 +346,7 @@ class _MatchImageState extends ConsumerState<MatchImage> {
                             isSecondTrue = false;
                             isThirdTrue = false;
                           },
-                          child: Image.asset('assets/images/image_match/background/btn geri.png',width: 60,),
+                          child: Image.asset(key: _backButtonKey,'assets/images/image_match/background/btn geri.png',width: 60,),
                         ),
                         const SizedBox(width: 10,),
                         InkWell(
@@ -350,12 +356,12 @@ class _MatchImageState extends ConsumerState<MatchImage> {
                             isSecondTrue = false;
                             isThirdTrue = false;
                           },
-                          child: Image.asset('assets/images/image_match/background/btn sıfırla.png',width: 60,),
+                          child: Image.asset(key: _restartButtonKey,'assets/images/image_match/background/btn sıfırla.png',width: 60,),
                         ),
                         const SizedBox(width: 10,),
                         InkWell(
                           onTap: () {
-
+                              showTutorial(context);
                           },
                           child: Image.asset('assets/images/image_match/background/btn soru işrati.png',width: 60,),
                         ),
@@ -408,9 +414,11 @@ class _MatchImageState extends ConsumerState<MatchImage> {
       dataRepo.points += 1;
       if(dataRepo.points==3){
         _controllerCenter.play();
-        player.setFilePath(
-            'assets/sounds/confetti_sound.mp3');
-        player.play();
+        if(isVolumeOn == true){
+          player.setFilePath(
+              'assets/sounds/confetti_sound.mp3');
+          player.play();
+        }
         dataRepo.finished = true;
       }else{
         if(isVolumeOn == true) {
@@ -438,7 +446,152 @@ class _MatchImageState extends ConsumerState<MatchImage> {
 }
 
 
+void showTutorial(BuildContext context){
 
+  List<TargetFocus> targets = [
+
+      TargetFocus(
+        enableOverlayTab: true,
+        identify: 'Point',
+        keyTarget: _pointKey,
+        alignSkip: Alignment.topRight,
+        contents: [
+          TargetContent(
+            align: ContentAlign.top,
+            builder: (context, controller) {
+              return const Column(
+                mainAxisSize: MainAxisSize.min,
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: <Widget>[
+                  Text(
+                    "Her doğru 1 puan kazandırır.",
+                    style: TextStyle(
+                      color: Colors.white,
+                        fontSize: 14
+                    ),
+                  ),
+                ],
+              );
+            },
+          ),
+        ]
+      ),
+    TargetFocus(
+        enableOverlayTab: true,
+        identify: 'Sound',
+        keyTarget: _soundKey,
+        alignSkip: Alignment.topRight,
+        contents: [
+          TargetContent(
+            align: ContentAlign.top,
+            builder: (context, controller) {
+              return const Column(
+                mainAxisSize: MainAxisSize.min,
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: <Widget>[
+                  Text(
+                    "Sesi bu buton ile açıp kapayabilirsiniz.",
+                    style: TextStyle(
+                      color: Colors.white,
+                        fontSize: 14
+                    ),
+                  ),
+                ],
+              );
+            },
+          ),
+        ]
+    ),
+    TargetFocus(
+        enableOverlayTab: true,
+        identify: 'Shape',
+        keyTarget: _shapeKey,
+        alignSkip: Alignment.topRight,
+        contents: [
+          TargetContent(
+            align: ContentAlign.top,
+            builder: (context, controller) {
+              return const Column(
+                mainAxisSize: MainAxisSize.min,
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: <Widget>[
+                  Text(
+                    "Karşıdaki sonu benzer sesle biten resimle eşleştirin.\nResimlere basılı tutarak ismini dinleyebilirsiniz.",
+                    style: TextStyle(
+                      color: Colors.white,
+                      fontSize: 14
+                    ),
+                  ),
+                ],
+              );
+            },
+          ),
+        ]
+    ),
+    TargetFocus(
+        enableOverlayTab: true,
+        identify: 'Back Button',
+        keyTarget: _backButtonKey,
+        alignSkip: Alignment.topRight,
+        contents: [
+          TargetContent(
+            align: ContentAlign.top,
+            builder: (context, controller) {
+              return const Column(
+                mainAxisSize: MainAxisSize.min,
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: <Widget>[
+                  Text(
+                    "Oyundan çıkmak için bu butona basın.",
+                    style: TextStyle(
+                      color: Colors.white,
+                        fontSize: 14
+                    ),
+                  ),
+                ],
+              );
+            },
+          ),
+        ]
+    ),
+    TargetFocus(
+        enableOverlayTab: true,
+        identify: 'Restart Button',
+        keyTarget: _restartButtonKey,
+        alignSkip: Alignment.topRight,
+        contents: [
+          TargetContent(
+            align: ContentAlign.top,
+            builder: (context, controller) {
+              return const Column(
+                mainAxisSize: MainAxisSize.min,
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: <Widget>[
+                  Text(
+                    "Bu buton oyunu baştan başlatır.",
+                    style: TextStyle(
+                      color: Colors.white,
+                        fontSize: 14
+                    ),
+                  ),
+                ],
+              );
+            },
+          ),
+        ]
+    ),
+
+  ];
+
+  var tutorialCoachMark = TutorialCoachMark(
+      targets: targets,
+      textSkip: 'Atla',
+
+  );
+
+  tutorialCoachMark.show(context: context);
+
+}
 
 
 
