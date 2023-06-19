@@ -104,9 +104,9 @@ class _MatchImageState extends ConsumerState<MatchImage> {
 
                           },
                         ),
-                        const SizedBox(width: 50,),
+                        const SizedBox(width: 20,),
                         Text('Skor: ${dataRepo.points}/3',style: const TextStyle(fontWeight: FontWeight.bold,fontSize: 24),),
-                        const SizedBox(width: 80,),
+                        const SizedBox(width: 40,),
                         IconButton(
                             onPressed: ()
                             {
@@ -121,30 +121,30 @@ class _MatchImageState extends ConsumerState<MatchImage> {
                     ),
 
                     Container(
-                        height: 590,
-                        width: 380,
+                        height: 490,
+                        width: 320,
                         decoration: BoxDecoration(
-                          color: tWhiteColor,
-                          borderRadius: BorderRadius.circular(12),
-                         border: Border.all(
-                           width: 6,
-                           color: tErrorColor
-                         ),
-                          boxShadow: [
-                            BoxShadow(
-                              blurRadius: 2,
-                              color: Colors.grey.shade500,
-                              offset: const Offset(
-                                3,
-                                6
+                            color: tWhiteColor,
+                            borderRadius: BorderRadius.circular(12),
+                            border: Border.all(
+                                width: 6,
+                                color: tErrorColor
+                            ),
+                            boxShadow: [
+                              BoxShadow(
+                                  blurRadius: 2,
+                                  color: Colors.grey.shade500,
+                                  offset: const Offset(
+                                      3,
+                                      6
+                                  )
                               )
-                            )
-                          ]
+                            ]
                         ),
                         child: Column(
                           children: [
                             Padding(
-                              padding: const EdgeInsets.only(left: 30,right: 20,bottom: 15),
+                              padding: const EdgeInsets.only(left: 15,right: 15,top:25),
                               child: CustomPaint(
                                 painter: LinePainter(
                                   firstStartPoint: dataRepo.firstStartPoint, firstEndPoint: dataRepo.firstEndPoint,
@@ -159,27 +159,25 @@ class _MatchImageState extends ConsumerState<MatchImage> {
                                     Row(
                                       children: [
                                         InkWell(
-                                          onLongPress: () {
-                                            if(isVolumeOn == true){
-                                              textToSpeech(shapeNames[dataRepo.currentLevel][0]);
-                                            }
-                                          },
+                                            onLongPress: () {
+                                              if(isVolumeOn == true){
+                                                textToSpeech(shapeNames[dataRepo.currentLevel][0]);
+                                              }
+                                            },
                                             onTap: () {
 
-                                                  setState(() {
-                                                      dataRepo.firstStartPoint = leftDots[0];
-                                                      dataRepo.isFirstClicked=true;
-                                                      dataRepo.isSecondClicked = false;
-                                                      dataRepo.isThirdClicked = false;
+                                              setState(() {
+                                                dataRepo.firstStartPoint = leftDots[0];
+                                                dataRepo.isFirstClicked=true;
+                                                dataRepo.isSecondClicked = false;
+                                                dataRepo.isThirdClicked = false;
 
-                                                  });
+                                              });
 
-                                               },
-                                            child: Image(image: AssetImage(shapeLocation[dataRepo.currentLevel][0]))
+                                            },
+                                            child: Image(image: AssetImage(shapeLocation[dataRepo.currentLevel][0]),width: 100,)
                                         ),
-                                        const Text('.',style: TextStyle(color: tSecondaryColor,fontSize: 130),),
-                                        const SizedBox(width: 50,),
-                                        const Text('.',style: TextStyle(color: tPrimaryColor,fontSize: 130),),
+                                        const SizedBox(width: 75,),
                                         InkWell(
                                             onLongPress: () {
                                               if(isVolumeOn == true){
@@ -209,10 +207,11 @@ class _MatchImageState extends ConsumerState<MatchImage> {
 
                                               });
                                             },
-                                            child: Image(image: AssetImage(shapeLocation[dataRepo.currentLevel][1]))
+                                            child: Image(image: AssetImage(shapeLocation[dataRepo.currentLevel][1]),width: 100,)
                                         )
                                       ],
                                     ),
+                                    const SizedBox(height: 60,),
                                     Row(
                                       children: [
                                         InkWell(
@@ -232,11 +231,9 @@ class _MatchImageState extends ConsumerState<MatchImage> {
                                               });
 
                                             },
-                                            child: Image(image: AssetImage(shapeLocation[dataRepo.currentLevel][2]))
+                                            child: Image(image: AssetImage(shapeLocation[dataRepo.currentLevel][2]),width: 100)
                                         ),
-                                        const Text('.',style: TextStyle(color: tSecondaryColor,fontSize: 130),),
-                                        const SizedBox(width: 50,),
-                                        const Text('.',style: TextStyle(color: tPrimaryColor,fontSize: 130),),
+                                        const SizedBox(width: 75,),
                                         InkWell(
                                             onLongPress: () {
                                               if(isVolumeOn == true){
@@ -264,10 +261,11 @@ class _MatchImageState extends ConsumerState<MatchImage> {
 
                                               });
                                             },
-                                            child: Image(image: AssetImage(shapeLocation[dataRepo.currentLevel][3]))
+                                            child: Image(image: AssetImage(shapeLocation[dataRepo.currentLevel][3]),width: 100)
                                         )
                                       ],
                                     ),
+                                    const SizedBox(height: 60,),
                                     Row(
                                       children: [
                                         InkWell(
@@ -286,11 +284,9 @@ class _MatchImageState extends ConsumerState<MatchImage> {
                                               });
 
                                             },
-                                            child: Image(image: AssetImage(shapeLocation[dataRepo.currentLevel][4]))
+                                            child: Image(image: AssetImage(shapeLocation[dataRepo.currentLevel][4]),width: 100)
                                         ),
-                                        const Text('.',style: TextStyle(color: tSecondaryColor,fontSize: 130),),
-                                        const SizedBox(width: 50,),
-                                        const Text('.',style: TextStyle(color: tPrimaryColor,fontSize: 130),),
+                                        const SizedBox(width: 75,),
                                         InkWell(
                                             onLongPress: () {
                                               if(isVolumeOn == true){
@@ -318,7 +314,7 @@ class _MatchImageState extends ConsumerState<MatchImage> {
 
                                               });
                                             },
-                                            child: Image(image: AssetImage(shapeLocation[dataRepo.currentLevel][5]))
+                                            child: Image(image: AssetImage(shapeLocation[dataRepo.currentLevel][5]),width: 100)
                                         )
                                       ],
                                     ),
@@ -338,11 +334,11 @@ class _MatchImageState extends ConsumerState<MatchImage> {
 
                         InkWell(
                           onTap: () {
-                              Navigator.of(context).pop();
-                              dataRepo.resetGame();
-                              isFirstTrue = false;
-                              isSecondTrue = false;
-                              isThirdTrue = false;
+                            Navigator.of(context).pop();
+                            dataRepo.resetGame();
+                            isFirstTrue = false;
+                            isSecondTrue = false;
+                            isThirdTrue = false;
                           },
                           child: Image.asset('assets/images/image_match/background/btn geri.png',width: 60,),
                         ),
@@ -408,36 +404,36 @@ class _MatchImageState extends ConsumerState<MatchImage> {
   }
 
   void answer(bool isCorrect,DataChangeNotifier dataRepo){
-      if(isCorrect){
-        dataRepo.points += 1;
-        if(dataRepo.points==3){
-          _controllerCenter.play();
+    if(isCorrect){
+      dataRepo.points += 1;
+      if(dataRepo.points==3){
+        _controllerCenter.play();
+        player.setFilePath(
+            'assets/sounds/confetti_sound.mp3');
+        player.play();
+        dataRepo.finished = true;
+      }else{
+        if(isVolumeOn == true) {
           player.setFilePath(
-              'assets/sounds/confetti_sound.mp3');
+              'assets/sounds/correct_answer.mp3'
+          );
           player.play();
-          dataRepo.finished = true;
-        }else{
-          if(isVolumeOn == true) {
-            player.setFilePath(
-                'assets/sounds/correct_answer.mp3'
-            );
-            player.play();
-
-          }
-        }
-      } else{
-        dataRepo.healthes -=1;
-        if(dataRepo.healthes == 0){
-          dataRepo.finished = false;
-        }else{
-          if(isVolumeOn == true) {
-            player.setFilePath(
-                'assets/sounds/incorrect_answer.mp3');
-            player.play();
-          }
 
         }
       }
+    } else{
+      dataRepo.healthes -=1;
+      if(dataRepo.healthes == 0){
+        dataRepo.finished = false;
+      }else{
+        if(isVolumeOn == true) {
+          player.setFilePath(
+              'assets/sounds/incorrect_answer.mp3');
+          player.play();
+        }
+
+      }
+    }
   }
 }
 
