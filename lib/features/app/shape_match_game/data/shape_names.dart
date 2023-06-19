@@ -1,7 +1,7 @@
 
 const List shapeNames =
 [
-  ['tır, yaprak, pencere, mısır, bardak, fare'],
+  ['tır', 'yaprak', 'pencere', 'mısır', 'bardak', 'fare'],
   ['çiçek','ocak','uçak','bezelye','sandalye','köpek'],
   ['tavşan','tarak','araba','ceylan','durak','soba'],
   ['cüzdan','aslan','dil','baş','taş','zil'],
