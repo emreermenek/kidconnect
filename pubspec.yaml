@@ -48,6 +48,7 @@ dependencies:
   just_audio: ^0.9.34
   flutter_rating_bar: ^4.0.1
   confetti: ^0.7.0
+  tutorial_coach_mark: ^1.2.8
 
 dev_dependencies:
   flutter_test:
