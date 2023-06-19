@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 
 const List<Offset> leftDots =
-[Offset(105, 130), Offset(105, 316), Offset(105, 503)];
+[Offset(90, 55), Offset(90, 210), Offset(90, 370)];
 const List<Offset> rightDots =
-[Offset(193,129),Offset(190,315),Offset(190,502)];
+[Offset(185,55),Offset(185,210),Offset(185,370)];
 const List<Offset> circles =
-[Offset(45, 93),Offset(45, 279),Offset(45, 465)];
+[Offset(50, 50),Offset(50, 210),Offset(50, 370)];
 
 List<List<int>> levelInfo =
 [
