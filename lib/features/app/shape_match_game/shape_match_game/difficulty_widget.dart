@@ -20,16 +20,16 @@ class DifficultyWidget extends StatelessWidget {
           return const Row(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              SizedBox(width: 260,),
-              Image(image: AssetImage('assets/images/image_match/background/kolay.png'),),
+              SizedBox(width: 215,),
+              Image(image: AssetImage('assets/images/image_match/background/kolay.png'),width: 100,),
             ],
           );
         }else if(snapshot.data == 'orta'){
           return const Row(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              SizedBox(width: 260,),
-              Image(image: AssetImage('assets/images/image_match/background/orta.png'),)
+              SizedBox(width: 215,),
+              Image(image: AssetImage('assets/images/image_match/background/orta.png'),width: 100)
             ],
           );
 
@@ -37,8 +37,8 @@ class DifficultyWidget extends StatelessWidget {
           return const Row(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              SizedBox(width: 260,),
-              Image(image: AssetImage('assets/images/image_match/background/zor.png'),)
+              SizedBox(width: 215,),
+              Image(image: AssetImage('assets/images/image_match/background/zor.png'),width: 100)
             ],
           );
 
