@@ -49,6 +49,7 @@ dependencies:
   flutter_rating_bar: ^4.0.1
   confetti: ^0.7.0
   tutorial_coach_mark: ^1.2.8
+  flutter_switch: ^0.3.2
 
 dev_dependencies:
   flutter_test:
@@ -193,6 +194,16 @@ flutter:
     - assets/images/alert_dialog/success/Group 52.png
     - assets/images/alert_dialog/success/harika gidiyorsun.png
     - assets/images/alert_dialog/success/image 91.png
+    - assets/images/settings_image/customer.png
+    - assets/images/settings_image/doll.png
+    - assets/images/settings_image/gear.png
+    - assets/images/settings_image/il.png
+    - assets/images/settings_image/log-out.png
+    - assets/images/settings_image/musical-notes.png
+    - assets/images/settings_image/notification-bell.png
+    - assets/images/settings_image/toys.png
+    - assets/images/settings_image/train.png
+    - assets/images/settings_image/happy tiger.png
 
   #   - images/a_dot_burr.jpeg
   #   - images/a_dot_ham.jpeg
