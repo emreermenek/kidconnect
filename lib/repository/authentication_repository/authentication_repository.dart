@@ -16,7 +16,11 @@ class AuthRepository{
     required this.ref
     });
 
-
+/*
+---------------------------------------------------------------------------------------------
+        Sign in with email with password
+---------------------------------------------------------------------------------------------
+*/
   Future<void> signInWithEmailAndPassword(TextEditingController email, TextEditingController password) async{
 
     showDialog(
@@ -34,7 +38,11 @@ class AuthRepository{
     }
     navigatorKey.currentState!.popUntil((route) => route.isFirst);
   }
-
+/*
+---------------------------------------------------------------------------------------------
+        Sign up with email with password
+---------------------------------------------------------------------------------------------
+*/
   Future<void> createUserWithEmailAndPassword(TextEditingController email, TextEditingController password, TextEditingController name) async{
 
     showDialog(
@@ -84,7 +92,11 @@ class AuthRepository{
     navigatorKey.currentState!.popUntil((route) => route.isFirst);
   }
 
-
+/*
+---------------------------------------------------------------------------------------------
+        Sign in with Google
+---------------------------------------------------------------------------------------------
+*/
   Future<void> signInWithGoogle() async {
 
     showDialog(
@@ -143,7 +155,11 @@ class AuthRepository{
     }
     navigatorKey.currentState!.popUntil((route) => route.isFirst);
   }
-
+/*
+---------------------------------------------------------------------------------------------
+        Sign in with Facebook
+---------------------------------------------------------------------------------------------
+*/
   Future<void> signInWithFacebook() async {
 
     showDialog(
@@ -197,6 +213,30 @@ class AuthRepository{
     }
     navigatorKey.currentState!.popUntil((route) => route.isFirst);
   }
+/*
+---------------------------------------------------------------------------------------------
+        Verify Email
+---------------------------------------------------------------------------------------------
+*/
+  Future sendVerificationEmail() async {
+
+    try {
+      final user = FirebaseAuth.instance.currentUser!;
+      await user.sendEmailVerification();
+      await Future.delayed(const Duration(seconds: 5));
+    } on FirebaseAuthException catch(e){
+      Utils.showSnackBar(e.message);
+    }
+  }
+/*
+---------------------------------------------------------------------------------------------
+        Sign Out
+---------------------------------------------------------------------------------------------
+*/
+  Future signOut() async {
+    await FirebaseAuth.instance.signOut();
+}
+
 
 }
 
