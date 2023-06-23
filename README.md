@@ -40,7 +40,7 @@ KidConnect çocuklar için öğrenmeyi, eğlenceli bir hale getirir. Çocukları
 - Disleksi olan 4-10 yaş arası çocuklar
 - Öğrenme bozukluğu olan 4-10 yaş arası çocuklar
 
-## [F32 - Product Bcklog URL](https://morteza24.atlassian.net/jira/software/projects/F32/boards/3/backlog)
+## [F32 - Product Backlog URL](https://morteza24.atlassian.net/jira/software/projects/F32/boards/3/backlog)
 ---
 
 # Sprint 1
@@ -70,7 +70,12 @@ KidConnect çocuklar için öğrenmeyi, eğlenceli bir hale getirir. Çocukları
   
   - Takım için roller düzenlendi.
   - Görev dağılımı yapıldı.
+ 
+- **Sprint Notları:**
 
+  - Uygulama ana sayfasının çok karışık olduğu düşünülerek ana sayfanın daha sadeleştirilmesi gerektiği kararlaştırıldı.
+  - Bu sprint için tamamlanan toplam puan 67. Sprint 1'in hedeflerine genel olarak ulaştığımızı düşünüyorum. Ancak, gelecek sprintlerde performansı daha da artırmak ve bütün tasarımları bitirmeyi hedefliyoruz.
+    
 ---
 
 # Sprint 2
