@@ -306,6 +306,32 @@ flutter:
     - assets/images/letter_game_image/letter_images/zebra.png
     - assets/images/letter_game_image/letter_images/cow.png
     - assets/images/buttons/categories_button.png
+    - assets/images/letter_game_image/letter_images/barbecue.png
+    - assets/images/choose_correct_images/tiger_looking_down.png
+    - assets/images/numbers_marks_images/%.png
+    - assets/images/numbers_marks_images/+.png
+    - assets/images/numbers_marks_images/0.png
+    - assets/images/numbers_marks_images/1.png
+    - assets/images/numbers_marks_images/2.png
+    - assets/images/numbers_marks_images/3.png
+    - assets/images/numbers_marks_images/4.png
+    - assets/images/numbers_marks_images/5.png
+    - assets/images/numbers_marks_images/6.png
+    - assets/images/numbers_marks_images/7.png
+    - assets/images/numbers_marks_images/8.png
+    - assets/images/numbers_marks_images/9.png
+    - assets/images/numbers_marks_images/=.png
+    - assets/images/numbers_marks_images/-.png
+    - assets/images/numbers_marks_images/bigger.png
+    - assets/images/numbers_marks_images/lower.png
+    - assets/images/numbers_marks_images/question_mark.png
+    - assets/images/numbers_marks_images/x.png
+    - assets/images/numbers_marks_images/÷.png
+    - assets/images/choose_correct_images/background.png
+    - assets/images/choose_correct_images/geri button.png
+    - assets/images/level_list/exit.png
+    - assets/images/level_list/lock.png
+    - assets/images/level_list/open_lock.png
 
   #   - images/a_dot_burr.jpeg
   #   - images/a_dot_ham.jpeg
