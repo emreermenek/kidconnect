@@ -50,6 +50,7 @@ dependencies:
   confetti: ^0.7.0
   tutorial_coach_mark: ^1.2.8
   flutter_switch: ^0.3.2
+  flip_card: ^0.7.0
 
 dev_dependencies:
   flutter_test:
@@ -214,6 +215,97 @@ flutter:
     - assets/images/profile_page/user (1).png
     - assets/images/profile_page/windmill 1.png
     - assets/images/profile_page/Asset 13.png
+    - assets/images/letter_game_image/big_letters/A.png
+    - assets/images/letter_game_image/big_letters/B.png
+    - assets/images/letter_game_image/big_letters/C.png
+    - assets/images/letter_game_image/big_letters/Ç.png
+    - assets/images/letter_game_image/big_letters/D.png
+    - assets/images/letter_game_image/big_letters/E.png
+    - assets/images/letter_game_image/big_letters/F.png
+    - assets/images/letter_game_image/big_letters/G.png
+    - assets/images/letter_game_image/big_letters/Ğ.png
+    - assets/images/letter_game_image/big_letters/H.png
+    - assets/images/letter_game_image/big_letters/J.png
+    - assets/images/letter_game_image/big_letters/K.png
+    - assets/images/letter_game_image/big_letters/L.png
+    - assets/images/letter_game_image/big_letters/M.png
+    - assets/images/letter_game_image/big_letters/N.png
+    - assets/images/letter_game_image/big_letters/O.png
+    - assets/images/letter_game_image/big_letters/Ö.png
+    - assets/images/letter_game_image/big_letters/P.png
+    - assets/images/letter_game_image/big_letters/R.png
+    - assets/images/letter_game_image/big_letters/S.png
+    - assets/images/letter_game_image/big_letters/Ş.png
+    - assets/images/letter_game_image/big_letters/T.png
+    - assets/images/letter_game_image/big_letters/U.png
+    - assets/images/letter_game_image/big_letters/Ü.png
+    - assets/images/letter_game_image/big_letters/V.png
+    - assets/images/letter_game_image/big_letters/Y.png
+    - assets/images/letter_game_image/big_letters/Z.png
+    - assets/images/letter_game_image/big_letters/i.png
+    - assets/images/letter_game_image/big_letters/II.png
+    - assets/images/buttons/exit_button.png
+    - assets/images/buttons/flip_button.png
+    - assets/images/buttons/play_button.png
+    - assets/images/buttons/speaker_button.png
+    - assets/images/letter_game_image/two_letter/Aa.png
+    - assets/images/letter_game_image/two_letter/Bb.png
+    - assets/images/letter_game_image/two_letter/Cc.png
+    - assets/images/letter_game_image/two_letter/Çç.png
+    - assets/images/letter_game_image/two_letter/Dd.png
+    - assets/images/letter_game_image/two_letter/Ee.png
+    - assets/images/letter_game_image/two_letter/Ff.png
+    - assets/images/letter_game_image/two_letter/Gg.png
+    - assets/images/letter_game_image/two_letter/Ğğ.png
+    - assets/images/letter_game_image/two_letter/Hh.png
+    - assets/images/letter_game_image/two_letter/Iı.png
+    - assets/images/letter_game_image/two_letter/İii.png
+    - assets/images/letter_game_image/two_letter/Jj.png
+    - assets/images/letter_game_image/two_letter/Kk.png
+    - assets/images/letter_game_image/two_letter/Ll.png
+    - assets/images/letter_game_image/two_letter/Mm.png
+    - assets/images/letter_game_image/two_letter/Nn.png
+    - assets/images/letter_game_image/two_letter/Oo.png
+    - assets/images/letter_game_image/two_letter/Öö.png
+    - assets/images/letter_game_image/two_letter/Pp.png
+    - assets/images/letter_game_image/two_letter/Rr.png
+    - assets/images/letter_game_image/two_letter/Ss.png
+    - assets/images/letter_game_image/two_letter/Şş.png
+    - assets/images/letter_game_image/two_letter/Tt.png
+    - assets/images/letter_game_image/two_letter/Uu.png
+    - assets/images/letter_game_image/two_letter/Üü.png
+    - assets/images/letter_game_image/two_letter/Vv.png
+    - assets/images/letter_game_image/two_letter/Yy.png
+    - assets/images/letter_game_image/two_letter/Zz.png
+    - assets/images/letter_game_image/letter_images/pear (1) 1.png
+    - assets/images/letter_game_image/letter_images/bicycle.png
+    - assets/images/letter_game_image/letter_images/mosques.png
+    - assets/images/letter_game_image/letter_images/strawberry.png
+    - assets/images/letter_game_image/letter_images/ice-creams.png
+    - assets/images/letter_game_image/letter_images/house.png
+    - assets/images/letter_game_image/letter_images/elephant.png
+    - assets/images/letter_game_image/letter_images/rose.png
+    - assets/images/letter_game_image/letter_images/mountain.png
+    - assets/images/letter_game_image/letter_images/chicken.png
+    - assets/images/letter_game_image/letter_images/leopard.png
+    - assets/images/letter_game_image/letter_images/cat.png
+    - assets/images/letter_game_image/letter_images/light-bulb.png
+    - assets/images/letter_game_image/letter_images/seagull.png
+    - assets/images/letter_game_image/letter_images/pomegranate.png
+    - assets/images/letter_game_image/letter_images/bus.png
+    - assets/images/letter_game_image/letter_images/tarantula.png
+    - assets/images/letter_game_image/letter_images/cake.png
+    - assets/images/letter_game_image/letter_images/painting.png
+    - assets/images/letter_game_image/letter_images/judge-chair.png
+    - assets/images/letter_game_image/letter_images/baseball-hat.png
+    - assets/images/letter_game_image/letter_images/soccer-ball.png
+    - assets/images/letter_game_image/letter_images/kite.png
+    - assets/images/letter_game_image/letter_images/grape-fruit.png
+    - assets/images/letter_game_image/letter_images/vase.png
+    - assets/images/letter_game_image/letter_images/crab.png
+    - assets/images/letter_game_image/letter_images/zebra.png
+    - assets/images/letter_game_image/letter_images/cow.png
+    - assets/images/buttons/categories_button.png
 
   #   - images/a_dot_burr.jpeg
   #   - images/a_dot_ham.jpeg
