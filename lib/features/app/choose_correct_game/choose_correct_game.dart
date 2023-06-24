@@ -86,7 +86,7 @@ class _ChooseCorrectGameState extends ConsumerState<ChooseCorrectGame> {
                         ),)
                       ],
                     ),
-                  const SizedBox(height: 20,),
+                  const SizedBox(height: 5,),
                   const Center(
                     child: Image(image: AssetImage('assets/images/choose_correct_images/tiger_looking_down.png')),
                   ),
@@ -106,10 +106,11 @@ class _ChooseCorrectGameState extends ConsumerState<ChooseCorrectGame> {
                             setState(() {
                               data.currentLevel += 1;
                             });
-                            data.levelLock();
+
                             if(data.currentLevel == 10){
                               Navigator.of(context).pop();
                             }
+                          data.levelLock();
                         }else{
                         _player.setFilePath(
                             'assets/sounds/incorrect_answer.mp3');
@@ -231,11 +232,11 @@ class _ChooseCorrectGameState extends ConsumerState<ChooseCorrectGame> {
                           setState(() {
                             data.currentLevel += 1;
                           });
-                        data.levelLock();
+
                         if(data.currentLevel == 10){
                           Navigator.of(context).pop();
                         }
-
+                        data.levelLock();
                       }else{
                         _player.setFilePath(
                             'assets/sounds/incorrect_answer.mp3');
@@ -356,10 +357,10 @@ class _ChooseCorrectGameState extends ConsumerState<ChooseCorrectGame> {
                         setState(() {
                           data.currentLevel += 1;
                         });
-                        data.levelLock();
                         if(data.currentLevel == 10){
                           Navigator.of(context).pop();
                         }
+                        data.levelLock();
 
                       }else{
                         _player.setFilePath(
