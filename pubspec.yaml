@@ -364,6 +364,13 @@ flutter:
     - assets/images/oyunlar-images/canlılar-oyunları/problem.png
     - assets/images/oyunlar-images/diger-oyunlar/language.png
     - assets/images/oyunlar-images/diger-oyunlar/Group3.png
+    - assets/images/whichOneGame_images/table_girl.png
+    - assets/images/whichOneGame_images/table_man_1.png
+    - assets/images/whichOneGame_images/table_man_2.png
+    - assets/images/whichOneGame_images/çerçeve 1.png
+    - assets/images/whichOneGame_images/çerçeve 2.png
+    - assets/images/whichOneGame_images/çerçeve 3.png
+    - assets/images/whichOneGame_images/tiger_looking_side.png
     
 
   #   - images/a_dot_burr.jpeg
