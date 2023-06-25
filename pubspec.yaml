@@ -332,6 +332,39 @@ flutter:
     - assets/images/level_list/exit.png
     - assets/images/level_list/lock.png
     - assets/images/level_list/open_lock.png
+    - assets/images/ögrenelim-images/ALFABE.png
+    - assets/images/ögrenelim-images/behavior.png
+    - assets/images/ögrenelim-images/eşyalar.png
+    - assets/images/ögrenelim-images/groceries.png
+    - assets/images/ögrenelim-images/livestock.png
+    - assets/images/ögrenelim-images/postman.png
+    - assets/images/ögrenelim-images/SAATLER.png
+    - assets/images/ögrenelim-images/satisfaction.png
+    - assets/images/ögrenelim-images/SAYILAR.png
+    - assets/images/ögrenelim-images/season.png
+    - assets/images/ögrenelim-images/TEMİZLİK.png
+    - assets/images/ögrenelim-images/VUCUDUMUZ.png
+    - assets/images/ögrenelim-images/wheel.png
+    - assets/images/oyunlar-images/goods 1.png
+    - assets/images/oyunlar-images/shapes.png
+    - assets/images/seslendirme-images/CUMLE.png
+    - assets/images/seslendirme-images/HIKAYE.png
+    - assets/images/sarkilar-images/SARKITAMAM.png
+    - assets/images/sarkilar-images/BIRLIKTE.png
+    - assets/images/oyunlar-images/sayı-oyunları/alarm.png
+    - assets/images/oyunlar-images/sayı-oyunları/ear.png
+    - assets/images/oyunlar-images/sayı-oyunları/Group.png
+    - assets/images/oyunlar-images/sayı-oyunları/Group-2.png
+    - assets/images/oyunlar-images/sayı-oyunları/magnifier.png
+    - assets/images/oyunlar-images/sayı-oyunları/person.png
+    - assets/images/oyunlar-images/sayı-oyunları/scrabble.png
+    - assets/images/oyunlar-images/sayı-oyunları/true-or-false.png
+    - assets/images/oyunlar-images/alfabe-oyunları/alphabet.png
+    - assets/images/oyunlar-images/alfabe-oyunları/critical-thinking.png
+    - assets/images/oyunlar-images/canlılar-oyunları/problem.png
+    - assets/images/oyunlar-images/diger-oyunlar/language.png
+    - assets/images/oyunlar-images/diger-oyunlar/Group3.png
+    
 
   #   - images/a_dot_burr.jpeg
   #   - images/a_dot_ham.jpeg
