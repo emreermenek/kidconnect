@@ -1,11 +1,14 @@
+import 'package:bootcamp_f32/common_widgets/bottom_navigation_bar_widget.dart';
 import 'package:bootcamp_f32/constants/colors.dart';
-import 'package:bootcamp_f32/features/app/%C3%B6%C4%9Frenelim/%C3%B6grenelim.dart';
-import 'package:bootcamp_f32/features/app/%C5%9Fark%C4%B1lar/sark%C4%B1lar.dart';
 import 'package:bootcamp_f32/features/app/birlikte-yapal%C4%B1m/birlikte-yapal%C4%B1m.dart';
 import 'package:bootcamp_f32/features/app/boyama/boyama.dart';
 import 'package:bootcamp_f32/features/app/oyunlar/oyunlar.dart';
 import 'package:bootcamp_f32/features/app/seslendirme/seslendirme.dart';
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
+import '../../../common_widgets/app_bar_dialog_clip.dart';
+import '../öğrenelim/ogrenelim.dart';
+import '../şarkılar/sarkilar.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({Key? key}) : super(key: key);
@@ -42,15 +45,16 @@ final List routes = [
 ];
 
 class _HomePageState extends State<HomePage> {
-  int _currentIndex = 0;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: tWhiteColor,
       appBar: AppBar(
+        backgroundColor: Colors.white,
         toolbarHeight: 75,
         elevation: 0,
         title: Row(
+          mainAxisAlignment: MainAxisAlignment.center,
           children: [
             SizedBox(
               width: 250,
@@ -59,56 +63,29 @@ class _HomePageState extends State<HomePage> {
                   child: Container(
                     padding: const EdgeInsets.symmetric(vertical: 10),
                     color: tPrimaryColor,
-                    child: const Center(
+                    child: Center(
                         child: Text(
                       'Hoşgeldin',
-                      style: TextStyle(fontWeight: FontWeight.bold),
-                    )),
+                            style: GoogleFonts.quicksand(
+                                textStyle: const TextStyle(
+                                  fontWeight: FontWeight.bold,
+                                  color: Colors.black,
+                                  fontSize: 18,
+                                )
+                            )
+                        ),
+                    ),
                   )),
             ),
+            const SizedBox(width: 10,),
             const Image(
               image: AssetImage('assets/images/home_page_image/cute-tiger.png'),
-              width: 70,
+              width: 75,
             ),
           ],
         ),
       ),
-      bottomNavigationBar: SizedBox(
-        height: 85,
-        child: BottomNavigationBar(
-          selectedItemColor: Colors.black,
-          currentIndex: _currentIndex,
-          selectedFontSize: 14,
-          unselectedFontSize: 12,
-          showSelectedLabels: true,
-          backgroundColor: Colors.white,
-          onTap: (value) {
-            setState(() {
-              _currentIndex = value;
-            });
-          },
-          items: const [
-            BottomNavigationBarItem(
-                label: 'ANA SAYFA',
-                icon: Image(
-                  image: AssetImage(
-                      'assets/images/home_page_image/bottom_navigation_bar_images/home-big.png'),
-                )),
-            BottomNavigationBarItem(
-                label: 'PROFİL',
-                icon: Image(
-                  image: AssetImage(
-                      'assets/images/home_page_image/bottom_navigation_bar_images/student-card -big.png'),
-                )),
-            BottomNavigationBarItem(
-                label: 'AYARLAR',
-                icon: Image(
-                  image: AssetImage(
-                      'assets/images/home_page_image/bottom_navigation_bar_images/settings-big.png'),
-                )),
-          ],
-        ),
-      ),
+      bottomNavigationBar: botNavBar(currentIndex: 0, context: context),
       body: Stack(
         children: [
           const Positioned(
@@ -166,16 +143,15 @@ class _HomePageState extends State<HomePage> {
             itemCount: 6,
             gridDelegate: const SliverGridDelegateWithMaxCrossAxisExtent(
               maxCrossAxisExtent:
-                  250, //if you have a device with 300px width only one category is shown in a row if you have 500px then two categories are lied side by side in a row
-              childAspectRatio: 3 /
-                  2, // for 200px width, I need 300px height (for extra spacing)
+                  230, //if you have a device with 300px width only one category is shown in a row if you have 500px then two categories are lied side by side in a row
+              childAspectRatio: 1,// for 200px width, I need 300px height (for extra spacing)
               crossAxisSpacing: 10,
               mainAxisSpacing: 10,
             ),
             itemBuilder: (context, index) {
               return InkWell(
                 onTap: () {
-                  Navigator.of(context).pushReplacement(
+                  Navigator.of(context).push(
                     MaterialPageRoute(
                       builder: (context) => routes[index],
                     ),
@@ -183,6 +159,7 @@ class _HomePageState extends State<HomePage> {
                 },
                 child: GridTile(
                   child: Container(
+                    padding: const EdgeInsets.all(12),
                     margin: const EdgeInsets.all(2),
                     decoration: BoxDecoration(
                         boxShadow: [
@@ -222,36 +199,4 @@ class _HomePageState extends State<HomePage> {
   }
 }
 
-class CustomClipPath extends CustomClipper<Path> {
-  @override
-  Path getClip(Size size) {
-    Path path0 = Path();
-    path0.moveTo(size.width * 0.0008333, size.height * 0.5000000);
-    path0.quadraticBezierTo(size.width * 0.0008000, size.height * 0.0946000,
-        size.width * 0.0826417, 0);
-    path0.lineTo(size.width * 0.4562333, 0);
-    path0.lineTo(size.width * 0.8384333, 0);
-    path0.quadraticBezierTo(size.width * 0.9157000, size.height * 0.0962333,
-        size.width * 0.9162417, size.height * 0.5061000);
-    path0.cubicTo(
-        size.width * 0.9129667,
-        size.height * 0.7439667,
-        size.width * 0.9507833,
-        size.height * 0.7810333,
-        size.width * 0.9975000,
-        size.height * 0.8466667);
-    path0.quadraticBezierTo(size.width * 0.9844750, size.height * 0.9988000,
-        size.width * 0.8705333, size.height);
-    path0.lineTo(size.width * 0.0830417, size.height);
-    path0.quadraticBezierTo(size.width * -0.0013583, size.height * 0.8973000,
-        size.width * 0.0008333, size.height * 0.5000000);
-    path0.close();
 
-    return path0;
-  }
-
-  @override
-  bool shouldReclip(CustomClipper<Path> oldClipper) {
-    return false;
-  }
-}

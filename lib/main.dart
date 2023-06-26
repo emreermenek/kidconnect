@@ -1,4 +1,4 @@
-import 'package:bootcamp_f32/features/app/first-page.dart';
+import 'package:bootcamp_f32/features/app/first_page/first-page.dart';
 import 'package:bootcamp_f32/features/authentication/screens/auth_gate/auth_gate.dart';
 import 'package:bootcamp_f32/features/authentication/screens/login_page/login_page.dart';
 import 'package:firebase_core/firebase_core.dart';
@@ -23,11 +23,6 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       navigatorKey: navigatorKey,
       debugShowCheckedModeBanner: false,
-      themeMode: ThemeMode.system,
-      theme: ThemeData(
-        colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
-        useMaterial3: true,
-      ),
       home: const FirstPage(),
     );
   }

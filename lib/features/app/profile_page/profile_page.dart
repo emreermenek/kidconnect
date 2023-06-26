@@ -1,9 +1,11 @@
+import 'package:bootcamp_f32/features/app/settings_page/settings_page.dart';
 import 'package:bootcamp_f32/features/app/shape_match_game/data/offset.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
+import '../../../common_widgets/bottom_navigation_bar_widget.dart';
 import '../../../constants/colors.dart';
 
 class ProfileUserOpen extends StatefulWidget {

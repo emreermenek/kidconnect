@@ -42,13 +42,13 @@ class _SettingsPageState extends ConsumerState<SettingsPage> {
         backgroundColor: const Color(0xFF4FCBE9),
         appBar: AppBar(
           backgroundColor: Colors.white,
-          toolbarHeight: 71,
+          toolbarHeight: 75,
           elevation: 0,
           title: Row(
+            mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              const SizedBox(width: 62,height: 62,),
               const Image(image: AssetImage('assets/images/settings_image/gear.png'),width: 70,),
-              const SizedBox(width: 26,),
+              const SizedBox(width: 5,),
               Text('AYARLAR',style: GoogleFonts.quicksand(
                 textStyle: const TextStyle(
                   color: Colors.black,
