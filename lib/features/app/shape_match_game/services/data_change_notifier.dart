@@ -19,7 +19,7 @@ class DataChangeNotifier extends ChangeNotifier{
   bool isThirdClicked = false;
   int currentLevel = 0;
   bool? finished;
-
+  int lockLevel = 0;
 
   void resetGame()
   {
@@ -46,6 +46,18 @@ class DataChangeNotifier extends ChangeNotifier{
 
   void chooseLevel(int level){
     currentLevel = level;
+    notifyListeners();
+  }
+  List<String> lock =
+  [
+    'assets/images/level_list/open_lock.png','assets/images/level_list/lock.png',
+    'assets/images/level_list/lock.png','assets/images/level_list/lock.png',
+    'assets/images/level_list/lock.png', 'assets/images/level_list/lock.png',
+    'assets/images/level_list/lock.png', 'assets/images/level_list/lock.png',
+    'assets/images/level_list/lock.png', 'assets/images/level_list/lock.png'
+  ];
+  void levelLock() {
+    lock[lockLevel] = 'assets/images/level_list/open_lock.png';
     notifyListeners();
   }
 

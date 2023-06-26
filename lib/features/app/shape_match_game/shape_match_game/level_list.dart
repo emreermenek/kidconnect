@@ -1,26 +1,24 @@
-import 'package:bootcamp_f32/features/app/how_many_image_game/how_many_image_game.dart';
-import 'package:bootcamp_f32/features/app/which_one_correct_game/services/data_service.dart';
-import 'package:bootcamp_f32/features/app/which_one_correct_game/which_one_correct_game.dart';
+import 'package:bootcamp_f32/features/app/shape_match_game/services/data_change_notifier.dart';
+import 'package:bootcamp_f32/features/app/shape_match_game/shape_match_game/shape_match_game.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:google_fonts/google_fonts.dart';
+import '../../../../utils/utils.dart';
 
-import '../../../utils/utils.dart';
-
-class WhichOneCorrectGameLevelList extends ConsumerStatefulWidget {
-  const WhichOneCorrectGameLevelList({Key? key}) : super(key: key);
+class ShapeMatchGameLevelList extends ConsumerStatefulWidget {
+  const ShapeMatchGameLevelList({Key? key}) : super(key: key);
 
   @override
-  ConsumerState<WhichOneCorrectGameLevelList> createState() => _ChooseCorrectGameLevelListState();
+  ConsumerState<ShapeMatchGameLevelList> createState() => _ChooseCorrectGameLevelListState();
 }
 
-class _ChooseCorrectGameLevelListState extends ConsumerState<WhichOneCorrectGameLevelList> {
+class _ChooseCorrectGameLevelListState extends ConsumerState<ShapeMatchGameLevelList> {
   List<String> levels =
   ['bölüm 1','bölüm 2','bölüm 3','bölüm 4','bölüm 5','bölüm 6','bölüm 7','bölüm 8','bölüm 9','bölüm 10'];
 
   @override
   Widget build(BuildContext context) {
-    final data = ref.watch(dataServiceProvider2);
+    final data = ref.watch(dataChangeNotifierProvider);
     return SafeArea(
       child: Scaffold(
         appBar: AppBar(
@@ -73,7 +71,7 @@ class _ChooseCorrectGameLevelListState extends ConsumerState<WhichOneCorrectGame
                     onTap: () {
                       if(data.lock[index] == 'assets/images/level_list/open_lock.png'){
                         data.currentLevel = index;
-                        Navigator.of(context).push(MaterialPageRoute(builder: (context) => const WhichOneCorrectGame(),));
+                        Navigator.of(context).push(MaterialPageRoute(builder: (context) => const MatchImage(),));
                       }else{
                         Utils.showSnackBar('Bölüm kitli!!!');
                       }

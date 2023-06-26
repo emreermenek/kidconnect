@@ -420,6 +420,8 @@ class _MatchImageState extends ConsumerState<MatchImage> {
           player.play();
         }
         dataRepo.finished = true;
+        dataRepo.lockLevel +=1;
+        dataRepo.levelLock();
       }else{
         if(isVolumeOn == true) {
           player.setFilePath(

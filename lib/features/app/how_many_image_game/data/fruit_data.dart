@@ -1,3 +1,9 @@
+
+const List<String> fruitNames =
+[
+  'Elma', 'Üzüm', 'Limon', 'Armut', 'Ananas', 'Karpuz'
+];
+
 const List<String> fruitImage =
 [
   'assets/images/how_many_image_game/apple 3.png',
