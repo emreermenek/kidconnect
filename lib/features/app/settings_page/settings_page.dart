@@ -63,7 +63,11 @@ class _SettingsPageState extends ConsumerState<SettingsPage> {
         body: StreamBuilder<User?>(
           stream: FirebaseAuth.instance.authStateChanges(),
           builder: (context, snapshot) {
-            if(snapshot.hasData && !FirebaseAuth.instance.currentUser!.emailVerified){
+            if(snapshot.connectionState == ConnectionState.waiting){
+              return const Center(child: CircularProgressIndicator(),);
+            }else if(snapshot.hasError){
+              return const Center(child: Text("Bir şeyler yanlış gitti!"),);
+            }else if(snapshot.hasData && !FirebaseAuth.instance.currentUser!.emailVerified){
               FirebaseAuth.instance.currentUser!.reload();
               return signedIn();
             }else if(snapshot.hasData && FirebaseAuth.instance.currentUser!.emailVerified){

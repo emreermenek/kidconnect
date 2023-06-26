@@ -55,7 +55,7 @@ class _ProfileUserOpenState extends State<ProfileUserOpen> {
               FirebaseAuth.instance.currentUser!.reload();
               return WelcomePage();
             }else {
-              return ProfilePage();
+              return const ProfilePage();
             }
           },
         ),
@@ -86,7 +86,7 @@ class WelcomePage extends StatelessWidget {
                     child: Container(
                       height: 627,
                       width: 130,
-                      decoration: BoxDecoration(
+                      decoration: const BoxDecoration(
                         color: Colors.white,
                         borderRadius: BorderRadius.all(Radius.circular(50.0)),
                       ),
@@ -112,7 +112,7 @@ class WelcomePage extends StatelessWidget {
                 child: Container(
                   width: 274,
                   height: 107,
-                  decoration: BoxDecoration(
+                  decoration: const BoxDecoration(
                       color: Color(0xFF4FCBE9),
                       borderRadius: BorderRadius.all(Radius.circular(50))
                   ),
