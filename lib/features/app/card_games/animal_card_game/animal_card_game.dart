@@ -140,7 +140,11 @@ class _AnimalCardGameState extends ConsumerState<AnimalCardGame> {
                                   children: [
                                     InkWell(
                                         onTap: () {
-                                          Navigator.of(context).pop();
+                                          if(data.currentAnimal != 0){
+                                            setState(() {
+                                              data.currentAnimal -=1;
+                                            });
+                                          }
                                         },
                                         child: const Image(image: AssetImage('assets/images/card_games/animal_card_game_image/back.png'))
                                     ),
