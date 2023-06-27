@@ -10,10 +10,10 @@ class HowManyImageGameLevelList extends ConsumerStatefulWidget {
   const HowManyImageGameLevelList({Key? key}) : super(key: key);
 
   @override
-  ConsumerState<HowManyImageGameLevelList> createState() => _ChooseCorrectGameLevelListState();
+  ConsumerState<HowManyImageGameLevelList> createState() => _HowManyImageGameLevelListState();
 }
 
-class _ChooseCorrectGameLevelListState extends ConsumerState<HowManyImageGameLevelList> {
+class _HowManyImageGameLevelListState extends ConsumerState<HowManyImageGameLevelList> {
   List<String> levels =
   ['bölüm 1','bölüm 2','bölüm 3','bölüm 4','bölüm 5','bölüm 6','bölüm 7','bölüm 8','bölüm 9','bölüm 10'];
 

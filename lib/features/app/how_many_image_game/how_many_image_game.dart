@@ -54,414 +54,416 @@ class _HowManyImageGameState extends ConsumerState<HowManyImageGame> {
             number2 = numberIndexList[Random().nextInt(numberIndexList.length)];
           } while (number2 == number1 || number2 == correctNumber);
           numberIndexList = [0,1,2,3,4,5,6,7,8];
-          return Stack(
-          children: [
-            const Padding(
-              padding: EdgeInsets.symmetric(vertical: 10,horizontal: 85),
-              child: Center(
-                child: Image(image: AssetImage('assets/images/choose_correct_images/background.png'),),
+          return SingleChildScrollView(
+            child: Stack(
+            children: [
+              const Padding(
+                padding: EdgeInsets.symmetric(vertical: 10,horizontal: 85),
+                child: Center(
+                  child: Image(image: AssetImage('assets/images/choose_correct_images/background.png'),),
+                ),
               ),
-            ),
-            Column(
-              children: [
-                Padding(
-                  padding: const EdgeInsets.symmetric(vertical: 10,horizontal: 85),
-                  child: Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              Column(
+                children: [
+                  Padding(
+                    padding: const EdgeInsets.symmetric(vertical: 10,horizontal: 85),
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: [
+                        InkWell(
+                            onTap: () {
+                              Navigator.of(context).pop();
+                            },
+                            child: const Image(image: AssetImage('assets/images/choose_correct_images/geri button.png'))),
+                        Text('${data.currentLevel+1}/10', style: GoogleFonts.gluten(
+                          textStyle:  const TextStyle(
+                              color: Color(0xFF16519F),
+                              fontSize: 36,
+                              fontWeight: FontWeight.bold
+                          ),
+                        ),)
+                      ],
+                    ),
+                  ),
+                  const SizedBox(height: 10,),
+                  Container(
+                    width: 292,
+                    height: 292,
+                    decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(32),
+                      color: Colors.white,
+                    ),
+                    child: ValueListenableBuilder(
+                      valueListenable: imageDataNotifier,
+                      builder: (context, value, child) {
+                        if(shapes == shapeCount[0]){
+                          return Center(
+                            child: Image(image: AssetImage(fruitImage[image]),width: 100,),
+                          );
+                        }else if(shapes == shapeCount[1]){
+                          return Row(
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            crossAxisAlignment: CrossAxisAlignment.center,
+                            children: [
+                              Image(image: AssetImage(fruitImage[image]),width: 100,),
+                              Image(image: AssetImage(fruitImage[image]),width: 100,),
+                            ],
+                          );
+                        }else if(shapes == shapeCount[2]){
+                          return Column(
+                            crossAxisAlignment: CrossAxisAlignment.center,
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            children: [
+                              Row(
+                                mainAxisAlignment: MainAxisAlignment.center,
+                                crossAxisAlignment: CrossAxisAlignment.center,
+                               children: [
+                                  Image(image: AssetImage(fruitImage[image]),width: 100,),
+                                  Image(image: AssetImage(fruitImage[image]),width: 100,),
+                                ],
+                              ),
+                              Row(
+                                mainAxisAlignment: MainAxisAlignment.center,
+                                crossAxisAlignment: CrossAxisAlignment.center,
+                                children: [
+                                  Image(image: AssetImage(fruitImage[image]),width: 100,),
+                                ],
+                              ),
+                            ],
+                          );
+                        }else if(shapes == shapeCount[3]){
+                          return Column(
+                            crossAxisAlignment: CrossAxisAlignment.center,
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            children: [
+                              Row(
+                                mainAxisAlignment: MainAxisAlignment.center,
+                                crossAxisAlignment: CrossAxisAlignment.center,
+                                children: [
+                                  Image(image: AssetImage(fruitImage[image]),width: 100,),
+                                  Image(image: AssetImage(fruitImage[image]),width: 100,),
+                                ],
+                              ),
+                              Row(
+                                mainAxisAlignment: MainAxisAlignment.center,
+                                crossAxisAlignment: CrossAxisAlignment.center,
+                                children: [
+                                  Image(image: AssetImage(fruitImage[image]),width: 100,),
+                                  Image(image: AssetImage(fruitImage[image]),width: 100,),
+                                ],
+                              ),
+                            ],
+                          );
+                        }else if(shapes == shapeCount[4]){
+                          return Column(
+                            crossAxisAlignment: CrossAxisAlignment.center,
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            children: [
+                              Row(
+                                mainAxisAlignment: MainAxisAlignment.center,
+                                crossAxisAlignment: CrossAxisAlignment.center,
+                                children: [
+                                  Image(image: AssetImage(fruitImage[image]),width: 80,),
+                                  Image(image: AssetImage(fruitImage[image]),width: 80,),
+                                  Image(image: AssetImage(fruitImage[image]),width: 80,),
+                                ],
+                              ),
+                              Row(
+                                mainAxisAlignment: MainAxisAlignment.center,
+                                crossAxisAlignment: CrossAxisAlignment.center,
+                                children: [
+                                  Image(image: AssetImage(fruitImage[image]),width: 80,),
+                                  Image(image: AssetImage(fruitImage[image]),width: 80,),
+                                ],
+                              ),
+                            ],
+                          );
+                        }else if(shapes == shapeCount[5]){
+                          return Column(
+                            crossAxisAlignment: CrossAxisAlignment.center,
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            children: [
+                              Row(
+                                mainAxisAlignment: MainAxisAlignment.center,
+                                crossAxisAlignment: CrossAxisAlignment.center,
+                                children: [
+                                  Image(image: AssetImage(fruitImage[image]),width: 80,),
+                                  Image(image: AssetImage(fruitImage[image]),width: 80,),
+                                  Image(image: AssetImage(fruitImage[image]),width: 80,),
+                                ],
+                              ),
+                              Row(
+                                mainAxisAlignment: MainAxisAlignment.center,
+                                crossAxisAlignment: CrossAxisAlignment.center,
+                                children: [
+                                  Image(image: AssetImage(fruitImage[image]),width: 80,),
+                                  Image(image: AssetImage(fruitImage[image]),width: 80,),
+                                  Image(image: AssetImage(fruitImage[image]),width: 80,),
+                                ],
+                              ),
+                            ],
+                          );
+                        }else if(shapes == shapeCount[6]){
+                          return Column(
+                            crossAxisAlignment: CrossAxisAlignment.center,
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            children: [
+                              Row(
+                                mainAxisAlignment: MainAxisAlignment.center,
+                                crossAxisAlignment: CrossAxisAlignment.center,
+                                children: [
+                                  Image(image: AssetImage(fruitImage[image]),width: 80,),
+                                  Image(image: AssetImage(fruitImage[image]),width: 80,),
+                                  Image(image: AssetImage(fruitImage[image]),width: 80,),
+                                ],
+                              ),
+                              Row(
+                                mainAxisAlignment: MainAxisAlignment.center,
+                                crossAxisAlignment: CrossAxisAlignment.center,
+                                children: [
+                                  Image(image: AssetImage(fruitImage[image]),width: 80,),
+                                  Image(image: AssetImage(fruitImage[image]),width: 80,),
+                                  Image(image: AssetImage(fruitImage[image]),width: 80,),
+                                ],
+                              ),
+                              Row(
+                                mainAxisAlignment: MainAxisAlignment.center,
+                                crossAxisAlignment: CrossAxisAlignment.center,
+                                children: [
+                                  Image(image: AssetImage(fruitImage[image]),width: 80,),
+                                ],
+                              ),
+                            ],
+                          );
+                        }else if(shapes == shapeCount[7]){
+                          return Column(
+                            crossAxisAlignment: CrossAxisAlignment.center,
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            children: [
+                              Row(
+                                mainAxisAlignment: MainAxisAlignment.center,
+                                crossAxisAlignment: CrossAxisAlignment.center,
+                                children: [
+                                  Image(image: AssetImage(fruitImage[image]),width: 80,),
+                                  Image(image: AssetImage(fruitImage[image]),width: 80,),
+                                  Image(image: AssetImage(fruitImage[image]),width: 80,),
+                                ],
+                              ),
+                              Row(
+                                mainAxisAlignment: MainAxisAlignment.center,
+                                crossAxisAlignment: CrossAxisAlignment.center,
+                                children: [
+                                  Image(image: AssetImage(fruitImage[image]),width: 80,),
+                                  Image(image: AssetImage(fruitImage[image]),width: 80,),
+                                  Image(image: AssetImage(fruitImage[image]),width: 80,),
+                                ],
+                              ),
+                              Row(
+                                mainAxisAlignment: MainAxisAlignment.center,
+                                crossAxisAlignment: CrossAxisAlignment.center,
+                                children: [
+                                  Image(image: AssetImage(fruitImage[image]),width: 80,),
+                                  Image(image: AssetImage(fruitImage[image]),width: 80,),
+                                ],
+                              ),
+                            ],
+                          );
+                        }else{
+                          return Column(
+                            crossAxisAlignment: CrossAxisAlignment.center,
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            children: [
+                              Row(
+                                mainAxisAlignment: MainAxisAlignment.center,
+                                crossAxisAlignment: CrossAxisAlignment.center,
+                                children: [
+                                  Image(image: AssetImage(fruitImage[image]),width: 80,),
+                                  Image(image: AssetImage(fruitImage[image]),width: 80,),
+                                  Image(image: AssetImage(fruitImage[image]),width: 80,),
+
+                                ],
+                              ),
+                              Row(
+                                mainAxisAlignment: MainAxisAlignment.center,
+                                crossAxisAlignment: CrossAxisAlignment.center,
+                                children: [
+
+                                  Image(image: AssetImage(fruitImage[image]),width: 80,),
+                                  Image(image: AssetImage(fruitImage[image]),width: 80,),
+                                  Image(image: AssetImage(fruitImage[image]),width: 80,),
+                                ],
+                              ),
+                              Row(
+                                mainAxisAlignment: MainAxisAlignment.center,
+                                crossAxisAlignment: CrossAxisAlignment.center,
+                                children: [
+
+                                  Image(image: AssetImage(fruitImage[image]),width: 80,),
+                                  Image(image: AssetImage(fruitImage[image]),width: 80,),
+                                  Image(image: AssetImage(fruitImage[image]),width: 80,),
+                                ],
+                              ),
+                            ],
+                          );
+                        }
+                      },
+                    ),
+                  ),
+                  const SizedBox(height: 10,),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
                     children: [
-                      InkWell(
-                          onTap: () {
-                            Navigator.of(context).pop();
-                          },
-                          child: const Image(image: AssetImage('assets/images/choose_correct_images/geri button.png'))),
-                      Text('${data.currentLevel+1}/10', style: GoogleFonts.gluten(
+                      const Image(image: AssetImage('assets/images/how_many_image_game/thinking_lion.png')),
+                      const SizedBox(width: 15,),
+                      Text('  Ekranda\n kaç tane\n${fruitNames[image]} resmi\n     var?', style: GoogleFonts.gluten(
                         textStyle:  const TextStyle(
-                            color: Color(0xFF16519F),
-                            fontSize: 36,
+                            color: Colors.black,
+                            fontSize: 20,
                             fontWeight: FontWeight.bold
                         ),
                       ),)
                     ],
                   ),
-                ),
-                const SizedBox(height: 10,),
-                Container(
-                  width: 292,
-                  height: 292,
-                  decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(32),
-                    color: Colors.white,
-                  ),
-                  child: ValueListenableBuilder(
-                    valueListenable: imageDataNotifier,
-                    builder: (context, value, child) {
-                      if(shapes == shapeCount[0]){
-                        return Center(
-                          child: Image(image: AssetImage(fruitImage[image]),width: 100,),
-                        );
-                      }else if(shapes == shapeCount[1]){
-                        return Row(
-                          mainAxisAlignment: MainAxisAlignment.center,
-                          crossAxisAlignment: CrossAxisAlignment.center,
-                          children: [
-                            Image(image: AssetImage(fruitImage[image]),width: 100,),
-                            Image(image: AssetImage(fruitImage[image]),width: 100,),
-                          ],
-                        );
-                      }else if(shapes == shapeCount[2]){
-                        return Column(
-                          crossAxisAlignment: CrossAxisAlignment.center,
-                          mainAxisAlignment: MainAxisAlignment.center,
-                          children: [
-                            Row(
-                              mainAxisAlignment: MainAxisAlignment.center,
-                              crossAxisAlignment: CrossAxisAlignment.center,
-                             children: [
-                                Image(image: AssetImage(fruitImage[image]),width: 100,),
-                                Image(image: AssetImage(fruitImage[image]),width: 100,),
-                              ],
-                            ),
-                            Row(
-                              mainAxisAlignment: MainAxisAlignment.center,
-                              crossAxisAlignment: CrossAxisAlignment.center,
-                              children: [
-                                Image(image: AssetImage(fruitImage[image]),width: 100,),
-                              ],
-                            ),
-                          ],
-                        );
-                      }else if(shapes == shapeCount[3]){
-                        return Column(
-                          crossAxisAlignment: CrossAxisAlignment.center,
-                          mainAxisAlignment: MainAxisAlignment.center,
-                          children: [
-                            Row(
-                              mainAxisAlignment: MainAxisAlignment.center,
-                              crossAxisAlignment: CrossAxisAlignment.center,
-                              children: [
-                                Image(image: AssetImage(fruitImage[image]),width: 100,),
-                                Image(image: AssetImage(fruitImage[image]),width: 100,),
-                              ],
-                            ),
-                            Row(
-                              mainAxisAlignment: MainAxisAlignment.center,
-                              crossAxisAlignment: CrossAxisAlignment.center,
-                              children: [
-                                Image(image: AssetImage(fruitImage[image]),width: 100,),
-                                Image(image: AssetImage(fruitImage[image]),width: 100,),
-                              ],
-                            ),
-                          ],
-                        );
-                      }else if(shapes == shapeCount[4]){
-                        return Column(
-                          crossAxisAlignment: CrossAxisAlignment.center,
-                          mainAxisAlignment: MainAxisAlignment.center,
-                          children: [
-                            Row(
-                              mainAxisAlignment: MainAxisAlignment.center,
-                              crossAxisAlignment: CrossAxisAlignment.center,
-                              children: [
-                                Image(image: AssetImage(fruitImage[image]),width: 80,),
-                                Image(image: AssetImage(fruitImage[image]),width: 80,),
-                                Image(image: AssetImage(fruitImage[image]),width: 80,),
-                              ],
-                            ),
-                            Row(
-                              mainAxisAlignment: MainAxisAlignment.center,
-                              crossAxisAlignment: CrossAxisAlignment.center,
-                              children: [
-                                Image(image: AssetImage(fruitImage[image]),width: 80,),
-                                Image(image: AssetImage(fruitImage[image]),width: 80,),
-                              ],
-                            ),
-                          ],
-                        );
-                      }else if(shapes == shapeCount[5]){
-                        return Column(
-                          crossAxisAlignment: CrossAxisAlignment.center,
-                          mainAxisAlignment: MainAxisAlignment.center,
-                          children: [
-                            Row(
-                              mainAxisAlignment: MainAxisAlignment.center,
-                              crossAxisAlignment: CrossAxisAlignment.center,
-                              children: [
-                                Image(image: AssetImage(fruitImage[image]),width: 80,),
-                                Image(image: AssetImage(fruitImage[image]),width: 80,),
-                                Image(image: AssetImage(fruitImage[image]),width: 80,),
-                              ],
-                            ),
-                            Row(
-                              mainAxisAlignment: MainAxisAlignment.center,
-                              crossAxisAlignment: CrossAxisAlignment.center,
-                              children: [
-                                Image(image: AssetImage(fruitImage[image]),width: 80,),
-                                Image(image: AssetImage(fruitImage[image]),width: 80,),
-                                Image(image: AssetImage(fruitImage[image]),width: 80,),
-                              ],
-                            ),
-                          ],
-                        );
-                      }else if(shapes == shapeCount[6]){
-                        return Column(
-                          crossAxisAlignment: CrossAxisAlignment.center,
-                          mainAxisAlignment: MainAxisAlignment.center,
-                          children: [
-                            Row(
-                              mainAxisAlignment: MainAxisAlignment.center,
-                              crossAxisAlignment: CrossAxisAlignment.center,
-                              children: [
-                                Image(image: AssetImage(fruitImage[image]),width: 80,),
-                                Image(image: AssetImage(fruitImage[image]),width: 80,),
-                                Image(image: AssetImage(fruitImage[image]),width: 80,),
-                              ],
-                            ),
-                            Row(
-                              mainAxisAlignment: MainAxisAlignment.center,
-                              crossAxisAlignment: CrossAxisAlignment.center,
-                              children: [
-                                Image(image: AssetImage(fruitImage[image]),width: 80,),
-                                Image(image: AssetImage(fruitImage[image]),width: 80,),
-                                Image(image: AssetImage(fruitImage[image]),width: 80,),
-                              ],
-                            ),
-                            Row(
-                              mainAxisAlignment: MainAxisAlignment.center,
-                              crossAxisAlignment: CrossAxisAlignment.center,
-                              children: [
-                                Image(image: AssetImage(fruitImage[image]),width: 80,),
-                              ],
-                            ),
-                          ],
-                        );
-                      }else if(shapes == shapeCount[7]){
-                        return Column(
-                          crossAxisAlignment: CrossAxisAlignment.center,
-                          mainAxisAlignment: MainAxisAlignment.center,
-                          children: [
-                            Row(
-                              mainAxisAlignment: MainAxisAlignment.center,
-                              crossAxisAlignment: CrossAxisAlignment.center,
-                              children: [
-                                Image(image: AssetImage(fruitImage[image]),width: 80,),
-                                Image(image: AssetImage(fruitImage[image]),width: 80,),
-                                Image(image: AssetImage(fruitImage[image]),width: 80,),
-                              ],
-                            ),
-                            Row(
-                              mainAxisAlignment: MainAxisAlignment.center,
-                              crossAxisAlignment: CrossAxisAlignment.center,
-                              children: [
-                                Image(image: AssetImage(fruitImage[image]),width: 80,),
-                                Image(image: AssetImage(fruitImage[image]),width: 80,),
-                                Image(image: AssetImage(fruitImage[image]),width: 80,),
-                              ],
-                            ),
-                            Row(
-                              mainAxisAlignment: MainAxisAlignment.center,
-                              crossAxisAlignment: CrossAxisAlignment.center,
-                              children: [
-                                Image(image: AssetImage(fruitImage[image]),width: 80,),
-                                Image(image: AssetImage(fruitImage[image]),width: 80,),
-                              ],
-                            ),
-                          ],
-                        );
-                      }else{
-                        return Column(
-                          crossAxisAlignment: CrossAxisAlignment.center,
-                          mainAxisAlignment: MainAxisAlignment.center,
-                          children: [
-                            Row(
-                              mainAxisAlignment: MainAxisAlignment.center,
-                              crossAxisAlignment: CrossAxisAlignment.center,
-                              children: [
-                                Image(image: AssetImage(fruitImage[image]),width: 80,),
-                                Image(image: AssetImage(fruitImage[image]),width: 80,),
-                                Image(image: AssetImage(fruitImage[image]),width: 80,),
+                  const SizedBox(height: 10,),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      InkWell(
+                        onTap: () {
+                          if(data.currentLevel == 0 || data.currentLevel == 3 || data.currentLevel == 5 )
+                          {
+                            _player.setFilePath(
+                                'assets/sounds/correct_answer.mp3'
+                            );
+                            _player.play();
+                            setState(() {
+                              data.currentLevel += 1;
+                            });
 
-                              ],
-                            ),
-                            Row(
-                              mainAxisAlignment: MainAxisAlignment.center,
-                              crossAxisAlignment: CrossAxisAlignment.center,
-                              children: [
-
-                                Image(image: AssetImage(fruitImage[image]),width: 80,),
-                                Image(image: AssetImage(fruitImage[image]),width: 80,),
-                                Image(image: AssetImage(fruitImage[image]),width: 80,),
-                              ],
-                            ),
-                            Row(
-                              mainAxisAlignment: MainAxisAlignment.center,
-                              crossAxisAlignment: CrossAxisAlignment.center,
-                              children: [
-
-                                Image(image: AssetImage(fruitImage[image]),width: 80,),
-                                Image(image: AssetImage(fruitImage[image]),width: 80,),
-                                Image(image: AssetImage(fruitImage[image]),width: 80,),
-                              ],
-                            ),
-                          ],
-                        );
-                      }
-                    },
-                  ),
-                ),
-                const SizedBox(height: 10,),
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
-                    const Image(image: AssetImage('assets/images/how_many_image_game/thinking_lion.png')),
-                    const SizedBox(width: 15,),
-                    Text('  Ekranda\n kaç tane\n${fruitNames[image]} resmi\n     var?', style: GoogleFonts.gluten(
-                      textStyle:  const TextStyle(
-                          color: Colors.black,
-                          fontSize: 20,
-                          fontWeight: FontWeight.bold
-                      ),
-                    ),)
-                  ],
-                ),
-                const SizedBox(height: 10,),
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
-                    InkWell(
-                      onTap: () {
-                        if(data.currentLevel == 0 || data.currentLevel == 3 || data.currentLevel == 5 )
-                        {
-                          _player.setFilePath(
-                              'assets/sounds/correct_answer.mp3'
-                          );
-                          _player.play();
-                          setState(() {
-                            data.currentLevel += 1;
-                          });
-
-                          if(data.currentLevel == 10){
-                            Navigator.of(context).pop();
+                            if(data.currentLevel == 10){
+                              Navigator.of(context).pop();
+                            }
+                            data.levelLock();
+                          }else{
+                            _player.setFilePath(
+                                'assets/sounds/incorrect_answer.mp3');
+                            _player.play();
                           }
-                          data.levelLock();
-                        }else{
-                          _player.setFilePath(
-                              'assets/sounds/incorrect_answer.mp3');
-                          _player.play();
-                        }
-                      },
-                      child: Container(
-                        width: 80,
-                        height: 80,
-                        decoration: BoxDecoration(
-                            borderRadius: BorderRadius.circular(24),
-                            color: Colors.white
+                        },
+                        child: Container(
+                          width: 80,
+                          height: 80,
+                          decoration: BoxDecoration(
+                              borderRadius: BorderRadius.circular(24),
+                              color: Colors.white
+                          ),
+                          child: ValueListenableBuilder(
+                              valueListenable: levels,
+                              builder: (BuildContext context, value, Widget? child) {
+                                if(data.currentLevel == 0 ||data.currentLevel == 3 || data.currentLevel == 5){
+                                  return Image(image: AssetImage(numberImages[correctNumber!]),);
+                                }else{
+                                  return Image(image: AssetImage(numberImages[number1!]),);
+                                }
+                              },
+                           ),
                         ),
-                        child: ValueListenableBuilder(
+                      ),
+                      const SizedBox(width: 15,),
+                      InkWell(
+                        onTap: () {
+                          if(data.currentLevel == 1 || data.currentLevel == 4 || data.currentLevel == 6 || data.currentLevel == 8)
+                          {
+                            _player.setFilePath(
+                                'assets/sounds/correct_answer.mp3'
+                            );
+                            _player.play();
+                            setState(() {
+                              data.currentLevel += 1;
+                            });
+
+                            if(data.currentLevel == 10){
+                              Navigator.of(context).pop();
+                            }
+                            data.levelLock();
+                          }else{
+                            _player.setFilePath(
+                                'assets/sounds/incorrect_answer.mp3');
+                            _player.play();
+                          }
+                        },
+                        child: Container(
+                          width: 80,
+                          height: 80,
+                          decoration: BoxDecoration(
+                              borderRadius: BorderRadius.circular(24),
+                              color: Colors.white
+                          ),
+                          child: ValueListenableBuilder(
                             valueListenable: levels,
                             builder: (BuildContext context, value, Widget? child) {
-                              if(data.currentLevel == 0 ||data.currentLevel == 3 || data.currentLevel == 5){
+                              if(data.currentLevel == 1 ||data.currentLevel == 4 || data.currentLevel == 6 || data.currentLevel == 8){
                                 return Image(image: AssetImage(numberImages[correctNumber!]),);
                               }else{
-                                return Image(image: AssetImage(numberImages[number1!]),);
+                                return Image(image: AssetImage(numberImages[number2!]),);
                               }
                             },
-                         ),
-                      ),
-                    ),
-                    const SizedBox(width: 15,),
-                    InkWell(
-                      onTap: () {
-                        if(data.currentLevel == 1 || data.currentLevel == 4 || data.currentLevel == 6 || data.currentLevel == 8)
-                        {
-                          _player.setFilePath(
-                              'assets/sounds/correct_answer.mp3'
-                          );
-                          _player.play();
-                          setState(() {
-                            data.currentLevel += 1;
-                          });
-
-                          if(data.currentLevel == 10){
-                            Navigator.of(context).pop();
-                          }
-                          data.levelLock();
-                        }else{
-                          _player.setFilePath(
-                              'assets/sounds/incorrect_answer.mp3');
-                          _player.play();
-                        }
-                      },
-                      child: Container(
-                        width: 80,
-                        height: 80,
-                        decoration: BoxDecoration(
-                            borderRadius: BorderRadius.circular(24),
-                            color: Colors.white
+                          ),
                         ),
-                        child: ValueListenableBuilder(
-                          valueListenable: levels,
-                          builder: (BuildContext context, value, Widget? child) {
-                            if(data.currentLevel == 1 ||data.currentLevel == 4 || data.currentLevel == 6 || data.currentLevel == 8){
-                              return Image(image: AssetImage(numberImages[correctNumber!]),);
-                            }else{
-                              return Image(image: AssetImage(numberImages[number2!]),);
+                      ),
+                      const SizedBox(width: 15,),
+                      InkWell(
+                        onTap: () {
+                          if(data.currentLevel == 2 || data.currentLevel == 7 || data.currentLevel == 9 )
+                          {
+                            _player.setFilePath(
+                                'assets/sounds/correct_answer.mp3'
+                            );
+                            _player.play();
+                            setState(() {
+                              data.currentLevel += 1;
+                            });
+
+                            if(data.currentLevel == 10){
+                              Navigator.of(context).pop();
                             }
-                          },
-                        ),
-                      ),
-                    ),
-                    const SizedBox(width: 15,),
-                    InkWell(
-                      onTap: () {
-                        if(data.currentLevel == 2 || data.currentLevel == 7 || data.currentLevel == 9 )
-                        {
-                          _player.setFilePath(
-                              'assets/sounds/correct_answer.mp3'
-                          );
-                          _player.play();
-                          setState(() {
-                            data.currentLevel += 1;
-                          });
-
-                          if(data.currentLevel == 10){
-                            Navigator.of(context).pop();
+                            data.levelLock();
+                          }else{
+                            _player.setFilePath(
+                                'assets/sounds/incorrect_answer.mp3');
+                            _player.play();
                           }
-                          data.levelLock();
-                        }else{
-                          _player.setFilePath(
-                              'assets/sounds/incorrect_answer.mp3');
-                          _player.play();
-                        }
-                      },
-                      child: Container(
-                        width: 80,
-                        height: 80,
-                        decoration: BoxDecoration(
-                            borderRadius: BorderRadius.circular(24),
-                            color: Colors.white
-                        ),
-                        child: ValueListenableBuilder(
-                          valueListenable: levels,
-                          builder: (BuildContext context, value, Widget? child) {
-                            if(data.currentLevel == 2 ||data.currentLevel == 7 || data.currentLevel == 9){
-                              return Image(image: AssetImage(numberImages[correctNumber!]),);
-                            }else{
-                              if(data.currentLevel == 1 ||data.currentLevel == 4 || data.currentLevel == 6 || data.currentLevel == 8){
-                                return Image(image: AssetImage(numberImages[number2!]),);
+                        },
+                        child: Container(
+                          width: 80,
+                          height: 80,
+                          decoration: BoxDecoration(
+                              borderRadius: BorderRadius.circular(24),
+                              color: Colors.white
+                          ),
+                          child: ValueListenableBuilder(
+                            valueListenable: levels,
+                            builder: (BuildContext context, value, Widget? child) {
+                              if(data.currentLevel == 2 ||data.currentLevel == 7 || data.currentLevel == 9){
+                                return Image(image: AssetImage(numberImages[correctNumber!]),);
                               }else{
-                                return Image(image: AssetImage(numberImages[number1!]),);
+                                if(data.currentLevel == 1 ||data.currentLevel == 4 || data.currentLevel == 6 || data.currentLevel == 8){
+                                  return Image(image: AssetImage(numberImages[number2!]),);
+                                }else{
+                                  return Image(image: AssetImage(numberImages[number1!]),);
+                                }
                               }
-                            }
-                          },
+                            },
+                          ),
                         ),
                       ),
-                    ),
-                  ],
-                ),
-              ],
-            ),
-          ],
-        );
+                    ],
+                  ),
+                ],
+              ),
+            ],
+        ),
+          );
   }
       ),
     );

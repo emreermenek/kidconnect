@@ -10,10 +10,10 @@ class BiggerOrLowerGameLevelList extends ConsumerStatefulWidget {
   const BiggerOrLowerGameLevelList({Key? key}) : super(key: key);
 
   @override
-  ConsumerState<BiggerOrLowerGameLevelList> createState() => _ChooseCorrectGameLevelListState();
+  ConsumerState<BiggerOrLowerGameLevelList> createState() => _BiggerOrLowerGameLevelListState();
 }
 
-class _ChooseCorrectGameLevelListState extends ConsumerState<BiggerOrLowerGameLevelList> {
+class _BiggerOrLowerGameLevelListState extends ConsumerState<BiggerOrLowerGameLevelList> {
   List<String> levels =
   ['bölüm 1','bölüm 2','bölüm 3','bölüm 4','bölüm 5','bölüm 6','bölüm 7','bölüm 8','bölüm 9','bölüm 10'];
 

@@ -9,10 +9,10 @@ class ShapeMatchGameLevelList extends ConsumerStatefulWidget {
   const ShapeMatchGameLevelList({Key? key}) : super(key: key);
 
   @override
-  ConsumerState<ShapeMatchGameLevelList> createState() => _ChooseCorrectGameLevelListState();
+  ConsumerState<ShapeMatchGameLevelList> createState() => _ShapeMatchGameLevelListState();
 }
 
-class _ChooseCorrectGameLevelListState extends ConsumerState<ShapeMatchGameLevelList> {
+class _ShapeMatchGameLevelListState extends ConsumerState<ShapeMatchGameLevelList> {
   List<String> levels =
   ['bölüm 1','bölüm 2','bölüm 3','bölüm 4','bölüm 5','bölüm 6','bölüm 7','bölüm 8','bölüm 9','bölüm 10'];
 
