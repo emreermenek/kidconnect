@@ -1,3 +1,5 @@
+import 'package:bootcamp_f32/features/app/biger_or_lower_game/bigger_or_lower_game.dart';
+import 'package:bootcamp_f32/features/app/biger_or_lower_game/level_list.dart';
 import 'package:bootcamp_f32/features/app/choose_correct_game/choose_correct_game.dart';
 import 'package:bootcamp_f32/features/app/how_many_image_game/how_many_image_game.dart';
 import 'package:bootcamp_f32/features/app/how_many_image_game/level_list.dart';
@@ -24,7 +26,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       navigatorKey: navigatorKey,
       debugShowCheckedModeBanner: false,
-      home: const ShapeMatchGameLevelList()
+      home: const BiggerOrLowerGameLevelList()
     );
   }
 }
