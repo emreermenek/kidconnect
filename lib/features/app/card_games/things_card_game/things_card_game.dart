@@ -26,10 +26,23 @@ class _ThingsCardGameState extends ConsumerState<ThingsCardGame> {
             builder: (BuildContext context, value, Widget? child) {
               return Stack(
                 children: [
-                  Image(image: AssetImage('assets/images/card_games/things_card_game/background_top.png'),),
-                  const Align(
-                    alignment: Alignment.bottomCenter,
-                    child: Image(image: AssetImage('assets/images/card_games/things_card_game/background_bottom.png'),),
+                  Container(
+                    decoration: const BoxDecoration(
+                      image: DecorationImage(
+                        alignment: Alignment.topCenter,
+                        fit: BoxFit.fitWidth,
+                        image: AssetImage('assets/images/card_games/things_card_game/background_top.png')
+                      )
+                    ),
+                  ),
+                  Container(
+                    decoration: const BoxDecoration(
+                        image: DecorationImage(
+                            alignment: Alignment.bottomCenter,
+                            fit: BoxFit.fitWidth,
+                            image: AssetImage('assets/images/card_games/things_card_game/background_bottom.png')
+                        )
+                    ),
                   ),
                   SingleChildScrollView(
                     child: Column(
