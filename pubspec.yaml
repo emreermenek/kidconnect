@@ -122,6 +122,10 @@ flutter:
     - assets/images/card_games/seasons_card_game/
     - assets/images/card_games/weather_card_game/
     - assets/images/card_games/opposite_card_game/
+    - assets/images/card_games/nutrition_card_game/background/
+    - assets/images/card_games/nutrition_card_game/foods/
+    - assets/images/card_games/nutrition_card_game/fruits/
+    - assets/images/card_games/nutrition_card_game/vegetables/
   #   - images/a_dot_burr.jpeg
   #   - images/a_dot_ham.jpeg
 
