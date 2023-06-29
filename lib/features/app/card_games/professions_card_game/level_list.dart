@@ -1,23 +1,25 @@
-import 'package:bootcamp_f32/features/app/card_games/animal_card_game/animal_card_game.dart';
-import 'package:bootcamp_f32/features/app/card_games/animal_card_game/data/animals.dart';
-import 'package:bootcamp_f32/features/app/card_games/animal_card_game/services/services.dart';
+import 'package:bootcamp_f32/features/app/card_games/professions_card_game/professions_card_game.dart';
+import 'package:bootcamp_f32/features/app/card_games/professions_card_game/services/services.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:google_fonts/google_fonts.dart';
 
+import 'data/professions.dart';
 
-class AnimalCardGameLevelList extends ConsumerStatefulWidget {
-  const AnimalCardGameLevelList({Key? key}) : super(key: key);
+
+
+class ProfessionCardGameLevelList extends ConsumerStatefulWidget {
+  const ProfessionCardGameLevelList({Key? key}) : super(key: key);
 
   @override
-  ConsumerState<AnimalCardGameLevelList> createState() => _AnimalCardGameLevelListState();
+  ConsumerState<ProfessionCardGameLevelList> createState() => _ProfessionCardGameLevelListState();
 }
 
-class _AnimalCardGameLevelListState extends ConsumerState<AnimalCardGameLevelList> {
+class _ProfessionCardGameLevelListState extends ConsumerState<ProfessionCardGameLevelList> {
 
   @override
   Widget build(BuildContext context) {
-    final data = ref.watch(animalCardGameDataServiceProvider);
+    final data = ref.watch(professionCardGameDataServiceProvider);
     return SafeArea(
       child: Scaffold(
         appBar: AppBar(
@@ -35,7 +37,7 @@ class _AnimalCardGameLevelListState extends ConsumerState<AnimalCardGameLevelLis
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
               Text(
-                  'HAYVANLAR',
+                  'MESLEKLER',
                   style: GoogleFonts.quicksand(
                       textStyle: const TextStyle(
                         fontWeight: FontWeight.bold,
@@ -64,14 +66,14 @@ class _AnimalCardGameLevelListState extends ConsumerState<AnimalCardGameLevelLis
                     childAspectRatio: 14/3,
                     crossAxisSpacing: 8
                 ),
-                itemCount: animalNames.length,
+                itemCount: professionNames.length,
                 itemBuilder: (BuildContext context, int index) {
                   return InkWell(
                     onTap: () {
                       setState(() {
-                        data.currentAnimal = index;
+                        data.currentProfession = index;
                       });
-                      Navigator.of(context).push(MaterialPageRoute(builder: (context) => const AnimalCardGame(),));
+                      Navigator.of(context).push(MaterialPageRoute(builder: (context) => const ProfessionsCardGame(),));
                     },
                     child: Container(
                       margin: const EdgeInsets.symmetric(horizontal: 30,vertical: 10),
@@ -90,7 +92,7 @@ class _AnimalCardGameLevelListState extends ConsumerState<AnimalCardGameLevelLis
                           ]
                       ),
                       child: Center(
-                        child: Text(animalNames[index], style: GoogleFonts.comfortaa(
+                        child: Text(professionNames[index], style: GoogleFonts.comfortaa(
                           textStyle:  const TextStyle(
                               color: Color(0xFFBDF2D5),
                               fontSize: 40,

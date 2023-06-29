@@ -113,6 +113,11 @@ flutter:
     - assets/images/biggerOrLowerGame_images/
     - assets/images/card_games/animal_card_game_image/
     - assets/images/number_game_image/
+    - assets/images/card_games/emotions_card_game/
+    - assets/images/card_games/professions_image_game/
+    - assets/images/card_games/cleaning_image_game/
+    - assets/images/card_games/body_card_game/
+    - assets/images/card_games/things_card_game/
   #   - images/a_dot_burr.jpeg
   #   - images/a_dot_ham.jpeg
 

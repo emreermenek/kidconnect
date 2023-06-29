@@ -145,7 +145,7 @@ class _BiggerOrLowerGameState extends ConsumerState<BiggerOrLowerGame> {
                         ],
                       ),
                       const SizedBox(height: 25,),
-                      Text('      ? Yerine\naşşağıdakilerden\nhangisi gelmeli',
+                      Text('      ? Yerine\naşağıdakilerden\nhangisi gelmeli',
                         style: GoogleFonts.gluten(
                           textStyle: const TextStyle(
                               color: Colors.black,
