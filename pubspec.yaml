@@ -118,6 +118,7 @@ flutter:
     - assets/images/card_games/cleaning_image_game/
     - assets/images/card_games/body_card_game/
     - assets/images/card_games/things_card_game/
+    - assets/images/card_games/shapes_card_game/
   #   - images/a_dot_burr.jpeg
   #   - images/a_dot_ham.jpeg
 

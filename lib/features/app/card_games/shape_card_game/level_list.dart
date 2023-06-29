@@ -1,24 +1,27 @@
-import 'package:bootcamp_f32/features/app/card_games/cleaning_card_game/data/cleaning.dart';
-import 'package:bootcamp_f32/features/app/card_games/cleaning_card_game/services/services.dart';
+import 'package:bootcamp_f32/features/app/card_games/shape_card_game/shape_card_game.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:google_fonts/google_fonts.dart';
 
-import 'cleaning_card_game.dart';
+import 'data/shapes.dart';
+import 'services/services.dart';
 
 
-class CleaningCardGameLevelList extends ConsumerStatefulWidget {
-  const CleaningCardGameLevelList({Key? key}) : super(key: key);
+
+
+
+class ShapeCardGameLevelList extends ConsumerStatefulWidget {
+  const ShapeCardGameLevelList({Key? key}) : super(key: key);
 
   @override
-  ConsumerState<CleaningCardGameLevelList> createState() => _CleaningCardGameLevelListState();
+  ConsumerState<ShapeCardGameLevelList> createState() => _ShapeCardGameLevelListState();
 }
 
-class _CleaningCardGameLevelListState extends ConsumerState<CleaningCardGameLevelList> {
+class _ShapeCardGameLevelListState extends ConsumerState<ShapeCardGameLevelList> {
 
   @override
   Widget build(BuildContext context) {
-    final data = ref.watch(cleaningCardGameDataServiceProvider);
+    final data = ref.watch(shapeCardGameDataServiceProvider);
     return SafeArea(
       child: Scaffold(
         appBar: AppBar(
@@ -36,7 +39,7 @@ class _CleaningCardGameLevelListState extends ConsumerState<CleaningCardGameLeve
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
               Text(
-                  'TEMİZLİK',
+                  'ŞEKİLLER',
                   style: GoogleFonts.quicksand(
                       textStyle: const TextStyle(
                         fontWeight: FontWeight.bold,
@@ -65,14 +68,14 @@ class _CleaningCardGameLevelListState extends ConsumerState<CleaningCardGameLeve
                     childAspectRatio: 14/3,
                     crossAxisSpacing: 8
                 ),
-                itemCount: cleaningNames.length,
+                itemCount: shapeNames.length,
                 itemBuilder: (BuildContext context, int index) {
                   return InkWell(
                     onTap: () {
                       setState(() {
-                        data.currentCleaning = index;
+                        data.currentShape = index;
                       });
-                      Navigator.of(context).push(MaterialPageRoute(builder: (context) => const CleaningCardGame(),));
+                      Navigator.of(context).push(MaterialPageRoute(builder: (context) => const ShapeCardGame(),));
                     },
                     child: Container(
                       margin: const EdgeInsets.symmetric(horizontal: 30,vertical: 10),
@@ -91,10 +94,10 @@ class _CleaningCardGameLevelListState extends ConsumerState<CleaningCardGameLeve
                           ]
                       ),
                       child: Center(
-                        child: Text(cleaningNames[index], style: GoogleFonts.comfortaa(
+                        child: Text(shapeNames[index], style: GoogleFonts.comfortaa(
                           textStyle:  const TextStyle(
                               color: Color(0xFFBDF2D5),
-                              fontSize: 30,
+                              fontSize: 40,
                               fontWeight: FontWeight.bold
                           ),
                         ),),
