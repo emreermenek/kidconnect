@@ -6,6 +6,7 @@ import 'package:bootcamp_f32/features/app/card_games/body_card_game/level_list.d
 import 'package:bootcamp_f32/features/app/card_games/cleaning_card_game/level_list.dart';
 import 'package:bootcamp_f32/features/app/card_games/emotions_card_game/emotions_card_game.dart';
 import 'package:bootcamp_f32/features/app/card_games/emotions_card_game/level_list.dart';
+import 'package:bootcamp_f32/features/app/card_games/opposite_card_game/level_list.dart';
 import 'package:bootcamp_f32/features/app/card_games/opposite_card_game/opposite_card_game.dart';
 import 'package:bootcamp_f32/features/app/card_games/professions_card_game/level_list.dart';
 import 'package:bootcamp_f32/features/app/card_games/seasonsAndWeather_card_game/seasonAndWeather_level_list.dart';
@@ -48,7 +49,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       navigatorKey: navigatorKey,
       debugShowCheckedModeBanner: false,
-      home: const OppositeCardGame()
+      home: const OppositeCardGameLevelList()
     );
   }
 }

@@ -49,6 +49,9 @@ class _OppositeCardGameState extends ConsumerState<OppositeCardGame> {
                                 padding: const EdgeInsets.symmetric(vertical: 10,horizontal: 85),
                                 child: InkWell(
                                     onTap: () {
+                                      setState(() {
+                                        pageIndex = 0;
+                                      });
                                       Navigator.of(context).pop();
                                     },
                                     child: const Image(image: AssetImage('assets/images/card_games/emotions_card_game/exit.png'))),
