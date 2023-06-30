@@ -89,107 +89,109 @@ class _SettingsPageState extends ConsumerState<SettingsPage> {
     return SizedBox(
         child: Stack(
             children: [
-              Column(
-                crossAxisAlignment: CrossAxisAlignment.center,
-                children: [
-                  const SizedBox(height: 30,),
-                  const Image(image: AssetImage('assets/images/settings_image/happy tiger.png'),width: 270,height: 170,),
-                  Center(
-                    child: Container(
-                      width: 300,
-                      height: 260,
-                      padding: const EdgeInsets.all(32),
-                      decoration: BoxDecoration(
-                        shape: BoxShape.rectangle,
-                        color: Colors.white,
-                        borderRadius: BorderRadius.circular(50),
-                      ),
-                      child: Column(
-                        children: [
-                          Row(
-                            children: [
-                              const Image(image: AssetImage('assets/images/settings_image/musical-notes.png'),width: 40,),
-                              const SizedBox(width: 25,),
-                              Text('MÜZİK',style: GoogleFonts.quicksand(
-                                textStyle: const TextStyle(
-                                  color: Colors.black,
-                                  fontSize: 24,
-                                  fontWeight: FontWeight.bold,
-                                ),
-                              ) ),
-                              const SizedBox(width: 32,),
-                              FlutterSwitch(
-                                  width: 45.0,
-                                  height: 25.0,
-                                  padding: 3,
-                                  value: isMusicOpen,
-                                  onToggle: (val) {
-                                    setState(() {
-                                      isMusicOpen = val;
-                                    });
-                                  }
-                              ),
-
-                            ],
-                          ),
-                          const SizedBox(height: 30,),
-                          Row(
-                            children: [
-                              const Image(image: AssetImage('assets/images/settings_image/notification-bell.png'),width: 40,),
-                              const SizedBox(width: 15,),
-                              Text('BİLDİRİM',style: GoogleFonts.quicksand(
-                                textStyle: const TextStyle(
-                                  color: Colors.black,
-                                  fontSize: 22,
-                                  fontWeight: FontWeight.bold,
-                                ),
-                              ) ),
-                              const SizedBox(width: 25,),
-                              FlutterSwitch(
-                                  width: 45.0,
-                                  height: 25.0,
-                                  padding: 3,
-                                  value: isNotificationOpen,
-                                  onToggle: (val) {
-                                    setState(() {
-
-                                      isNotificationOpen = val;
-                                    });
-
-                                  }
-                              ),
-                            ],
-                          ),
-                          const SizedBox(height: 30,),
-                          Row(
-                            children: [
-                              const Image(image: AssetImage('assets/images/settings_image/log-out.png'),width: 40,),
-                              const SizedBox(width: 20,),
-                              InkWell(
-                                onTap: () {
-                                  _controller.signOut();
-                                },
-                                child: Text('ÇIKIŞ YAP',style: GoogleFonts.quicksand(
+              const Align(
+                  alignment: Alignment.bottomCenter,
+                  child: Image(image: AssetImage('assets/images/settings_image/il.png'),width: 250,)
+              ),
+              SingleChildScrollView(
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.center,
+                  children: [
+                    const SizedBox(height: 30,),
+                    const Image(image: AssetImage('assets/images/settings_image/happy tiger.png'),width: 270,height: 170,),
+                    Center(
+                      child: Container(
+                        width: 300,
+                        height: 260,
+                        padding: const EdgeInsets.all(32),
+                        decoration: BoxDecoration(
+                          shape: BoxShape.rectangle,
+                          color: Colors.white,
+                          borderRadius: BorderRadius.circular(50),
+                        ),
+                        child: Column(
+                          children: [
+                            Row(
+                              children: [
+                                const Image(image: AssetImage('assets/images/settings_image/musical-notes.png'),width: 40,),
+                                const SizedBox(width: 25,),
+                                Text('MÜZİK',style: GoogleFonts.quicksand(
                                   textStyle: const TextStyle(
                                     color: Colors.black,
                                     fontSize: 24,
                                     fontWeight: FontWeight.bold,
                                   ),
                                 ) ),
-                              ),
+                                const SizedBox(width: 32,),
+                                FlutterSwitch(
+                                    width: 45.0,
+                                    height: 25.0,
+                                    padding: 3,
+                                    value: isMusicOpen,
+                                    onToggle: (val) {
+                                      setState(() {
+                                        isMusicOpen = val;
+                                      });
+                                    }
+                                ),
 
-                            ],
-                          ),
-                        ],
+                              ],
+                            ),
+                            const SizedBox(height: 30,),
+                            Row(
+                              children: [
+                                const Image(image: AssetImage('assets/images/settings_image/notification-bell.png'),width: 40,),
+                                const SizedBox(width: 15,),
+                                Text('BİLDİRİM',style: GoogleFonts.quicksand(
+                                  textStyle: const TextStyle(
+                                    color: Colors.black,
+                                    fontSize: 22,
+                                    fontWeight: FontWeight.bold,
+                                  ),
+                                ) ),
+                                const SizedBox(width: 25,),
+                                FlutterSwitch(
+                                    width: 45.0,
+                                    height: 25.0,
+                                    padding: 3,
+                                    value: isNotificationOpen,
+                                    onToggle: (val) {
+                                      setState(() {
+
+                                        isNotificationOpen = val;
+                                      });
+
+                                    }
+                                ),
+                              ],
+                            ),
+                            const SizedBox(height: 30,),
+                            Row(
+                              children: [
+                                const Image(image: AssetImage('assets/images/settings_image/log-out.png'),width: 40,),
+                                const SizedBox(width: 20,),
+                                InkWell(
+                                  onTap: () {
+                                    _controller.signOut();
+                                  },
+                                  child: Text('ÇIKIŞ YAP',style: GoogleFonts.quicksand(
+                                    textStyle: const TextStyle(
+                                      color: Colors.black,
+                                      fontSize: 24,
+                                      fontWeight: FontWeight.bold,
+                                    ),
+                                  ) ),
+                                ),
+
+                              ],
+                            ),
+                          ],
+                        ),
                       ),
                     ),
-                  ),
-                ],
+                  ],
+                ),
               ),
-              const Align(
-                  alignment: Alignment.bottomCenter,
-                  child: Image(image: AssetImage('assets/images/settings_image/il.png'),width: 250,)
-              )
             ]
         )
     );
@@ -203,139 +205,12 @@ class _SettingsPageState extends ConsumerState<SettingsPage> {
     return SizedBox(
       child: Stack(
         children: [
-          Column(
-            crossAxisAlignment: CrossAxisAlignment.center,
-            children: [
-              const SizedBox(height: 15,),
-              const Image(image: AssetImage('assets/images/settings_image/happy tiger.png'),width: 180),
-              Center(
-                child: Container(
-                  width: 300,
-                  height: 330,
-                  padding: const EdgeInsets.all(32),
-                  decoration: BoxDecoration(
-                    shape: BoxShape.rectangle,
-                    color: Colors.white,
-                    borderRadius: BorderRadius.circular(50),
-                  ),
-                  child: Column(
-                    children: [
-                      Row(
-                        children: [
-                          const Image(image: AssetImage('assets/images/settings_image/musical-notes.png'),width: 40,),
-                          const SizedBox(width: 25,),
-                          Text('MÜZİK',style: GoogleFonts.quicksand(
-                            textStyle: const TextStyle(
-                              color: Colors.black,
-                              fontSize: 24,
-                              fontWeight: FontWeight.bold,
-                            ),
-                          ) ),
-                          const SizedBox(width: 32,),
-                          FlutterSwitch(
-                              width: 45.0,
-                              height: 25.0,
-                              padding: 3,
-                              value: isMusicOpen,
-                              onToggle: (val) {
-                                setState(() {
-                                  isMusicOpen = val;
-                                });
-                              }
-                          ),
-
-                        ],
-                      ),
-                      const SizedBox(height: 30,),
-                      Row(
-                        children: [
-                          const Image(image: AssetImage('assets/images/settings_image/notification-bell.png'),width: 40,),
-                          const SizedBox(width: 15,),
-                          Text('BİLDİRİM',style: GoogleFonts.quicksand(
-                            textStyle: const TextStyle(
-                              color: Colors.black,
-                              fontSize: 22,
-                              fontWeight: FontWeight.bold,
-                            ),
-                          ) ),
-                          const SizedBox(width: 25,),
-                          FlutterSwitch(
-                              width: 45.0,
-                              height: 25.0,
-                              padding: 3,
-                              value: isNotificationOpen,
-                              onToggle: (val) {
-                                setState(() {
-                                  isNotificationOpen = val;
-                                });
-
-                              }
-                          ),
-                        ],
-                      ),
-                      const SizedBox(height: 30,),
-                      Row(
-                        children: [
-                          const Image(image: AssetImage('assets/images/settings_image/customer.png'),width: 40,),
-                          const SizedBox(width: 10,),
-                          InkWell(
-                            onTap: () {
-                                _controller.sendVerificationEmail();
-                            },
-                            child: Text('HESABINI AKTİF ET',style: GoogleFonts.quicksand(
-                              textStyle: const TextStyle(
-                                color: Colors.black,
-                                fontSize: 20,
-                                fontWeight: FontWeight.bold,
-                              ),
-                            ) ),
-                          ),
-                        ],
-                      ),
-                      const SizedBox(height: 30,),
-                      Row(
-                        children: [
-                          const Image(image: AssetImage('assets/images/settings_image/log-out.png'),width: 40,),
-                          const SizedBox(width: 20,),
-                          InkWell(
-                            onTap: () {
-                                _controller.signOut();
-                            },
-                            child: Text('ÇIKIŞ YAP',style: GoogleFonts.quicksand(
-                              textStyle: const TextStyle(
-                                color: Colors.black,
-                                fontSize: 24,
-                                fontWeight: FontWeight.bold,
-                              ),
-                            ) ),
-                          ),
-
-                        ],
-                      ),
-                    ],
-                  ),
-                ),
-              ),
-        ],
-      ),
           const Align(
               alignment: Alignment.bottomCenter,
               child: Image(image: AssetImage('assets/images/settings_image/il.png'),width: 250,)
-          )
-      ]
-    )
-    );
-  }
-/*
------------------------------------------------------------------------------------------
-                  Guest Page
------------------------------------------------------------------------------------------
-*/
-  SizedBox guest() {
-    return SizedBox(
-        child: Stack(
-          children: [
-            Column(
+          ),
+          SingleChildScrollView(
+            child: Column(
               crossAxisAlignment: CrossAxisAlignment.center,
               children: [
                 const SizedBox(height: 15,),
@@ -343,7 +218,7 @@ class _SettingsPageState extends ConsumerState<SettingsPage> {
                 Center(
                   child: Container(
                     width: 300,
-                    height: 180,
+                    height: 330,
                     padding: const EdgeInsets.all(32),
                     decoration: BoxDecoration(
                       shape: BoxShape.rectangle,
@@ -373,9 +248,9 @@ class _SettingsPageState extends ConsumerState<SettingsPage> {
                                   setState(() {
                                     isMusicOpen = val;
                                   });
-
                                 }
                             ),
+
                           ],
                         ),
                         const SizedBox(height: 30,),
@@ -398,69 +273,201 @@ class _SettingsPageState extends ConsumerState<SettingsPage> {
                                 value: isNotificationOpen,
                                 onToggle: (val) {
                                   setState(() {
-
-                                  isNotificationOpen = val;
+                                    isNotificationOpen = val;
                                   });
 
                                 }
                             ),
                           ],
                         ),
+                        const SizedBox(height: 30,),
+                        Row(
+                          children: [
+                            const Image(image: AssetImage('assets/images/settings_image/customer.png'),width: 40,),
+                            const SizedBox(width: 10,),
+                            InkWell(
+                              onTap: () {
+                                  _controller.sendVerificationEmail();
+                              },
+                              child: Text('HESABINI AKTİF ET',style: GoogleFonts.quicksand(
+                                textStyle: const TextStyle(
+                                  color: Colors.black,
+                                  fontSize: 20,
+                                  fontWeight: FontWeight.bold,
+                                ),
+                              ) ),
+                            ),
+                          ],
+                        ),
+                        const SizedBox(height: 30,),
+                        Row(
+                          children: [
+                            const Image(image: AssetImage('assets/images/settings_image/log-out.png'),width: 40,),
+                            const SizedBox(width: 20,),
+                            InkWell(
+                              onTap: () {
+                                  _controller.signOut();
+                              },
+                              child: Text('ÇIKIŞ YAP',style: GoogleFonts.quicksand(
+                                textStyle: const TextStyle(
+                                  color: Colors.black,
+                                  fontSize: 24,
+                                  fontWeight: FontWeight.bold,
+                                ),
+                              ) ),
+                            ),
+
+                          ],
+                        ),
                       ],
                     ),
                   ),
                 ),
-                const SizedBox(height: 30,),
-                ElevatedButton(
-                  onPressed: () {
-                    Navigator.of(context).push(MaterialPageRoute(builder: (context) => const SignupPage(),));
-                  },
-                  style: ElevatedButton.styleFrom(
-                      backgroundColor: Colors.white,
-                      padding: const EdgeInsets.symmetric(horizontal: 24,vertical: 12),
-                      shape: RoundedRectangleBorder(
-                          borderRadius: BorderRadius.circular(16)
-                      )
-                  ),
-                  child:  Text('KAYIT OL',style: GoogleFonts.quicksand(
-                    textStyle: const TextStyle(
-                      color: Colors.black,
-                      fontSize: 24,
-                      fontWeight: FontWeight.bold,
-                    ),
-                  ) ),
-                ),
-                const SizedBox(height: 15,),
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
-                    InkWell(
-                      onTap: () {
-                        _controller.signInWithFacebook();
-                      },
-                      child: const Image(
-                        image:
-                        AssetImage('assets/logo/facebook_logo.png'),
-                      ),
-                    ),
-                    const SizedBox(width: 30,),
-                    InkWell(
-                      onTap: () {
-                        _controller.signInWithGoogle();
-                      },
-                      child: const Image(
-                        image:
-                        AssetImage('assets/logo/google_logo.png'),
-                      ),
-                    ),
-                  ],
-                ),
-              ],
-            ),
+        ],
+      ),
+          ),
+      ]
+    )
+    );
+  }
+/*
+-----------------------------------------------------------------------------------------
+                  Guest Page
+-----------------------------------------------------------------------------------------
+*/
+  SizedBox guest() {
+    return SizedBox(
+        child: Stack(
+          children: [
             const Align(
                 alignment: Alignment.bottomCenter,
                 child: Image(image: AssetImage('assets/images/settings_image/il.png'),width: 250,)
-            )
+            ),
+            SingleChildScrollView(
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.center,
+                children: [
+                  const SizedBox(height: 15,),
+                  const Image(image: AssetImage('assets/images/settings_image/happy tiger.png'),width: 180),
+                  Center(
+                    child: Container(
+                      width: 300,
+                      height: 180,
+                      padding: const EdgeInsets.all(32),
+                      decoration: BoxDecoration(
+                        shape: BoxShape.rectangle,
+                        color: Colors.white,
+                        borderRadius: BorderRadius.circular(50),
+                      ),
+                      child: Column(
+                        children: [
+                          Row(
+                            children: [
+                              const Image(image: AssetImage('assets/images/settings_image/musical-notes.png'),width: 40,),
+                              const SizedBox(width: 25,),
+                              Text('MÜZİK',style: GoogleFonts.quicksand(
+                                textStyle: const TextStyle(
+                                  color: Colors.black,
+                                  fontSize: 24,
+                                  fontWeight: FontWeight.bold,
+                                ),
+                              ) ),
+                              const SizedBox(width: 32,),
+                              FlutterSwitch(
+                                  width: 45.0,
+                                  height: 25.0,
+                                  padding: 3,
+                                  value: isMusicOpen,
+                                  onToggle: (val) {
+                                    setState(() {
+                                      isMusicOpen = val;
+                                    });
+
+                                  }
+                              ),
+                            ],
+                          ),
+                          const SizedBox(height: 30,),
+                          Row(
+                            children: [
+                              const Image(image: AssetImage('assets/images/settings_image/notification-bell.png'),width: 40,),
+                              const SizedBox(width: 15,),
+                              Text('BİLDİRİM',style: GoogleFonts.quicksand(
+                                textStyle: const TextStyle(
+                                  color: Colors.black,
+                                  fontSize: 22,
+                                  fontWeight: FontWeight.bold,
+                                ),
+                              ) ),
+                              const SizedBox(width: 25,),
+                              FlutterSwitch(
+                                  width: 45.0,
+                                  height: 25.0,
+                                  padding: 3,
+                                  value: isNotificationOpen,
+                                  onToggle: (val) {
+                                    setState(() {
+
+                                    isNotificationOpen = val;
+                                    });
+
+                                  }
+                              ),
+                            ],
+                          ),
+                        ],
+                      ),
+                    ),
+                  ),
+                  const SizedBox(height: 30,),
+                  ElevatedButton(
+                    onPressed: () {
+                      Navigator.of(context).push(MaterialPageRoute(builder: (context) => const SignupPage(),));
+                    },
+                    style: ElevatedButton.styleFrom(
+                        backgroundColor: Colors.white,
+                        padding: const EdgeInsets.symmetric(horizontal: 24,vertical: 12),
+                        shape: RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(16)
+                        )
+                    ),
+                    child:  Text('KAYIT OL',style: GoogleFonts.quicksand(
+                      textStyle: const TextStyle(
+                        color: Colors.black,
+                        fontSize: 24,
+                        fontWeight: FontWeight.bold,
+                      ),
+                    ) ),
+                  ),
+                  const SizedBox(height: 15,),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      InkWell(
+                        onTap: () {
+                          _controller.signInWithFacebook();
+                        },
+                        child: const Image(
+                          image:
+                          AssetImage('assets/logo/facebook_logo.png'),
+                        ),
+                      ),
+                      const SizedBox(width: 30,),
+                      InkWell(
+                        onTap: () {
+                          _controller.signInWithGoogle();
+                        },
+                        child: const Image(
+                          image:
+                          AssetImage('assets/logo/google_logo.png'),
+                        ),
+                      ),
+                    ],
+                  ),
+                ],
+              ),
+            ),
+
           ],
         ),
       );
