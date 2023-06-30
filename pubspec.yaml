@@ -52,6 +52,7 @@ dependencies:
   flutter_switch: ^0.3.2
   flip_card: ^0.7.0
   analog_clock: ^0.1.1
+  page_transition: ^2.0.9
 
 dev_dependencies:
   flutter_test:
@@ -126,6 +127,7 @@ flutter:
     - assets/images/card_games/nutrition_card_game/foods/
     - assets/images/card_games/nutrition_card_game/fruits/
     - assets/images/card_games/nutrition_card_game/vegetables/
+    - assets/images/card_games/color_card_game/
   #   - images/a_dot_burr.jpeg
   #   - images/a_dot_ham.jpeg
 

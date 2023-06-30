@@ -29,7 +29,7 @@ class _ProfessionCardGameState extends ConsumerState<ProfessionsCardGame> {
               return Container(
                 decoration: const BoxDecoration(
                   image: DecorationImage(
-                    image: AssetImage('assets/images/card_games/proffesions_image_game/ana sayfa 31.png'),
+                    image: AssetImage('assets/images/card_games/professions_image_game/ana sayfa 31.png'),
                     fit: BoxFit.fill
                   )
                 ),
@@ -37,7 +37,7 @@ class _ProfessionCardGameState extends ConsumerState<ProfessionsCardGame> {
                   children: [
                     const Align(
                       alignment: Alignment.bottomCenter,
-                      child: Image(image: AssetImage('assets/images/card_games/proffesions_image_game/down background.png'),),
+                      child: Image(image: AssetImage('assets/images/card_games/professions_image_game/down background.png'),),
                     ),
                     SingleChildScrollView(
                       child: Column(
@@ -50,7 +50,7 @@ class _ProfessionCardGameState extends ConsumerState<ProfessionsCardGame> {
                                     onTap: () {
                                       Navigator.of(context).pop();
                                     },
-                                    child: const Image(image: AssetImage('assets/images/card_games/proffesions_image_game/exit.png'))),
+                                    child: const Image(image: AssetImage('assets/images/card_games/professions_image_game/exit.png'))),
                               ),
                             ],
                           ),
@@ -105,7 +105,7 @@ class _ProfessionCardGameState extends ConsumerState<ProfessionsCardGame> {
                                       });
                                     }
                                   },
-                                  child: const Image(image: AssetImage('assets/images/card_games/proffesions_image_game/back.png'))
+                                  child: const Image(image: AssetImage('assets/images/card_games/professions_image_game/back.png'))
                               ),
                               const SizedBox(width: 30,),
                               InkWell(
@@ -116,7 +116,7 @@ class _ProfessionCardGameState extends ConsumerState<ProfessionsCardGame> {
                                       });
                                     }
                                   },
-                                  child: const Image(image: AssetImage('assets/images/card_games/proffesions_image_game/next.png'))
+                                  child: const Image(image: AssetImage('assets/images/card_games/professions_image_game/next.png'))
                               ),
                             ],
                           ),

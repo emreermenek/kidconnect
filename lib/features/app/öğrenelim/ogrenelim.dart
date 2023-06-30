@@ -1,9 +1,22 @@
 import 'package:bootcamp_f32/constants/colors.dart';
+import 'package:bootcamp_f32/features/app/card_games/animal_card_game/level_list.dart';
+import 'package:bootcamp_f32/features/app/card_games/body_card_game/level_list.dart';
+import 'package:bootcamp_f32/features/app/card_games/cleaning_card_game/level_list.dart';
+import 'package:bootcamp_f32/features/app/card_games/color_card_game/level_list.dart';
+import 'package:bootcamp_f32/features/app/card_games/emotions_card_game/level_list.dart';
+import 'package:bootcamp_f32/features/app/card_games/nutrition_card_game/level_lists/nutrition_level_list.dart';
+import 'package:bootcamp_f32/features/app/card_games/opposite_card_game/level_list.dart';
+import 'package:bootcamp_f32/features/app/card_games/professions_card_game/level_list.dart';
+import 'package:bootcamp_f32/features/app/card_games/seasonsAndWeather_card_game/seasonAndWeather_level_list.dart';
+import 'package:bootcamp_f32/features/app/card_games/shape_card_game/level_list.dart';
+import 'package:bootcamp_f32/features/app/card_games/things_card_game/level_list.dart';
 import 'package:flutter/material.dart';
 import '../../../common_widgets/app_bar_widget.dart';
 import '../../../common_widgets/bottom_navigation_bar_widget.dart';
 import '../../../common_widgets/main_pages_background.dart';
 import '../../../common_widgets/main_pages_gridView_widget.dart';
+import '../card_games/letter_game/letter_game.dart';
+import '../card_games/number_game/number_game.dart';
 
 class OgrenelimPage extends StatefulWidget {
   const OgrenelimPage({Key? key}) : super(key: key);
@@ -46,7 +59,22 @@ final List texts = [
   'ZIT KAVRAMLAR'
 ];
 
-final List<String> routes = [];
+const List routes = [
+  LetterGame(),
+  NutritionCardGameLevelList(),
+  BodyCardGameLevelList(),
+  AnimalCardGameLevelList(),
+  CleaningCardGameLevelList(),
+  NumberGame(),
+  ThingsCardGameLevelList(),
+  EmotionCardGameLevelList(),
+  EmotionCardGameLevelList(), // saatler gelecek
+  SeasonAndWeatherCardGameLevelList(),
+  ColorCardGameLevelList(),
+  ProfessionCardGameLevelList(),
+  ShapeCardGameLevelList(),
+  OppositeCardGameLevelList()
+];
 
 class _OgrenelimPageState extends State<OgrenelimPage> {
   @override
