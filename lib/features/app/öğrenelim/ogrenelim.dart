@@ -2,6 +2,7 @@ import 'package:bootcamp_f32/constants/colors.dart';
 import 'package:bootcamp_f32/features/app/card_games/animal_card_game/level_list.dart';
 import 'package:bootcamp_f32/features/app/card_games/body_card_game/level_list.dart';
 import 'package:bootcamp_f32/features/app/card_games/cleaning_card_game/level_list.dart';
+import 'package:bootcamp_f32/features/app/card_games/clock_card_game/level_list.dart';
 import 'package:bootcamp_f32/features/app/card_games/color_card_game/level_list.dart';
 import 'package:bootcamp_f32/features/app/card_games/emotions_card_game/level_list.dart';
 import 'package:bootcamp_f32/features/app/card_games/nutrition_card_game/level_lists/nutrition_level_list.dart';
@@ -68,7 +69,7 @@ const List routes = [
   NumberGame(),
   ThingsCardGameLevelList(),
   EmotionCardGameLevelList(),
-  EmotionCardGameLevelList(), // saatler gelecek
+  ClockCardGameLevelList(),
   SeasonAndWeatherCardGameLevelList(),
   ColorCardGameLevelList(),
   ProfessionCardGameLevelList(),
