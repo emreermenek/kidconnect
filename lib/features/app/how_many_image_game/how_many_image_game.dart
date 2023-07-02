@@ -1,12 +1,13 @@
 import 'dart:math';
 
-import 'package:bootcamp_f32/features/app/choose_correct_game/data/numbers.dart';
 import 'package:bootcamp_f32/features/app/how_many_image_game/data/fruit_data.dart';
 import 'package:bootcamp_f32/features/app/how_many_image_game/services/services.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:just_audio/just_audio.dart';
+
+import '../biger_or_lower_game/data/numbers.dart';
 
 class HowManyImageGame extends ConsumerStatefulWidget {
   const HowManyImageGame({super.key});
