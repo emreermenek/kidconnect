@@ -52,19 +52,19 @@ KidConnect çocuklar için öğrenmeyi, eğlenceli bir hale getirir. Çocukları
 
 - **Sprint Board Update**: Screenshots
   
-![Screenshot 1](https://github.com/Bootcampf32/bootcampf32/blob/main/ProjectManagement/Sprint1Documents/backlog1.png)
-![Screenshot 2](https://github.com/Bootcampf32/bootcampf32/blob/main/ProjectManagement/Sprint1Documents/backlog2.png)
+  ![Screenshot 1](https://github.com/Bootcampf32/bootcampf32/blob/main/ProjectManagement/Sprint1Documents/backlog1.png)
+  ![Screenshot 2](https://github.com/Bootcampf32/bootcampf32/blob/main/ProjectManagement/Sprint1Documents/backlog2.png)
 
 - **Ürün Durumu Ekran Görüntüleri:**
 
-![Screenshot 3](https://github.com/Bootcampf32/bootcampf32/blob/main/ProjectManagement/Sprint1Documents/product1.png)
-![Screenshot 4](https://github.com/Bootcampf32/bootcampf32/blob/main/ProjectManagement/Sprint1Documents/product2.png)
-![Screenshot 5](https://github.com/Bootcampf32/bootcampf32/blob/main/ProjectManagement/Sprint1Documents/product3.jpg)
-![Screenshot 6](https://github.com/Bootcampf32/bootcampf32/blob/main/ProjectManagement/Sprint1Documents/product4.jpeg)
-![Screenshot 7](https://github.com/Bootcampf32/bootcampf32/blob/main/ProjectManagement/Sprint1Documents/product5.png)
+  ![Screenshot 3](https://github.com/Bootcampf32/bootcampf32/blob/main/ProjectManagement/Sprint1Documents/product1.png)
+  ![Screenshot 4](https://github.com/Bootcampf32/bootcampf32/blob/main/ProjectManagement/Sprint1Documents/product2.png)
+  ![Screenshot 5](https://github.com/Bootcampf32/bootcampf32/blob/main/ProjectManagement/Sprint1Documents/product3.jpg)
+  ![Screenshot 6](https://github.com/Bootcampf32/bootcampf32/blob/main/ProjectManagement/Sprint1Documents/product4.jpeg)
+  ![Screenshot 7](https://github.com/Bootcampf32/bootcampf32/blob/main/ProjectManagement/Sprint1Documents/product5.png)
 
 
-- **Sprint Review:** Alınan kararlar: Uygulama arayüzleri oluşturuldu ve kodlandı, uygulama için firebase bağlanması yapıldı, uygulama için çoğu tasarım yapıldı. Sprint Review katılımcıları: Melike Çiydem, Emine Betül Erdoğan, Emre Ermenek: Team Member, Morteza Rezaeı, Nil Sezer Şenaylar.
+- **Sprint Review:** Alınan kararlar: Uygulama arayüzleri oluşturuldu ve kodlandı, uygulama için firebase bağlanması yapıldı, uygulama için çoğu tasarım yapıldı. Sprint Review katılımcıları: Melike Çiydem, Emine Betül Erdoğan, Emre Ermenek, Morteza Rezaeı, Nil Sezer Şenaylar.
 
 - **Sprint Retrospective:**
   
@@ -80,6 +80,38 @@ KidConnect çocuklar için öğrenmeyi, eğlenceli bir hale getirir. Çocukları
 
 # Sprint 2
 
+ - **Sprint İçinde Tamamlanması Gereken Puan:** 98 puan.
+
+ - **Puan Tamamlama Mantığı:** Projede backlog listesinde bulunan toplam puan 176 . İkinci sprint için 98 puan kararlaştırıldı.
+   
+ - **Daily Scrum:** Daily Scrum toplantıları her gün sesli konuşma olarak yapılmaya karar verilmiştir ve bunun için bir grup odası kurulmuştur. Daily Scrum sonlarında alınan notlar verilecek olan linkte mevcuttur.  [Daily Scrum Notes](https://morteza24.atlassian.net/wiki/spaces/notlar/pages/295196/Melike)
+   
+ - **Sprint Board Update**:
+
+   ![Screenshot 1](https://github.com/Bootcampf32/bootcampf32/blob/main/ProjectManagement/Sprint2Documents/backlog1.png)
+   ![Screenshot 2](https://github.com/Bootcampf32/bootcampf32/blob/main/ProjectManagement/Sprint2Documents/backlog2.png)
+
+ - **Ürün Durumu Ekran Görüntüleri:**
+
+   ![Screenshot 3](https://github.com/Bootcampf32/bootcampf32/blob/main/ProjectManagement/Sprint2Documents/product1.png)
+   ![Screenshot 4](https://github.com/Bootcampf32/bootcampf32/blob/main/ProjectManagement/Sprint2Documents/product2.png)
+   ![Screenshot 5](https://github.com/Bootcampf32/bootcampf32/blob/main/ProjectManagement/Sprint2Documents/product3.png)
+   ![Screenshot 6](https://github.com/Bootcampf32/bootcampf32/blob/main/ProjectManagement/Sprint2Documents/product4.png)
+   ![Screenshot 7](https://github.com/Bootcampf32/bootcampf32/blob/main/ProjectManagement/Sprint2Documents/product5.png)
+ 
+ - **Sprint Review:**
+
+   - Sadeleştirilen ana sayfa yeniden kodlandı. Öğrenelim kartlarının hepsi tasarlanıp kodlanarak bitti. Oyunların bir kısmı yapıldı ve eksiklikleri değerlendirildi.
+   - Sprint Review katılımcıları: Melike Çiydem, Emine Betül Erdoğan, Emre Ermenek, Morteza Rezaeı, Nil Sezer Şenaylar.
+   
+ - **Sprint Retrospective:**
+   
+   - Yapılacak oyunlarda düzenleme yapılarak eksiklikler giderilecek.
+   - Oyunlar için seviyelerin düzeyleri belirlenerek kategorilere ayrılması kararlaştırıldı.
+   
+ - **Sprint Notları:**
+
+   -Bu sprint için toplam tamamlanması gereken puan 98 . Sprint 2 için belirlenen hedeflere ulaşıldı. Gelecek sprintte performansımızı arttırarak bütün oyunları bitirmeyi hedefliyoruz.
 
 ---
 
