@@ -130,6 +130,7 @@ flutter:
     - assets/images/card_games/color_card_game/
     - assets/images/card_games/clock_card_game_image/
     - assets/images/choose_correct_games/color_choose_correct_game_images/
+    - assets/images/difficulty/
   #   - images/a_dot_burr.jpeg
   #   - images/a_dot_ham.jpeg
 
