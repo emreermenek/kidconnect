@@ -1,3 +1,8 @@
+import 'package:bootcamp_f32/features/app/choose_correct_games/professions_choose_correct_game/difficulty.dart';
+import 'package:bootcamp_f32/features/app/choose_correct_games/professions_choose_correct_game/easy_level_list.dart';
+import 'package:bootcamp_f32/features/app/choose_correct_games/professions_choose_correct_game/easy_profession_choose_correct_game.dart';
+import 'package:bootcamp_f32/features/app/choose_correct_games/professions_choose_correct_game/hard_level_list.dart';
+import 'package:bootcamp_f32/features/app/choose_correct_games/professions_choose_correct_game/hard_profession_choose_correct_game.dart';
 import 'package:bootcamp_f32/features/app/choose_correct_games/seasonWeather_choose_correct_game/difficulty.dart';
 import 'package:bootcamp_f32/features/app/choose_correct_games/seasonWeather_choose_correct_game/easy_season_weather_choose_correct_game.dart';
 import 'package:bootcamp_f32/features/app/first_page/first-page.dart';
@@ -23,7 +28,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       navigatorKey: navigatorKey,
       debugShowCheckedModeBanner: false,
-      home: const SeasonWeatherChooseCorrectGameDifficulty()
+      home: const ProfessionChooseCorrectGameDifficulty()
     );
   }
 }
