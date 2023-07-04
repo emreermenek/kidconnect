@@ -30,24 +30,38 @@ class _SeasonWeatherChooseCorrectGameDifficultyState extends State<SeasonWeather
             child: Image(image: AssetImage('assets/images/difficulty/maskot.png'),),
           ),
           SingleChildScrollView(
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.center,
+            child: Column(
               children: [
-                Column(
-                  crossAxisAlignment: CrossAxisAlignment.center,
+                Align(
+                  alignment: Alignment.topLeft,
+                  child: Padding(
+                    padding: const EdgeInsets.all(10),
+                    child: InkWell(
+                      onTap: () => Navigator.of(context).pop(),
+                      child: const Image(image: AssetImage('assets/images/choose_correct_games/color_choose_correct_game_images/exit.png'),),
+                    ),
+                  ),
+                ),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
                   children: [
-                    const SizedBox(height: 120,),
-                    InkWell(
-                        onTap: () {
-                          Navigator.of(context).push(MaterialPageRoute(builder: (context) => const EasySeasonWeatherChooseCorrectGameLevelList(),));
-                        },
-                        child: const Image(image: AssetImage('assets/images/difficulty/kolay.png'))),
-                    const SizedBox(height: 30,),
-                    InkWell(
-                        onTap: () {
-                          Navigator.of(context).push(MaterialPageRoute(builder: (context) => const HardSeasonWeatherChooseCorrectGameLevelList(),));
-                        },
-                        child: const Image(image: AssetImage('assets/images/difficulty/zor.png'))),
+                    Column(
+                      crossAxisAlignment: CrossAxisAlignment.center,
+                      children: [
+                        const SizedBox(height: 120,),
+                        InkWell(
+                            onTap: () {
+                              Navigator.of(context).push(MaterialPageRoute(builder: (context) => const EasySeasonWeatherChooseCorrectGameLevelList(),));
+                            },
+                            child: const Image(image: AssetImage('assets/images/difficulty/kolay.png'))),
+                        const SizedBox(height: 30,),
+                        InkWell(
+                            onTap: () {
+                              Navigator.of(context).push(MaterialPageRoute(builder: (context) => const HardSeasonWeatherChooseCorrectGameLevelList(),));
+                            },
+                            child: const Image(image: AssetImage('assets/images/difficulty/zor.png'))),
+                      ],
+                    ),
                   ],
                 ),
               ],

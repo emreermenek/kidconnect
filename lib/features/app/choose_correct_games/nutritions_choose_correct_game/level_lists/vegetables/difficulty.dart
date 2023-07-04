@@ -1,16 +1,15 @@
-import 'package:bootcamp_f32/features/app/choose_correct_games/professions_choose_correct_game/easy_level_list.dart';
-import 'package:bootcamp_f32/features/app/choose_correct_games/professions_choose_correct_game/hard_level_list.dart';
-import 'package:bootcamp_f32/features/app/choose_correct_games/seasonWeather_choose_correct_game/easy_level_list.dart';
-import 'package:bootcamp_f32/features/app/choose_correct_games/seasonWeather_choose_correct_game/hard_level_list.dart';
+import 'package:bootcamp_f32/features/app/choose_correct_games/nutritions_choose_correct_game/level_lists/vegetables/easy_level_list.dart';
+import 'package:bootcamp_f32/features/app/choose_correct_games/nutritions_choose_correct_game/level_lists/vegetables/hard_level_list.dart';
 import 'package:flutter/material.dart';
-class ProfessionChooseCorrectGameDifficulty extends StatefulWidget {
-  const ProfessionChooseCorrectGameDifficulty({super.key});
+
+class VegetablesChooseCorrectGameDifficulty extends StatefulWidget {
+  const VegetablesChooseCorrectGameDifficulty({super.key});
 
   @override
-  State<ProfessionChooseCorrectGameDifficulty> createState() => _ProfessionChooseCorrectGameDifficultyState();
+  State<VegetablesChooseCorrectGameDifficulty> createState() => _VegetablesChooseCorrectGameDifficultyState();
 }
 
-class _ProfessionChooseCorrectGameDifficultyState extends State<ProfessionChooseCorrectGameDifficulty> {
+class _VegetablesChooseCorrectGameDifficultyState extends State<VegetablesChooseCorrectGameDifficulty> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -31,7 +30,6 @@ class _ProfessionChooseCorrectGameDifficultyState extends State<ProfessionChoose
             alignment: Alignment.bottomCenter,
             child: Image(image: AssetImage('assets/images/difficulty/maskot.png'),),
           ),
-
           SingleChildScrollView(
             child: Column(
               children: [
@@ -54,13 +52,13 @@ class _ProfessionChooseCorrectGameDifficultyState extends State<ProfessionChoose
                         const SizedBox(height: 120,),
                         InkWell(
                             onTap: () {
-                              Navigator.of(context).push(MaterialPageRoute(builder: (context) => const EasyProfessionsChooseCorrectGameLevelList(),));
+                              Navigator.of(context).push(MaterialPageRoute(builder: (context) => const EasyVegetablesChooseCorrectGameLevelList(),));
                             },
                             child: const Image(image: AssetImage('assets/images/difficulty/kolay.png'))),
                         const SizedBox(height: 30,),
                         InkWell(
                             onTap: () {
-                              Navigator.of(context).push(MaterialPageRoute(builder: (context) => const HardProfessionChooseCorrectGameLevelList(),));
+                              Navigator.of(context).push(MaterialPageRoute(builder: (context) => const HardVegetablesChooseCorrectGameLevelList()));
                             },
                             child: const Image(image: AssetImage('assets/images/difficulty/zor.png'))),
                       ],
