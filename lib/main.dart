@@ -1,4 +1,5 @@
 import 'package:bootcamp_f32/features/app/choose_correct_games/body_choose_correct_game/difficulty.dart';
+import 'package:bootcamp_f32/features/app/choose_correct_games/shapes_choose_correct_game/difficulty.dart';
 import 'package:bootcamp_f32/features/app/choose_correct_games/things_choose_correct_game/difficulty.dart';
 import 'package:bootcamp_f32/features/app/choose_correct_games/things_choose_correct_game/easy_things_choose_correct_game.dart';
 import 'package:bootcamp_f32/features/app/choose_correct_games/things_choose_correct_game/hard_things_choose_correct_game.dart';
@@ -23,7 +24,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       navigatorKey: navigatorKey,
       debugShowCheckedModeBanner: false,
-      home: const ThingsChooseCorrectGameDifficulty()
+      home: const ShapesChooseCorrectGameDifficulty()
     );
   }
 }
