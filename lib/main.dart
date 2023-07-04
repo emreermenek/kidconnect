@@ -1,5 +1,6 @@
 import 'package:bootcamp_f32/features/app/choose_correct_games/animals_choose_correct_game/difficulty.dart';
 import 'package:bootcamp_f32/features/app/choose_correct_games/animals_choose_correct_game/easy_animal_choose_correct_game.dart';
+import 'package:bootcamp_f32/features/app/choose_correct_games/body_choose_correct_game/difficulty.dart';
 import 'package:bootcamp_f32/features/app/choose_correct_games/cleaning_choose_correct_game/difficulty.dart';
 import 'package:bootcamp_f32/features/app/choose_correct_games/nutritions_choose_correct_game/games/foods/easy_food_choose_correct_game.dart';
 import 'package:bootcamp_f32/features/app/choose_correct_games/nutritions_choose_correct_game/games/foods/hard_food_choose_correct_game.dart';
@@ -43,7 +44,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       navigatorKey: navigatorKey,
       debugShowCheckedModeBanner: false,
-      home: const CleaningChooseCorrectGameDifficulty()
+      home: const BodyChooseCorrectGameDifficulty()
     );
   }
 }
