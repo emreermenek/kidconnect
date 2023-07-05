@@ -1,22 +1,9 @@
-import 'package:bootcamp_f32/features/app/card_games/clock_card_game/level_list.dart';
-import 'package:bootcamp_f32/features/app/card_games/opposite_card_game/level_list.dart';
-import 'package:bootcamp_f32/features/app/choose_correct_games/body_choose_correct_game/difficulty.dart';
-import 'package:bootcamp_f32/features/app/choose_correct_games/emotions_choose_correct_game/difficulty.dart';
-import 'package:bootcamp_f32/features/app/choose_correct_games/letter_choose_correct_game/difficulty.dart';
-import 'package:bootcamp_f32/features/app/choose_correct_games/nutritions_choose_correct_game/nutritions_game_list.dart';
-import 'package:bootcamp_f32/features/app/choose_correct_games/opposition_choose_correct_game/level_list.dart';
-import 'package:bootcamp_f32/features/app/choose_correct_games/opposition_choose_correct_game/opposition_choose_correct_game.dart';
-import 'package:bootcamp_f32/features/app/choose_correct_games/shapes_choose_correct_game/difficulty.dart';
-import 'package:bootcamp_f32/features/app/choose_correct_games/things_choose_correct_game/difficulty.dart';
-import 'package:bootcamp_f32/features/app/choose_correct_games/things_choose_correct_game/easy_things_choose_correct_game.dart';
-import 'package:bootcamp_f32/features/app/choose_correct_games/things_choose_correct_game/hard_things_choose_correct_game.dart';
-import 'package:bootcamp_f32/features/app/first_page/first-page.dart';
-import 'package:bootcamp_f32/features/app/shadow_games/numbers_shadow_game/numbers_shadow_game.dart';
-import 'package:bootcamp_f32/features/app/shape_match_game/shape_match_game/shape_match_game.dart';
+import 'package:bootcamp_f32/features/app/clock_game/level_list.dart';
+import 'package:bootcamp_f32/features/app/clock_game/time/time.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'features/app/choose_correct_games/seasonWeather_choose_correct_game/difficulty.dart';
+import 'features/app/clock_game/time/level_list.dart';
 import 'firebase_options.dart';
 
 Future<void> main() async {
@@ -35,7 +22,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       navigatorKey: navigatorKey,
       debugShowCheckedModeBanner: false,
-      home: const OppositionChooseCorrectGameLevelList()
+      home: const ClockGameLevelList()
     );
   }
 }
