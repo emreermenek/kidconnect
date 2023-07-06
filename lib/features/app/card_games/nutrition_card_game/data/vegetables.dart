@@ -2,7 +2,7 @@
 const List<String> vegetableNames =
 [
   'PATATES', 'HAVUÇ', 'SALATALIK', 'BİBER', 'MANTAR', 'LAHANA', 'PIRASA',
-  'PATLICAN', 'DOMATES', 'SOĞAN', 'KABAK', 'MAYDANOZ'
+  'PATLICAN', 'DOMATES', 'SOĞAN', 'KABAK', 'MAYDANOZ',
 ];
 
 const List<String> vegetableImage =

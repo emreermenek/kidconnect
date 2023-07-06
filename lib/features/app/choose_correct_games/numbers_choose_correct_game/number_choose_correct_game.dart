@@ -64,28 +64,29 @@ class _NumberChooseCorrectGameState extends ConsumerState<NumberChooseCorrectGam
               number4Value = randomNumberGenerator();
               number5Value = randomNumberGenerator();
               number6Value = randomNumberGenerator();
-              return Padding(
-              padding: const EdgeInsets.symmetric(vertical: 10,horizontal: 85),
-              child: SingleChildScrollView(
+              return SingleChildScrollView(
                 child: Column(
                   children:
                   [
-                      Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                        children: [
-                          InkWell(
-                            onTap: () {
-                              Navigator.of(context).pop();
-                            },
-                              child: const Image(image: AssetImage('assets/images/choose_correct_games/number_choose_correct_images/geri button.png'))),
-                          Text('${data.currentLevel +1}/10', style: GoogleFonts.gluten(
-                            textStyle:  const TextStyle(
-                                color: Color(0xFF16519F),
-                                fontSize: 36,
-                                fontWeight: FontWeight.bold
-                            ),
-                          ),)
-                        ],
+                      Padding(
+                        padding: const EdgeInsets.all(10),
+                        child: Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          children: [
+                            InkWell(
+                              onTap: () {
+                                Navigator.of(context).pop();
+                              },
+                                child: const Image(image: AssetImage('assets/images/choose_correct_games/number_choose_correct_images/geri button.png'))),
+                            Text('${data.currentLevel +1}/10', style: GoogleFonts.gluten(
+                              textStyle:  const TextStyle(
+                                  color: Color(0xFF16519F),
+                                  fontSize: 36,
+                                  fontWeight: FontWeight.bold
+                              ),
+                            ),)
+                          ],
+                        ),
                       ),
                     const SizedBox(height: 5,),
                     const Center(
@@ -476,8 +477,7 @@ class _NumberChooseCorrectGameState extends ConsumerState<NumberChooseCorrectGam
                     ),),
                   ],
                 ),
-              ),
-            );
+              );
             }
           ),
         ],
