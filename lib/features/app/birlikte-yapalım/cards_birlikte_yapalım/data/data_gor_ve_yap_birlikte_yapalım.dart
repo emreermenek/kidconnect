@@ -1,0 +1,37 @@
+const List<String> seeAndDoNames = [
+  ' KAPIYI ÇALMAK',
+  '    ELLERİMİZİ\nBELİMİZE KOYALIM',
+  'PARMAĞIMIZI\n KALDIRALIM',
+  ' KARNIMIZI\nGÖSTERELİM',
+  'ELLERİMİZİ\nYIKAYALIM',
+  'ALKIŞ YAPALIM',
+  '   BİRLİKTE\nGÜLÜMSEYELİM',
+  ' KAFAMIZA\nDOKUNALIM',
+  'KOLLARIMIZI\nBAĞLAYALIM',
+  'AYAKKABIMIZA\n DOKUNALIM',
+  ' ANNEMİZE\nSARILALIM',
+  ' KAFAMIZI EVET\nDİYE SAĞLAYALIM',
+  'EL SALLAYALIM',
+  ' BABAMIZIN\nELİNİ SIKALIM',
+  'KAPIYI AÇALIM',
+  '     ELİMİZLE\n1, 2 VE 3YAPALIM'
+];
+
+const List<String> seeAndDoImages = [
+  'assets/images/do_together_images/seeAndDo/kapıyı çalmak.gif',
+  'assets/images/do_together_images/seeAndDo/elleri bele koymak.png',
+  'assets/images/do_together_images/seeAndDo/parmak kaldırmak.gif',
+  'assets/images/do_together_images/seeAndDo/karnımızı göstermek.gif',
+  'assets/images/do_together_images/seeAndDo/ellerimizi yıkamak.gif',
+  'assets/images/do_together_images/seeAndDo/alkış yapmak.gif',
+  'assets/images/do_together_images/seeAndDo/gülümsemek.gif',
+  'assets/images/do_together_images/seeAndDo/kafaya dokunmak.gif',
+  'assets/images/do_together_images/seeAndDo/kolları bağlamak.gif',
+  'assets/images/do_together_images/seeAndDo/ayakkabıya dokunmak.png',
+  'assets/images/do_together_images/seeAndDo/annemize sarılmak.gif',
+  'assets/images/do_together_images/seeAndDo/kafa sallamak.gif',
+  'assets/images/do_together_images/seeAndDo/el sallamak.gif',
+  'assets/images/do_together_images/seeAndDo/el sıkmak.gif',
+  'assets/images/do_together_images/seeAndDo/kapıyı açmak.gif',
+  'assets/images/do_together_images/seeAndDo/sayıları göstermek.gif',
+];
