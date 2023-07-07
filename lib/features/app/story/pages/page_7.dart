@@ -9,9 +9,15 @@ class StoryPage7 extends StatefulWidget {
 }
 
 class _StoryPage7State extends State<StoryPage7> {
-  bool isPlaying = false;
+  bool isPlaying = true;
   final _player = AudioPlayer();
-
+  @override
+  void initState() {
+    // TODO: implement initState
+    super.initState();
+    _player.setFilePath(
+        'assets/sounds/story_sounds/7 (enhanced).wav');
+  }
   @override
   void dispose() {
     // TODO: implement dispose
@@ -52,14 +58,26 @@ class _StoryPage7State extends State<StoryPage7> {
                   Column(
                     children: [
                       InkWell(
-                        onTap: () {
-                          setState(() {
-                            isPlaying = !isPlaying;
-                          });
-                        },
-                        child: isPlaying ?
-                        const Image(image: AssetImage('assets/images/story/stop button.png'),) :
-                        const Image(image: AssetImage('assets/images/story/play button.png'),),
+                          onTap: () async {
+                            if(isPlaying){
+                              setState(() {
+                                isPlaying = !isPlaying;
+                              });
+                              await _player.play();
+
+                            }else {
+                              setState(() {
+                                isPlaying = !isPlaying;
+                              });
+                              await _player.pause();
+
+                            }
+
+                          },
+                          child: isPlaying ?
+                          const Image(image: AssetImage('assets/images/story/play button.png'),) :
+                          const Image(image: AssetImage('assets/images/story/stop button.png'),)
+
                       ),
                       const SizedBox(height: 30,),
                       const Image(image: AssetImage('assets/images/story/anlati7.png')),

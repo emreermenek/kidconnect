@@ -9,9 +9,16 @@ class StoryPage1 extends StatefulWidget {
 }
 
 class _StoryPage1State extends State<StoryPage1> {
-  bool isPlaying = false;
+  bool isPlaying = true;
   final _player = AudioPlayer();
 
+  @override
+  void initState() {
+    // TODO: implement initState
+    super.initState();
+    _player.setFilePath(
+        'assets/sounds/story_sounds/1 (enhanced).wav');
+  }
   @override
   void dispose() {
     // TODO: implement dispose
@@ -20,6 +27,7 @@ class _StoryPage1State extends State<StoryPage1> {
   }
   @override
   Widget build(BuildContext context) {
+
     return Scaffold(
       backgroundColor: Colors.white,
       body: Stack(
@@ -58,14 +66,26 @@ class _StoryPage1State extends State<StoryPage1> {
                       const Image(image: AssetImage('assets/images/story/anlati1.png')),
                       const SizedBox(height: 30,),
                       InkWell(
-                        onTap: () {
+                        onTap: () async {
+                          if(isPlaying){
                             setState(() {
                               isPlaying = !isPlaying;
                             });
+                            await _player.play();
+
+                          }else {
+                            setState(() {
+                              isPlaying = !isPlaying;
+                            });
+                            await _player.pause();
+
+                          }
+
                         },
                         child: isPlaying ?
-                        const Image(image: AssetImage('assets/images/story/stop button.png'),) :
-                        const Image(image: AssetImage('assets/images/story/play button.png'),),
+                        const Image(image: AssetImage('assets/images/story/play button.png'),) :
+                        const Image(image: AssetImage('assets/images/story/stop button.png'),)
+
                       )
                     ],
                   ),
