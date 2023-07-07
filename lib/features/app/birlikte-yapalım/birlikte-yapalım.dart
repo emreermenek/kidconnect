@@ -1,11 +1,7 @@
-import 'package:bootcamp_f32/constants/colors.dart';
 import 'package:bootcamp_f32/features/app/birlikte-yapal%C4%B1m/sports_birlikte_yapal%C4%B1m.dart';
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
 import '../../../common_widgets/app_bar_widget.dart';
 import '../../../common_widgets/bottom_navigation_bar_widget.dart';
-import '../../../common_widgets/main_pages_background.dart';
-import '../../../common_widgets/main_pages_gridView_widget.dart';
 import 'gör_ve_yap_birlikte_yapalım.dart';
 
 class BirlikteYapalimPage extends StatefulWidget {
@@ -15,23 +11,11 @@ class BirlikteYapalimPage extends StatefulWidget {
   State<BirlikteYapalimPage> createState() => _BirlikteYapalimPageState();
 }
 
-final List cards = [
-  'assets/images/birlikte_yapalım/Group 330.png',
-  'assets/images/birlikte_yapalım/spor yapalım.png'
-];
-
-final List texts = [
-  '',
-  '',
-];
-
-final List routes = [const GorVeYapListPage(), const SportsListPage()];
-
 class _BirlikteYapalimPageState extends State<BirlikteYapalimPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.lightBlueAccent,
+      backgroundColor: const Color(0xFFBDF2D5),
       appBar: const AppBarWidget(
         title: 'Birlikte Yapalım',
       ),

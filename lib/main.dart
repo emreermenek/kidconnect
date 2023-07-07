@@ -1,3 +1,4 @@
+import 'package:bootcamp_f32/features/app/birlikte-yapal%C4%B1m/birlikte-yapal%C4%B1m.dart';
 import 'package:bootcamp_f32/features/app/make_word_game/level_list.dart';
 import 'package:bootcamp_f32/features/app/story/pages/page_1.dart';
 import 'package:bootcamp_f32/features/app/story/start_page.dart';
@@ -25,7 +26,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       navigatorKey: navigatorKey,
       debugShowCheckedModeBanner: false,
-      home: const StoryStartPage()
+      home: const BirlikteYapalimPage()
     );
   }
 }

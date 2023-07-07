@@ -56,7 +56,7 @@ class _SportsListPageState extends ConsumerState<SportsListPage> {
             ],
           ),
         ),
-        backgroundColor: const Color(0xBDF2D5),
+        backgroundColor: const Color(0xFFBDF2D5),
         body: Column(
           crossAxisAlignment: CrossAxisAlignment.center,
           mainAxisAlignment: MainAxisAlignment.center,

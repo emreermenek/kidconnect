@@ -1,9 +1,5 @@
 import 'package:bootcamp_f32/common_features/text_to_speech.dart';
-import 'package:bootcamp_f32/features/app/birlikte-yapal%C4%B1m/cards_birlikte_yapal%C4%B1m/services/services.dart';
 import 'package:bootcamp_f32/features/app/birlikte-yapal%C4%B1m/cards_birlikte_yapal%C4%B1m/sports_card_birlikte_yapal%C4%B1m/services/services.dart';
-import 'package:bootcamp_f32/features/app/card_games/animal_card_game/data/animals.dart';
-import 'package:bootcamp_f32/features/app/card_games/animal_card_game/services/services.dart';
-import 'package:bootcamp_f32/features/app/card_games/letter_game/data/backgroundColor.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:google_fonts/google_fonts.dart';

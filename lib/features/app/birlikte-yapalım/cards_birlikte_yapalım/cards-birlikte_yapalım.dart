@@ -1,13 +1,9 @@
 import 'package:bootcamp_f32/common_features/text_to_speech.dart';
 import 'package:bootcamp_f32/features/app/birlikte-yapal%C4%B1m/cards_birlikte_yapal%C4%B1m/services/services.dart';
-import 'package:bootcamp_f32/features/app/card_games/animal_card_game/data/animals.dart';
-import 'package:bootcamp_f32/features/app/card_games/animal_card_game/services/services.dart';
-import 'package:bootcamp_f32/features/app/card_games/letter_game/data/backgroundColor.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:just_audio/just_audio.dart';
-
 import 'data/data_gor_ve_yap_birlikte_yapalım.dart';
 
 class GorveYapBirlikteYapalimCard extends ConsumerStatefulWidget {
@@ -34,14 +30,14 @@ class _GorveYapBirlikteYapalimCardState
     final ValueNotifier<int> chooseCard = ValueNotifier<int>(data.currentCard);
     return SafeArea(
       child: Scaffold(
-        backgroundColor: Colors.white,
+        backgroundColor: const Color(0xFFBDF2D5),
         body: ValueListenableBuilder(
           valueListenable: chooseCard,
           builder: (BuildContext context, value, Widget? child) => SizedBox(
             height: double.infinity,
             child: Stack(
               children: [
-                Positioned.fill(
+                const Positioned.fill(
                   child: Image(
                       image: AssetImage(
                           'assets/images/do_together_images/background/background.png'),

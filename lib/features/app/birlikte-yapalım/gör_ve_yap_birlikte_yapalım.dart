@@ -23,6 +23,7 @@ class _GorVeYapListPageState extends ConsumerState<GorVeYapListPage> {
     final data = ref.watch(GorVeYapBirlikteYapalimDataServiceProvider);
     return SafeArea(
       child: Scaffold(
+
         appBar: AppBar(
           backgroundColor: Colors.white,
           toolbarHeight: 75,
@@ -56,7 +57,7 @@ class _GorVeYapListPageState extends ConsumerState<GorVeYapListPage> {
             ],
           ),
         ),
-        backgroundColor: const Color(0xBDF2D5),
+        backgroundColor: const Color(0xFFBDF2D5),
         body: Column(
           crossAxisAlignment: CrossAxisAlignment.center,
           mainAxisAlignment: MainAxisAlignment.center,
