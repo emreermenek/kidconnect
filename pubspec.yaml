@@ -53,6 +53,8 @@ dependencies:
   flip_card: ^0.7.0
   analog_clock: ^0.1.1
   page_transition: ^2.0.9
+  page_flip: ^0.1.0
+
 
 dev_dependencies:
   flutter_test:
@@ -150,6 +152,7 @@ flutter:
     - assets/images/make_word_game_images/
     - assets/images/whose_sound_images/
     - assets/sounds/animal_sounds/
+    - assets/images/story/
 
   #   - images/a_dot_burr.jpeg
   #   - images/a_dot_ham.jpeg
