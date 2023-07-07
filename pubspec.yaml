@@ -147,6 +147,7 @@ flutter:
     - assets/images/make_logic_game_images/shapes_make_logic_game_images/
     - assets/images/make_logic_game_images/things_make_logic_game_images/
     - assets/images/listen_match_game_images/
+    - assets/images/make_word_game_images/
 
   #   - images/a_dot_burr.jpeg
   #   - images/a_dot_ham.jpeg
