@@ -15,8 +15,8 @@ class NumberShadowGame extends ConsumerStatefulWidget {
 class _NumberShadowGameState extends ConsumerState<NumberShadowGame> {
 
   int firstIndex =0;
-  int secondIndex=0;
-  int thirdIndex=0;
+  int secondIndex = 0;
+  int thirdIndex = 0;
 
   final _player = AudioPlayer();
   @override
@@ -35,18 +35,24 @@ class _NumberShadowGameState extends ConsumerState<NumberShadowGame> {
         body: ValueListenableBuilder(
           valueListenable: levels,
           builder: (BuildContext context, value, Widget? child) {
-            try{
-              // Shuffle the list of indices
+            if(data.imageIndexList.length == 0){
+              data.currentLevel = 0;
+              data.imageIndexList = List.generate(12, (index) => index);
+              data.correctAnswerNumber = 0;
+              Navigator.of(context).pop();
+            }else{
               data.imageIndexList.shuffle();
-              // Select the first three elements as the random indices
-              firstIndex = data.imageIndexList[0];
+              firstIndex = data.imageIndexList[2];
               secondIndex = data.imageIndexList[1];
-              thirdIndex = data.imageIndexList[2];
-              // Remove the selected elements from the list
-              data.imageIndexList.removeRange(0, 3);
-            }catch(e){
-              print(e);
+              thirdIndex = data.imageIndexList[0];
+              data.imageIndexList.removeAt(2);
+              data.imageIndexList.removeAt(1);
+              data.imageIndexList.removeAt(0);
             }
+
+          Color color1 = Colors.grey;
+          Color color2 = Colors.grey;
+          Color color3 = Colors.grey;
           return Stack(
             children: [
               const Align(
@@ -210,14 +216,9 @@ class _NumberShadowGameState extends ConsumerState<NumberShadowGame> {
                             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                             children: [
                               DragTarget<int>(
-                                builder: (BuildContext context, List<int?> candidateData, List<dynamic> rejectedData) => candidateData.isEmpty ? Image(
+                                builder: (BuildContext context, List<int?> candidateData, List<dynamic> rejectedData) =>Image(
                                   image: AssetImage(numberShadowGameImage[firstIndex]),
-                                  color: Colors.grey,
-                                  width: 100,
-                                  height: 100,
-                                ) : Image(
-                                  image: AssetImage(numberShadowGameImage[firstIndex]),
-                                  color: null,
+                                  color: color1,
                                   width: 100,
                                   height: 100,
                                 ),
@@ -232,30 +233,36 @@ class _NumberShadowGameState extends ConsumerState<NumberShadowGame> {
                                   }
                                 },
                                 onAccept: (input) {
+                                  if(color1 == Colors.grey){
+                                    color1 = Colors.transparent;
                                     if(data.correctAnswerNumber != 2){
-                                        _player.setFilePath(
-                                            'assets/sounds/correct_answer.mp3'
-                                        );
-                                        _player.play();
-                                        data.correctAnswerNumber +=1;
+                                      _player.setFilePath(
+                                          'assets/sounds/correct_answer.mp3'
+                                      );
+                                      _player.play();
+                                      data.correctAnswerNumber +=1;
                                     }else{
 
                                       _player.setFilePath(
                                           'assets/sounds/correct_answer.mp3'
                                       );
                                       _player.play();
-                                      data.levelLock();
                                       setState(() {
                                         data.currentLevel += 1;
                                         data.correctAnswerNumber = 0;
                                       });
+                                      if(data.currentLevel != 4){
+                                        data.levelLock();
+                                      }
                                     }
+                                  }
+
                                 },
                               ),
                               DragTarget<int>(
                                 builder: (BuildContext context, List<int?> candidateData, List<dynamic> rejectedData) =>Image(
                                   image: AssetImage(numberShadowGameImage[secondIndex]),
-                                  color: candidateData.isEmpty ? Colors.grey : null,
+                                  color: color2,
                                   width: 100,
                                   height: 100,
                                 ),
@@ -270,31 +277,35 @@ class _NumberShadowGameState extends ConsumerState<NumberShadowGame> {
                                   }
                                 },
                                 onAccept: (input) {
-
-                                  if(data.correctAnswerNumber != 2){
-                                    _player.setFilePath(
-                                        'assets/sounds/correct_answer.mp3'
-                                    );
-                                    _player.play();
+                                  if(color2 == Colors.grey){
+                                    color2 = Colors.transparent;
+                                    if(data.correctAnswerNumber != 2){
+                                      _player.setFilePath(
+                                          'assets/sounds/correct_answer.mp3'
+                                      );
+                                      _player.play();
                                       data.correctAnswerNumber +=1;
-                                  }else{
+                                    }else{
 
-                                    _player.setFilePath(
-                                        'assets/sounds/correct_answer.mp3'
-                                    );
-                                    _player.play();
-                                    data.levelLock();
-                                    setState(() {
-                                      data.currentLevel += 1;
-                                      data.correctAnswerNumber = 0;
-                                    });
+                                      _player.setFilePath(
+                                          'assets/sounds/correct_answer.mp3'
+                                      );
+                                      _player.play();
+                                      setState(() {
+                                        data.currentLevel += 1;
+                                        data.correctAnswerNumber = 0;
+                                      });
+                                      if(data.currentLevel != 4){
+                                        data.levelLock();
+                                      }
+                                    }
                                   }
                                 },
                               ),
                               DragTarget<int>(
                                 builder: (BuildContext context, List<int?> candidateData, List<dynamic> rejectedData) =>Image(
                                   image: AssetImage(numberShadowGameImage[thirdIndex]),
-                                  color: candidateData.isEmpty ? Colors.grey : null,
+                                  color: color3,
                                   width: 100,
                                   height: 100,
                                 ),
@@ -309,26 +320,32 @@ class _NumberShadowGameState extends ConsumerState<NumberShadowGame> {
                                   }
                                 },
                                 onAccept: (input) {
-                                  if(data.correctAnswerNumber != 2){
-                                    _player.setFilePath(
-                                        'assets/sounds/correct_answer.mp3'
-                                    );
-                                    _player.play();
+                                  if(color3 == Colors.grey){
+                                    color3 = Colors.transparent;
+                                    if(data.correctAnswerNumber != 2){
+                                      _player.setFilePath(
+                                          'assets/sounds/correct_answer.mp3'
+                                      );
+                                      _player.play();
 
                                       data.correctAnswerNumber +=1;
 
-                                  }else{
+                                    }else{
 
-                                    _player.setFilePath(
-                                        'assets/sounds/correct_answer.mp3'
-                                    );
-                                    _player.play();
-                                    data.levelLock();
-                                    setState(() {
-                                      data.currentLevel += 1;
-                                      data.correctAnswerNumber = 0;
-                                    });
+                                      _player.setFilePath(
+                                          'assets/sounds/correct_answer.mp3'
+                                      );
+                                      _player.play();
+                                      setState(() {
+                                        data.currentLevel += 1;
+                                        data.correctAnswerNumber = 0;
+                                      });
+                                      if(data.currentLevel != 4){
+                                        data.levelLock();
+                                      }
+                                    }
                                   }
+
                                 },
                               ),
                             ],
@@ -345,18 +362,7 @@ class _NumberShadowGameState extends ConsumerState<NumberShadowGame> {
               ------------------------
               */
 
-              Align(
-                alignment: Alignment.topLeft,
-                child: Padding(
-                  padding: const EdgeInsets.all(10),
-                  child: InkWell(
-                      onTap: () => Navigator.of(context).pop(),
-                      child: const Image(
-                        image: AssetImage(
-                            'assets/images/shadow_games/background/exit_button.png'),
-                      )),
-                ),
-              ),
+
               const Positioned(
                   top: 10,
                   right: 10,
@@ -381,6 +387,23 @@ class _NumberShadowGameState extends ConsumerState<NumberShadowGame> {
                     ],
                   ),
                 ],
+              ),
+              Align(
+                alignment: Alignment.topLeft,
+                child: Padding(
+                  padding: const EdgeInsets.all(10),
+                  child: InkWell(
+                      onTap: () {
+                        Navigator.of(context).pop();
+                          data.currentLevel = 0;
+                          data.imageIndexList = List.generate(12, (index) => index);
+                          data.correctAnswerNumber = 0;
+                      },
+                      child: const Image(
+                        image: AssetImage(
+                            'assets/images/shadow_games/background/exit_button.png'),
+                      )),
+                ),
               ),
             ],
           );

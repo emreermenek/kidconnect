@@ -1,24 +1,27 @@
-import 'package:bootcamp_f32/features/app/shadow_games/numbers_shadow_game/numbers_shadow_game.dart';
-import 'package:bootcamp_f32/features/app/shadow_games/numbers_shadow_game/services/services.dart';
+import 'package:bootcamp_f32/features/app/shadow_games/things_shadow_game/services/services.dart';
+import 'package:bootcamp_f32/features/app/shadow_games/things_shadow_game/things_shadow_game.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:google_fonts/google_fonts.dart';
 import '../../../../utils/utils.dart';
 
-class NumbersShadowGameLevelList extends ConsumerStatefulWidget {
-  const NumbersShadowGameLevelList({Key? key}) : super(key: key);
+class ThingsShadowGameLevelList extends ConsumerStatefulWidget {
+  const ThingsShadowGameLevelList({Key? key}) : super(key: key);
 
   @override
-  ConsumerState<NumbersShadowGameLevelList> createState() => _NumbersShadowGameLevelListState();
+  ConsumerState<ThingsShadowGameLevelList> createState() => _ThingsShadowGameLevelListState();
 }
 
-class _NumbersShadowGameLevelListState extends ConsumerState<NumbersShadowGameLevelList> {
+class _ThingsShadowGameLevelListState extends ConsumerState<ThingsShadowGameLevelList> {
   List<String> levels =
-  ['bölüm 1','bölüm 2','bölüm 3','bölüm 4'];
+  [
+    'bölüm 1','bölüm 2','bölüm 3','bölüm 4','bölüm 5','bölüm 6','bölüm 7','bölüm 8', 'bölüm 9',
+    'bölüm 10','bölüm 11','bölüm 12','bölüm 13','bölüm 14','bölüm 15'
+  ];
 
   @override
   Widget build(BuildContext context) {
-    final data = ref.watch(numberShadowGameDataServiceProvider);
+    final data = ref.watch(thingsShadowGameServiceProvider);
     return SafeArea(
       child: Scaffold(
         appBar: AppBar(
@@ -70,13 +73,13 @@ class _NumbersShadowGameLevelListState extends ConsumerState<NumbersShadowGameLe
                   return InkWell(
                     onTap: () {
                       if(data.lock[index] == 'assets/images/level_list/open_lock.png'){
-                        for(int i = 0; i < 4; i++){
+                        for(int i = 0; i < 15; i++){
                           if(i == index){
-                            data.imageIndexList = List.generate(12 - i*3, (index) => index);
+                            data.imageIndexList = List.generate(30 - i*2, (index) => index);
                           }
                         }
                         data.currentLevel = index;
-                        Navigator.of(context).push(MaterialPageRoute(builder: (context) => const NumberShadowGame(),));
+                        Navigator.of(context).push(MaterialPageRoute(builder: (context) => const ThingsShadowGame(),));
                       }else{
                         Utils.showSnackBar('Bölüm kitli!!!');
                       }

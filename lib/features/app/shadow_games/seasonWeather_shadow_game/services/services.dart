@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
-class NumberShadowGameDataService extends ChangeNotifier{
+class SeasonWeatherShadowGameService extends ChangeNotifier{
   int currentLevel = 0;
   List<int> imageIndexList = List.generate(12, (index) => index);
   int correctAnswerNumber = 0;
@@ -14,7 +14,6 @@ class NumberShadowGameDataService extends ChangeNotifier{
     lock[currentLevel] = 'assets/images/level_list/open_lock.png';
     notifyListeners();
   }
-
 }
 
-final numberShadowGameDataServiceProvider = ChangeNotifierProvider((ref) => NumberShadowGameDataService());
+final seasonWeatherShadowGameServiceProvider = ChangeNotifierProvider((ref) => SeasonWeatherShadowGameService());

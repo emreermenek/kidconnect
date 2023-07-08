@@ -1,24 +1,24 @@
-import 'package:bootcamp_f32/features/app/shadow_games/numbers_shadow_game/numbers_shadow_game.dart';
-import 'package:bootcamp_f32/features/app/shadow_games/numbers_shadow_game/services/services.dart';
+import 'package:bootcamp_f32/features/app/shadow_games/body_shadow_game/body_shadow_game.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:google_fonts/google_fonts.dart';
 import '../../../../utils/utils.dart';
+import 'services/services.dart';
 
-class NumbersShadowGameLevelList extends ConsumerStatefulWidget {
-  const NumbersShadowGameLevelList({Key? key}) : super(key: key);
+class BodyShadowGameLevelList extends ConsumerStatefulWidget {
+  const BodyShadowGameLevelList({Key? key}) : super(key: key);
 
   @override
-  ConsumerState<NumbersShadowGameLevelList> createState() => _NumbersShadowGameLevelListState();
+  ConsumerState<BodyShadowGameLevelList> createState() => _BodyShadowGameLevelListState();
 }
 
-class _NumbersShadowGameLevelListState extends ConsumerState<NumbersShadowGameLevelList> {
+class _BodyShadowGameLevelListState extends ConsumerState<BodyShadowGameLevelList> {
   List<String> levels =
   ['bölüm 1','bölüm 2','bölüm 3','bölüm 4'];
 
   @override
   Widget build(BuildContext context) {
-    final data = ref.watch(numberShadowGameDataServiceProvider);
+    final data = ref.watch(bodyShadowGameDataServiceProvider);
     return SafeArea(
       child: Scaffold(
         appBar: AppBar(
@@ -76,7 +76,7 @@ class _NumbersShadowGameLevelListState extends ConsumerState<NumbersShadowGameLe
                           }
                         }
                         data.currentLevel = index;
-                        Navigator.of(context).push(MaterialPageRoute(builder: (context) => const NumberShadowGame(),));
+                        Navigator.of(context).push(MaterialPageRoute(builder: (context) => const BodyShadowGame(),));
                       }else{
                         Utils.showSnackBar('Bölüm kitli!!!');
                       }

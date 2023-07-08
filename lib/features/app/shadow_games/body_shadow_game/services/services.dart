@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
-class NumberShadowGameDataService extends ChangeNotifier{
+class BodyShadowGameDataService extends ChangeNotifier{
   int currentLevel = 0;
   List<int> imageIndexList = List.generate(12, (index) => index);
   int correctAnswerNumber = 0;
@@ -17,4 +17,4 @@ class NumberShadowGameDataService extends ChangeNotifier{
 
 }
 
-final numberShadowGameDataServiceProvider = ChangeNotifierProvider((ref) => NumberShadowGameDataService());
+final bodyShadowGameDataServiceProvider = ChangeNotifierProvider((ref) => BodyShadowGameDataService());

@@ -7,5 +7,4 @@ const List<String> numberShadowGameImage=
   'assets/images/number_game_image/list_7.png', 'assets/images/number_game_image/list_8.png',
   'assets/images/number_game_image/list_9.png', 'assets/images/number_game_image/list_10.png',
   'assets/images/number_game_image/list_11.png', 'assets/images/number_game_image/list_12.png',
-
 ];

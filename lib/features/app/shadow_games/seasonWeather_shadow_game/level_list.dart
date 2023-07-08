@@ -1,24 +1,24 @@
-import 'package:bootcamp_f32/features/app/shadow_games/numbers_shadow_game/numbers_shadow_game.dart';
-import 'package:bootcamp_f32/features/app/shadow_games/numbers_shadow_game/services/services.dart';
+import 'package:bootcamp_f32/features/app/shadow_games/seasonWeather_shadow_game/season_weather_shadow_game.dart';
+import 'package:bootcamp_f32/features/app/shadow_games/seasonWeather_shadow_game/services/services.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:google_fonts/google_fonts.dart';
 import '../../../../utils/utils.dart';
 
-class NumbersShadowGameLevelList extends ConsumerStatefulWidget {
-  const NumbersShadowGameLevelList({Key? key}) : super(key: key);
+class SeasonWeatherShadowGameLevelList extends ConsumerStatefulWidget {
+  const SeasonWeatherShadowGameLevelList({Key? key}) : super(key: key);
 
   @override
-  ConsumerState<NumbersShadowGameLevelList> createState() => _NumbersShadowGameLevelListState();
+  ConsumerState<SeasonWeatherShadowGameLevelList> createState() => _SeasonWeatherShadowGameLevelListState();
 }
 
-class _NumbersShadowGameLevelListState extends ConsumerState<NumbersShadowGameLevelList> {
+class _SeasonWeatherShadowGameLevelListState extends ConsumerState<SeasonWeatherShadowGameLevelList> {
   List<String> levels =
   ['bölüm 1','bölüm 2','bölüm 3','bölüm 4'];
 
   @override
   Widget build(BuildContext context) {
-    final data = ref.watch(numberShadowGameDataServiceProvider);
+    final data = ref.watch(seasonWeatherShadowGameServiceProvider);
     return SafeArea(
       child: Scaffold(
         appBar: AppBar(
@@ -76,7 +76,7 @@ class _NumbersShadowGameLevelListState extends ConsumerState<NumbersShadowGameLe
                           }
                         }
                         data.currentLevel = index;
-                        Navigator.of(context).push(MaterialPageRoute(builder: (context) => const NumberShadowGame(),));
+                        Navigator.of(context).push(MaterialPageRoute(builder: (context) => const SeasonWeatherShadowGame(),));
                       }else{
                         Utils.showSnackBar('Bölüm kitli!!!');
                       }
