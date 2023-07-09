@@ -1,6 +1,5 @@
 import 'dart:math';
 import 'package:bootcamp_f32/common_features/text_to_speech.dart';
-import 'package:bootcamp_f32/features/app/listen_match_games/profession_listen_match_game/services/services.dart';
 import 'package:bootcamp_f32/features/app/listen_match_games/season_weather_listen_match_game/services/services.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
@@ -9,16 +8,16 @@ import 'package:just_audio/just_audio.dart';
 
 import 'data/data.dart';
 
-
 class SeasonWeatherListenMatchGame extends ConsumerStatefulWidget {
   const SeasonWeatherListenMatchGame({super.key});
 
   @override
-  ConsumerState<SeasonWeatherListenMatchGame> createState() => _SeasonWeatherListenMatchGameState();
+  ConsumerState<SeasonWeatherListenMatchGame> createState() =>
+      _SeasonWeatherListenMatchGameState();
 }
 
-class _SeasonWeatherListenMatchGameState extends ConsumerState<SeasonWeatherListenMatchGame> {
-
+class _SeasonWeatherListenMatchGameState
+    extends ConsumerState<SeasonWeatherListenMatchGame> {
   final _player = AudioPlayer();
   int? a;
   int? whichImage;
@@ -29,6 +28,7 @@ class _SeasonWeatherListenMatchGameState extends ConsumerState<SeasonWeatherList
     super.dispose();
     _player.dispose();
   }
+
   @override
   Widget build(BuildContext context) {
     final data = ref.watch(seasonWeatherListenMatchGameServiceProvider);
@@ -53,18 +53,20 @@ class _SeasonWeatherListenMatchGameState extends ConsumerState<SeasonWeatherList
                   padding: const EdgeInsets.only(top: 30),
                   child: ValueListenableBuilder(
                       valueListenable: levels,
-                      builder: (BuildContext context, int value, Widget? child) {
+                      builder:
+                          (BuildContext context, int value, Widget? child) {
                         a = Random().nextInt(2);
                         imageIndexList = List.generate(13, (index) => index);
                         imageIndexList!.removeAt(data.currentLevel);
                         whichImage = Random().nextInt(12);
-                        if(a == 0){
+                        if (a == 0) {
                           return Column(
                             mainAxisSize: MainAxisSize.min,
                             children: [
                               InkWell(
                                 onTap: () {
-                                  textToSpeech(seasonWeatherListenMatchNames[data.currentLevel]);
+                                  textToSpeech(seasonWeatherListenMatchNames[
+                                      data.currentLevel]);
                                 },
                                 child: Image.asset(
                                     'assets/images/listen_match_game_images/dinleme.png'),
@@ -74,9 +76,9 @@ class _SeasonWeatherListenMatchGameState extends ConsumerState<SeasonWeatherList
                                 'DİNLE VE EŞLEŞTİR',
                                 style: GoogleFonts.comfortaa(
                                     textStyle: const TextStyle(
-                                      color: Colors.black,
-                                      fontSize: 30,
-                                    )),
+                                  color: Colors.black,
+                                  fontSize: 30,
+                                )),
                               ),
                               const SizedBox(height: 30),
                               Container(
@@ -93,21 +95,21 @@ class _SeasonWeatherListenMatchGameState extends ConsumerState<SeasonWeatherList
                                 ),
                                 child: InkWell(
                                   onTap: () {
-                                    if(data.currentLevel != 12){
+                                    if (data.currentLevel != 12) {
                                       setState(() {
-                                        data.currentLevel +=1;
+                                        data.currentLevel += 1;
                                       });
                                       _player.setFilePath(
-                                          'assets/sounds/correct_answer.mp3'
-                                      );
+                                          'assets/sounds/correct_answer.mp3');
                                       _player.play();
-                                    }else if(data.currentLevel == 12){
+                                    } else if (data.currentLevel == 12) {
                                       Navigator.of(context).pop();
                                     }
                                     data.levelLock();
                                   },
                                   child: Image.asset(
-                                      seasonWeatherListenMatchImages[data.currentLevel]),
+                                      seasonWeatherListenMatchImages[
+                                          data.currentLevel]),
                                 ),
                               ),
                               const SizedBox(height: 25),
@@ -130,18 +132,20 @@ class _SeasonWeatherListenMatchGameState extends ConsumerState<SeasonWeatherList
                                     _player.play();
                                   },
                                   child: Image.asset(
-                                      seasonWeatherListenMatchImages[imageIndexList![whichImage!]]),
+                                      seasonWeatherListenMatchImages[
+                                          imageIndexList![whichImage!]]),
                                 ),
                               ),
                             ],
                           );
-                        }else{
+                        } else {
                           return Column(
                             mainAxisSize: MainAxisSize.min,
                             children: [
                               InkWell(
                                 onTap: () {
-                                  textToSpeech(seasonWeatherListenMatchNames[data.currentLevel]);
+                                  textToSpeech(seasonWeatherListenMatchNames[
+                                      data.currentLevel]);
                                 },
                                 child: Image.asset(
                                     'assets/images/listen_match_game_images/dinleme.png'),
@@ -151,9 +155,9 @@ class _SeasonWeatherListenMatchGameState extends ConsumerState<SeasonWeatherList
                                 'DİNLE VE EŞLEŞTİR',
                                 style: GoogleFonts.comfortaa(
                                     textStyle: const TextStyle(
-                                      color: Colors.black,
-                                      fontSize: 30,
-                                    )),
+                                  color: Colors.black,
+                                  fontSize: 30,
+                                )),
                               ),
                               const SizedBox(height: 30),
                               Container(
@@ -175,7 +179,8 @@ class _SeasonWeatherListenMatchGameState extends ConsumerState<SeasonWeatherList
                                     _player.play();
                                   },
                                   child: Image.asset(
-                                      seasonWeatherListenMatchImages[imageIndexList![whichImage!]]),
+                                      seasonWeatherListenMatchImages[
+                                          imageIndexList![whichImage!]]),
                                 ),
                               ),
                               const SizedBox(height: 25),
@@ -193,28 +198,27 @@ class _SeasonWeatherListenMatchGameState extends ConsumerState<SeasonWeatherList
                                 ),
                                 child: InkWell(
                                   onTap: () {
-                                    if(data.currentLevel != 12){
+                                    if (data.currentLevel != 12) {
                                       setState(() {
-                                        data.currentLevel +=1;
+                                        data.currentLevel += 1;
                                       });
                                       _player.setFilePath(
-                                          'assets/sounds/correct_answer.mp3'
-                                      );
+                                          'assets/sounds/correct_answer.mp3');
                                       _player.play();
-                                    }else if(data.currentLevel == 12){
+                                    } else if (data.currentLevel == 12) {
                                       Navigator.of(context).pop();
                                     }
                                     data.levelLock();
                                   },
                                   child: Image.asset(
-                                      seasonWeatherListenMatchImages[data.currentLevel]),
+                                      seasonWeatherListenMatchImages[
+                                          data.currentLevel]),
                                 ),
                               ),
                             ],
                           );
                         }
-                      }
-                  ),
+                      }),
                 ),
               ),
             ),
@@ -233,13 +237,13 @@ class _SeasonWeatherListenMatchGameState extends ConsumerState<SeasonWeatherList
                   ),
                   Align(
                     alignment: Alignment.topRight,
-                    child: Text('${data.currentLevel+1}/13',
+                    child: Text(
+                      '${data.currentLevel + 1}/13',
                       style: GoogleFonts.montserratAlternates(
                         textStyle: const TextStyle(
                             color: Colors.black,
                             fontWeight: FontWeight.bold,
-                            fontSize: 34
-                        ),
+                            fontSize: 34),
                       ),
                     ),
                   )

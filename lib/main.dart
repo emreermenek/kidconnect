@@ -1,3 +1,8 @@
+import 'package:bootcamp_f32/features/app/card_games/animal_card_game/level_list.dart';
+import 'package:bootcamp_f32/features/app/lyrics_game/lyrics.dart';
+import 'package:bootcamp_f32/features/app/shadow_games/animals_shadow_game/animals_shadow_game.dart';
+import 'package:bootcamp_f32/features/app/shadow_games/animals_shadow_game/level_list.dart';
+import 'package:bootcamp_f32/features/app/shadow_games/letter_shadow_game/letter_shadow_game.dart';
 import 'package:bootcamp_f32/features/app/shadow_games/letter_shadow_game/level_list.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
@@ -20,7 +25,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       navigatorKey: navigatorKey,
       debugShowCheckedModeBanner: false,
-      home: const LetterShadowGameLevelList()
+      home: const AnimalCardGameLevelList()
     );
   }
 }

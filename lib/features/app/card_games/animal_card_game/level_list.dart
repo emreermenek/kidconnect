@@ -93,7 +93,7 @@ class _AnimalCardGameLevelListState extends ConsumerState<AnimalCardGameLevelLis
                         child: Text(animalNames[index], style: GoogleFonts.comfortaa(
                           textStyle:  const TextStyle(
                               color: Color(0xFFBDF2D5),
-                              fontSize: 40,
+                              fontSize: 30,
                               fontWeight: FontWeight.bold
                           ),
                         ),),

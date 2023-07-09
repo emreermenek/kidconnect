@@ -82,7 +82,6 @@ class _ShapesMakeLogicGameLevelListState extends ConsumerState<ShapesMakeLogicGa
                     child: Container(
                       margin: const EdgeInsets.symmetric(horizontal: 30,vertical: 10),
                       alignment: Alignment.center,
-                      padding: const EdgeInsets.only(left: 100,),
                       decoration: BoxDecoration(
                           color: const Color(0xFF4B5D67),
                           borderRadius: BorderRadius.circular(24),
@@ -97,6 +96,7 @@ class _ShapesMakeLogicGameLevelListState extends ConsumerState<ShapesMakeLogicGa
                           ]
                       ),
                       child: Row(
+                        mainAxisAlignment: MainAxisAlignment.center,
                         children: [
                           Text(levels[index], style: GoogleFonts.comfortaa(
                             textStyle:  const TextStyle(

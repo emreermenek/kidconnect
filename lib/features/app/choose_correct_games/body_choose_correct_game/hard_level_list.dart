@@ -1,25 +1,36 @@
 import 'package:bootcamp_f32/features/app/choose_correct_games/body_choose_correct_game/hard_body_choose_correct_game.dart';
 import 'package:bootcamp_f32/features/app/choose_correct_games/body_choose_correct_game/services/services.dart';
-import 'package:bootcamp_f32/features/app/choose_correct_games/cleaning_choose_correct_game/hard_cleaning_choose_correct_game.dart';
-import 'package:bootcamp_f32/features/app/choose_correct_games/cleaning_choose_correct_game/services/services.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 import '../../../../utils/utils.dart';
 
-
-
 class HardBodyChooseCorrectGameLevelList extends ConsumerStatefulWidget {
   const HardBodyChooseCorrectGameLevelList({Key? key}) : super(key: key);
 
   @override
-  ConsumerState<HardBodyChooseCorrectGameLevelList> createState() => _HardBodyChooseCorrectGameLevelListState();
+  ConsumerState<HardBodyChooseCorrectGameLevelList> createState() =>
+      _HardBodyChooseCorrectGameLevelListState();
 }
 
-class _HardBodyChooseCorrectGameLevelListState extends ConsumerState<HardBodyChooseCorrectGameLevelList> {
-  List<String> levels =
-  ['bölüm 1','bölüm 2','bölüm 3','bölüm 4','bölüm 5','bölüm 6','bölüm 7','bölüm 8','bölüm 9','bölüm 10','bölüm 11', 'bölüm 12','bölüm 13'];
+class _HardBodyChooseCorrectGameLevelListState
+    extends ConsumerState<HardBodyChooseCorrectGameLevelList> {
+  List<String> levels = [
+    'bölüm 1',
+    'bölüm 2',
+    'bölüm 3',
+    'bölüm 4',
+    'bölüm 5',
+    'bölüm 6',
+    'bölüm 7',
+    'bölüm 8',
+    'bölüm 9',
+    'bölüm 10',
+    'bölüm 11',
+    'bölüm 12',
+    'bölüm 13'
+  ];
 
   @override
   Widget build(BuildContext context) {
@@ -31,28 +42,29 @@ class _HardBodyChooseCorrectGameLevelListState extends ConsumerState<HardBodyCho
           toolbarHeight: 75,
           elevation: 0,
           leading: InkWell(
-              onTap: ()
-              {
+              onTap: () {
                 Navigator.of(context).pop();
               },
-              child: const Image(image: AssetImage('assets/images/level_list/exit.png'),width: 100,)
-          ),
+              child: const Image(
+                image: AssetImage('assets/images/level_list/exit.png'),
+                width: 100,
+              )),
           title: Row(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              Text(
-                  'BÖLÜMLER',
+              Text('BÖLÜMLER',
                   style: GoogleFonts.quicksand(
                       textStyle: const TextStyle(
-                        fontWeight: FontWeight.bold,
-                        color: Colors.black,
-                        fontSize: 24,
-                      )
-                  )
+                    fontWeight: FontWeight.bold,
+                    color: Colors.black,
+                    fontSize: 24,
+                  ))),
+              const SizedBox(
+                width: 20,
               ),
-              const SizedBox(width: 20,),
               const Image(
-                image: AssetImage('assets/images/home_page_image/cute-tiger.png'),
+                image:
+                    AssetImage('assets/images/home_page_image/cute-tiger.png'),
                 width: 75,
               ),
             ],
@@ -67,47 +79,50 @@ class _HardBodyChooseCorrectGameLevelListState extends ConsumerState<HardBodyCho
               child: GridView.builder(
                 gridDelegate: const SliverGridDelegateWithMaxCrossAxisExtent(
                     maxCrossAxisExtent: 600,
-                    childAspectRatio: 14/3,
-                    crossAxisSpacing: 8
-                ),
+                    childAspectRatio: 14 / 3,
+                    crossAxisSpacing: 8),
                 itemCount: levels.length,
                 itemBuilder: (BuildContext context, int index) {
                   return InkWell(
                     onTap: () {
-                      if(data.lockHard[index] == 'assets/images/level_list/open_lock.png'){
+                      if (data.lockHard[index] ==
+                          'assets/images/level_list/open_lock.png') {
                         data.currentLevelHard = index;
-                        Navigator.of(context).push(MaterialPageRoute(builder: (context) => const HardBodyChooseCorrectGame(),));
-                      }else{
+                        Navigator.of(context).push(MaterialPageRoute(
+                          builder: (context) =>
+                              const HardBodyChooseCorrectGame(),
+                        ));
+                      } else {
                         Utils.showSnackBar('Bölüm kitli!!!');
                       }
                     },
                     child: Container(
-                      margin: const EdgeInsets.symmetric(horizontal: 30,vertical: 10),
+                      margin: const EdgeInsets.symmetric(
+                          horizontal: 30, vertical: 10),
                       alignment: Alignment.center,
-                      padding: const EdgeInsets.only(left: 100,),
                       decoration: BoxDecoration(
                           color: const Color(0xFF4B5D67),
                           borderRadius: BorderRadius.circular(24),
                           boxShadow: [
                             BoxShadow(
                                 color: Colors.black.withOpacity(0.2),
-                                offset: const Offset(
-                                    3,
-                                    4
-                                )
-                            )
-                          ]
-                      ),
+                                offset: const Offset(3, 4))
+                          ]),
                       child: Row(
+                        mainAxisAlignment: MainAxisAlignment.center,
                         children: [
-                          Text(levels[index], style: GoogleFonts.comfortaa(
-                            textStyle:  const TextStyle(
-                                color: Color(0xFFBDF2D5),
-                                fontSize: 48,
-                                fontWeight: FontWeight.bold
+                          Text(
+                            levels[index],
+                            style: GoogleFonts.comfortaa(
+                              textStyle: const TextStyle(
+                                  color: Color(0xFFBDF2D5),
+                                  fontSize: 48,
+                                  fontWeight: FontWeight.bold),
                             ),
-                          ),),
-                          const SizedBox(width: 30,),
+                          ),
+                          const SizedBox(
+                            width: 30,
+                          ),
                           Image(image: AssetImage(data.lockHard[index]))
                         ],
                       ),

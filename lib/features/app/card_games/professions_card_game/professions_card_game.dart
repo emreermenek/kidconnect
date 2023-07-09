@@ -1,5 +1,4 @@
 import 'package:bootcamp_f32/common_features/text_to_speech.dart';
-import 'package:bootcamp_f32/features/app/card_games/emotions_card_game/data/emotions.dart';
 import 'package:bootcamp_f32/features/app/card_games/professions_card_game/data/professions.dart';
 
 import 'package:flutter/material.dart';
@@ -12,14 +11,16 @@ class ProfessionsCardGame extends ConsumerStatefulWidget {
   const ProfessionsCardGame({super.key});
 
   @override
-  ConsumerState<ProfessionsCardGame> createState() => _ProfessionCardGameState();
+  ConsumerState<ProfessionsCardGame> createState() =>
+      _ProfessionCardGameState();
 }
 
 class _ProfessionCardGameState extends ConsumerState<ProfessionsCardGame> {
   @override
   Widget build(BuildContext context) {
     final data = ref.watch(professionCardGameDataServiceProvider);
-    final ValueNotifier<int> chooseProfession = ValueNotifier<int>(data.currentProfession);
+    final ValueNotifier<int> chooseProfession =
+        ValueNotifier<int>(data.currentProfession);
     return SafeArea(
       child: Scaffold(
         backgroundColor: const Color(0xFFFFE6C7),
@@ -28,16 +29,18 @@ class _ProfessionCardGameState extends ConsumerState<ProfessionsCardGame> {
             builder: (BuildContext context, value, Widget? child) {
               return Container(
                 decoration: const BoxDecoration(
-                  image: DecorationImage(
-                    image: AssetImage('assets/images/card_games/professions_image_game/ana sayfa 31.png'),
-                    fit: BoxFit.fill
-                  )
-                ),
+                    image: DecorationImage(
+                        image: AssetImage(
+                            'assets/images/card_games/professions_image_game/ana sayfa 31.png'),
+                        fit: BoxFit.fill)),
                 child: Stack(
                   children: [
                     const Align(
                       alignment: Alignment.bottomCenter,
-                      child: Image(image: AssetImage('assets/images/card_games/professions_image_game/down background.png'),),
+                      child: Image(
+                        image: AssetImage(
+                            'assets/images/card_games/professions_image_game/down background.png'),
+                      ),
                     ),
                     SingleChildScrollView(
                       child: Column(
@@ -45,19 +48,22 @@ class _ProfessionCardGameState extends ConsumerState<ProfessionsCardGame> {
                           Row(
                             children: [
                               Padding(
-                                padding: const EdgeInsets.symmetric(vertical: 10,horizontal: 85),
+                                padding: const EdgeInsets.symmetric(
+                                    vertical: 10, horizontal: 85),
                                 child: InkWell(
                                     onTap: () {
                                       Navigator.of(context).pop();
                                     },
-                                    child: const Image(image: AssetImage('assets/images/card_games/professions_image_game/exit.png'))),
+                                    child: const Image(
+                                        image: AssetImage(
+                                            'assets/images/card_games/professions_image_game/exit.png'))),
                               ),
                             ],
                           ),
-
                           InkWell(
                             onTap: () {
-                              textToSpeech(professionNames[data.currentProfession]);
+                              textToSpeech(
+                                  professionNames[data.currentProfession]);
                             },
                             child: Container(
                               width: 320,
@@ -76,48 +82,59 @@ class _ProfessionCardGameState extends ConsumerState<ProfessionsCardGame> {
                                       decoration: const BoxDecoration(
                                           color: Colors.white,
                                           borderRadius: BorderRadius.vertical(
-                                              top: Radius.circular(24)
-                                          )
+                                              top: Radius.circular(24))),
+                                      child: Image(
+                                        image: AssetImage(professionImages[
+                                            data.currentProfession]),
                                       ),
-                                      child: Image(image: AssetImage(professionImages[data.currentProfession]),),
                                     ),
-                                    const SizedBox(height: 30,),
-                                    Text(professionNames[data.currentProfession], style: GoogleFonts.comfortaa(
-                                        textStyle: const TextStyle(
-                                            fontSize: 40,
-                                            fontWeight: FontWeight.bold
-                                        )
-                                    ),)
+                                    const SizedBox(
+                                      height: 30,
+                                    ),
+                                    Text(
+                                      professionNames[data.currentProfession],
+                                      style: GoogleFonts.comfortaa(
+                                          textStyle: const TextStyle(
+                                              fontSize: 40,
+                                              fontWeight: FontWeight.bold)),
+                                    )
                                   ],
                                 ),
                               ),
                             ),
                           ),
-                          const SizedBox(height: 30,),
+                          const SizedBox(
+                            height: 30,
+                          ),
                           Row(
                             mainAxisAlignment: MainAxisAlignment.center,
                             children: [
                               InkWell(
                                   onTap: () {
-                                    if(data.currentProfession != 0){
+                                    if (data.currentProfession != 0) {
                                       setState(() {
-                                        data.currentProfession -=1;
+                                        data.currentProfession -= 1;
                                       });
                                     }
                                   },
-                                  child: const Image(image: AssetImage('assets/images/card_games/professions_image_game/back.png'))
+                                  child: const Image(
+                                      image: AssetImage(
+                                          'assets/images/card_games/professions_image_game/back.png'))),
+                              const SizedBox(
+                                width: 30,
                               ),
-                              const SizedBox(width: 30,),
                               InkWell(
                                   onTap: () {
-                                    if(data.currentProfession < professionNames.length-1) {
+                                    if (data.currentProfession <
+                                        professionNames.length - 1) {
                                       setState(() {
                                         data.currentProfession += 1;
                                       });
                                     }
                                   },
-                                  child: const Image(image: AssetImage('assets/images/card_games/professions_image_game/next.png'))
-                              ),
+                                  child: const Image(
+                                      image: AssetImage(
+                                          'assets/images/card_games/professions_image_game/next.png'))),
                             ],
                           ),
                         ],
@@ -126,8 +143,7 @@ class _ProfessionCardGameState extends ConsumerState<ProfessionsCardGame> {
                   ],
                 ),
               );
-            }
-        ),
+            }),
       ),
     );
   }

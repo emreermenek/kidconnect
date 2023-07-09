@@ -1,13 +1,9 @@
-import 'package:bootcamp_f32/features/app/choose_correct_games/color_choose_correct_game/easy_color_choose_correct_game.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:google_fonts/google_fonts.dart';
-
-import '../../../../utils/utils.dart';
 import 'cards_birlikte_yapalım/cards-birlikte_yapalım.dart';
 import 'cards_birlikte_yapalım/data/data_gor_ve_yap_birlikte_yapalım.dart';
 import 'cards_birlikte_yapalım/services/services.dart';
-import 'services/services.dart';
 
 class GorVeYapListPage extends ConsumerStatefulWidget {
   const GorVeYapListPage({Key? key}) : super(key: key);
@@ -23,7 +19,6 @@ class _GorVeYapListPageState extends ConsumerState<GorVeYapListPage> {
     final data = ref.watch(GorVeYapBirlikteYapalimDataServiceProvider);
     return SafeArea(
       child: Scaffold(
-
         appBar: AppBar(
           backgroundColor: Colors.white,
           toolbarHeight: 75,
@@ -84,9 +79,6 @@ class _GorVeYapListPageState extends ConsumerState<GorVeYapListPage> {
                       margin: const EdgeInsets.symmetric(
                           horizontal: 30, vertical: 10),
                       alignment: Alignment.center,
-                      padding: const EdgeInsets.only(
-                        left: 30,
-                      ),
                       decoration: BoxDecoration(
                           color: const Color(0xFF4B5D67),
                           borderRadius: BorderRadius.circular(24),
@@ -96,6 +88,7 @@ class _GorVeYapListPageState extends ConsumerState<GorVeYapListPage> {
                                 offset: const Offset(3, 4))
                           ]),
                       child: Row(
+                        mainAxisAlignment: MainAxisAlignment.center,
                         children: [
                           Text(
                             seeAndDoNames[index],

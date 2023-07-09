@@ -125,7 +125,7 @@ class _AnimalCardGameState extends ConsumerState<AnimalCardGame> {
                                           const SizedBox(height: 30,),
                                           Text(animalNames[data.currentAnimal], style: GoogleFonts.comfortaa(
                                               textStyle: const TextStyle(
-                                                  fontSize: 40,
+                                                  fontSize: 30,
                                                   fontWeight: FontWeight.bold
                                               )
                                           ),)

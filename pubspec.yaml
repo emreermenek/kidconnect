@@ -55,6 +55,7 @@ dependencies:
   page_transition: ^2.0.9
   page_flip: ^0.1.0
   flutter_lyric: ^2.0.4+6
+  youtube_player_flutter: ^8.1.2
 
 
 dev_dependencies:
