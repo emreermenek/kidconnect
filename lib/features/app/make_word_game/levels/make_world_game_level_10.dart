@@ -149,7 +149,7 @@ class _MakeWordGameLevel10State extends ConsumerState<MakeWordGameLevel10> {
                                 ),
                                 onChanged: (value) {
                                   if(value.toLowerCase() == 'kayık'){
-                                    _player.setFilePath(
+                                    _player.setAsset(
                                         'assets/sounds/correct_answer.mp3'
                                     );
                                     _player.play();

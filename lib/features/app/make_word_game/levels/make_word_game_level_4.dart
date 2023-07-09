@@ -151,7 +151,7 @@ class _MakeWordGameLevel4State extends ConsumerState<MakeWordGameLevel4> {
                                 ),
                                 onChanged: (value) {
                                   if(value.toLowerCase() == 'deve'){
-                                    _player.setFilePath(
+                                    _player.setAsset(
                                         'assets/sounds/correct_answer.mp3'
                                     );
                                     _player.play();

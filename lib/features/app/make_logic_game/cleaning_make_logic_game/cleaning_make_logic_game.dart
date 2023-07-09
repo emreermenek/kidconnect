@@ -92,7 +92,7 @@ class _CleaningMakeLogicGameState extends ConsumerState<CleaningMakeLogicGame> {
                                                 setState(() {
                                                   data.currentLevel +=1;
                                                 });
-                                                _player.setFilePath(
+                                                _player.setAsset(
                                                     'assets/sounds/correct_answer.mp3'
                                                 );
                                                 _player.play();
@@ -109,7 +109,7 @@ class _CleaningMakeLogicGameState extends ConsumerState<CleaningMakeLogicGame> {
                                         const SizedBox(height: 100,),
                                         InkWell(
                                             onTap: (){
-                                              _player.setFilePath(
+                                              _player.setAsset(
                                                   'assets/sounds/incorrect_answer.mp3');
                                               _player.play();
                                             },
@@ -130,7 +130,7 @@ class _CleaningMakeLogicGameState extends ConsumerState<CleaningMakeLogicGame> {
                                       children: [
                                         InkWell(
                                             onTap: (){
-                                              _player.setFilePath(
+                                              _player.setAsset(
                                                   'assets/sounds/incorrect_answer.mp3');
                                               _player.play();
                                             },
@@ -147,7 +147,7 @@ class _CleaningMakeLogicGameState extends ConsumerState<CleaningMakeLogicGame> {
                                                 setState(() {
                                                   data.currentLevel +=1;
                                                 });
-                                                _player.setFilePath(
+                                                _player.setAsset(
                                                     'assets/sounds/correct_answer.mp3'
                                                 );
                                                 _player.play();
@@ -174,7 +174,7 @@ class _CleaningMakeLogicGameState extends ConsumerState<CleaningMakeLogicGame> {
                                         const SizedBox(height: 100,),
                                         InkWell(
                                             onTap: (){
-                                              _player.setFilePath(
+                                              _player.setAsset(
                                                   'assets/sounds/incorrect_answer.mp3');
                                               _player.play();
                                             },
@@ -190,7 +190,7 @@ class _CleaningMakeLogicGameState extends ConsumerState<CleaningMakeLogicGame> {
                                                 setState(() {
                                                   data.currentLevel +=1;
                                                 });
-                                                _player.setFilePath(
+                                                _player.setAsset(
                                                     'assets/sounds/correct_answer.mp3'
                                                 );
                                                 _player.play();

@@ -99,7 +99,7 @@ class _SeasonWeatherListenMatchGameState
                                       setState(() {
                                         data.currentLevel += 1;
                                       });
-                                      _player.setFilePath(
+                                      _player.setAsset(
                                           'assets/sounds/correct_answer.mp3');
                                       _player.play();
                                     } else if (data.currentLevel == 12) {
@@ -127,7 +127,7 @@ class _SeasonWeatherListenMatchGameState
                                 ),
                                 child: InkWell(
                                   onTap: () {
-                                    _player.setFilePath(
+                                    _player.setAsset(
                                         'assets/sounds/incorrect_answer.mp3');
                                     _player.play();
                                   },
@@ -174,7 +174,7 @@ class _SeasonWeatherListenMatchGameState
                                 ),
                                 child: InkWell(
                                   onTap: () {
-                                    _player.setFilePath(
+                                    _player.setAsset(
                                         'assets/sounds/incorrect_answer.mp3');
                                     _player.play();
                                   },
@@ -202,7 +202,7 @@ class _SeasonWeatherListenMatchGameState
                                       setState(() {
                                         data.currentLevel += 1;
                                       });
-                                      _player.setFilePath(
+                                      _player.setAsset(
                                           'assets/sounds/correct_answer.mp3');
                                       _player.play();
                                     } else if (data.currentLevel == 12) {

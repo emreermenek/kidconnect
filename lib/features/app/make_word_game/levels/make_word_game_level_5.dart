@@ -162,7 +162,7 @@ class _MakeWordGameLevel5State extends ConsumerState<MakeWordGameLevel5> {
                                 ),
                                 onChanged: (value) {
                                   if(value.toLowerCase() == 'telsiz'){
-                                    _player.setFilePath(
+                                    _player.setAsset(
                                         'assets/sounds/correct_answer.mp3'
                                     );
                                     _player.play();

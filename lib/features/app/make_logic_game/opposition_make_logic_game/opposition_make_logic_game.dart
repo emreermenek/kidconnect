@@ -89,7 +89,7 @@ class _OppositionMakeLogicGameState extends ConsumerState<OppositionMakeLogicGam
                                             setState(() {
                                               data.currentLevel +=1;
                                             });
-                                            _player.setFilePath(
+                                            _player.setAsset(
                                                 'assets/sounds/correct_answer.mp3'
                                             );
                                             _player.play();
@@ -98,7 +98,7 @@ class _OppositionMakeLogicGameState extends ConsumerState<OppositionMakeLogicGam
                                           }
                                           data.levelLock();
                                         }else{   //yanlış
-                                          _player.setFilePath(
+                                          _player.setAsset(
                                               'assets/sounds/incorrect_answer.mp3');
                                           _player.play();
                                         }
@@ -113,7 +113,7 @@ class _OppositionMakeLogicGameState extends ConsumerState<OppositionMakeLogicGam
                                             setState(() {
                                               data.currentLevel +=1;
                                             });
-                                            _player.setFilePath(
+                                            _player.setAsset(
                                                 'assets/sounds/correct_answer.mp3'
                                             );
                                             _player.play();
@@ -122,7 +122,7 @@ class _OppositionMakeLogicGameState extends ConsumerState<OppositionMakeLogicGam
                                           }
                                           data.levelLock();
                                         }else{   //yanlış
-                                          _player.setFilePath(
+                                          _player.setAsset(
                                               'assets/sounds/incorrect_answer.mp3');
                                           _player.play();
                                         }
@@ -143,7 +143,7 @@ class _OppositionMakeLogicGameState extends ConsumerState<OppositionMakeLogicGam
                                             setState(() {
                                               data.currentLevel +=1;
                                             });
-                                            _player.setFilePath(
+                                            _player.setAsset(
                                                 'assets/sounds/correct_answer.mp3'
                                             );
                                             _player.play();
@@ -152,7 +152,7 @@ class _OppositionMakeLogicGameState extends ConsumerState<OppositionMakeLogicGam
                                           }
                                           data.levelLock();
                                         }else{   //yanlış
-                                          _player.setFilePath(
+                                          _player.setAsset(
                                               'assets/sounds/incorrect_answer.mp3');
                                           _player.play();
                                         }
@@ -167,7 +167,7 @@ class _OppositionMakeLogicGameState extends ConsumerState<OppositionMakeLogicGam
                                             setState(() {
                                               data.currentLevel +=1;
                                             });
-                                            _player.setFilePath(
+                                            _player.setAsset(
                                                 'assets/sounds/correct_answer.mp3'
                                             );
                                             _player.play();
@@ -176,7 +176,7 @@ class _OppositionMakeLogicGameState extends ConsumerState<OppositionMakeLogicGam
                                           }
                                           data.levelLock();
                                         }else{   //yanlış
-                                          _player.setFilePath(
+                                          _player.setAsset(
                                               'assets/sounds/incorrect_answer.mp3');
                                           _player.play();
                                         }

@@ -90,7 +90,7 @@ class _SeasonWeatherMakeLogicGameState extends ConsumerState<SeasonWeatherMakeLo
                                                 setState(() {
                                                   data.currentLevel +=1;
                                                 });
-                                                _player.setFilePath(
+                                                _player.setAsset(
                                                     'assets/sounds/correct_answer.mp3'
                                                 );
                                                 _player.play();
@@ -107,7 +107,7 @@ class _SeasonWeatherMakeLogicGameState extends ConsumerState<SeasonWeatherMakeLo
                                         const SizedBox(height: 100,),
                                         InkWell(
                                             onTap: (){
-                                              _player.setFilePath(
+                                              _player.setAsset(
                                                   'assets/sounds/incorrect_answer.mp3');
                                               _player.play();
                                             },
@@ -128,7 +128,7 @@ class _SeasonWeatherMakeLogicGameState extends ConsumerState<SeasonWeatherMakeLo
                                       children: [
                                         InkWell(
                                             onTap: (){
-                                              _player.setFilePath(
+                                              _player.setAsset(
                                                   'assets/sounds/incorrect_answer.mp3');
                                               _player.play();
                                             },
@@ -145,7 +145,7 @@ class _SeasonWeatherMakeLogicGameState extends ConsumerState<SeasonWeatherMakeLo
                                                 setState(() {
                                                   data.currentLevel +=1;
                                                 });
-                                                _player.setFilePath(
+                                                _player.setAsset(
                                                     'assets/sounds/correct_answer.mp3'
                                                 );
                                                 _player.play();
@@ -172,7 +172,7 @@ class _SeasonWeatherMakeLogicGameState extends ConsumerState<SeasonWeatherMakeLo
                                         const SizedBox(height: 100,),
                                         InkWell(
                                             onTap: (){
-                                              _player.setFilePath(
+                                              _player.setAsset(
                                                   'assets/sounds/incorrect_answer.mp3');
                                               _player.play();
                                             },
@@ -188,7 +188,7 @@ class _SeasonWeatherMakeLogicGameState extends ConsumerState<SeasonWeatherMakeLo
                                                 setState(() {
                                                   data.currentLevel +=1;
                                                 });
-                                                _player.setFilePath(
+                                                _player.setAsset(
                                                     'assets/sounds/correct_answer.mp3'
                                                 );
                                                 _player.play();

@@ -190,7 +190,7 @@ class _ThingsShadowGameState extends ConsumerState<ThingsShadowGame> {
                                       if(input == firstIndex){
                                         return true;
                                       }else{
-                                        _player.setFilePath(
+                                        _player.setAsset(
                                             'assets/sounds/incorrect_answer.mp3');
                                         _player.play();
                                         return false;
@@ -200,14 +200,14 @@ class _ThingsShadowGameState extends ConsumerState<ThingsShadowGame> {
                                       if(color1 == Colors.grey){
                                         color1 = Colors.transparent;
                                         if(data.correctAnswerNumber != 1){
-                                          _player.setFilePath(
+                                          _player.setAsset(
                                               'assets/sounds/correct_answer.mp3'
                                           );
                                           _player.play();
                                           data.correctAnswerNumber +=1;
                                         }else{
 
-                                          _player.setFilePath(
+                                          _player.setAsset(
                                               'assets/sounds/correct_answer.mp3'
                                           );
                                           _player.play();
@@ -234,7 +234,7 @@ class _ThingsShadowGameState extends ConsumerState<ThingsShadowGame> {
                                       if(input == secondIndex){
                                         return true;
                                       }else{
-                                        _player.setFilePath(
+                                        _player.setAsset(
                                             'assets/sounds/incorrect_answer.mp3');
                                         _player.play();
                                         return false;
@@ -244,14 +244,14 @@ class _ThingsShadowGameState extends ConsumerState<ThingsShadowGame> {
                                       if(color2 == Colors.grey){
                                         color2 = Colors.transparent;
                                         if(data.correctAnswerNumber != 1){
-                                          _player.setFilePath(
+                                          _player.setAsset(
                                               'assets/sounds/correct_answer.mp3'
                                           );
                                           _player.play();
                                           data.correctAnswerNumber +=1;
                                         }else{
 
-                                          _player.setFilePath(
+                                          _player.setAsset(
                                               'assets/sounds/correct_answer.mp3'
                                           );
                                           _player.play();

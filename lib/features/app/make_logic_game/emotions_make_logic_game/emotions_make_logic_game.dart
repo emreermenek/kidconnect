@@ -91,7 +91,7 @@ class _EmotionMakeLogicGameState extends ConsumerState<EmotionMakeLogicGame> {
                                                 setState(() {
                                                   data.currentLevel +=1;
                                                 });
-                                                _player.setFilePath(
+                                                _player.setAsset(
                                                     'assets/sounds/correct_answer.mp3'
                                                 );
                                                 _player.play();
@@ -108,7 +108,7 @@ class _EmotionMakeLogicGameState extends ConsumerState<EmotionMakeLogicGame> {
                                         const SizedBox(height: 100,),
                                         InkWell(
                                             onTap: (){
-                                              _player.setFilePath(
+                                              _player.setAsset(
                                                   'assets/sounds/incorrect_answer.mp3');
                                               _player.play();
                                             },
@@ -129,7 +129,7 @@ class _EmotionMakeLogicGameState extends ConsumerState<EmotionMakeLogicGame> {
                                       children: [
                                         InkWell(
                                             onTap: (){
-                                              _player.setFilePath(
+                                              _player.setAsset(
                                                   'assets/sounds/incorrect_answer.mp3');
                                               _player.play();
                                             },
@@ -146,7 +146,7 @@ class _EmotionMakeLogicGameState extends ConsumerState<EmotionMakeLogicGame> {
                                                 setState(() {
                                                   data.currentLevel +=1;
                                                 });
-                                                _player.setFilePath(
+                                                _player.setAsset(
                                                     'assets/sounds/correct_answer.mp3'
                                                 );
                                                 _player.play();
@@ -173,7 +173,7 @@ class _EmotionMakeLogicGameState extends ConsumerState<EmotionMakeLogicGame> {
                                         const SizedBox(height: 100,),
                                         InkWell(
                                             onTap: (){
-                                              _player.setFilePath(
+                                              _player.setAsset(
                                                   'assets/sounds/incorrect_answer.mp3');
                                               _player.play();
                                             },
@@ -189,7 +189,7 @@ class _EmotionMakeLogicGameState extends ConsumerState<EmotionMakeLogicGame> {
                                                 setState(() {
                                                   data.currentLevel +=1;
                                                 });
-                                                _player.setFilePath(
+                                                _player.setAsset(
                                                     'assets/sounds/correct_answer.mp3'
                                                 );
                                                 _player.play();

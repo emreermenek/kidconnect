@@ -149,7 +149,7 @@ class _MakeWordGameLevel3State extends ConsumerState<MakeWordGameLevel3> {
                                 ),
                                 onChanged: (value) {
                                   if(value.toLowerCase() == 'telgraf'){
-                                    _player.setFilePath(
+                                    _player.setAsset(
                                         'assets/sounds/correct_answer.mp3'
                                     );
                                     _player.play();

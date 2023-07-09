@@ -15,7 +15,7 @@ class _StoryPage11State extends State<StoryPage11> {
   void initState() {
     // TODO: implement initState
     super.initState();
-    _player.setFilePath(
+    _player.setAsset(
         'assets/sounds/story_sounds/11 (enhanced).wav');
   }
   @override

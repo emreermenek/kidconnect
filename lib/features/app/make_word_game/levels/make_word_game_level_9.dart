@@ -154,7 +154,7 @@ class _MakeWordGameLevel9State extends ConsumerState<MakeWordGameLevel9> {
                                 ),
                                 onChanged: (value) {
                                   if(value.toLowerCase() == 'izinli'){
-                                    _player.setFilePath(
+                                    _player.setAsset(
                                         'assets/sounds/correct_answer.mp3'
                                     );
                                     _player.play();

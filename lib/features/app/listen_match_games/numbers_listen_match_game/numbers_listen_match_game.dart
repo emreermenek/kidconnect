@@ -95,7 +95,7 @@ class _NumbersListenMatchGameState extends ConsumerState<NumbersListenMatchGame>
                                         setState(() {
                                           data.currentLevel +=1;
                                         });
-                                        _player.setFilePath(
+                                        _player.setAsset(
                                             'assets/sounds/correct_answer.mp3'
                                         );
                                         _player.play();
@@ -123,7 +123,7 @@ class _NumbersListenMatchGameState extends ConsumerState<NumbersListenMatchGame>
                                   ),
                                   child: InkWell(
                                     onTap: () {
-                                      _player.setFilePath(
+                                      _player.setAsset(
                                           'assets/sounds/incorrect_answer.mp3');
                                       _player.play();
                                     },
@@ -168,7 +168,7 @@ class _NumbersListenMatchGameState extends ConsumerState<NumbersListenMatchGame>
                                   ),
                                   child: InkWell(
                                     onTap: () {
-                                      _player.setFilePath(
+                                      _player.setAsset(
                                           'assets/sounds/incorrect_answer.mp3');
                                       _player.play();
                                     },
@@ -195,7 +195,7 @@ class _NumbersListenMatchGameState extends ConsumerState<NumbersListenMatchGame>
                                         setState(() {
                                           data.currentLevel +=1;
                                         });
-                                        _player.setFilePath(
+                                        _player.setAsset(
                                             'assets/sounds/correct_answer.mp3'
                                         );
                                         _player.play();

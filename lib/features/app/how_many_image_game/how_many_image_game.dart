@@ -333,7 +333,7 @@ class _HowManyImageGameState extends ConsumerState<HowManyImageGame> {
                         onTap: () {
                           if(data.currentLevel == 0 || data.currentLevel == 3 || data.currentLevel == 5 )
                           {
-                            _player.setFilePath(
+                            _player.setAsset(
                                 'assets/sounds/correct_answer.mp3'
                             );
                             _player.play();
@@ -346,7 +346,7 @@ class _HowManyImageGameState extends ConsumerState<HowManyImageGame> {
                             }
                             data.levelLock();
                           }else{
-                            _player.setFilePath(
+                            _player.setAsset(
                                 'assets/sounds/incorrect_answer.mp3');
                             _player.play();
                           }
@@ -375,7 +375,7 @@ class _HowManyImageGameState extends ConsumerState<HowManyImageGame> {
                         onTap: () {
                           if(data.currentLevel == 1 || data.currentLevel == 4 || data.currentLevel == 6 || data.currentLevel == 8)
                           {
-                            _player.setFilePath(
+                            _player.setAsset(
                                 'assets/sounds/correct_answer.mp3'
                             );
                             _player.play();
@@ -388,7 +388,7 @@ class _HowManyImageGameState extends ConsumerState<HowManyImageGame> {
                             }
                             data.levelLock();
                           }else{
-                            _player.setFilePath(
+                            _player.setAsset(
                                 'assets/sounds/incorrect_answer.mp3');
                             _player.play();
                           }
@@ -417,7 +417,7 @@ class _HowManyImageGameState extends ConsumerState<HowManyImageGame> {
                         onTap: () {
                           if(data.currentLevel == 2 || data.currentLevel == 7 || data.currentLevel == 9 )
                           {
-                            _player.setFilePath(
+                            _player.setAsset(
                                 'assets/sounds/correct_answer.mp3'
                             );
                             _player.play();
@@ -430,7 +430,7 @@ class _HowManyImageGameState extends ConsumerState<HowManyImageGame> {
                             }
                             data.levelLock();
                           }else{
-                            _player.setFilePath(
+                            _player.setAsset(
                                 'assets/sounds/incorrect_answer.mp3');
                             _player.play();
                           }

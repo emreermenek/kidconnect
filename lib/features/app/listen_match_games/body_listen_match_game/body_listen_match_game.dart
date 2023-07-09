@@ -96,7 +96,7 @@ class _BodyListenMatchGameState extends ConsumerState<BodyListenMatchGame> {
                                       setState(() {
                                         data.currentLevel +=1;
                                       });
-                                      _player.setFilePath(
+                                      _player.setAsset(
                                           'assets/sounds/correct_answer.mp3'
                                       );
                                       _player.play();
@@ -124,7 +124,7 @@ class _BodyListenMatchGameState extends ConsumerState<BodyListenMatchGame> {
                                 ),
                                 child: InkWell(
                                   onTap: () {
-                                    _player.setFilePath(
+                                    _player.setAsset(
                                         'assets/sounds/incorrect_answer.mp3');
                                     _player.play();
                                   },
@@ -169,7 +169,7 @@ class _BodyListenMatchGameState extends ConsumerState<BodyListenMatchGame> {
                                 ),
                                 child: InkWell(
                                   onTap: () {
-                                    _player.setFilePath(
+                                    _player.setAsset(
                                         'assets/sounds/incorrect_answer.mp3');
                                     _player.play();
                                   },
@@ -196,7 +196,7 @@ class _BodyListenMatchGameState extends ConsumerState<BodyListenMatchGame> {
                                       setState(() {
                                         data.currentLevel +=1;
                                       });
-                                      _player.setFilePath(
+                                      _player.setAsset(
                                           'assets/sounds/correct_answer.mp3'
                                       );
                                       _player.play();

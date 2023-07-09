@@ -151,7 +151,7 @@ class _MakeWordGameLevel6State extends ConsumerState<MakeWordGameLevel6> {
                                 ),
                                 onChanged: (value) {
                                   if(value.toLowerCase() == 'evlat'){
-                                    _player.setFilePath(
+                                    _player.setAsset(
                                         'assets/sounds/correct_answer.mp3'
                                     );
                                     _player.play();

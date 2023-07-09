@@ -25,7 +25,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       navigatorKey: navigatorKey,
       debugShowCheckedModeBanner: false,
-      home: const AnimalCardGameLevelList()
+      home: const AnimalsShadowGameLevelList()
     );
   }
 }

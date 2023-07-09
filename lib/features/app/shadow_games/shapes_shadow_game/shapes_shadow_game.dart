@@ -191,7 +191,7 @@ class _ShapesShadowGameState extends ConsumerState<ShapesShadowGame> {
                                       if(input == firstIndex){
                                         return true;
                                       }else{
-                                        _player.setFilePath(
+                                        _player.setAsset(
                                             'assets/sounds/incorrect_answer.mp3');
                                         _player.play();
                                         return false;
@@ -201,14 +201,14 @@ class _ShapesShadowGameState extends ConsumerState<ShapesShadowGame> {
                                       if(color1 == Colors.grey){
                                         color1 = Colors.transparent;
                                         if(data.correctAnswerNumber != 1){
-                                          _player.setFilePath(
+                                          _player.setAsset(
                                               'assets/sounds/correct_answer.mp3'
                                           );
                                           _player.play();
                                           data.correctAnswerNumber +=1;
                                         }else{
 
-                                          _player.setFilePath(
+                                          _player.setAsset(
                                               'assets/sounds/correct_answer.mp3'
                                           );
                                           _player.play();
@@ -235,7 +235,7 @@ class _ShapesShadowGameState extends ConsumerState<ShapesShadowGame> {
                                       if(input == secondIndex){
                                         return true;
                                       }else{
-                                        _player.setFilePath(
+                                        _player.setAsset(
                                             'assets/sounds/incorrect_answer.mp3');
                                         _player.play();
                                         return false;
@@ -245,14 +245,14 @@ class _ShapesShadowGameState extends ConsumerState<ShapesShadowGame> {
                                       if(color2 == Colors.grey){
                                         color2 = Colors.transparent;
                                         if(data.correctAnswerNumber != 1){
-                                          _player.setFilePath(
+                                          _player.setAsset(
                                               'assets/sounds/correct_answer.mp3'
                                           );
                                           _player.play();
                                           data.correctAnswerNumber +=1;
                                         }else{
 
-                                          _player.setFilePath(
+                                          _player.setAsset(
                                               'assets/sounds/correct_answer.mp3'
                                           );
                                           _player.play();

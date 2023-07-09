@@ -155,7 +155,7 @@ class _MakeWordGameLevel2State extends ConsumerState<MakeWordGameLevel2> {
                                 ),
                                 onChanged: (value) {
                                   if(value.toLowerCase() == 'batık'){
-                                    _player.setFilePath(
+                                    _player.setAsset(
                                         'assets/sounds/correct_answer.mp3'
                                     );
                                     _player.play();

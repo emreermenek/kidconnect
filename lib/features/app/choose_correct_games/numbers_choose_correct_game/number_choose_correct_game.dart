@@ -101,7 +101,7 @@ class _NumberChooseCorrectGameState extends ConsumerState<NumberChooseCorrectGam
                       onTap: () {
                         if(data.currentLevel == 1 || data.currentLevel == 3 || data.currentLevel == 5 || data.currentLevel == 6 )
                           {
-                            _player.setFilePath(
+                            _player.setAsset(
                                 'assets/sounds/correct_answer.mp3'
                             );
                             _player.play();
@@ -114,7 +114,7 @@ class _NumberChooseCorrectGameState extends ConsumerState<NumberChooseCorrectGam
                               }
                             data.levelLock();
                           }else{
-                          _player.setFilePath(
+                          _player.setAsset(
                               'assets/sounds/incorrect_answer.mp3');
                           _player.play();
                         }
@@ -227,7 +227,7 @@ class _NumberChooseCorrectGameState extends ConsumerState<NumberChooseCorrectGam
                       onTap: () {
                         if(data.currentLevel == 0 || data.currentLevel == 2 || data.currentLevel == 7)
                         {
-                          _player.setFilePath(
+                          _player.setAsset(
                               'assets/sounds/correct_answer.mp3'
                           );
                           _player.play();
@@ -240,7 +240,7 @@ class _NumberChooseCorrectGameState extends ConsumerState<NumberChooseCorrectGam
                           }
                           data.levelLock();
                         }else{
-                          _player.setFilePath(
+                          _player.setAsset(
                               'assets/sounds/incorrect_answer.mp3');
                           _player.play();
                         }
@@ -352,7 +352,7 @@ class _NumberChooseCorrectGameState extends ConsumerState<NumberChooseCorrectGam
                       onTap: () {
                         if(data.currentLevel == 4 || data.currentLevel == 8 || data.currentLevel == 9)
                         {
-                          _player.setFilePath(
+                          _player.setAsset(
                               'assets/sounds/correct_answer.mp3'
                           );
                           _player.play();
@@ -365,7 +365,7 @@ class _NumberChooseCorrectGameState extends ConsumerState<NumberChooseCorrectGam
                           data.levelLock();
 
                         }else{
-                          _player.setFilePath(
+                          _player.setAsset(
                               'assets/sounds/incorrect_answer.mp3');
                           _player.play();
                         }

@@ -126,7 +126,7 @@ class _EasyFoodChooseCorrectGameState
                                                   setState(() {
                                                     data.currentLevelEasy +=1;
                                                   });
-                                                  _player.setFilePath(
+                                                  _player.setAsset(
                                                       'assets/sounds/correct_answer.mp3'
                                                   );
                                                   _player.play();
@@ -143,7 +143,7 @@ class _EasyFoodChooseCorrectGameState
                                           const SizedBox(height: 100,),
                                           InkWell(
                                               onTap: (){
-                                                _player.setFilePath(
+                                                _player.setAsset(
                                                     'assets/sounds/incorrect_answer.mp3');
                                                 _player.play();
                                               },
@@ -164,7 +164,7 @@ class _EasyFoodChooseCorrectGameState
                                         children: [
                                           InkWell(
                                               onTap: (){
-                                                _player.setFilePath(
+                                                _player.setAsset(
                                                     'assets/sounds/incorrect_answer.mp3');
                                                 _player.play();
                                               },
@@ -181,7 +181,7 @@ class _EasyFoodChooseCorrectGameState
                                                   setState(() {
                                                     data.currentLevelEasy +=1;
                                                   });
-                                                  _player.setFilePath(
+                                                  _player.setAsset(
                                                       'assets/sounds/correct_answer.mp3'
                                                   );
                                                   _player.play();
@@ -208,7 +208,7 @@ class _EasyFoodChooseCorrectGameState
                                           const SizedBox(height: 100,),
                                           InkWell(
                                               onTap: (){
-                                                _player.setFilePath(
+                                                _player.setAsset(
                                                     'assets/sounds/incorrect_answer.mp3');
                                                 _player.play();
                                               },
@@ -224,7 +224,7 @@ class _EasyFoodChooseCorrectGameState
                                                   setState(() {
                                                     data.currentLevelEasy +=1;
                                                   });
-                                                  _player.setFilePath(
+                                                  _player.setAsset(
                                                       'assets/sounds/correct_answer.mp3'
                                                   );
                                                   _player.play();

@@ -153,7 +153,7 @@ class _MakeWordGameLevel8State extends ConsumerState<MakeWordGameLevel8> {
                                 ),
                                 onChanged: (value) {
                                   if(value.toLowerCase() == 'balkon'){
-                                    _player.setFilePath(
+                                    _player.setAsset(
                                         'assets/sounds/correct_answer.mp3'
                                     );
                                     _player.play();

@@ -129,7 +129,7 @@ class _EasyCleaningChooseCorrectGameState
                                                   setState(() {
                                                     data.currentLevelEasy +=1;
                                                   });
-                                                  _player.setFilePath(
+                                                  _player.setAsset(
                                                       'assets/sounds/correct_answer.mp3'
                                                   );
                                                   _player.play();
@@ -146,7 +146,7 @@ class _EasyCleaningChooseCorrectGameState
                                           const SizedBox(height: 100,),
                                           InkWell(
                                               onTap: (){
-                                                _player.setFilePath(
+                                                _player.setAsset(
                                                     'assets/sounds/incorrect_answer.mp3');
                                                 _player.play();
                                               },
@@ -167,7 +167,7 @@ class _EasyCleaningChooseCorrectGameState
                                         children: [
                                           InkWell(
                                               onTap: (){
-                                                _player.setFilePath(
+                                                _player.setAsset(
                                                     'assets/sounds/incorrect_answer.mp3');
                                                 _player.play();
                                               },
@@ -184,7 +184,7 @@ class _EasyCleaningChooseCorrectGameState
                                                   setState(() {
                                                     data.currentLevelEasy +=1;
                                                   });
-                                                  _player.setFilePath(
+                                                  _player.setAsset(
                                                       'assets/sounds/correct_answer.mp3'
                                                   );
                                                   _player.play();
@@ -211,7 +211,7 @@ class _EasyCleaningChooseCorrectGameState
                                           const SizedBox(height: 100,),
                                           InkWell(
                                               onTap: (){
-                                                _player.setFilePath(
+                                                _player.setAsset(
                                                     'assets/sounds/incorrect_answer.mp3');
                                                 _player.play();
                                               },
@@ -227,7 +227,7 @@ class _EasyCleaningChooseCorrectGameState
                                                   setState(() {
                                                     data.currentLevelEasy +=1;
                                                   });
-                                                  _player.setFilePath(
+                                                  _player.setAsset(
                                                       'assets/sounds/correct_answer.mp3'
                                                   );
                                                   _player.play();

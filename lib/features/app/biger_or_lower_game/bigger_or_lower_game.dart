@@ -169,7 +169,7 @@ class _BiggerOrLowerGameState extends ConsumerState<BiggerOrLowerGame> {
                                 for(int i = 0; i < 3; i++){
                                   if(trueAnswer[i] == true){
                                     if(i==0){
-                                      _player.setFilePath(
+                                      _player.setAsset(
                                           'assets/sounds/correct_answer.mp3'
                                       );
                                       _player.play();
@@ -182,7 +182,7 @@ class _BiggerOrLowerGameState extends ConsumerState<BiggerOrLowerGame> {
                                       }
                                       data.levelLock();
                                     }else{
-                                      _player.setFilePath(
+                                      _player.setAsset(
                                           'assets/sounds/incorrect_answer.mp3');
                                       _player.play();
                                     }
@@ -206,7 +206,7 @@ class _BiggerOrLowerGameState extends ConsumerState<BiggerOrLowerGame> {
                                 for(int i = 0; i < 3; i++){
                                   if(trueAnswer[i] == true){
                                     if(i==1){
-                                      _player.setFilePath(
+                                      _player.setAsset(
                                           'assets/sounds/correct_answer.mp3'
                                       );
                                       _player.play();
@@ -219,7 +219,7 @@ class _BiggerOrLowerGameState extends ConsumerState<BiggerOrLowerGame> {
                                       }
                                       data.levelLock();
                                     }else{
-                                      _player.setFilePath(
+                                      _player.setAsset(
                                           'assets/sounds/incorrect_answer.mp3');
                                       _player.play();
                                     }
@@ -243,7 +243,7 @@ class _BiggerOrLowerGameState extends ConsumerState<BiggerOrLowerGame> {
                                 for(int i = 0; i < 3; i++){
                                   if(trueAnswer[i] == true){
                                     if(i==2){
-                                      _player.setFilePath(
+                                      _player.setAsset(
                                           'assets/sounds/correct_answer.mp3'
                                       );
                                       _player.play();
@@ -256,7 +256,7 @@ class _BiggerOrLowerGameState extends ConsumerState<BiggerOrLowerGame> {
                                       }
                                       data.levelLock();
                                     }else{
-                                      _player.setFilePath(
+                                      _player.setAsset(
                                           'assets/sounds/incorrect_answer.mp3');
                                       _player.play();
                                     }

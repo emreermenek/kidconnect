@@ -62,7 +62,7 @@ class _WhoseSoundGameState extends ConsumerState<WhoseSoundGame> {
                             children: [
                               InkWell(
                                 onTap: () {
-                                  _player.setFilePath(
+                                  _player.setAsset(
                                       whoseSoundSounds[data.currentLevel]
                                   );
                                   _player.play();
@@ -79,7 +79,7 @@ class _WhoseSoundGameState extends ConsumerState<WhoseSoundGame> {
                                     setState(() {
                                       data.currentLevel +=1;
                                     });
-                                    _player.setFilePath(
+                                    _player.setAsset(
                                         'assets/sounds/correct_answer.mp3'
                                     );
                                     _player.play();
@@ -94,7 +94,7 @@ class _WhoseSoundGameState extends ConsumerState<WhoseSoundGame> {
                               const SizedBox(height: 25),
                               InkWell(
                                 onTap: () {
-                                  _player.setFilePath(
+                                  _player.setAsset(
                                       'assets/sounds/incorrect_answer.mp3');
                                   _player.play();
                                 },
@@ -109,7 +109,7 @@ class _WhoseSoundGameState extends ConsumerState<WhoseSoundGame> {
                             children: [
                               InkWell(
                                 onTap: () {
-                                  _player.setFilePath(
+                                  _player.setAsset(
                                       whoseSoundSounds[data.currentLevel]
                                   );
                                   _player.play();
@@ -122,7 +122,7 @@ class _WhoseSoundGameState extends ConsumerState<WhoseSoundGame> {
                               const SizedBox(height: 30),
                               InkWell(
                                 onTap: () {
-                                  _player.setFilePath(
+                                  _player.setAsset(
                                       'assets/sounds/incorrect_answer.mp3');
                                   _player.play();
                                 },
@@ -136,7 +136,7 @@ class _WhoseSoundGameState extends ConsumerState<WhoseSoundGame> {
                                     setState(() {
                                       data.currentLevel +=1;
                                     });
-                                    _player.setFilePath(
+                                    _player.setAsset(
                                         'assets/sounds/correct_answer.mp3'
                                     );
                                     _player.play();

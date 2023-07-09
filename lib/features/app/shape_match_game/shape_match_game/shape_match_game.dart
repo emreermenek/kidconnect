@@ -417,7 +417,7 @@ class _MatchImageState extends ConsumerState<MatchImage> {
       if(dataRepo.points==3){
         _controllerCenter.play();
         if(isVolumeOn == true){
-          player.setFilePath(
+          player.setAsset(
               'assets/sounds/confetti_sound.mp3');
           player.play();
         }
@@ -426,7 +426,7 @@ class _MatchImageState extends ConsumerState<MatchImage> {
         dataRepo.levelLock();
       }else{
         if(isVolumeOn == true) {
-          player.setFilePath(
+          player.setAsset(
               'assets/sounds/correct_answer.mp3'
           );
           player.play();
@@ -439,7 +439,7 @@ class _MatchImageState extends ConsumerState<MatchImage> {
         dataRepo.finished = false;
       }else{
         if(isVolumeOn == true) {
-          player.setFilePath(
+          player.setAsset(
               'assets/sounds/incorrect_answer.mp3');
           player.play();
         }

@@ -159,7 +159,7 @@ class _MakeWordGameLevel7State extends ConsumerState<MakeWordGameLevel7> {
                                 ),
                                 onChanged: (value) {
                                   if(value.toLowerCase() == 'tırnak'){
-                                    _player.setFilePath(
+                                    _player.setAsset(
                                         'assets/sounds/correct_answer.mp3'
                                     );
                                     _player.play();
