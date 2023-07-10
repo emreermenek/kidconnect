@@ -42,13 +42,6 @@ class MainPagesBackground extends StatelessWidget {
             top: 170,
             child: Image(
               image: AssetImage(
-                  'assets/images/home_page_image/content/shape2.png'),
-            )),
-        Positioned(
-            right: 0,
-            top: 300,
-            child: Image(
-              image: AssetImage(
                   'assets/images/home_page_image/content/shape3.png'),
             )),
         Positioned(

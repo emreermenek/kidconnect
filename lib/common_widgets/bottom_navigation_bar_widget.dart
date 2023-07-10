@@ -1,7 +1,8 @@
-import 'package:bootcamp_f32/features/app/home_page/home_page.dart';
-import 'package:bootcamp_f32/features/app/profile_page/profile_page.dart';
-import 'package:bootcamp_f32/features/app/settings_page/settings_page.dart';
 import 'package:flutter/material.dart';
+
+import '../features/app/main_pages/home_page/home_page.dart';
+import '../features/app/main_pages/profile_page/profile_page.dart';
+import '../features/app/main_pages/settings_page/settings_page.dart';
 
 SizedBox botNavBar({required int currentIndex, required BuildContext context}) {
   return SizedBox(

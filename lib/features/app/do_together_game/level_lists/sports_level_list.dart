@@ -1,0 +1,118 @@
+
+import 'package:flutter/material.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:google_fonts/google_fonts.dart';
+
+import '../data/sport_data.dart';
+import '../games/do_together_sports_game.dart';
+import '../services/sports_game_service.dart';
+
+class SportsListPage extends ConsumerStatefulWidget {
+  const SportsListPage({Key? key}) : super(key: key);
+
+  @override
+  ConsumerState<SportsListPage> createState() => _SportsListPageState();
+}
+
+class _SportsListPageState extends ConsumerState<SportsListPage> {
+  final List routes = [];
+  @override
+  Widget build(BuildContext context) {
+    final data = ref.watch(sportsGameServiceProvider);
+    return SafeArea(
+      child: Scaffold(
+        appBar: AppBar(
+          backgroundColor: Colors.white,
+          toolbarHeight: 75,
+          elevation: 0,
+          leading: InkWell(
+              onTap: () {
+                Navigator.of(context).pop();
+              },
+              child: const Image(
+                image: AssetImage('assets/images/level_list/exit.png'),
+                width: 100,
+              )),
+          title: Row(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              Text('Spor Yapalım',
+                  style: GoogleFonts.quicksand(
+                      textStyle: const TextStyle(
+                    fontWeight: FontWeight.bold,
+                    color: Colors.black,
+                    fontSize: 24,
+                  ))),
+              const SizedBox(
+                width: 20,
+              ),
+              const Image(
+                image:
+                    AssetImage('assets/images/home_page_image/cute-tiger.png'),
+                width: 75,
+              ),
+            ],
+          ),
+        ),
+        backgroundColor: const Color(0xFFBDF2D5),
+        body: Column(
+          crossAxisAlignment: CrossAxisAlignment.center,
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            Expanded(
+              child: GridView.builder(
+                gridDelegate: const SliverGridDelegateWithMaxCrossAxisExtent(
+                    maxCrossAxisExtent: 550,
+                    childAspectRatio: 14 / 3,
+                    crossAxisSpacing: 8),
+                itemCount: sportsNames.length,
+                itemBuilder: (BuildContext context, int index) {
+                  return InkWell(
+                    onTap: () {
+                      setState(() {
+                        data.sportsCurrentCard = index;
+                      });
+                      Navigator.of(context).push(MaterialPageRoute(
+                        builder: (context) => const DoTogetherSportsGame(),
+                      ));
+                    },
+                    child: Container(
+                      margin: const EdgeInsets.symmetric(
+                          horizontal: 30, vertical: 10),
+                      alignment: Alignment.center,
+                      decoration: BoxDecoration(
+                          color: const Color(0xFF4B5D67),
+                          borderRadius: BorderRadius.circular(24),
+                          boxShadow: [
+                            BoxShadow(
+                                color: Colors.black.withOpacity(0.2),
+                                offset: const Offset(3, 4))
+                          ]),
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: [
+                          Text(
+                            sportsNames[index],
+                            style: GoogleFonts.comfortaa(
+                              textStyle: const TextStyle(
+                                  color: Color(0xFFBDF2D5),
+                                  fontSize: 24,
+                                  fontWeight: FontWeight.bold),
+                            ),
+                          ),
+                          const SizedBox(
+                            width: 30,
+                          ),
+                        ],
+                      ),
+                    ),
+                  );
+                },
+              ),
+            )
+          ],
+        ),
+      ),
+    );
+  }
+}
