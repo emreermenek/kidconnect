@@ -147,7 +147,7 @@ class _SettingsPageState extends ConsumerState<SettingsPage> {
                                     fontWeight: FontWeight.bold,
                                   ),
                                 ) ),
-                                const SizedBox(width: 25,),
+                                const SizedBox(width: 15,),
                                 FlutterSwitch(
                                     width: 45.0,
                                     height: 25.0,
@@ -263,7 +263,7 @@ class _SettingsPageState extends ConsumerState<SettingsPage> {
                                 fontWeight: FontWeight.bold,
                               ),
                             ) ),
-                            const SizedBox(width: 25,),
+                            const SizedBox(width: 15,),
                             FlutterSwitch(
                                 width: 45.0,
                                 height: 25.0,
@@ -397,7 +397,7 @@ class _SettingsPageState extends ConsumerState<SettingsPage> {
                                   fontWeight: FontWeight.bold,
                                 ),
                               ) ),
-                              const SizedBox(width: 25,),
+                              const SizedBox(width: 15,),
                               FlutterSwitch(
                                   width: 45.0,
                                   height: 25.0,

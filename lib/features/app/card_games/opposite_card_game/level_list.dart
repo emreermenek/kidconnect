@@ -1,3 +1,4 @@
+import 'package:bootcamp_f32/constants/colors.dart';
 import 'package:bootcamp_f32/features/app/card_games/opposite_card_game/data/opposite_back.dart';
 import 'package:bootcamp_f32/features/app/card_games/opposite_card_game/opposite_card_game.dart';
 import 'package:flutter/material.dart';
@@ -41,7 +42,7 @@ class _OppositeCardGameLevelListState
                       textStyle: const TextStyle(
                     fontWeight: FontWeight.bold,
                     color: Colors.black,
-                    fontSize: 24,
+                    fontSize: 18,
                   ))),
               const SizedBox(
                 width: 20,
@@ -54,7 +55,7 @@ class _OppositeCardGameLevelListState
             ],
           ),
         ),
-        backgroundColor: const Color(0xFFBDF2D5),
+        backgroundColor: tWhiteColor,
         body: Column(
           crossAxisAlignment: CrossAxisAlignment.center,
           mainAxisAlignment: MainAxisAlignment.center,
@@ -81,7 +82,7 @@ class _OppositeCardGameLevelListState
                           horizontal: 30, vertical: 10),
                       alignment: Alignment.center,
                       decoration: BoxDecoration(
-                          color: const Color(0xFF4B5D67),
+                          color: tPrimaryColor,
                           borderRadius: BorderRadius.circular(24),
                           boxShadow: [
                             BoxShadow(
@@ -93,8 +94,8 @@ class _OppositeCardGameLevelListState
                           twoNames[index],
                           style: GoogleFonts.comfortaa(
                             textStyle: const TextStyle(
-                                color: Color(0xFFBDF2D5),
-                                fontSize: 40,
+                                color: Colors.black,
+                                fontSize: 20,
                                 fontWeight: FontWeight.bold),
                           ),
                         ),

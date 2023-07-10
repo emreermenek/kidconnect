@@ -20,7 +20,7 @@ class _ThingsCardGameState extends ConsumerState<ThingsCardGame> {
     final ValueNotifier<int> chooseThing = ValueNotifier<int>(data.currentThing);
     return SafeArea(
       child: Scaffold(
-        backgroundColor: const Color(0xFFF07E74).withOpacity(0.3),
+        backgroundColor: const Color(0xFFF07E74),
         body: ValueListenableBuilder(
             valueListenable: chooseThing,
             builder: (BuildContext context, value, Widget? child) {
@@ -89,7 +89,7 @@ class _ThingsCardGameState extends ConsumerState<ThingsCardGame> {
                                   const SizedBox(height: 30,),
                                   Text(thingNames[data.currentThing], style: GoogleFonts.comfortaa(
                                       textStyle: const TextStyle(
-                                          fontSize: 34,
+                                          fontSize: 24,
                                           fontWeight: FontWeight.bold
                                       )
                                   ),)

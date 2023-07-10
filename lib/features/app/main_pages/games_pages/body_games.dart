@@ -45,15 +45,17 @@ final List routes = [
 class _BodyGamesPageState extends State<BodyGamesPage> {
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      backgroundColor: tWhiteColor,
-      appBar: const AppBarWidget(title: 'VÜCUDUMUZ OYUNLARI',),
-      bottomNavigationBar: botNavBar(currentIndex: 0,context: context),
-      body: Stack(
-        children: [
-          const MainPagesBackground(),
-          GridViewWidget(context: context,texts: texts,cards: cards, routes: routes,),
-        ],
+    return SafeArea(
+      child: Scaffold(
+        backgroundColor: tWhiteColor,
+        appBar: const AppBarWidget(title: 'VÜCUDUMUZ',),
+        bottomNavigationBar: botNavBar(currentIndex: 0,context: context),
+        body: Stack(
+          children: [
+            const MainPagesBackground(),
+            GridViewWidget(context: context,texts: texts,cards: cards, routes: routes,),
+          ],
+        ),
       ),
     );
   }

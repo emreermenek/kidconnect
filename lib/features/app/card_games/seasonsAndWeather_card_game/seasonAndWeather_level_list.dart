@@ -1,3 +1,4 @@
+import 'package:bootcamp_f32/constants/colors.dart';
 import 'package:bootcamp_f32/features/app/card_games/seasonsAndWeather_card_game/seasonLevel_list.dart';
 import 'package:bootcamp_f32/features/app/card_games/seasonsAndWeather_card_game/weatherLevel_list.dart';
 import 'package:flutter/material.dart';
@@ -50,7 +51,7 @@ class _SeasonAndWeatherCardGameLevelListState extends ConsumerState<SeasonAndWea
             ],
           ),
         ),
-        backgroundColor: const Color(0xFFBDF2D5),
+        backgroundColor: tWhiteColor,
         body: Column(
           crossAxisAlignment: CrossAxisAlignment.center,
           mainAxisAlignment: MainAxisAlignment.center,
@@ -71,7 +72,7 @@ class _SeasonAndWeatherCardGameLevelListState extends ConsumerState<SeasonAndWea
                       margin: const EdgeInsets.symmetric(horizontal: 30,vertical: 10),
                       alignment: Alignment.center,
                       decoration: BoxDecoration(
-                          color: const Color(0xFF4B5D67),
+                          color: tPrimaryColor,
                           borderRadius: BorderRadius.circular(24),
                           boxShadow: [
                             BoxShadow(
@@ -86,8 +87,8 @@ class _SeasonAndWeatherCardGameLevelListState extends ConsumerState<SeasonAndWea
                       child: Center(
                         child: Text('MEVSİMLER', style: GoogleFonts.comfortaa(
                           textStyle:  const TextStyle(
-                              color: Color(0xFFBDF2D5),
-                              fontSize: 34,
+                              color: Colors.black,
+                              fontSize: 20,
                               fontWeight: FontWeight.bold
                           ),
                         ),),
@@ -102,7 +103,7 @@ class _SeasonAndWeatherCardGameLevelListState extends ConsumerState<SeasonAndWea
                       margin: const EdgeInsets.symmetric(horizontal: 30,vertical: 10),
                       alignment: Alignment.center,
                       decoration: BoxDecoration(
-                          color: const Color(0xFF4B5D67),
+                          color: tPrimaryColor,
                           borderRadius: BorderRadius.circular(24),
                           boxShadow: [
                             BoxShadow(
@@ -117,8 +118,8 @@ class _SeasonAndWeatherCardGameLevelListState extends ConsumerState<SeasonAndWea
                       child: Center(
                         child: Text('HAVA DURUMU', style: GoogleFonts.comfortaa(
                           textStyle:  const TextStyle(
-                              color: Color(0xFFBDF2D5),
-                              fontSize: 34,
+                              color: Colors.black,
+                              fontSize: 20,
                               fontWeight: FontWeight.bold
                           ),
                         ),),

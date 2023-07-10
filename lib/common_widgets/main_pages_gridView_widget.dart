@@ -17,11 +17,10 @@ class GridViewWidget extends StatelessWidget {
       padding: const EdgeInsets.symmetric(horizontal: 50, vertical: 15),
       scrollDirection: Axis.vertical,
       itemCount: texts.length,
-      gridDelegate:const SliverGridDelegateWithMaxCrossAxisExtent(
-        maxCrossAxisExtent: 300,
-        childAspectRatio: 1,
-        crossAxisSpacing: 30,
-        mainAxisSpacing: 20,
+      gridDelegate: const SliverGridDelegateWithMaxCrossAxisExtent(
+        maxCrossAxisExtent:
+        300, //if you have a device with 300px width only one category is shown in a row if you have 500px then two categories are lied side by side in a row
+        childAspectRatio: 1,// for 200px width, I need 300px height (for extra spacing)
       ),
       itemBuilder: (context, index) {
         final ValueNotifier<int> textLength = ValueNotifier<int>(texts[index].length);
@@ -31,7 +30,7 @@ class GridViewWidget extends StatelessWidget {
           },
           child: GridTile(
             child: Container(
-              margin: const EdgeInsets.all(2),
+              margin: const EdgeInsets.all(16),
               decoration: BoxDecoration(
                   boxShadow: [
                     BoxShadow(

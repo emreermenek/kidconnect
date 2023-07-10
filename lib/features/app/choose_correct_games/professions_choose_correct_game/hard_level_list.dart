@@ -1,3 +1,4 @@
+import 'package:bootcamp_f32/constants/colors.dart';
 import 'package:bootcamp_f32/features/app/choose_correct_games/professions_choose_correct_game/hard_profession_choose_correct_game.dart';
 import 'package:bootcamp_f32/features/app/choose_correct_games/professions_choose_correct_game/services/services.dart';
 import 'package:flutter/material.dart';
@@ -54,7 +55,7 @@ class _HardProfessionChooseCorrectGameLevelListState extends ConsumerState<HardP
             ],
           ),
         ),
-        backgroundColor: const Color(0xFFBDF2D5),
+        backgroundColor: tWhiteColor,
         body: Column(
           crossAxisAlignment: CrossAxisAlignment.center,
           mainAxisAlignment: MainAxisAlignment.center,
@@ -81,7 +82,7 @@ class _HardProfessionChooseCorrectGameLevelListState extends ConsumerState<HardP
                       margin: const EdgeInsets.symmetric(horizontal: 30,vertical: 10),
                       alignment: Alignment.center,
                       decoration: BoxDecoration(
-                          color: const Color(0xFF4B5D67),
+                          color: tPrimaryColor,
                           borderRadius: BorderRadius.circular(24),
                           boxShadow: [
                             BoxShadow(
@@ -98,8 +99,8 @@ class _HardProfessionChooseCorrectGameLevelListState extends ConsumerState<HardP
                         children: [
                           Text(levels[index], style: GoogleFonts.comfortaa(
                             textStyle:  const TextStyle(
-                                color: Color(0xFFBDF2D5),
-                                fontSize: 48,
+                                color: Colors.black,
+                                fontSize: 24,
                                 fontWeight: FontWeight.bold
                             ),
                           ),),

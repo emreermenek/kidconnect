@@ -40,15 +40,17 @@ final List routes = [
 class _ColorGamesPageState extends State<ColorGamesPage> {
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      backgroundColor: tWhiteColor,
-      appBar: const AppBarWidget(title: 'RENK OYUNLARI',),
-      bottomNavigationBar: botNavBar(currentIndex: 0,context: context),
-      body: Stack(
-        children: [
-          const MainPagesBackground(),
-          GridViewWidget(context: context,texts: texts,cards: cards, routes: routes,),
-        ],
+    return SafeArea(
+      child: Scaffold(
+        backgroundColor: tWhiteColor,
+        appBar: const AppBarWidget(title: 'RENK OYUNLARI',),
+        bottomNavigationBar: botNavBar(currentIndex: 0,context: context),
+        body: Stack(
+          children: [
+            const MainPagesBackground(),
+            GridViewWidget(context: context,texts: texts,cards: cards, routes: routes,),
+          ],
+        ),
       ),
     );
   }

@@ -1,20 +1,23 @@
 
 
+import 'package:bootcamp_f32/constants/colors.dart';
 import 'package:bootcamp_f32/features/app/card_games/clock_card_game/evening_card_game.dart';
 import 'package:bootcamp_f32/features/app/card_games/clock_card_game/morning_card_game.dart';
 import 'package:bootcamp_f32/features/app/card_games/clock_card_game/night_card_game.dart';
 import 'package:bootcamp_f32/features/app/card_games/clock_card_game/noon_card_game.dart';
+import 'package:bootcamp_f32/features/app/card_games/clock_card_game/services/services.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:google_fonts/google_fonts.dart';
 
-class ClockCardGameLevelList extends StatefulWidget {
+class ClockCardGameLevelList extends ConsumerStatefulWidget {
   const ClockCardGameLevelList({super.key});
 
   @override
-  State<ClockCardGameLevelList> createState() => _ClockCardGameLevelListState();
+  ConsumerState<ClockCardGameLevelList> createState() => _ClockCardGameLevelListState();
 }
 
-class _ClockCardGameLevelListState extends State<ClockCardGameLevelList> {
+class _ClockCardGameLevelListState extends ConsumerState<ClockCardGameLevelList> {
   List navigation = [const MorningCardGame(), const NoonCardGame(), const EveningCardGame(), const NightCardGame()];
   List timeNames = ['SABAH', 'ÖĞLEN', 'AKŞAM', 'GECE'];
   List images =
@@ -25,10 +28,11 @@ class _ClockCardGameLevelListState extends State<ClockCardGameLevelList> {
   bool isWhite = true;
   @override
   Widget build(BuildContext context) {
+    final data = ref.watch(clockCardGameDataServiceProvider);
     final ValueNotifier<bool> whiteNotifier = ValueNotifier<bool>(isWhite);
     return SafeArea(
       child: Scaffold(
-        backgroundColor: const Color(0xFFBDF2D5),
+        backgroundColor: tWhiteColor,
         appBar: AppBar(
           backgroundColor: Colors.white,
           toolbarHeight: 75,
@@ -80,6 +84,7 @@ class _ClockCardGameLevelListState extends State<ClockCardGameLevelList> {
                     itemBuilder: (context, index) {
                       return InkWell(
                         onTap: () {
+                          data.currentTime = 0;
                           Navigator.of(context).push(MaterialPageRoute(builder: (context) => navigation[index],));
                         },
                         child: Container(

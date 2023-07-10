@@ -50,7 +50,7 @@ class _ClockGameLevelListState extends ConsumerState<ClockGameLevelList> {
             ],
           ),
         ),
-        backgroundColor: const Color(0xFFBDF2D5),
+        backgroundColor: Colors.white,
         body: Row(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [

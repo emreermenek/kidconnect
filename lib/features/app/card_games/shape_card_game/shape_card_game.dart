@@ -88,7 +88,7 @@ class _ShapeCardGameState extends ConsumerState<ShapeCardGame> {
                                   const SizedBox(height: 30,),
                                   Text(shapeNames[data.currentShape], style: GoogleFonts.comfortaa(
                                       textStyle: const TextStyle(
-                                          fontSize: 40,
+                                          fontSize: 30,
                                           fontWeight: FontWeight.bold
                                       )
                                   ),)

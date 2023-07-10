@@ -37,49 +37,51 @@ class _LyricsGameState extends State<LyricsGame> {
         controller: controller,
       ),
       builder: (context , player ) => SafeArea(
-        child: Scaffold(
-          body: Container(
-            height: double.infinity,
-            width: double.infinity,
-            decoration: const BoxDecoration(
-              image: DecorationImage(
-                image: AssetImage('assets/images/lyrics_images/background.png'),
-                fit: BoxFit.fill
-              ),
-            ),
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                Column(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
-                    const SizedBox(height: 10,),
-                    Container(
-                      height: 541,
-                      width: 340,
-                      decoration: const BoxDecoration(
-                        image: DecorationImage(
-                          image: AssetImage('assets/images/lyrics_images/box1.png'),
-                          fit: BoxFit.fill
-                        )
-                      ),
-                      child: Column(
-                        children: [
-                          const SizedBox(height: 120,),
-                          SizedBox(
-                            width: 300,
-                              child: player
-                          ),
-                        ],
-                      ),
-                    ),
-                    InkWell(
-                      onTap: () => Navigator.of(context).pop(),
-                      child: const Image(image: AssetImage('assets/images/lyrics_images/back.png'),width: 60,),
-                    ),
-                  ],
+        child: SafeArea(
+          child: Scaffold(
+            body: Container(
+              height: double.infinity,
+              width: double.infinity,
+              decoration: const BoxDecoration(
+                image: DecorationImage(
+                  image: AssetImage('assets/images/lyrics_images/background.png'),
+                  fit: BoxFit.fill
                 ),
-              ],
+              ),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  Column(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      const SizedBox(height: 10,),
+                      Container(
+                        height: 541,
+                        width: 340,
+                        decoration: const BoxDecoration(
+                          image: DecorationImage(
+                            image: AssetImage('assets/images/lyrics_images/box1.png'),
+                            fit: BoxFit.fill
+                          )
+                        ),
+                        child: Column(
+                          children: [
+                            const SizedBox(height: 120,),
+                            SizedBox(
+                              width: 300,
+                                child: player
+                            ),
+                          ],
+                        ),
+                      ),
+                      InkWell(
+                        onTap: () => Navigator.of(context).pop(),
+                        child: const Image(image: AssetImage('assets/images/lyrics_images/back.png'),width: 60,),
+                      ),
+                    ],
+                  ),
+                ],
+              ),
             ),
           ),
         ),

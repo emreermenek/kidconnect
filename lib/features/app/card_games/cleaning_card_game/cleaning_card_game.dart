@@ -85,7 +85,7 @@ class _CleaningCardGameState extends ConsumerState<CleaningCardGame> {
                                     cleaningNames[data.currentCleaning],
                                     style: GoogleFonts.comfortaa(
                                         textStyle: const TextStyle(
-                                            fontSize: 30,
+                                            fontSize: 20,
                                             fontWeight: FontWeight.bold)),
                                   )
                                 ],

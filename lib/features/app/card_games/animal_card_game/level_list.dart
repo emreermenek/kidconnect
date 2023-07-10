@@ -1,3 +1,4 @@
+import 'package:bootcamp_f32/constants/colors.dart';
 import 'package:bootcamp_f32/features/app/card_games/animal_card_game/animal_card_game.dart';
 import 'package:bootcamp_f32/features/app/card_games/animal_card_game/data/animals.dart';
 import 'package:bootcamp_f32/features/app/card_games/animal_card_game/services/services.dart';
@@ -52,7 +53,7 @@ class _AnimalCardGameLevelListState extends ConsumerState<AnimalCardGameLevelLis
             ],
           ),
         ),
-        backgroundColor: const Color(0xFFBDF2D5),
+        backgroundColor: tWhiteColor,
         body: Column(
           crossAxisAlignment: CrossAxisAlignment.center,
           mainAxisAlignment: MainAxisAlignment.center,
@@ -77,7 +78,7 @@ class _AnimalCardGameLevelListState extends ConsumerState<AnimalCardGameLevelLis
                       margin: const EdgeInsets.symmetric(horizontal: 30,vertical: 10),
                       alignment: Alignment.center,
                       decoration: BoxDecoration(
-                          color: const Color(0xFF4B5D67),
+                          color: tPrimaryColor,
                           borderRadius: BorderRadius.circular(24),
                           boxShadow: [
                             BoxShadow(
@@ -92,8 +93,8 @@ class _AnimalCardGameLevelListState extends ConsumerState<AnimalCardGameLevelLis
                       child: Center(
                         child: Text(animalNames[index], style: GoogleFonts.comfortaa(
                           textStyle:  const TextStyle(
-                              color: Color(0xFFBDF2D5),
-                              fontSize: 30,
+                              color: Colors.black,
+                              fontSize: 24,
                               fontWeight: FontWeight.bold
                           ),
                         ),),

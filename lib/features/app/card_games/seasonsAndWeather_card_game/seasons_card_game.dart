@@ -86,7 +86,7 @@ class _SeasonsCardGameState extends ConsumerState<SeasonsCardGame> {
                                   const SizedBox(height: 30,),
                                   Text(seasonNames[data.currentSeason], style: GoogleFonts.comfortaa(
                                       textStyle: const TextStyle(
-                                          fontSize: 40,
+                                          fontSize: 30,
                                           fontWeight: FontWeight.bold
                                       )
                                   ),)

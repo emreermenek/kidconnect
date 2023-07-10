@@ -42,15 +42,17 @@ class _EmotionsGamesPageState
     extends State<EmotionsGamesPage> {
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      backgroundColor: tWhiteColor,
-      appBar: const AppBarWidget(title: 'DUYGU VE DAVRANIŞ OYUNLARI',),
-      bottomNavigationBar: botNavBar(currentIndex: 0,context: context),
-      body: Stack(
-        children: [
-          const MainPagesBackground(),
-          GridViewWidget(context: context,texts: texts,cards: cards, routes: routes,),
-        ],
+    return SafeArea(
+      child: Scaffold(
+        backgroundColor: tWhiteColor,
+        appBar: const AppBarWidget(title: 'DUYGU-DAVRANIŞ',),
+        bottomNavigationBar: botNavBar(currentIndex: 0,context: context),
+        body: Stack(
+          children: [
+            const MainPagesBackground(),
+            GridViewWidget(context: context,texts: texts,cards: cards, routes: routes,),
+          ],
+        ),
       ),
     );
   }

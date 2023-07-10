@@ -1,3 +1,4 @@
+import 'package:bootcamp_f32/constants/colors.dart';
 import 'package:bootcamp_f32/features/app/shadow_games/shapes_shadow_game/services/services.dart';
 import 'package:bootcamp_f32/features/app/shadow_games/shapes_shadow_game/shapes_shadow_game.dart';
 import 'package:flutter/material.dart';
@@ -55,7 +56,7 @@ class _ShapesShadowGameLevelListState extends ConsumerState<ShapesShadowGameLeve
             ],
           ),
         ),
-        backgroundColor: const Color(0xFFBDF2D5),
+        backgroundColor: tWhiteColor,
         body: Column(
           crossAxisAlignment: CrossAxisAlignment.center,
           mainAxisAlignment: MainAxisAlignment.center,
@@ -87,7 +88,7 @@ class _ShapesShadowGameLevelListState extends ConsumerState<ShapesShadowGameLeve
                       margin: const EdgeInsets.symmetric(horizontal: 30,vertical: 10),
                       alignment: Alignment.center,
                       decoration: BoxDecoration(
-                          color: const Color(0xFF4B5D67),
+                          color: tPrimaryColor,
                           borderRadius: BorderRadius.circular(24),
                           boxShadow: [
                             BoxShadow(
@@ -104,8 +105,8 @@ class _ShapesShadowGameLevelListState extends ConsumerState<ShapesShadowGameLeve
                         children: [
                           Text(levels[index], style: GoogleFonts.comfortaa(
                             textStyle:  const TextStyle(
-                                color: Color(0xFFBDF2D5),
-                                fontSize: 48,
+                                color: Colors.black,
+                                fontSize: 24,
                                 fontWeight: FontWeight.bold
                             ),
                           ),),

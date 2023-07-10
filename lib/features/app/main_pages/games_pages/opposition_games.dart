@@ -37,15 +37,17 @@ final List routes = [
 class _OppositionGamesPageState extends State<OppositionGamesPage> {
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      backgroundColor: tWhiteColor,
-      appBar: const AppBarWidget(title: 'ZIT KAVRAMLAR',),
-      bottomNavigationBar: botNavBar(currentIndex: 0,context: context),
-      body: Stack(
-        children: [
-          const MainPagesBackground(),
-          GridViewWidget(context: context,texts: texts,cards: cards, routes: routes,),
-        ],
+    return SafeArea(
+      child: Scaffold(
+        backgroundColor: tWhiteColor,
+        appBar: const AppBarWidget(title: 'ZIT KAVRAMLAR',),
+        bottomNavigationBar: botNavBar(currentIndex: 0,context: context),
+        body: Stack(
+          children: [
+            const MainPagesBackground(),
+            GridViewWidget(context: context,texts: texts,cards: cards, routes: routes,),
+          ],
+        ),
       ),
     );
   }

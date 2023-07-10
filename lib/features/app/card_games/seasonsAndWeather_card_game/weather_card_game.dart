@@ -85,7 +85,7 @@ class _WeatherCardGameState extends ConsumerState<WeatherCardGame> {
                                   const SizedBox(height: 30,),
                                   Text(weatherNames[data.currentWeather], style: GoogleFonts.comfortaa(
                                       textStyle: const TextStyle(
-                                          fontSize: 34,
+                                          fontSize: 25,
                                           fontWeight: FontWeight.bold
                                       )
                                   ),)

@@ -23,197 +23,197 @@ class _NoonCardGameState extends ConsumerState<NoonCardGame> {
     final data = ref.watch(clockCardGameDataServiceProvider);
     final ValueNotifier<int> time = ValueNotifier<int>(data.currentTime);
     hourList.remove(hour);
-    return Scaffold(
-      body: Container(
-        width: double.infinity,
-        height: double.infinity,
-        decoration: const BoxDecoration(
-          image: DecorationImage(
-              image: AssetImage('assets/images/card_games/clock_card_game_image/oglen.png'),
-              fit: BoxFit.fill
+    return SafeArea(
+      child: Scaffold(
+        body: Container(
+          width: double.infinity,
+          height: double.infinity,
+          decoration: const BoxDecoration(
+            image: DecorationImage(
+                image: AssetImage('assets/images/card_games/clock_card_game_image/oglen.png'),
+                fit: BoxFit.fill
+            ),
           ),
-        ),
-        child: SingleChildScrollView(
-          child: ValueListenableBuilder(
-              valueListenable: time,
-              builder: (BuildContext context, value, Widget? child)
-              {
+          child: SingleChildScrollView(
+            child: ValueListenableBuilder(
+                valueListenable: time,
+                builder: (BuildContext context, value, Widget? child)
+                {
 
-                if(data.currentTime == 0){
-                  minute = 0;
-                  minuteList.remove(minute);
-                }else if(data.currentTime == 1){
-                  minute = 15;
-                  minuteList.remove(minute);
-                }else if(data.currentTime == 2){
-                  minute = 30;
-                  minuteList.remove(minute);
-                }else{
-                  minute = minuteList[Random().nextInt(58)];
-                  hour = hourList[Random().nextInt(3)];
-                }
-                return Column(
-                  children: [
-                    Padding(
-                      padding: const EdgeInsets.symmetric(vertical: 60,horizontal: 30),
-                      child: Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  if(data.currentTime == 0){
+                    minute = 0;
+                    minuteList.remove(minute);
+                  }else if(data.currentTime == 1){
+                    minute = 15;
+                    minuteList.remove(minute);
+                  }else if(data.currentTime == 2){
+                    minute = 30;
+                    minuteList.remove(minute);
+                  }else{
+                    minute = minuteList[Random().nextInt(58)];
+                    hour = hourList[Random().nextInt(3)];
+                  }
+                  return Column(
+                    children: [
+                      Padding(
+                        padding: const EdgeInsets.symmetric(vertical: 60,horizontal: 30),
+                        child: Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          children: [
+                            InkWell(
+                                onTap: () {
+                                  data.currentTime = 0;
+                                  Navigator.of(context).pop();
+                                },
+                                child: const Image(image: AssetImage('assets/images/card_games/clock_card_game_image/btn_cikis.png'))
+                            ),
+                            Text('${data.currentTime+1}/4',
+                              style: GoogleFonts.montserratAlternates(
+                                textStyle: const TextStyle(
+                                    color: Colors.black,
+                                    fontWeight: FontWeight.bold,
+                                    fontSize: 34
+                                ),
+                              ),
+                            )
+                          ],
+                        ),
+                      ),
+                      const SizedBox(height: 10,),
+                      Center(
+                        child: Container(
+                          width: 320,
+                          height: 430,
+                          decoration: BoxDecoration(
+                            color: const Color(0xFF9BBFBE),
+                            borderRadius: BorderRadius.circular(32),
+                          ),
+                          child: Padding(
+                            padding: const EdgeInsets.all(8),
+                            child: Column(
+                              children: [
+                                Container(
+                                    padding: const EdgeInsets.all(8),
+                                    width: 300,
+                                    height: 303,
+                                    decoration: const BoxDecoration(
+                                        color: Colors.white,
+                                        borderRadius: BorderRadius.vertical(
+                                            top: Radius.circular(24)
+                                        )
+                                    ),
+                                    child: Container(
+                                      padding: const EdgeInsets.only(top: 95,right: 55,left: 55, bottom: 23),
+                                      decoration: const BoxDecoration(
+                                          image: DecorationImage(
+                                              image: AssetImage('assets/images/card_games/clock_card_game_image/saat.png')
+                                          )
+                                      ),
+                                      child: AnalogClock(
+                                          decoration: const BoxDecoration(
+                                              color: Colors.transparent,
+                                              shape: BoxShape.circle
+                                          ),
+                                          isLive: false,
+                                          showDigitalClock: false,
+                                          hourHandColor: Colors.black,
+                                          minuteHandColor: Colors.black,
+                                          textScaleFactor: 1.7,
+                                          showAllNumbers: true,
+                                          showSecondHand: false,
+                                          width: 90,
+                                          datetime: DateTime(
+                                              1,
+                                              1,
+                                              2,
+                                              hour, //saat
+                                              minute //dakika
+                                          )
+                                      ),
+                                    )
+                                ),
+                                const SizedBox(height: 10,),
+                                ValueListenableBuilder(
+                                  valueListenable: time,
+                                  builder: (context, value, child) {
+                                    if(minute < 10 ){
+                                      return RichText(
+                                          text: TextSpan(
+                                              text: '$hour:',
+                                              style: GoogleFonts.montserratAlternates(
+                                                textStyle: const TextStyle(
+                                                    color: Colors.white,
+                                                    fontWeight: FontWeight.bold,
+                                                    fontSize: 64
+                                                ),
+                                              ),
+                                              children: <TextSpan>[
+                                                TextSpan(
+                                                    text: '0$minute',
+                                                    style: GoogleFonts.montserratAlternates(
+                                                        textStyle: const TextStyle(
+                                                            color: Colors.white,
+                                                            fontWeight: FontWeight.bold,
+                                                            fontSize: 64
+                                                        )
+                                                    )
+                                                )
+                                              ]
+                                          )
+                                      );
+                                    }else{
+                                      return RichText(
+                                          text: TextSpan(
+                                              text: '$hour:',
+                                              style: GoogleFonts.montserratAlternates(
+                                                textStyle: const TextStyle(
+                                                    color: Colors.white,
+                                                    fontWeight: FontWeight.bold,
+                                                    fontSize: 64
+                                                ),
+                                              ),
+                                              children: <TextSpan>[
+                                                TextSpan(
+                                                    text: '$minute',
+                                                    style: GoogleFonts.montserratAlternates(
+                                                        textStyle: const TextStyle(
+                                                            color: Colors.white,
+                                                            fontWeight: FontWeight.bold,
+                                                            fontSize: 64
+                                                        )
+                                                    )
+                                                )
+                                              ]
+                                          )
+                                      );
+                                    }
+                                  },
+                                )
+                              ],
+                            ),
+                          ),
+                        ),
+                      ),
+                      const SizedBox(height: 10,),
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.center,
                         children: [
                           InkWell(
                               onTap: () {
-                                Navigator.of(context).pop();
-                                setState(() {
-                                  data.currentTime = 0;
-                                });
+                                if(data.currentTime < 3) {
+                                  setState(() {
+                                    data.currentTime += 1;
+                                  });
+                                }
                               },
-                              child: const Image(image: AssetImage('assets/images/card_games/clock_card_game_image/btn_cikis.png'))
+                              child: const Image(image: AssetImage('assets/images/card_games/clock_card_game_image/btn_sonraki.png'))
                           ),
-                          Text('${data.currentTime+1}/4',
-                            style: GoogleFonts.montserratAlternates(
-                              textStyle: const TextStyle(
-                                  color: Colors.black,
-                                  fontWeight: FontWeight.bold,
-                                  fontSize: 34
-                              ),
-                            ),
-                          )
                         ],
-                      ),
-                    ),
-                    const SizedBox(height: 10,),
-                    Center(
-                      child: Container(
-                        width: 320,
-                        height: 430,
-                        decoration: BoxDecoration(
-                          color: const Color(0xFF9BBFBE),
-                          borderRadius: BorderRadius.circular(32),
-                        ),
-                        child: Padding(
-                          padding: const EdgeInsets.all(8),
-                          child: Column(
-                            children: [
-                              Container(
-                                  padding: const EdgeInsets.all(8),
-                                  width: 300,
-                                  height: 303,
-                                  decoration: const BoxDecoration(
-                                      color: Colors.white,
-                                      borderRadius: BorderRadius.vertical(
-                                          top: Radius.circular(24)
-                                      )
-                                  ),
-                                  child: Container(
-                                    padding: const EdgeInsets.only(top: 95,right: 55,left: 55, bottom: 23),
-                                    decoration: const BoxDecoration(
-                                        image: DecorationImage(
-                                            image: AssetImage('assets/images/card_games/clock_card_game_image/saat.png')
-                                        )
-                                    ),
-                                    child: AnalogClock(
-                                        decoration: const BoxDecoration(
-                                            color: Colors.transparent,
-                                            shape: BoxShape.circle
-                                        ),
-                                        isLive: false,
-                                        showDigitalClock: false,
-                                        hourHandColor: Colors.black,
-                                        minuteHandColor: Colors.black,
-                                        textScaleFactor: 1.7,
-                                        showAllNumbers: true,
-                                        showSecondHand: false,
-                                        width: 90,
-                                        datetime: DateTime(
-                                            1,
-                                            1,
-                                            2,
-                                            hour, //saat
-                                            minute //dakika
-                                        )
-                                    ),
-                                  )
-                              ),
-                              const SizedBox(height: 10,),
-                              ValueListenableBuilder(
-                                valueListenable: time,
-                                builder: (context, value, child) {
-                                  if(minute < 10 ){
-                                    return RichText(
-                                        text: TextSpan(
-                                            text: '$hour:',
-                                            style: GoogleFonts.montserratAlternates(
-                                              textStyle: const TextStyle(
-                                                  color: Colors.white,
-                                                  fontWeight: FontWeight.bold,
-                                                  fontSize: 64
-                                              ),
-                                            ),
-                                            children: <TextSpan>[
-                                              TextSpan(
-                                                  text: '0$minute',
-                                                  style: GoogleFonts.montserratAlternates(
-                                                      textStyle: const TextStyle(
-                                                          color: Colors.white,
-                                                          fontWeight: FontWeight.bold,
-                                                          fontSize: 64
-                                                      )
-                                                  )
-                                              )
-                                            ]
-                                        )
-                                    );
-                                  }else{
-                                    return RichText(
-                                        text: TextSpan(
-                                            text: '$hour:',
-                                            style: GoogleFonts.montserratAlternates(
-                                              textStyle: const TextStyle(
-                                                  color: Colors.white,
-                                                  fontWeight: FontWeight.bold,
-                                                  fontSize: 64
-                                              ),
-                                            ),
-                                            children: <TextSpan>[
-                                              TextSpan(
-                                                  text: '$minute',
-                                                  style: GoogleFonts.montserratAlternates(
-                                                      textStyle: const TextStyle(
-                                                          color: Colors.white,
-                                                          fontWeight: FontWeight.bold,
-                                                          fontSize: 64
-                                                      )
-                                                  )
-                                              )
-                                            ]
-                                        )
-                                    );
-                                  }
-                                },
-                              )
-                            ],
-                          ),
-                        ),
-                      ),
-                    ),
-                    const SizedBox(height: 10,),
-                    Row(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children: [
-                        InkWell(
-                            onTap: () {
-                              if(data.currentTime < 3) {
-                                setState(() {
-                                  data.currentTime += 1;
-                                });
-                              }
-                            },
-                            child: const Image(image: AssetImage('assets/images/card_games/clock_card_game_image/btn_sonraki.png'))
-                        ),
-                      ],
-                    )
-                  ],
-                );
-              }
+                      )
+                    ],
+                  );
+                }
+            ),
           ),
         ),
       ),

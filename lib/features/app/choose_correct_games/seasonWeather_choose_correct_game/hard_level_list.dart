@@ -1,3 +1,4 @@
+import 'package:bootcamp_f32/constants/colors.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -55,7 +56,7 @@ class _HardSeasonWeatherChooseCorrectGameLevelListState extends ConsumerState<Ha
             ],
           ),
         ),
-        backgroundColor: const Color(0xFFBDF2D5),
+        backgroundColor: tWhiteColor,
         body: Column(
           crossAxisAlignment: CrossAxisAlignment.center,
           mainAxisAlignment: MainAxisAlignment.center,
@@ -82,7 +83,7 @@ class _HardSeasonWeatherChooseCorrectGameLevelListState extends ConsumerState<Ha
                       margin: const EdgeInsets.symmetric(horizontal: 30,vertical: 10),
                       alignment: Alignment.center,
                       decoration: BoxDecoration(
-                          color: const Color(0xFF4B5D67),
+                          color: tPrimaryColor,
                           borderRadius: BorderRadius.circular(24),
                           boxShadow: [
                             BoxShadow(
@@ -99,8 +100,8 @@ class _HardSeasonWeatherChooseCorrectGameLevelListState extends ConsumerState<Ha
                         children: [
                           Text(levels[index], style: GoogleFonts.comfortaa(
                             textStyle:  const TextStyle(
-                                color: Color(0xFFBDF2D5),
-                                fontSize: 48,
+                                color: Colors.black,
+                                fontSize: 24,
                                 fontWeight: FontWeight.bold
                             ),
                           ),),

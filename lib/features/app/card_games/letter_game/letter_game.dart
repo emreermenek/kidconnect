@@ -262,7 +262,7 @@ class _LetterGameState extends State<LetterGame> {
                                               fontWeight: FontWeight.w700
                                             ),
                                           ),),
-                                          SizedBox(height: value*80,),
+                                          SizedBox(height: value*70,),
                                           InkWell(
                                               onTap: () {
                                                 _controller.toggleCard();

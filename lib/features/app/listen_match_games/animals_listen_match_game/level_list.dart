@@ -1,7 +1,7 @@
+import 'package:bootcamp_f32/constants/colors.dart';
 import 'package:bootcamp_f32/features/app/listen_match_games/animals_listen_match_game/animals_listen_match_game.dart';
 import 'package:bootcamp_f32/features/app/listen_match_games/animals_listen_match_game/services/services.dart';
-import 'package:bootcamp_f32/features/app/listen_match_games/numbers_listen_match_game/numbers_listen_match_game.dart';
-import 'package:bootcamp_f32/features/app/listen_match_games/numbers_listen_match_game/services/services.dart';
+
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -60,7 +60,7 @@ class _AnimalsListenMatchGameLevelListState extends ConsumerState<AnimalsListenM
             ],
           ),
         ),
-        backgroundColor: const Color(0xFFBDF2D5),
+        backgroundColor: tWhiteColor,
         body: Column(
           crossAxisAlignment: CrossAxisAlignment.center,
           mainAxisAlignment: MainAxisAlignment.center,
@@ -87,7 +87,7 @@ class _AnimalsListenMatchGameLevelListState extends ConsumerState<AnimalsListenM
                       margin: const EdgeInsets.symmetric(horizontal: 30,vertical: 10),
                       alignment: Alignment.center,
                       decoration: BoxDecoration(
-                          color: const Color(0xFF4B5D67),
+                          color: tPrimaryColor,
                           borderRadius: BorderRadius.circular(24),
                           boxShadow: [
                             BoxShadow(
@@ -104,8 +104,8 @@ class _AnimalsListenMatchGameLevelListState extends ConsumerState<AnimalsListenM
                         children: [
                           Text(levels[index], style: GoogleFonts.comfortaa(
                             textStyle:  const TextStyle(
-                                color: Color(0xFFBDF2D5),
-                                fontSize: 48,
+                                color: Colors.black,
+                                fontSize: 24,
                                 fontWeight: FontWeight.bold
                             ),
                           ),),

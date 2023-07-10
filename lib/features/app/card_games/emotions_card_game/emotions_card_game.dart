@@ -82,7 +82,7 @@ class _EmotionsCardGameState extends ConsumerState<EmotionsCardGame> {
                                 const SizedBox(height: 30,),
                                 Text(emotionNames[data.currentEmotion], style: GoogleFonts.comfortaa(
                                     textStyle: const TextStyle(
-                                        fontSize: 40,
+                                        fontSize: 20,
                                         fontWeight: FontWeight.bold
                                     )
                                 ),)

@@ -1,4 +1,6 @@
 
+import 'package:bootcamp_f32/features/app/biger_or_lower_game/level_list.dart';
+import 'package:bootcamp_f32/features/app/opening_page/opening_page.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
@@ -26,7 +28,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       navigatorKey: navigatorKey,
       debugShowCheckedModeBanner: false,
-      home: const HomePage()
+      home: const FirstPage()
     );
   }
 }

@@ -95,7 +95,7 @@ class _ProfessionCardGameState extends ConsumerState<ProfessionsCardGame> {
                                       professionNames[data.currentProfession],
                                       style: GoogleFonts.comfortaa(
                                           textStyle: const TextStyle(
-                                              fontSize: 40,
+                                              fontSize: 30,
                                               fontWeight: FontWeight.bold)),
                                     )
                                   ],

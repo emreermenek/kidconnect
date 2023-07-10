@@ -271,8 +271,8 @@ class _NumberGameState extends State<NumberGame> {
                                                     mainAxisAlignment: MainAxisAlignment.center,
                                                     crossAxisAlignment: CrossAxisAlignment.center,
                                                     children: [
-                                                      Image(image: AssetImage(shapeImages[whichImageIndex]),width: 125,height: 250,),
-                                                      Image(image: AssetImage(shapeImages[whichImageIndex]),width: 125,height: 250,),
+                                                      Image(image: AssetImage(shapeImages[whichImageIndex]),width: 100,height: 250,),
+                                                      Image(image: AssetImage(shapeImages[whichImageIndex]),width: 100,height: 250,),
                                                     ],
                                                   );
                                                 }else if((i+1) == 3){
@@ -284,15 +284,15 @@ class _NumberGameState extends State<NumberGame> {
                                                         mainAxisAlignment: MainAxisAlignment.center,
                                                         crossAxisAlignment: CrossAxisAlignment.center,
                                                         children: [
-                                                          Image(image: AssetImage(shapeImages[whichImageIndex]),width: 125,height: 125,),
-                                                          Image(image: AssetImage(shapeImages[whichImageIndex]),width: 125,height: 125,),
+                                                          Image(image: AssetImage(shapeImages[whichImageIndex]),width: 100,height: 100,),
+                                                          Image(image: AssetImage(shapeImages[whichImageIndex]),width: 100,height: 100,),
                                                         ],
                                                       ),
                                                       Row(
                                                         mainAxisAlignment: MainAxisAlignment.center,
                                                         crossAxisAlignment: CrossAxisAlignment.center,
                                                         children: [
-                                                          Image(image: AssetImage(shapeImages[whichImageIndex]),width: 125,height: 125,),
+                                                          Image(image: AssetImage(shapeImages[whichImageIndex]),width: 100,height: 100,),
                                                         ],
                                                       ),
                                                     ],
@@ -306,16 +306,16 @@ class _NumberGameState extends State<NumberGame> {
                                                         mainAxisAlignment: MainAxisAlignment.center,
                                                         crossAxisAlignment: CrossAxisAlignment.center,
                                                         children: [
-                                                          Image(image: AssetImage(shapeImages[whichImageIndex]),width: 125,height: 125,),
-                                                          Image(image: AssetImage(shapeImages[whichImageIndex]),width: 125,height: 125),
+                                                          Image(image: AssetImage(shapeImages[whichImageIndex]),width: 100,height: 100,),
+                                                          Image(image: AssetImage(shapeImages[whichImageIndex]),width: 100,height: 100),
                                                         ],
                                                       ),
                                                       Row(
                                                         mainAxisAlignment: MainAxisAlignment.center,
                                                         crossAxisAlignment: CrossAxisAlignment.center,
                                                         children: [
-                                                          Image(image: AssetImage(shapeImages[whichImageIndex]),width: 125,height: 125),
-                                                          Image(image: AssetImage(shapeImages[whichImageIndex]),width: 125,height: 125),
+                                                          Image(image: AssetImage(shapeImages[whichImageIndex]),width: 100,height: 100),
+                                                          Image(image: AssetImage(shapeImages[whichImageIndex]),width: 100,height: 100),
                                                         ],
                                                       ),
                                                     ],
@@ -329,23 +329,23 @@ class _NumberGameState extends State<NumberGame> {
                                                         mainAxisAlignment: MainAxisAlignment.center,
                                                         crossAxisAlignment: CrossAxisAlignment.center,
                                                         children: [
-                                                          Image(image: AssetImage(shapeImages[whichImageIndex]),width: 125,height: 250/3,),
-                                                          Image(image: AssetImage(shapeImages[whichImageIndex]),width: 125,height: 250/3),
+                                                          Image(image: AssetImage(shapeImages[whichImageIndex]),width: 100,height: 250/3,),
+                                                          Image(image: AssetImage(shapeImages[whichImageIndex]),width: 100,height: 250/3),
                                                         ],
                                                       ),
                                                       Row(
                                                         mainAxisAlignment: MainAxisAlignment.center,
                                                         crossAxisAlignment: CrossAxisAlignment.center,
                                                         children: [
-                                                          Image(image: AssetImage(shapeImages[whichImageIndex]),width: 125,height: 250/3),
-                                                          Image(image: AssetImage(shapeImages[whichImageIndex]),width: 125,height: 250/3),
+                                                          Image(image: AssetImage(shapeImages[whichImageIndex]),width: 100,height: 250/3),
+                                                          Image(image: AssetImage(shapeImages[whichImageIndex]),width: 100,height: 250/3),
                                                         ],
                                                       ),
                                                       Row(
                                                         mainAxisAlignment: MainAxisAlignment.center,
                                                         crossAxisAlignment: CrossAxisAlignment.center,
                                                         children: [
-                                                          Image(image: AssetImage(shapeImages[whichImageIndex]),width: 125,height: 250/3),
+                                                          Image(image: AssetImage(shapeImages[whichImageIndex]),width: 100,height: 250/3),
                                                         ],
                                                       ),
                                                     ],
@@ -359,24 +359,24 @@ class _NumberGameState extends State<NumberGame> {
                                                         mainAxisAlignment: MainAxisAlignment.center,
                                                         crossAxisAlignment: CrossAxisAlignment.center,
                                                         children: [
-                                                          Image(image: AssetImage(shapeImages[whichImageIndex]),width: 125,height: 250/3,),
-                                                          Image(image: AssetImage(shapeImages[whichImageIndex]),width: 125,height: 250/3,),
+                                                          Image(image: AssetImage(shapeImages[whichImageIndex]),width: 100,height: 250/3,),
+                                                          Image(image: AssetImage(shapeImages[whichImageIndex]),width: 100,height: 250/3,),
                                                         ],
                                                       ),
                                                       Row(
                                                         mainAxisAlignment: MainAxisAlignment.center,
                                                         crossAxisAlignment: CrossAxisAlignment.center,
                                                         children: [
-                                                          Image(image: AssetImage(shapeImages[whichImageIndex]),width: 125,height: 250/3,),
-                                                          Image(image: AssetImage(shapeImages[whichImageIndex]),width: 125,height: 250/3,),
+                                                          Image(image: AssetImage(shapeImages[whichImageIndex]),width: 100,height: 250/3,),
+                                                          Image(image: AssetImage(shapeImages[whichImageIndex]),width: 100,height: 250/3,),
                                                         ],
                                                       ),
                                                       Row(
                                                         mainAxisAlignment: MainAxisAlignment.center,
                                                         crossAxisAlignment: CrossAxisAlignment.center,
                                                         children: [
-                                                          Image(image: AssetImage(shapeImages[whichImageIndex]),width: 125,height: 250/3,),
-                                                          Image(image: AssetImage(shapeImages[whichImageIndex]),width: 125,height: 250/3,),
+                                                          Image(image: AssetImage(shapeImages[whichImageIndex]),width: 100,height: 250/3,),
+                                                          Image(image: AssetImage(shapeImages[whichImageIndex]),width: 100,height: 250/3,),
                                                         ],
                                                       ),
                                                     ],
@@ -641,7 +641,7 @@ class _NumberGameState extends State<NumberGame> {
                                                 fontWeight: FontWeight.w700
                                             ),
                                           ),),
-                                          const SizedBox(height: 70,),
+                                          const SizedBox(height: 50,),
                                           InkWell(
                                               onTap: () {
                                                 _controller.toggleCard();
@@ -655,7 +655,6 @@ class _NumberGameState extends State<NumberGame> {
                                                 fontWeight: FontWeight.w400
                                             ),
                                           ),),
-                                          const SizedBox(height: 10,)
                                         ],
                                       ),
                                     ),

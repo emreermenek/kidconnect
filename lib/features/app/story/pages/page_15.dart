@@ -26,78 +26,80 @@ class _StoryPage15State extends State<StoryPage15> {
   }
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      backgroundColor: Colors.white,
-      body: Stack(
-        children: [
-          Align(
-            alignment: Alignment.bottomCenter,
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                InkWell(
-                    onTap: () async {
-                      if(isPlaying){
-                        setState(() {
-                          isPlaying = !isPlaying;
-                        });
-                        await _player.play();
-
-                      }else {
-                        setState(() {
-                          isPlaying = !isPlaying;
-                        });
-                        await _player.pause();
-
-                      }
-
-                    },
-                    child: isPlaying ?
-                    const Image(image: AssetImage('assets/images/story/play button.png'),) :
-                    const Image(image: AssetImage('assets/images/story/stop button.png'),)
-
-                ),
-                const SizedBox(width: 15,),
-                Container(
-                  width: 209,
-                  height: 299,
-                  decoration: const BoxDecoration(
-                      image: DecorationImage(
-                          image: AssetImage('assets/images/story/onalti.png'),
-                          fit: BoxFit.fill
-                      )
-                  ),
-                ),
-              ],
-            ),
-          ),
-          Column(
-            children: [
-              Align(
-                alignment: Alignment.topLeft,
-                child: Padding(
-                  padding: const EdgeInsets.all(8),
-                  child: InkWell(
-                    onTap: () => Navigator.of(context).pop(),
-                    child: const Image(image: AssetImage('assets/images/story/cikis.png'),),
-                  ),
-                ),
-              ),
-              const Row(
+    return SafeArea(
+      child: Scaffold(
+        backgroundColor: Colors.white,
+        body: Stack(
+          children: [
+            Align(
+              alignment: Alignment.bottomCenter,
+              child: Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  Column(
-                    children: [
-                      Image(image: AssetImage('assets/images/story/anlati15a.png')),
+                  InkWell(
+                      onTap: () async {
+                        if(isPlaying){
+                          setState(() {
+                            isPlaying = !isPlaying;
+                          });
+                          await _player.play();
 
-                    ],
+                        }else {
+                          setState(() {
+                            isPlaying = !isPlaying;
+                          });
+                          await _player.pause();
+
+                        }
+
+                      },
+                      child: isPlaying ?
+                      const Image(image: AssetImage('assets/images/story/play button.png'),) :
+                      const Image(image: AssetImage('assets/images/story/stop button.png'),)
+
+                  ),
+                  const SizedBox(width: 15,),
+                  Container(
+                    width: 209,
+                    height: 299,
+                    decoration: const BoxDecoration(
+                        image: DecorationImage(
+                            image: AssetImage('assets/images/story/onalti.png'),
+                            fit: BoxFit.fill
+                        )
+                    ),
                   ),
                 ],
               ),
+            ),
+            Column(
+              children: [
+                Align(
+                  alignment: Alignment.topLeft,
+                  child: Padding(
+                    padding: const EdgeInsets.all(8),
+                    child: InkWell(
+                      onTap: () => Navigator.of(context).pop(),
+                      child: const Image(image: AssetImage('assets/images/story/cikis.png'),),
+                    ),
+                  ),
+                ),
+                const Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    Column(
+                      children: [
+                        Image(image: AssetImage('assets/images/story/anlati15a.png')),
 
-            ],
-          )
-        ],
+                      ],
+                    ),
+                  ],
+                ),
+
+              ],
+            )
+          ],
+        ),
       ),
     );
   }

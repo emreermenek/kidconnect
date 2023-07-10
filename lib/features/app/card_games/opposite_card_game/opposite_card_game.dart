@@ -181,10 +181,10 @@ class _OppositeCardGameState extends ConsumerState<OppositeCardGame> {
                                                 ),
                                                 child: Image(image: AssetImage(twoImages[data.currentOpposite]),),
                                               ),
-                                              const SizedBox(height: 40,),
+                                              const SizedBox(height: 30,),
                                               Text(twoNames[data.currentOpposite], style: GoogleFonts.comfortaa(
                                                   textStyle: const TextStyle(
-                                                      fontSize: 28,
+                                                      fontSize: 20,
                                                       fontWeight: FontWeight.bold
                                                   )
                                               ),)

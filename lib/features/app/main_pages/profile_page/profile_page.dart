@@ -39,7 +39,7 @@ class _ProfilePageState extends State<ProfilePage> {
               child: Padding(
                 padding: const EdgeInsets.all(22.0),
                 child: Container(
-                  height: 627,
+                  height: 630,
                   width: 346,
                   decoration: const BoxDecoration(
                     color: Colors.white,
