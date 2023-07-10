@@ -8,14 +8,14 @@ import 'number_choose_correct_game.dart';
 import 'services/data_service.dart';
 
 
-class ChooseCorrectGameLevelList extends ConsumerStatefulWidget {
-  const ChooseCorrectGameLevelList({Key? key}) : super(key: key);
+class NumberChooseCorrectGameLevelList extends ConsumerStatefulWidget {
+  const NumberChooseCorrectGameLevelList({Key? key}) : super(key: key);
 
   @override
-  ConsumerState<ChooseCorrectGameLevelList> createState() => _ChooseCorrectGameLevelListState();
+  ConsumerState<NumberChooseCorrectGameLevelList> createState() => _NumberChooseCorrectGameLevelListState();
 }
 
-class _ChooseCorrectGameLevelListState extends ConsumerState<ChooseCorrectGameLevelList> {
+class _NumberChooseCorrectGameLevelListState extends ConsumerState<NumberChooseCorrectGameLevelList> {
   List<String> levels =
   ['bölüm 1','bölüm 2','bölüm 3','bölüm 4','bölüm 5','bölüm 6','bölüm 7','bölüm 8','bölüm 9','bölüm 10'];
 

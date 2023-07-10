@@ -1,4 +1,9 @@
 import 'package:bootcamp_f32/constants/colors.dart';
+import 'package:bootcamp_f32/features/app/choose_correct_games/body_choose_correct_game/difficulty.dart';
+import 'package:bootcamp_f32/features/app/listen_match_games/body_listen_match_game/level_list.dart';
+import 'package:bootcamp_f32/features/app/make_logic_game/body_make_logic_game/level_list.dart';
+import 'package:bootcamp_f32/features/app/pouch_games/body_pouch_game/level_list.dart';
+import 'package:bootcamp_f32/features/app/shadow_games/body_shadow_game/level_list.dart';
 import 'package:flutter/material.dart';
 
 import '../../../../common_widgets/app_bar_widget.dart';
@@ -29,7 +34,13 @@ final List texts = [
   'TORBA OYUNU',
 ];
 
-final List<String> routes = [];
+final List routes = [
+  const BodyMakeLogicGameLevelList(),
+  const BodyListenMatchGameLevelList(),
+  const BodyShadowGameLevelList(),
+  const BodyChooseCorrectGameDifficulty(),
+  const BodyPouchGameLevelList()
+];
 
 class _BodyGamesPageState extends State<BodyGamesPage> {
   @override

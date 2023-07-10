@@ -1,4 +1,12 @@
 import 'package:bootcamp_f32/constants/colors.dart';
+import 'package:bootcamp_f32/features/app/biger_or_lower_game/level_list.dart';
+import 'package:bootcamp_f32/features/app/choose_correct_games/numbers_choose_correct_game/level_list.dart';
+import 'package:bootcamp_f32/features/app/clock_game/level_list.dart';
+import 'package:bootcamp_f32/features/app/how_many_image_game/level_list.dart';
+import 'package:bootcamp_f32/features/app/listen_match_games/numbers_listen_match_game/level_list.dart';
+import 'package:bootcamp_f32/features/app/pouch_games/numbers_pouch_game/level_list.dart';
+import 'package:bootcamp_f32/features/app/shadow_games/numbers_shadow_game/level_list.dart';
+import 'package:bootcamp_f32/features/app/which_one_correct_game/level_list.dart';
 import 'package:flutter/material.dart';
 import '../../../../common_widgets/app_bar_widget.dart';
 import '../../../../common_widgets/bottom_navigation_bar_widget.dart';
@@ -34,7 +42,16 @@ final List texts = [
   'TORBA OYUNU',
 ];
 
-final List<String> routes = [];
+final List routes = [
+  const WhichOneCorrectGameLevelList(),
+  const HowManyImageGameLevelList(),
+  const BiggerOrLowerGameLevelList(),
+  const NumberChooseCorrectGameLevelList(),
+  const ClockGameLevelList(),
+  const NumbersShadowGameLevelList(),
+  const NumbersListenMatchGameLevelList(),
+  const NumbersPouchGameLevelList()
+];
 
 class _NumberGamesPageState extends State<NumberGamesPage> {
   @override

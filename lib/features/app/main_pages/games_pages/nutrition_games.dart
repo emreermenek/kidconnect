@@ -1,9 +1,15 @@
 import 'package:bootcamp_f32/constants/colors.dart';
+import 'package:bootcamp_f32/features/app/listen_match_games/nutritions_listen_match_game/level_list.dart';
+import 'package:bootcamp_f32/features/app/make_logic_game/nutrition_make_logic_game/level_list.dart';
+import 'package:bootcamp_f32/features/app/shadow_games/nutritions_shadow_game/level_list.dart';
+import 'package:bootcamp_f32/features/app/shadow_games/nutritions_shadow_game/nutritions_shadow_game.dart';
 import 'package:flutter/material.dart';
 import '../../../../common_widgets/app_bar_widget.dart';
 import '../../../../common_widgets/bottom_navigation_bar_widget.dart';
 import '../../../../common_widgets/main_pages_background.dart';
 import '../../../../common_widgets/main_pages_gridView_widget.dart';
+import '../../choose_correct_games/nutritions_choose_correct_game/nutritions_game_list.dart';
+import '../../pouch_games/nutrition_pouch_game/level_list.dart';
 
 class NutritionGamesPage extends StatefulWidget {
   const NutritionGamesPage({Key? key}) : super(key: key);
@@ -28,7 +34,13 @@ final List texts = [
   'TORBA OYUNU',
 ];
 
-final List<String> routes = [];
+final List routes = [
+  const NutritionMakeLogicGameLevelList(),
+  const NutritionsListenMatchGameLevelList(),
+  const NutritionsShadowGameLevelList(),
+  const NutritionChooseCorrectGameLevelList(),
+  const NutritionPouchGameLevelList()
+];
 
 class _NutritionGamesPageState extends State<NutritionGamesPage> {
   @override

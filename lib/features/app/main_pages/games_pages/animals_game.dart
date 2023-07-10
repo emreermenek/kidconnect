@@ -1,4 +1,10 @@
 import 'package:bootcamp_f32/constants/colors.dart';
+import 'package:bootcamp_f32/features/app/choose_correct_games/animals_choose_correct_game/difficulty.dart';
+import 'package:bootcamp_f32/features/app/listen_match_games/animals_listen_match_game/level_list.dart';
+import 'package:bootcamp_f32/features/app/make_logic_game/animal_make_logic_game/level_list.dart';
+import 'package:bootcamp_f32/features/app/pouch_games/animal_pouch_game/level_list.dart';
+import 'package:bootcamp_f32/features/app/shadow_games/animals_shadow_game/level_list.dart';
+import 'package:bootcamp_f32/features/app/whose_sound_game/level_list.dart';
 import 'package:flutter/material.dart';
 
 import '../../../../common_widgets/app_bar_widget.dart';
@@ -31,7 +37,14 @@ final List texts = [
   'TORBA OYUNU',
 ];
 
-final List<String> routes = [];
+final List routes = [
+  const AnimalMakeLogicGameLevelList(),
+  const WhoseSoundGameLevelList(),
+  const AnimalsShadowGameLevelList(),
+  const AnimalChooseCorrectGameDifficulty(),
+  const AnimalsListenMatchGameLevelList(),
+  const AnimalsPouchGameLevelList()
+];
 
 class _AnimalGamesPageState extends State<AnimalGamesPage> {
   @override

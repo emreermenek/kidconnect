@@ -61,7 +61,7 @@ class _HowManyImageGameState extends ConsumerState<HowManyImageGame> {
               const Padding(
                 padding: EdgeInsets.symmetric(vertical: 10,horizontal: 85),
                 child: Center(
-                  child: Image(image: AssetImage('assets/images/choose_correct_images/background.png'),),
+                  child: Image(image: AssetImage('assets/images/choose_correct_games/number_choose_correct_images/background.png'),),
                 ),
               ),
               Column(
@@ -75,7 +75,7 @@ class _HowManyImageGameState extends ConsumerState<HowManyImageGame> {
                             onTap: () {
                               Navigator.of(context).pop();
                             },
-                            child: const Image(image: AssetImage('assets/images/choose_correct_images/geri button.png'))),
+                            child: const Image(image: AssetImage('assets/images/choose_correct_games/number_choose_correct_images/geri button.png'))),
                         Text('${data.currentLevel+1}/10', style: GoogleFonts.gluten(
                           textStyle:  const TextStyle(
                               color: Color(0xFF16519F),

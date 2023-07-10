@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:learning_text_recognition/learning_text_recognition.dart';
 
 class TextVocalize extends StatefulWidget {
   const TextVocalize({super.key});
@@ -10,11 +9,9 @@ class TextVocalize extends StatefulWidget {
 }
 
 class _TextVocalizeState extends State<TextVocalize> {
-  TextRecognition? _textRecognition = TextRecognition();
 
   @override
   void dispose() {
-    _textRecognition?.dispose();
     super.dispose();
   }
 

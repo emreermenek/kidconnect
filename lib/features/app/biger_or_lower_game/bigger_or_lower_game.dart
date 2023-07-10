@@ -63,7 +63,7 @@ class _BiggerOrLowerGameState extends ConsumerState<BiggerOrLowerGame> {
                   padding: EdgeInsets.symmetric(vertical: 10, horizontal: 85),
                   child: Center(
                     child: Image(image: AssetImage(
-                        'assets/images/choose_correct_images/background.png'),),
+                        'assets/images/choose_correct_games/number_choose_correct_images/background.png'),),
                   ),
                 ),
                 Padding(
@@ -79,7 +79,7 @@ class _BiggerOrLowerGameState extends ConsumerState<BiggerOrLowerGame> {
                                 Navigator.of(context).pop();
                               },
                               child: const Image(image: AssetImage(
-                                  'assets/images/choose_correct_images/geri button.png'))),
+                                  'assets/images/choose_correct_games/number_choose_correct_images/geri button.png'))),
                           Text('${data.currentLevel + 1}/10',
                             style: GoogleFonts.gluten(
                               textStyle: const TextStyle(

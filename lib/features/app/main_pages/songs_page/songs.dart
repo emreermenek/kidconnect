@@ -1,4 +1,6 @@
 import 'package:bootcamp_f32/constants/colors.dart';
+import 'package:bootcamp_f32/features/app/coming_soon_screen/coming_soon_screen.dart';
+import 'package:bootcamp_f32/features/app/lyrics_game/lyrics.dart';
 import 'package:flutter/material.dart';
 
 import '../../../../common_widgets/app_bar_widget.dart';
@@ -23,7 +25,10 @@ final List texts = [
   'ŞARKI TAMAMLAMA',
 ];
 
-final List<String> routes = [];
+final List routes = [
+  const LyricsGame(),
+  const ComingSoonScreen()
+];
 
 class _SongsPageState extends State<SongsPage> {
   @override

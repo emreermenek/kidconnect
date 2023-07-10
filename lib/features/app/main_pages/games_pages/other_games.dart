@@ -1,9 +1,12 @@
 import 'package:bootcamp_f32/constants/colors.dart';
+import 'package:bootcamp_f32/features/app/make_word_game/level_list.dart';
+import 'package:bootcamp_f32/features/app/shape_match_game/shape_match_game/shape_match_game.dart';
 import 'package:flutter/material.dart';
 import '../../../../common_widgets/app_bar_widget.dart';
 import '../../../../common_widgets/bottom_navigation_bar_widget.dart';
 import '../../../../common_widgets/main_pages_background.dart';
 import '../../../../common_widgets/main_pages_gridView_widget.dart';
+import '../../shape_match_game/shape_match_game/level_list.dart';
 
 class OtherGamesPage extends StatefulWidget {
   const OtherGamesPage({Key? key}) : super(key: key);
@@ -22,7 +25,10 @@ final List texts = [
   'SÖZCÜK OLUŞTUMA',
 ];
 
-final List<String> routes = [];
+final List routes = [
+  const ShapeMatchGameLevelList(),
+  const MakeWordGameLevelList()
+];
 
 class _OtherGamesPageState extends State<OtherGamesPage> {
   @override

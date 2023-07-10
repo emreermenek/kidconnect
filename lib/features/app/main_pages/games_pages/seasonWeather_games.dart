@@ -1,4 +1,9 @@
 import 'package:bootcamp_f32/constants/colors.dart';
+import 'package:bootcamp_f32/features/app/choose_correct_games/seasonWeather_choose_correct_game/difficulty.dart';
+import 'package:bootcamp_f32/features/app/listen_match_games/season_weather_listen_match_game/level_list.dart';
+import 'package:bootcamp_f32/features/app/make_logic_game/season_weather_make_logic_game/level_list.dart';
+import 'package:bootcamp_f32/features/app/pouch_games/seasonWeather_pouch_game/level_list.dart';
+import 'package:bootcamp_f32/features/app/shadow_games/seasonWeather_shadow_game/level_list.dart';
 import 'package:flutter/material.dart';
 import '../../../../common_widgets/app_bar_widget.dart';
 import '../../../../common_widgets/bottom_navigation_bar_widget.dart';
@@ -14,7 +19,6 @@ class SeasonWeatherGamesPage extends StatefulWidget {
 
 final List cards = [
   'assets/images/games_images/alphabet_games/critical-thinking.png',
-  'assets/images/games_images/animal_games/problem.png',
   'assets/images/games_images/number_games/person.png',
   'assets/images/games_images/number_games/true-or-false.png',
   'assets/images/games_images/number_games/ear.png',
@@ -23,14 +27,19 @@ final List cards = [
 
 final List texts = [
   'MANTIK KURALIM',
-  'BU SES KİMİN?',
   'GÖLGE BULMA',
   'DOĞRUYU BULALIM',
   'DİNLE EŞLEŞTİR',
   'TORBA OYUNU',
 ];
 
-final List<String> routes = [];
+final List routes = [
+  const SeasonWeatherMakeLogicGameLevelList(),
+  const SeasonWeatherShadowGameLevelList(),
+  const SeasonWeatherChooseCorrectGameDifficulty(),
+  const SeasonWeatherListenMatchGameLevelList(),
+  const SeasonWeatherPouchGameLevelList()
+];
 
 class _SeasonWeatherGamesPageState extends State<SeasonWeatherGamesPage> {
   @override
