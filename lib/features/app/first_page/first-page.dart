@@ -77,7 +77,7 @@ class _FirstPageState extends ConsumerState<FirstPage> {
                               child: ElevatedButton(
                                 onPressed: () {
                                   Navigator.of(context)
-                                      .pushReplacement(MaterialPageRoute(
+                                      .push(MaterialPageRoute(
                                     builder: (context) => const SignupPage(),
                                   ));
                                 },

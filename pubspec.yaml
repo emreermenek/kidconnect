@@ -160,6 +160,8 @@ flutter:
     - assets/images/do_together_images/seeAndDo/
     - assets/images/do_together_images/sports/
     - assets/sounds/story_sounds/
+    - assets/images/pouch_game_images/
+    - assets/images/sound_vocalizing_images/
 
   #   - images/a_dot_burr.jpeg
   #   - images/a_dot_ham.jpeg

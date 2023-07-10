@@ -302,6 +302,19 @@ class _SignupPageState extends ConsumerState<SignupPage> {
               ),
             ),
           ),
+          Padding(
+            padding: const EdgeInsets.all(16.0),
+            child: Positioned(
+              top: 0,
+              right: 0,
+              child: InkWell(
+                  onTap: () {
+                    Navigator.of(context).pop();
+                  },
+                  child: const Image(image: AssetImage(
+                      'assets/images/choose_correct_games/color_choose_correct_game_images/exit.png'))),
+            ),
+          ),
         ]),
       ),
     );

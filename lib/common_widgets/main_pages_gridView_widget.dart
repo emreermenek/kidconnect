@@ -13,7 +13,6 @@ class GridViewWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-
     return GridView.builder(
       padding: const EdgeInsets.symmetric(horizontal: 50, vertical: 15),
       scrollDirection: Axis.vertical,

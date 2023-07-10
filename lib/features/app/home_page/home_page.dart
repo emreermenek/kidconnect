@@ -138,7 +138,6 @@ class _HomePageState extends State<HomePage> {
                     'assets/images/home_page_image/content/shape1.png'),
               )),
           GridView.builder(
-            padding: const EdgeInsets.symmetric(horizontal: 60, vertical: 15),
             scrollDirection: Axis.vertical,
             itemCount: 6,
             gridDelegate: const SliverGridDelegateWithMaxCrossAxisExtent(
@@ -160,7 +159,7 @@ class _HomePageState extends State<HomePage> {
                 child: GridTile(
                   child: Container(
                     padding: const EdgeInsets.all(12),
-                    margin: const EdgeInsets.all(2),
+                    margin: const EdgeInsets.all(6),
                     decoration: BoxDecoration(
                         boxShadow: [
                           BoxShadow(
