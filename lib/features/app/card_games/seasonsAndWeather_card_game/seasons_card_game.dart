@@ -19,7 +19,7 @@ class _SeasonsCardGameState extends ConsumerState<SeasonsCardGame> {
     final ValueNotifier<int> chooseSeason = ValueNotifier<int>(data.currentSeason);
     return SafeArea(
       child: Scaffold(
-        backgroundColor: const Color(0xFFEFE9AF),
+        backgroundColor: const Color(0xFFF2AB27),
         body: ValueListenableBuilder(
             valueListenable: chooseSeason,
             builder: (BuildContext context, value, Widget? child) {

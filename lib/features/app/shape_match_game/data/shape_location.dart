@@ -23,7 +23,7 @@ const List<List<String>> shapeLocation =
   ],
   [
     'assets/images/image_match/kaplumbağa.png', 'assets/images/image_match/dolap.png', 'assets/images/image_match/masa.png',
-    'assets/images/image_match/kurbaga.png', 'assets/images/image_match/kitap.png', 'assets/images/image_match/pırasa.png'
+    'assets/images/image_match/kurbağa.png', 'assets/images/image_match/kitap.png', 'assets/images/image_match/pırasa.png'
   ],
   [
     'assets/images/image_match/kolye.png','assets/images/image_match/telefon.png','assets/images/image_match/mikrofon.png',

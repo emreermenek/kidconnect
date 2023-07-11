@@ -116,7 +116,7 @@ class _WhoseSoundGameState extends ConsumerState<WhoseSoundGame> {
                                   _player.play();
                                 },
                                 child: Image.asset(
-                                    'assets/images/listen_match_game_images/dinleme.png'),
+                                    'assets/images/whose_sound_images/ses.png'),
                               ),
                               const SizedBox(height: 10),
                               const Image(image: AssetImage('assets/images/whose_sound_images/soru.png')),

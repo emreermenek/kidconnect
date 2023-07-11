@@ -109,32 +109,6 @@ class _SettingsPageState extends ConsumerState<SettingsPage> {
                         ),
                         child: Column(
                           children: [
-                            Row(
-                              children: [
-                                const Image(image: AssetImage('assets/images/settings_image/musical-notes.png'),width: 40,),
-                                const SizedBox(width: 25,),
-                                Text('MÜZİK',style: GoogleFonts.quicksand(
-                                  textStyle: const TextStyle(
-                                    color: Colors.black,
-                                    fontSize: 24,
-                                    fontWeight: FontWeight.bold,
-                                  ),
-                                ) ),
-                                const SizedBox(width: 32,),
-                                FlutterSwitch(
-                                    width: 45.0,
-                                    height: 25.0,
-                                    padding: 3,
-                                    value: isMusicOpen,
-                                    onToggle: (val) {
-                                      setState(() {
-                                        isMusicOpen = val;
-                                      });
-                                    }
-                                ),
-
-                              ],
-                            ),
                             const SizedBox(height: 30,),
                             Row(
                               children: [
@@ -225,32 +199,6 @@ class _SettingsPageState extends ConsumerState<SettingsPage> {
                     ),
                     child: Column(
                       children: [
-                        Row(
-                          children: [
-                            const Image(image: AssetImage('assets/images/settings_image/musical-notes.png'),width: 40,),
-                            const SizedBox(width: 25,),
-                            Text('MÜZİK',style: GoogleFonts.quicksand(
-                              textStyle: const TextStyle(
-                                color: Colors.black,
-                                fontSize: 24,
-                                fontWeight: FontWeight.bold,
-                              ),
-                            ) ),
-                            const SizedBox(width: 32,),
-                            FlutterSwitch(
-                                width: 45.0,
-                                height: 25.0,
-                                padding: 3,
-                                value: isMusicOpen,
-                                onToggle: (val) {
-                                  setState(() {
-                                    isMusicOpen = val;
-                                  });
-                                }
-                            ),
-
-                          ],
-                        ),
                         const SizedBox(height: 30,),
                         Row(
                           children: [
@@ -359,32 +307,6 @@ class _SettingsPageState extends ConsumerState<SettingsPage> {
                       ),
                       child: Column(
                         children: [
-                          Row(
-                            children: [
-                              const Image(image: AssetImage('assets/images/settings_image/musical-notes.png'),width: 40,),
-                              const SizedBox(width: 25,),
-                              Text('MÜZİK',style: GoogleFonts.quicksand(
-                                textStyle: const TextStyle(
-                                  color: Colors.black,
-                                  fontSize: 24,
-                                  fontWeight: FontWeight.bold,
-                                ),
-                              ) ),
-                              const SizedBox(width: 32,),
-                              FlutterSwitch(
-                                  width: 45.0,
-                                  height: 25.0,
-                                  padding: 3,
-                                  value: isMusicOpen,
-                                  onToggle: (val) {
-                                    setState(() {
-                                      isMusicOpen = val;
-                                    });
-
-                                  }
-                              ),
-                            ],
-                          ),
                           const SizedBox(height: 30,),
                           Row(
                             children: [

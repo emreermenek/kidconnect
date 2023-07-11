@@ -1,10 +1,13 @@
 import 'dart:async';
+import 'dart:io';
 
 import 'package:bootcamp_f32/common_widgets/bottom_navigation_bar_widget.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:image_picker/image_picker.dart';
 import '../../../../constants/colors.dart';
 import 'appbar_profile_page.dart';
 import 'appbar_welcome_page.dart';
@@ -18,24 +21,29 @@ class ProfilePage extends StatefulWidget {
 
 class _ProfilePageState extends State<ProfilePage> {
   String userName = '';
-  Future userData() async {
-    var user = FirebaseAuth.instance.currentUser;
-    String uid = user!.uid;
-    DocumentSnapshot snapshot  =
-    await FirebaseFirestore.instance.collection('users').doc(uid).get();
-    Map<String, dynamic> userData = snapshot.data() as Map<String, dynamic>;
-    userName = userData['name'];
-  }
-
   @override
   void initState() {
     // TODO: implement initState
     super.initState();
   }
+  File? _image;
 
+  Future _pickImage(ImageSource source) async {
+    try{
+      final image = await ImagePicker().pickImage(source: source);
+      if(image == null) return;
+      File? img = File(image.path);
+      setState(() {
+        _image = img;
+        Navigator.of(context).pop();
+      });
+    } on PlatformException catch (e){
+      print(e);
+      Navigator.of(context).pop();
+    }
+  }
   @override
   Widget build(BuildContext context) {
-
     return SafeArea(
       child: Scaffold(
         backgroundColor: const Color(0xFFF07E74),
@@ -78,7 +86,7 @@ class _ProfilePageState extends State<ProfilePage> {
                               if(snapshot.hasData){
                                 Map<String, dynamic> userData = snapshot.data!.data() as Map<String, dynamic>;
                                 String userName = userData['name'];
-                                return Profile2(userName: userName,);
+                                return Profile2(userName: userName,context: context,pickImage: _pickImage,image: _image,);
                               } else if(snapshot.hasError){
                                 return const Text('Bilinmeyen hata oluştu!');
                               }else{
@@ -105,9 +113,14 @@ class Profile2 extends StatelessWidget {
   const Profile2({
     required this.userName,
     super.key,
+    required this.context,
+    required this.image,
+    required this.pickImage,
   });
-
+  final BuildContext context;
   final String userName;
+  final File? image;
+  final Future Function(ImageSource) pickImage;
 
   @override
   Widget build(BuildContext context) {
@@ -115,7 +128,21 @@ class Profile2 extends StatelessWidget {
       child: Column(
         children: [
           const SizedBox(height: 25),
-          Image.asset("assets/images/profile_page/user (1).png", height: 154),
+         image == null ? InkWell(
+            onTap: () {
+              pickImage(ImageSource.gallery);
+            },
+              child: const CircleAvatar(
+                radius: 65,
+                  backgroundImage: AssetImage("assets/images/profile_page/user (1).png"))
+         )
+          : InkWell(
+             onTap: () {
+               pickImage(ImageSource.gallery);
+             },
+             child: CircleAvatar(
+               radius: 65,
+                 backgroundImage: FileImage(image!))),
           const SizedBox(height: 25),
           Container(
             height: 160,

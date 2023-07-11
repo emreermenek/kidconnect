@@ -53,7 +53,7 @@ final List texts = [
   'TEMİZLİK',
   'SAYILAR',
   'EŞYALAR',
-  'DUYGU VE DAVRANIŞ',
+  'DUYGULAR',
   'ZIT KAVRAMLAR',
   'MESLEKLER',
   'ŞEKİLLER',

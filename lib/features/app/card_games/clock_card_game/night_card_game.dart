@@ -41,6 +41,8 @@ class _NightCardGameState extends ConsumerState<NightCardGame> {
                 valueListenable: time,
                 builder: (BuildContext context, value, Widget? child)
                 {
+                  hourList = List.generate(3, (index) => index + 22) + List.generate(5, (index) => index + 1);
+                  minuteList = List.generate(61, (index) => index);
                   if(a == 0){
                     hour = hourList[Random().nextInt(8)];
                   }

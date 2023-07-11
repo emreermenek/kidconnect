@@ -19,7 +19,7 @@ class _WeatherCardGameState extends ConsumerState<WeatherCardGame> {
     final ValueNotifier<int> chooseWeather = ValueNotifier<int>(data.currentWeather);
     return SafeArea(
       child: Scaffold(
-        backgroundColor: const Color(0xFFEFE9AF),
+        backgroundColor: const Color(0xFFF2AB27),
         body: ValueListenableBuilder(
             valueListenable: chooseWeather,
             builder: (BuildContext context, value, Widget? child) {

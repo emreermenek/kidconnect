@@ -41,7 +41,8 @@ class _MorningCardGameState extends ConsumerState<MorningCardGame> {
               valueListenable: time,
               builder: (BuildContext context, value, Widget? child)
               {
-
+                hourList = List.generate(6, (index) => index + 6);
+                minuteList = List.generate(61, (index) => index);
                 if(data.currentTime == 0){
                     minute = 0;
                     minuteList.remove(minute);

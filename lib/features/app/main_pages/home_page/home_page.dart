@@ -1,10 +1,12 @@
 import 'package:bootcamp_f32/common_widgets/bottom_navigation_bar_widget.dart';
 import 'package:bootcamp_f32/constants/colors.dart';
 import 'package:bootcamp_f32/features/app/coming_soon_screen/coming_soon_screen.dart';
+import 'package:bootcamp_f32/features/app/lyrics_game/lyrics.dart';
 import 'package:bootcamp_f32/features/app/main_pages/games_pages/games_main_page.dart';
 import 'package:bootcamp_f32/features/app/main_pages/lets_learn_page/lets_learn.dart';
 import 'package:bootcamp_f32/features/app/main_pages/songs_page/songs.dart';
 import 'package:bootcamp_f32/features/app/main_pages/vocalizing_page/vocalizing.dart';
+import 'package:bootcamp_f32/features/app/story/start_page.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import '../../../../common_widgets/app_bar_dialog_clip.dart';
@@ -41,8 +43,8 @@ final List routes = [
   const ComingSoonScreen(),
   const GamesMainPage(),
   const DoTogetherLevelListPage(),
-  const VocalizingPage(),
-  const SongsPage()
+  const StoryStartPage(),
+  const LyricsGame()
 ];
 
 class _HomePageState extends State<HomePage> {
@@ -151,7 +153,7 @@ class _HomePageState extends State<HomePage> {
                   },
                   child: GridTile(
                     child: Container(
-                      margin: const EdgeInsets.all(16),
+                      margin: const EdgeInsets.all(6),
                       decoration: BoxDecoration(
                           boxShadow: [
                             BoxShadow(
