@@ -73,7 +73,7 @@ class _WhichOneCorrectGameState extends ConsumerState<WhichOneCorrectGame> {
                   return Column(
                     children: [
                       Padding(
-                        padding: const EdgeInsets.symmetric(vertical: 10,horizontal: 85),
+                        padding: const EdgeInsets.all(8),
                         child: Row(
                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
                           children: [
