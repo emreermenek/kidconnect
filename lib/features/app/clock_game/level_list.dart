@@ -1,3 +1,4 @@
+import 'package:bootcamp_f32/constants/colors.dart';
 import 'package:bootcamp_f32/features/app/clock_game/part_of_days/level_list.dart';
 import 'package:bootcamp_f32/features/app/clock_game/time/level_list.dart';
 import 'package:flutter/material.dart';
@@ -50,7 +51,7 @@ class _ClockGameLevelListState extends ConsumerState<ClockGameLevelList> {
             ],
           ),
         ),
-        backgroundColor: Colors.white,
+        backgroundColor: tWhiteColor,
         body: Row(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [

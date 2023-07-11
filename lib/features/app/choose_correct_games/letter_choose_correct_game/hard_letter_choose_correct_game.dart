@@ -38,7 +38,7 @@ class _HardLetterChooseCorrectGameState
     final size = MediaQuery.of(context).size;
     return SafeArea(
       child: Scaffold(
-        backgroundColor: const Color.fromRGBO(255, 234, 206, 100),
+        backgroundColor: const Color(0xFFFFEACE),
         body: SizedBox(
           height: double.infinity,
           child: ValueListenableBuilder(
@@ -130,7 +130,7 @@ class _HardLetterChooseCorrectGameState
                                                     'assets/sounds/incorrect_answer.mp3');
                                                 _player.play();
                                               },
-                                              child: Image(image: AssetImage(letterImagesList[imageIndexList![whichImage!]]),width: 120,)),
+                                              child: Image(image: AssetImage(letterImagesList[imageIndexList![whichImage!]]),width: 100,)),
                                         ],
                                       ),
                                       Column(
@@ -150,7 +150,7 @@ class _HardLetterChooseCorrectGameState
                                                 }
                                                 data.levelLockHard();
                                               },
-                                              child: Image(image: AssetImage(letterImagesList[data.currentLevelHard]),width: 120,)),
+                                              child: Image(image: AssetImage(letterImagesList[data.currentLevelHard]),width: 100,)),
                                         ],
                                       ),
                                       Column(
@@ -162,7 +162,7 @@ class _HardLetterChooseCorrectGameState
                                                     'assets/sounds/incorrect_answer.mp3');
                                                 _player.play();
                                               },
-                                              child: Image(image: AssetImage(letterImagesList[imageIndexList![whichImage2!]]),width: 120,)),
+                                              child: Image(image: AssetImage(letterImagesList[imageIndexList![whichImage2!]]),width: 100,)),
                                         ],
                                       ),
                                     ],
@@ -193,7 +193,7 @@ class _HardLetterChooseCorrectGameState
                                                 }
                                                 data.levelLockHard();
                                               },
-                                              child: Image(image: AssetImage(letterImagesList[data.currentLevelHard]),width: 120,)),
+                                              child: Image(image: AssetImage(letterImagesList[data.currentLevelHard]),width: 100,)),
                                         ],
                                       ),
                                       Column(
@@ -205,7 +205,7 @@ class _HardLetterChooseCorrectGameState
                                                     'assets/sounds/incorrect_answer.mp3');
                                                 _player.play();
                                               },
-                                              child: Image(image: AssetImage(letterImagesList[imageIndexList![whichImage2!]]),width: 120,)),
+                                              child: Image(image: AssetImage(letterImagesList[imageIndexList![whichImage2!]]),width: 100,)),
                                         ],
                                       ),
                                       Column(
@@ -216,7 +216,7 @@ class _HardLetterChooseCorrectGameState
                                                     'assets/sounds/incorrect_answer.mp3');
                                                 _player.play();
                                               },
-                                              child: Image(image: AssetImage(letterImagesList[imageIndexList![whichImage!]]),width: 120,)),
+                                              child: Image(image: AssetImage(letterImagesList[imageIndexList![whichImage!]]),width: 100,)),
                                         ],
                                       ),
                                     ],
@@ -237,7 +237,7 @@ class _HardLetterChooseCorrectGameState
                                                     'assets/sounds/incorrect_answer.mp3');
                                                 _player.play();
                                               },
-                                              child: Image(image: AssetImage(letterImagesList[imageIndexList![whichImage!]]),width: 120,)),
+                                              child: Image(image: AssetImage(letterImagesList[imageIndexList![whichImage!]]),width: 100,)),
                                         ],
                                       ),
                                       Column(
@@ -249,7 +249,7 @@ class _HardLetterChooseCorrectGameState
                                                     'assets/sounds/incorrect_answer.mp3');
                                                 _player.play();
                                               },
-                                              child: Image(image: AssetImage(letterImagesList[imageIndexList![whichImage2!]]),width: 120,)),
+                                              child: Image(image: AssetImage(letterImagesList[imageIndexList![whichImage2!]]),width: 100,)),
                                         ],
                                       ),
                                       Column(
@@ -269,7 +269,7 @@ class _HardLetterChooseCorrectGameState
                                                 }
                                                 data.levelLockHard();
                                               },
-                                              child: Image(image: AssetImage(letterImagesList[data.currentLevelHard]),width: 120,)),
+                                              child: Image(image: AssetImage(letterImagesList[data.currentLevelHard]),width: 100,)),
                                         ],
                                       ),
                                     ],

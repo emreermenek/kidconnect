@@ -32,7 +32,7 @@ class _OppositionChooseCorrectGameState
     final size = MediaQuery.of(context).size;
     return SafeArea(
       child: Scaffold(
-        backgroundColor: const Color.fromRGBO(255, 234, 206, 100),
+        backgroundColor: const Color(0xFFFFEACE),
         body: SizedBox(
           height: double.infinity,
           child: ValueListenableBuilder(
@@ -98,120 +98,125 @@ class _OppositionChooseCorrectGameState
                               ],
                             ),
                           ),
-                          ValueListenableBuilder(
-                            valueListenable: levels,
-                            builder: (BuildContext context, value, Widget? child) {
-                              if(verticalOrHorizontal[data.currentLevel] == 1){
-                                return Row(
-                                  mainAxisAlignment: MainAxisAlignment.center,
-                                  crossAxisAlignment: CrossAxisAlignment.center,
-                                  children: [
-                                    InkWell(
-                                      onTap: () {
-                                          if(oppositionCorrectAnswer[data.currentLevel] == 1){ //doğru
-                                            if(data.currentLevel != 31){
-                                              setState(() {
-                                                data.currentLevel +=1;
-                                              });
+                          Column(
+                            children: [
+                              const SizedBox(height: 40,),
+                              ValueListenableBuilder(
+                                valueListenable: levels,
+                                builder: (BuildContext context, value, Widget? child) {
+                                  if(verticalOrHorizontal[data.currentLevel] == 1){
+                                    return Row(
+                                      mainAxisAlignment: MainAxisAlignment.center,
+                                      crossAxisAlignment: CrossAxisAlignment.center,
+                                      children: [
+                                        InkWell(
+                                          onTap: () {
+                                              if(oppositionCorrectAnswer[data.currentLevel] == 1){ //doğru
+                                                if(data.currentLevel != 31){
+                                                  setState(() {
+                                                    data.currentLevel +=1;
+                                                  });
+                                                  _player.setAsset(
+                                                      'assets/sounds/correct_answer.mp3'
+                                                  );
+                                                  _player.play();
+                                                }else if(data.currentLevel == 31){
+                                                  Navigator.of(context).pop();
+                                                }
+                                                data.levelLock();
+                                              }else{   //yanlış
+                                                _player.setAsset(
+                                                    'assets/sounds/incorrect_answer.mp3');
+                                                _player.play();
+                                              }
+                                          },
+                                          child: Image(image: AssetImage(oppositionImagesList[data.currentLevel][0]),width: 120,),
+                                        ),
+                                        const SizedBox(width: 10,),
+                                        InkWell(
+                                          onTap: () {
+                                            if(oppositionCorrectAnswer[data.currentLevel] == 0){ //doğru
+                                              if(data.currentLevel != 31){
+                                                setState(() {
+                                                  data.currentLevel +=1;
+                                                });
+                                                _player.setAsset(
+                                                    'assets/sounds/correct_answer.mp3'
+                                                );
+                                                _player.play();
+                                              }else if(data.currentLevel == 31){
+                                                Navigator.of(context).pop();
+                                              }
+                                              data.levelLock();
+                                            }else{   //yanlış
                                               _player.setAsset(
-                                                  'assets/sounds/correct_answer.mp3'
-                                              );
+                                                  'assets/sounds/incorrect_answer.mp3');
                                               _player.play();
-                                            }else if(data.currentLevel == 31){
-                                              Navigator.of(context).pop();
                                             }
-                                            data.levelLock();
-                                          }else{   //yanlış
-                                            _player.setAsset(
-                                                'assets/sounds/incorrect_answer.mp3');
-                                            _player.play();
-                                          }
-                                      },
-                                      child: Image(image: AssetImage(oppositionImagesList[data.currentLevel][0])),
-                                    ),
-                                    const SizedBox(width: 10,),
-                                    InkWell(
-                                      onTap: () {
-                                        if(oppositionCorrectAnswer[data.currentLevel] == 0){ //doğru
-                                          if(data.currentLevel != 31){
-                                            setState(() {
-                                              data.currentLevel +=1;
-                                            });
-                                            _player.setAsset(
-                                                'assets/sounds/correct_answer.mp3'
-                                            );
-                                            _player.play();
-                                          }else if(data.currentLevel == 31){
-                                            Navigator.of(context).pop();
-                                          }
-                                          data.levelLock();
-                                        }else{   //yanlış
-                                          _player.setAsset(
-                                              'assets/sounds/incorrect_answer.mp3');
-                                          _player.play();
-                                        }
-                                      },
-                                      child: Image(image: AssetImage(oppositionImagesList[data.currentLevel][1]),),
-                                    ),
-                                  ],
-                                );
-                              }else{
-                                return Column(
-                                  mainAxisAlignment: MainAxisAlignment.center,
-                                  crossAxisAlignment: CrossAxisAlignment.center,
-                                  children: [
-                                    InkWell(
-                                      onTap: () {
-                                        if(oppositionCorrectAnswer[data.currentLevel] == 1){ //doğru
-                                          if(data.currentLevel != 31){
-                                            setState(() {
-                                              data.currentLevel +=1;
-                                            });
-                                            _player.setAsset(
-                                                'assets/sounds/correct_answer.mp3'
-                                            );
-                                            _player.play();
-                                          }else if(data.currentLevel == 31){
-                                            Navigator.of(context).pop();
-                                          }
-                                          data.levelLock();
-                                        }else{   //yanlış
-                                          _player.setAsset(
-                                              'assets/sounds/incorrect_answer.mp3');
-                                          _player.play();
-                                        }
-                                      },
-                                      child: Image(image: AssetImage(oppositionImagesList[data.currentLevel][0])),
-                                    ),
-                                    const SizedBox(height: 20,),
-                                    InkWell(
-                                      onTap: () {
-                                        if(oppositionCorrectAnswer[data.currentLevel] == 0){ //doğru
-                                          if(data.currentLevel != 31){
-                                            setState(() {
-                                              data.currentLevel +=1;
-                                            });
-                                            _player.setAsset(
-                                                'assets/sounds/correct_answer.mp3'
-                                            );
-                                            _player.play();
-                                          }else if(data.currentLevel == 31){
-                                            Navigator.of(context).pop();
-                                          }
-                                          data.levelLock();
-                                        }else{   //yanlış
-                                          _player.setAsset(
-                                              'assets/sounds/incorrect_answer.mp3');
-                                          _player.play();
-                                        }
-                                      },
-                                      child: Image(image: AssetImage(oppositionImagesList[data.currentLevel][1]),),
-                                    ),
-                                  ],
-                                );
-                              }
+                                          },
+                                          child: Image(image: AssetImage(oppositionImagesList[data.currentLevel][1]),width: 120,),
+                                        ),
+                                      ],
+                                    );
+                                  }else{
+                                    return Column(
+                                      mainAxisAlignment: MainAxisAlignment.center,
+                                      crossAxisAlignment: CrossAxisAlignment.center,
+                                      children: [
+                                        InkWell(
+                                          onTap: () {
+                                            if(oppositionCorrectAnswer[data.currentLevel] == 1){ //doğru
+                                              if(data.currentLevel != 31){
+                                                setState(() {
+                                                  data.currentLevel +=1;
+                                                });
+                                                _player.setAsset(
+                                                    'assets/sounds/correct_answer.mp3'
+                                                );
+                                                _player.play();
+                                              }else if(data.currentLevel == 31){
+                                                Navigator.of(context).pop();
+                                              }
+                                              data.levelLock();
+                                            }else{   //yanlış
+                                              _player.setAsset(
+                                                  'assets/sounds/incorrect_answer.mp3');
+                                              _player.play();
+                                            }
+                                          },
+                                          child: Image(image: AssetImage(oppositionImagesList[data.currentLevel][0]),width: 120),
+                                        ),
+                                        const SizedBox(height: 20,),
+                                        InkWell(
+                                          onTap: () {
+                                            if(oppositionCorrectAnswer[data.currentLevel] == 0){ //doğru
+                                              if(data.currentLevel != 31){
+                                                setState(() {
+                                                  data.currentLevel +=1;
+                                                });
+                                                _player.setAsset(
+                                                    'assets/sounds/correct_answer.mp3'
+                                                );
+                                                _player.play();
+                                              }else if(data.currentLevel == 31){
+                                                Navigator.of(context).pop();
+                                              }
+                                              data.levelLock();
+                                            }else{   //yanlış
+                                              _player.setAsset(
+                                                  'assets/sounds/incorrect_answer.mp3');
+                                              _player.play();
+                                            }
+                                          },
+                                          child: Image(image: AssetImage(oppositionImagesList[data.currentLevel][1]),width: 120,),
+                                        ),
+                                      ],
+                                    );
+                                  }
 
-                          }
+                              }
+                              ),
+                            ],
                           )
                         ],
                       ),

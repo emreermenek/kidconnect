@@ -40,7 +40,7 @@ class _EasyCleaningChooseCorrectGameState
     final size = MediaQuery.of(context).size;
     return SafeArea(
       child: Scaffold(
-        backgroundColor: const Color.fromRGBO(255, 234, 206, 100),
+        backgroundColor: const Color(0xFFFFEACE),
         body: SizedBox(
           height: double.infinity,
           child: ValueListenableBuilder(
@@ -110,141 +110,146 @@ class _EasyCleaningChooseCorrectGameState
                               ],
                             ),
                           ),
-                          ValueListenableBuilder(
-                            valueListenable: levels,
-                            builder: (context, value, child) {
-                              if(a == 0){
-                                return SizedBox(
-                                  height: 400,
-                                  child: Row(
-                                    crossAxisAlignment: CrossAxisAlignment.center,
-                                    mainAxisAlignment: MainAxisAlignment.center,
-                                    children: [
-                                      Column(
+                          Column(
+                            children: [
+                              const SizedBox(height: 40,),
+                              ValueListenableBuilder(
+                                valueListenable: levels,
+                                builder: (context, value, child) {
+                                  if(a == 0){
+                                    return SizedBox(
+                                      height: 400,
+                                      child: Row(
+                                        crossAxisAlignment: CrossAxisAlignment.center,
+                                        mainAxisAlignment: MainAxisAlignment.center,
                                         children: [
-                                          InkWell(
-                                              onTap: (){
+                                          Column(
+                                            children: [
+                                              InkWell(
+                                                  onTap: (){
 
-                                                if(data.currentLevelEasy != 13){
-                                                  setState(() {
-                                                    data.currentLevelEasy +=1;
-                                                  });
-                                                  _player.setAsset(
-                                                      'assets/sounds/correct_answer.mp3'
-                                                  );
-                                                  _player.play();
-                                                }else if(data.currentLevelEasy == 13){
-                                                  Navigator.of(context).pop();
-                                                }
-                                                data.levelLockEasy();
-                                              },
-                                              child: Image(image: AssetImage(cleaningImagesList[data.currentLevelEasy]),width: 200)),
+                                                    if(data.currentLevelEasy != 13){
+                                                      setState(() {
+                                                        data.currentLevelEasy +=1;
+                                                      });
+                                                      _player.setAsset(
+                                                          'assets/sounds/correct_answer.mp3'
+                                                      );
+                                                      _player.play();
+                                                    }else if(data.currentLevelEasy == 13){
+                                                      Navigator.of(context).pop();
+                                                    }
+                                                    data.levelLockEasy();
+                                                  },
+                                                  child: Image(image: AssetImage(cleaningImagesList[data.currentLevelEasy]),width: 120)),
+                                            ],
+                                          ),
+                                          Column(
+                                            children: [
+                                              const SizedBox(height: 100,),
+                                              InkWell(
+                                                  onTap: (){
+                                                    _player.setAsset(
+                                                        'assets/sounds/incorrect_answer.mp3');
+                                                    _player.play();
+                                                  },
+                                                  child: Image(image: AssetImage(cleaningImagesList[imageIndexList![whichImage!]]),width: 120)),
+                                            ],
+                                          ),
                                         ],
                                       ),
-                                      Column(
+                                    );
+                                  }else if(a==1){
+                                    return SizedBox(
+                                      height: 400,
+                                      child: Row(
+                                        crossAxisAlignment: CrossAxisAlignment.center,
+                                        mainAxisAlignment: MainAxisAlignment.center,
                                         children: [
-                                          const SizedBox(height: 100,),
-                                          InkWell(
-                                              onTap: (){
-                                                _player.setAsset(
-                                                    'assets/sounds/incorrect_answer.mp3');
-                                                _player.play();
-                                              },
-                                              child: Image(image: AssetImage(cleaningImagesList[imageIndexList![whichImage!]]),width: 200)),
-                                        ],
-                                      ),
-                                    ],
-                                  ),
-                                );
-                              }else if(a==1){
-                                return SizedBox(
-                                  height: 400,
-                                  child: Row(
-                                    crossAxisAlignment: CrossAxisAlignment.center,
-                                    mainAxisAlignment: MainAxisAlignment.center,
-                                    children: [
-                                      Column(
-                                        children: [
-                                          InkWell(
-                                              onTap: (){
-                                                _player.setAsset(
-                                                    'assets/sounds/incorrect_answer.mp3');
-                                                _player.play();
-                                              },
-                                              child: Image(image: AssetImage(cleaningImagesList[imageIndexList![whichImage!]]),width: 200)),
-                                        ],
-                                      ),
-                                      Column(
-                                        children: [
-                                          const SizedBox(height: 100,),
-                                          InkWell(
-                                              onTap: (){
+                                          Column(
+                                            children: [
+                                              InkWell(
+                                                  onTap: (){
+                                                    _player.setAsset(
+                                                        'assets/sounds/incorrect_answer.mp3');
+                                                    _player.play();
+                                                  },
+                                                  child: Image(image: AssetImage(cleaningImagesList[imageIndexList![whichImage!]]),width: 120)),
+                                            ],
+                                          ),
+                                          Column(
+                                            children: [
+                                              const SizedBox(height: 100,),
+                                              InkWell(
+                                                  onTap: (){
 
-                                                if(data.currentLevelEasy != 13){
-                                                  setState(() {
-                                                    data.currentLevelEasy +=1;
-                                                  });
-                                                  _player.setAsset(
-                                                      'assets/sounds/correct_answer.mp3'
-                                                  );
-                                                  _player.play();
-                                                }else if(data.currentLevelEasy == 13){
-                                                  Navigator.of(context).pop();
-                                                }
-                                                data.levelLockEasy();
-                                              },
-                                              child: Image(image: AssetImage(cleaningImagesList[data.currentLevelEasy]),width: 200)),
+                                                    if(data.currentLevelEasy != 13){
+                                                      setState(() {
+                                                        data.currentLevelEasy +=1;
+                                                      });
+                                                      _player.setAsset(
+                                                          'assets/sounds/correct_answer.mp3'
+                                                      );
+                                                      _player.play();
+                                                    }else if(data.currentLevelEasy == 13){
+                                                      Navigator.of(context).pop();
+                                                    }
+                                                    data.levelLockEasy();
+                                                  },
+                                                  child: Image(image: AssetImage(cleaningImagesList[data.currentLevelEasy]),width: 120)),
+                                            ],
+                                          ),
                                         ],
                                       ),
-                                    ],
-                                  ),
-                                );
-                              }else{
-                                return SizedBox(
-                                  height: 400,
-                                  child: Row(
-                                    crossAxisAlignment: CrossAxisAlignment.center,
-                                    mainAxisAlignment: MainAxisAlignment.center,
-                                    children: [
-                                      Column(
+                                    );
+                                  }else{
+                                    return SizedBox(
+                                      height: 400,
+                                      child: Row(
+                                        crossAxisAlignment: CrossAxisAlignment.center,
+                                        mainAxisAlignment: MainAxisAlignment.center,
                                         children: [
-                                          const SizedBox(height: 100,),
-                                          InkWell(
-                                              onTap: (){
-                                                _player.setAsset(
-                                                    'assets/sounds/incorrect_answer.mp3');
-                                                _player.play();
-                                              },
-                                              child: Image(image: AssetImage(cleaningImagesList[imageIndexList![whichImage!]]),width: 200)),
+                                          Column(
+                                            children: [
+                                              const SizedBox(height: 100,),
+                                              InkWell(
+                                                  onTap: (){
+                                                    _player.setAsset(
+                                                        'assets/sounds/incorrect_answer.mp3');
+                                                    _player.play();
+                                                  },
+                                                  child: Image(image: AssetImage(cleaningImagesList[imageIndexList![whichImage!]]),width: 120)),
+                                            ],
+                                          ),
+                                          Column(
+                                            children: [
+                                              InkWell(
+                                                  onTap: (){
+
+                                                    if(data.currentLevelEasy != 13){
+                                                      setState(() {
+                                                        data.currentLevelEasy +=1;
+                                                      });
+                                                      _player.setAsset(
+                                                          'assets/sounds/correct_answer.mp3'
+                                                      );
+                                                      _player.play();
+                                                    }else if(data.currentLevelEasy == 13){
+                                                      Navigator.of(context).pop();
+                                                    }
+                                                    data.levelLockEasy();
+                                                  },
+                                                  child: Image(image: AssetImage(cleaningImagesList[data.currentLevelEasy]),width: 120)),
+                                            ],
+                                          ),
                                         ],
                                       ),
-                                      Column(
-                                        children: [
-                                          InkWell(
-                                              onTap: (){
+                                    );
+                                  }
 
-                                                if(data.currentLevelEasy != 13){
-                                                  setState(() {
-                                                    data.currentLevelEasy +=1;
-                                                  });
-                                                  _player.setAsset(
-                                                      'assets/sounds/correct_answer.mp3'
-                                                  );
-                                                  _player.play();
-                                                }else if(data.currentLevelEasy == 13){
-                                                  Navigator.of(context).pop();
-                                                }
-                                                data.levelLockEasy();
-                                              },
-                                              child: Image(image: AssetImage(cleaningImagesList[data.currentLevelEasy]),width: 200)),
-                                        ],
-                                      ),
-                                    ],
-                                  ),
-                                );
-                              }
-
-                            },
+                                },
+                              ),
+                            ],
                           )
                         ],
                       ),

@@ -248,12 +248,17 @@ class _BodyShadowGameState extends ConsumerState<BodyShadowGame> {
                                               'assets/sounds/correct_answer.mp3'
                                           );
                                           _player.play();
-                                          setState(() {
+
                                             data.currentLevel += 1;
                                             data.correctAnswerNumber = 0;
-                                          });
+
                                           if(data.currentLevel != 4){
                                             data.levelLock();
+                                          }
+                                          if(data.imageIndexList.isEmpty){
+                                            data.currentLevel = 0;
+                                            data.correctAnswerNumber = 0;
+                                            Navigator.of(context).pop();
                                           }
                                         }
                                       }
@@ -292,12 +297,17 @@ class _BodyShadowGameState extends ConsumerState<BodyShadowGame> {
                                               'assets/sounds/correct_answer.mp3'
                                           );
                                           _player.play();
-                                          setState(() {
+
                                             data.currentLevel += 1;
                                             data.correctAnswerNumber = 0;
-                                          });
+
                                           if(data.currentLevel != 4){
                                             data.levelLock();
+                                          }
+                                          if(data.imageIndexList.isEmpty){
+                                            data.currentLevel = 0;
+                                            data.correctAnswerNumber = 0;
+                                            Navigator.of(context).pop();
                                           }
                                         }
                                       }
@@ -337,12 +347,17 @@ class _BodyShadowGameState extends ConsumerState<BodyShadowGame> {
                                               'assets/sounds/correct_answer.mp3'
                                           );
                                           _player.play();
-                                          setState(() {
+
                                             data.currentLevel += 1;
                                             data.correctAnswerNumber = 0;
-                                          });
+
                                           if(data.currentLevel != 4){
                                             data.levelLock();
+                                          }
+                                          if(data.imageIndexList.isEmpty){
+                                            data.currentLevel = 0;
+                                            data.correctAnswerNumber = 0;
+                                            Navigator.of(context).pop();
                                           }
                                         }
                                       }

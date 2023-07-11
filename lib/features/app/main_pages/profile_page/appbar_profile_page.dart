@@ -15,9 +15,9 @@ class AppBarClient extends StatelessWidget implements PreferredSizeWidget{
       title: Row(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
-          SizedBox( width: 123,height: 200,
+          SizedBox( width: 100,height: 200,
               child: Image.asset("assets/images/profile_page/Asset10.png")),
-          SizedBox(width: 20,),
+          const SizedBox(width: 20,),
           Text('PROFİL',style: GoogleFonts.quicksand(
             textStyle: const TextStyle(
               color: Colors.black,
@@ -25,8 +25,8 @@ class AppBarClient extends StatelessWidget implements PreferredSizeWidget{
               fontWeight: FontWeight.bold,
             ),
           )),
-          SizedBox(width: 20,),
-          const Image(image: AssetImage('assets/images/profile_page/balloons (1).png'),width: 58, height: 62,),
+          const SizedBox(width: 20,),
+          const Image(image: AssetImage('assets/images/profile_page/balloons (1).png'),width: 40, height: 62,),
         ],
       ),
     );

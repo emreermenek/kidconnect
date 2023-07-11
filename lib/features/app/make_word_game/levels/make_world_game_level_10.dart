@@ -150,11 +150,7 @@ class _MakeWordGameLevel10State extends ConsumerState<MakeWordGameLevel10> {
                                   ),
                                   onChanged: (value) {
                                     if(value.toLowerCase() == 'kayık'){
-                                      _player.setAsset(
-                                          'assets/sounds/correct_answer.mp3'
-                                      );
-                                      _player.play();
-                                      data.levelLock(10);
+                                      Navigator.of(context).pop();
                                     }
                                   },
                                 ),

@@ -26,6 +26,7 @@ class _StoryPage14State extends State<StoryPage14> {
   }
   @override
   Widget build(BuildContext context) {
+
     return SafeArea(
       child: Scaffold(
         backgroundColor: Colors.white,

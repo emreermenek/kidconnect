@@ -59,16 +59,13 @@ class _HowManyImageGameState extends ConsumerState<HowManyImageGame> {
             return SingleChildScrollView(
               child: Stack(
               children: [
-                const Padding(
-                  padding: EdgeInsets.symmetric(vertical: 10,horizontal: 85),
-                  child: Center(
-                    child: Image(image: AssetImage('assets/images/choose_correct_games/number_choose_correct_images/background.png'),),
-                  ),
+                const Center(
+                  child: Image(image: AssetImage('assets/images/choose_correct_games/number_choose_correct_images/background.png'),),
                 ),
                 Column(
                   children: [
                     Padding(
-                      padding: const EdgeInsets.symmetric(vertical: 10,horizontal: 85),
+                      padding: const EdgeInsets.all(8),
                       child: Row(
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [
@@ -345,7 +342,10 @@ class _HowManyImageGameState extends ConsumerState<HowManyImageGame> {
                               if(data.currentLevel == 10){
                                 Navigator.of(context).pop();
                               }
-                              data.levelLock();
+                              if(data.currentLevel != 10){
+                                data.levelLock();
+                              }
+
                             }else{
                               _player.setAsset(
                                   'assets/sounds/incorrect_answer.mp3');
@@ -387,7 +387,9 @@ class _HowManyImageGameState extends ConsumerState<HowManyImageGame> {
                               if(data.currentLevel == 10){
                                 Navigator.of(context).pop();
                               }
-                              data.levelLock();
+                              if(data.currentLevel != 10){
+                                data.levelLock();
+                              }
                             }else{
                               _player.setAsset(
                                   'assets/sounds/incorrect_answer.mp3');
@@ -429,7 +431,9 @@ class _HowManyImageGameState extends ConsumerState<HowManyImageGame> {
                               if(data.currentLevel == 10){
                                 Navigator.of(context).pop();
                               }
-                              data.levelLock();
+                              if(data.currentLevel != 10){
+                                data.levelLock();
+                              }
                             }else{
                               _player.setAsset(
                                   'assets/sounds/incorrect_answer.mp3');

@@ -394,9 +394,9 @@ class _MatchImageState extends ConsumerState<MatchImage> {
                         future: isCorrect(dataRepo.finished),
                         builder: (BuildContext context, AsyncSnapshot<dynamic> snapshot) {
                           if (snapshot.data == true) {
-                            return AlertDialogFail(dataRepo: dataRepo);
-                          }else if(snapshot.data == false){
                             return AlertDialogSuccess(dataRepo: dataRepo);
+                          }else if(snapshot.data == false){
+                            return AlertDialogFail(dataRepo: dataRepo);
                           }else{
                             return const SizedBox.shrink();
                           }
@@ -463,17 +463,18 @@ void showTutorial(BuildContext context){
         alignSkip: Alignment.topRight,
         contents: [
           TargetContent(
-            align: ContentAlign.top,
+            align: ContentAlign.bottom,
             builder: (context, controller) {
               return const Column(
                 mainAxisSize: MainAxisSize.min,
+                mainAxisAlignment: MainAxisAlignment.center,
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: <Widget>[
                   Text(
-                    "Her doğru 1 puan kazandırır.",
+                    "Her doğru\n1 puan kazandırır.",
                     style: TextStyle(
                       color: Colors.white,
-                        fontSize: 14
+                        fontSize: 24
                     ),
                   ),
                 ],
@@ -499,7 +500,7 @@ void showTutorial(BuildContext context){
                     "Sesi bu buton ile açıp kapayabilirsiniz.",
                     style: TextStyle(
                       color: Colors.white,
-                        fontSize: 14
+                        fontSize: 24
                     ),
                   ),
                 ],

@@ -1,5 +1,5 @@
 const List<String> sportsNames = [
-  'KOLLARIMIZI KALDIRALIM',
+  'KOLLARIMIZI\nKALDIRALIM',
   'ZIPLAYALIM',
   'KOŞALIM',
   ' YÜRÜYELİM VE\nSONRA DURALIM',

@@ -98,7 +98,7 @@ class _SeeAndDoLevelListPageState extends ConsumerState<SeeAndDoLevelListPage> {
                             style: GoogleFonts.comfortaa(
                               textStyle: const TextStyle(
                                   color: Colors.black,
-                                  fontSize: 24,
+                                  fontSize: 20,
                                   fontWeight: FontWeight.bold),
                             ),
                           ),

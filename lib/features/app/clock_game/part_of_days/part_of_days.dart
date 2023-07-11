@@ -50,11 +50,11 @@ class _PartOfDaysGameState extends ConsumerState<PartOfDaysGame> {
                         InkWell(
                           onTap: () => Navigator.of(context).pop(),
                             child: const Image(image: AssetImage('assets/images/clock_game/part_of_days/exit.png'))),
-                        const SizedBox(width: 70,),
+                        const SizedBox(width: 30,),
                         Text('Günün Bölümleri', style: GoogleFonts.quicksand(
                           textStyle: const TextStyle(
                             fontWeight: FontWeight.bold,
-                            fontSize: 30,
+                            fontSize: 24,
                           )
                         ),),
                       ],

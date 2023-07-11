@@ -1,4 +1,5 @@
 import 'package:bootcamp_f32/common_widgets/bottom_navigation_bar_widget.dart';
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -97,28 +98,14 @@ class Profile2 extends StatelessWidget {
                       children: [
                         Column(
                           mainAxisAlignment: MainAxisAlignment.center,
-
                           children: [
-                            buildText("AD SOYAD      :"),
-                            const SizedBox(height: 5,),
-                            buildText("YAŞ                 :"),
-                            const SizedBox(height: 5,),
-                            buildText("CİNSİYET        :"),
-                            const SizedBox(height: 5,),
-                            buildText("ACİL DURUM\nNUMARALARI :"),
+                            buildText("AD SOYAD :"),
                           ],
                         ),
-                        const SizedBox(width: 20,),
                         Column(
                           mainAxisAlignment: MainAxisAlignment.center,
                           children: [
                             buildText("AD SOYADI"),
-                            const SizedBox(height: 10,),
-                            buildText("YAŞ"),
-                            const SizedBox(height: 10,),
-                            buildText("CİNSİYET"),
-                            const SizedBox(height: 10),
-                            buildText("ACİL DURUM NO")
                           ],
                         ),
                       ],
@@ -148,23 +135,6 @@ class Profile2 extends StatelessWidget {
                       color: Colors.white,
                       fontWeight: FontWeight.bold,
                       fontSize: 16),),
-                ),
-              ),
-              const SizedBox(width: 5,),
-              SizedBox(
-                width: 160,
-                height: 50,
-                child: ElevatedButton(
-                    style: ElevatedButton.styleFrom(
-                      backgroundColor: const Color(0xFF4FCBE9),
-                    ), onPressed: () {
-
-                }, child: Text(
-                  "TAKİP SAYFASI",
-                  style: GoogleFonts.quicksand(
-                      color: Colors.white,
-                      fontWeight: FontWeight.bold,
-                      fontSize: 16),)
                 ),
               ),
             ],

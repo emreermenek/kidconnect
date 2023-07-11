@@ -47,23 +47,19 @@ class _DoTogetherSportsGameState
                 SingleChildScrollView(
                   child: Column(
                     children: [
-                      Row(
-                        children: [
-                          Padding(
-                            padding: const EdgeInsets.symmetric(
-                                vertical: 10, horizontal: 85),
-                            child: InkWell(
-                                onTap: () {
-                                  Navigator.of(context).pop();
-                                },
-                                child: const Image(
-                                    image: AssetImage(
-                                        'assets/images/card_games/animal_card_game_image/exit.png'))),
-                          ),
-                        ],
+                      Padding(
+                        padding: const EdgeInsets.all(8),
+                        child: Align(
+                          alignment: Alignment.topLeft,
+                          child: InkWell(
+                              onTap: () {
+                                Navigator.of(context).pop();
+                              },
+                              child: const Image(image: AssetImage('assets/images/card_games/animal_card_game_image/exit.png'))),
+                        ),
                       ),
                       Padding(
-                          padding: const EdgeInsets.only(top: 127),
+                          padding: const EdgeInsets.only(top: 30),
                           child: SingleChildScrollView(
                             child: Column(
                               crossAxisAlignment: CrossAxisAlignment.center,
@@ -105,7 +101,7 @@ class _DoTogetherSportsGameState
                                             sportsNames[data.sportsCurrentCard],
                                             style: GoogleFonts.comfortaa(
                                                 textStyle: const TextStyle(
-                                                    fontSize: 28,
+                                                    fontSize: 20,
                                                     fontWeight:
                                                         FontWeight.bold)),
                                           )

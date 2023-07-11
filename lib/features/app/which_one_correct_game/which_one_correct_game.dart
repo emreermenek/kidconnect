@@ -174,7 +174,9 @@ class _WhichOneCorrectGameState extends ConsumerState<WhichOneCorrectGame> {
                                 if(data.currentLevel == 10){
                                   Navigator.of(context).pop();
                                 }
-                                data.levelLock();
+                                if(data.currentLevel != 10){
+                                  data.levelLock();
+                                }
                               }else{
                                 _player.setAsset(
                                     'assets/sounds/incorrect_answer.mp3');
@@ -230,7 +232,9 @@ class _WhichOneCorrectGameState extends ConsumerState<WhichOneCorrectGame> {
                                 if(data.currentLevel == 10){
                                   Navigator.of(context).pop();
                                 }
-                                data.levelLock();
+                                if(data.currentLevel != 10){
+                                  data.levelLock();
+                                }
                               }else{
                                 _player.setAsset(
                                     'assets/sounds/incorrect_answer.mp3');
@@ -287,7 +291,10 @@ class _WhichOneCorrectGameState extends ConsumerState<WhichOneCorrectGame> {
                                 if(data.currentLevel == 10){
                                   Navigator.of(context).pop();
                                 }
-                                data.levelLock();
+                                if(data.currentLevel != 10){
+                                  data.levelLock();
+                                }
+
                               }else{
                                 _player.setAsset(
                                     'assets/sounds/incorrect_answer.mp3');

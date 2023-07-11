@@ -60,19 +60,16 @@ class _BiggerOrLowerGameState extends ConsumerState<BiggerOrLowerGame> {
             return SingleChildScrollView(
               child: Stack(
                 children: [
-                  const Padding(
-                    padding: EdgeInsets.symmetric(vertical: 10, horizontal: 85),
-                    child: Center(
-                      child: Image(image: AssetImage(
-                          'assets/images/choose_correct_games/number_choose_correct_images/background.png'),),
-                    ),
+                  const Center(
+                    child: Image(image: AssetImage(
+                        'assets/images/choose_correct_games/number_choose_correct_images/background.png'),),
                   ),
-                  Padding(
-                    padding: const EdgeInsets.symmetric(
-                        vertical: 10, horizontal: 85),
-                    child: Column(
-                      children: [
-                        Row(
+                  Column(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      Padding(
+                        padding: const EdgeInsets.all(8.0),
+                        child: Row(
                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
                           children: [
                             InkWell(
@@ -91,43 +88,16 @@ class _BiggerOrLowerGameState extends ConsumerState<BiggerOrLowerGame> {
                               ),)
                           ],
                         ),
-                        const SizedBox(height: 30,),
-                        const Align(
-                            alignment: Alignment.topRight,
-                            child: Image(image: AssetImage(
-                                'assets/images/biggerOrLowerGame_images/anxious_tiger.png'),)),
-                        Row(
-                          mainAxisAlignment: MainAxisAlignment.center,
-                          children: [
-                            Container(
-                                width: 80,
-                                height: 80,
-                                decoration: BoxDecoration(
-                                    borderRadius: BorderRadius.circular(24),
-                                    color: Colors.white
-                                ),
-                                child: ValueListenableBuilder(
-                                  valueListenable: levels,
-                                  builder: (BuildContext context, value,
-                                      Widget? child) {
-                                    return Image(image: AssetImage(
-                                        numberImages[number1!]),);
-                                  },
-                                )
-                            ),
-                            const SizedBox(width: 15,),
-                            Container(
-                              width: 80,
-                              height: 80,
-                              decoration: BoxDecoration(
-                                  borderRadius: BorderRadius.circular(24),
-                                  color: Colors.white
-                              ),
-                              child: const Image(image: AssetImage(
-                                  'assets/images/numbers_marks_images/question_mark.png'),),
-                            ),
-                            const SizedBox(width: 15,),
-                            Container(
+                      ),
+                      const SizedBox(height: 30,),
+                      const Align(
+                          alignment: Alignment.topRight,
+                          child: Image(image: AssetImage(
+                              'assets/images/biggerOrLowerGame_images/anxious_tiger.png'),)),
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: [
+                          Container(
                               width: 80,
                               height: 80,
                               decoration: BoxDecoration(
@@ -139,139 +109,173 @@ class _BiggerOrLowerGameState extends ConsumerState<BiggerOrLowerGame> {
                                 builder: (BuildContext context, value,
                                     Widget? child) {
                                   return Image(image: AssetImage(
-                                      numberImages[number2!]),);
+                                      numberImages[number1!]),);
                                 },
                               )
+                          ),
+                          const SizedBox(width: 15,),
+                          Container(
+                            width: 80,
+                            height: 80,
+                            decoration: BoxDecoration(
+                                borderRadius: BorderRadius.circular(24),
+                                color: Colors.white
+                            ),
+                            child: const Image(image: AssetImage(
+                                'assets/images/numbers_marks_images/question_mark.png'),),
+                          ),
+                          const SizedBox(width: 15,),
+                          Container(
+                            width: 80,
+                            height: 80,
+                            decoration: BoxDecoration(
+                                borderRadius: BorderRadius.circular(24),
+                                color: Colors.white
+                            ),
+                            child: ValueListenableBuilder(
+                              valueListenable: levels,
+                              builder: (BuildContext context, value,
+                                  Widget? child) {
+                                return Image(image: AssetImage(
+                                    numberImages[number2!]),);
+                              },
                             )
-                          ],
-                        ),
-                        const SizedBox(height: 25,),
-                        Text('      ? Yerine\naşağıdakilerden\nhangisi gelmeli',
-                          style: GoogleFonts.gluten(
-                            textStyle: const TextStyle(
-                                color: Colors.black,
-                                fontSize: 28,
-                                fontWeight: FontWeight.bold
+                          )
+                        ],
+                      ),
+                      const SizedBox(height: 25,),
+                      Text('      ? Yerine\naşağıdakilerden\nhangisi gelmeli',
+                        style: GoogleFonts.gluten(
+                          textStyle: const TextStyle(
+                              color: Colors.black,
+                              fontSize: 28,
+                              fontWeight: FontWeight.bold
+                          ),
+                        ),),
+                      const SizedBox(height: 25,),
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: [
+                          Container(
+                            width: 80,
+                            height: 80,
+                            decoration: BoxDecoration(
+                                borderRadius: BorderRadius.circular(24),
+                                color: Colors.white
                             ),
-                          ),),
-                        const SizedBox(height: 25,),
-                        Row(
-                          mainAxisAlignment: MainAxisAlignment.center,
-                          children: [
-                            Container(
-                              width: 80,
-                              height: 80,
-                              decoration: BoxDecoration(
-                                  borderRadius: BorderRadius.circular(24),
-                                  color: Colors.white
-                              ),
-                              child: InkWell(
-                                onTap: () {
-                                  for(int i = 0; i < 3; i++){
-                                    if(trueAnswer[i] == true){
-                                      if(i==0){
-                                        _player.setAsset(
-                                            'assets/sounds/correct_answer.mp3'
-                                        );
-                                        _player.play();
-                                        setState(() {
-                                          data.currentLevel += 1;
-                                        });
+                            child: InkWell(
+                              onTap: () {
+                                for(int i = 0; i < 3; i++){
+                                  if(trueAnswer[i] == true){
+                                    if(i==0){
+                                      _player.setAsset(
+                                          'assets/sounds/correct_answer.mp3'
+                                      );
+                                      _player.play();
+                                      setState(() {
+                                        data.currentLevel += 1;
+                                      });
 
-                                        if(data.currentLevel == 10){
-                                          Navigator.of(context).pop();
-                                        }
-                                        data.levelLock();
-                                      }else{
-                                        _player.setAsset(
-                                            'assets/sounds/incorrect_answer.mp3');
-                                        _player.play();
+                                      if(data.currentLevel == 10){
+                                        Navigator.of(context).pop();
                                       }
+                                      if(data.currentLevel !=10){
+                                        data.levelLock();
+                                      }
+
+                                    }else{
+                                      _player.setAsset(
+                                          'assets/sounds/incorrect_answer.mp3');
+                                      _player.play();
                                     }
                                   }
-                                },
-                                child: const Image(image: AssetImage(
-                                    'assets/images/numbers_marks_images/bigger.png'),),
-                              ),
+                                }
+                              },
+                              child: const Image(image: AssetImage(
+                                  'assets/images/numbers_marks_images/bigger.png'),),
                             ),
-                            const SizedBox(width: 15,),
-                            Container(
-                              width: 80,
-                              height: 80,
-                              decoration: BoxDecoration(
-                                  borderRadius: BorderRadius.circular(24),
-                                  color: Colors.white
-                              ),
-                              child: InkWell(
-                                onTap: () {
-                                  for(int i = 0; i < 3; i++){
-                                    if(trueAnswer[i] == true){
-                                      if(i==1){
-                                        _player.setAsset(
-                                            'assets/sounds/correct_answer.mp3'
-                                        );
-                                        _player.play();
-                                        setState(() {
-                                          data.currentLevel += 1;
-                                        });
+                          ),
+                          const SizedBox(width: 15,),
+                          Container(
+                            width: 80,
+                            height: 80,
+                            decoration: BoxDecoration(
+                                borderRadius: BorderRadius.circular(24),
+                                color: Colors.white
+                            ),
+                            child: InkWell(
+                              onTap: () {
+                                for(int i = 0; i < 3; i++){
+                                  if(trueAnswer[i] == true){
+                                    if(i==1){
+                                      _player.setAsset(
+                                          'assets/sounds/correct_answer.mp3'
+                                      );
+                                      _player.play();
+                                      setState(() {
+                                        data.currentLevel += 1;
+                                      });
 
-                                        if(data.currentLevel == 10){
-                                          Navigator.of(context).pop();
-                                        }
-                                        data.levelLock();
-                                      }else{
-                                        _player.setAsset(
-                                            'assets/sounds/incorrect_answer.mp3');
-                                        _player.play();
+                                      if(data.currentLevel == 10){
+                                        Navigator.of(context).pop();
                                       }
+                                      if(data.currentLevel !=10){
+                                        data.levelLock();
+                                      }
+                                    }else{
+                                      _player.setAsset(
+                                          'assets/sounds/incorrect_answer.mp3');
+                                      _player.play();
                                     }
                                   }
-                                },
-                                child: const Image(image: AssetImage(
-                                    'assets/images/numbers_marks_images/=.png'),),
-                              ),
+                                }
+                              },
+                              child: const Image(image: AssetImage(
+                                  'assets/images/numbers_marks_images/=.png'),),
                             ),
-                            const SizedBox(width: 15,),
-                            Container(
-                              width: 80,
-                              height: 80,
-                              decoration: BoxDecoration(
-                                  borderRadius: BorderRadius.circular(24),
-                                  color: Colors.white
-                              ),
-                              child: InkWell(
-                                onTap: () {
-                                  for(int i = 0; i < 3; i++){
-                                    if(trueAnswer[i] == true){
-                                      if(i==2){
-                                        _player.setAsset(
-                                            'assets/sounds/correct_answer.mp3'
-                                        );
-                                        _player.play();
-                                        setState(() {
-                                          data.currentLevel += 1;
-                                        });
+                          ),
+                          const SizedBox(width: 15,),
+                          Container(
+                            width: 80,
+                            height: 80,
+                            decoration: BoxDecoration(
+                                borderRadius: BorderRadius.circular(24),
+                                color: Colors.white
+                            ),
+                            child: InkWell(
+                              onTap: () {
+                                for(int i = 0; i < 3; i++){
+                                  if(trueAnswer[i] == true){
+                                    if(i==2){
+                                      _player.setAsset(
+                                          'assets/sounds/correct_answer.mp3'
+                                      );
+                                      _player.play();
+                                      setState(() {
+                                        data.currentLevel += 1;
+                                      });
 
-                                        if(data.currentLevel == 10){
-                                          Navigator.of(context).pop();
-                                        }
-                                        data.levelLock();
-                                      }else{
-                                        _player.setAsset(
-                                            'assets/sounds/incorrect_answer.mp3');
-                                        _player.play();
+                                      if(data.currentLevel == 10){
+                                        Navigator.of(context).pop();
                                       }
+                                      if(data.currentLevel !=10){
+                                        data.levelLock();
+                                      }
+                                    }else{
+                                      _player.setAsset(
+                                          'assets/sounds/incorrect_answer.mp3');
+                                      _player.play();
                                     }
                                   }
-                                },
-                                child: const Image(image: AssetImage(
-                                    'assets/images/numbers_marks_images/lower.png'),),
-                              ),
+                                }
+                              },
+                              child: const Image(image: AssetImage(
+                                  'assets/images/numbers_marks_images/lower.png'),),
                             ),
-                          ],
-                        ),
-                      ],
-                    ),
+                          ),
+                        ],
+                      ),
+                    ],
                   )
                 ],
               ),

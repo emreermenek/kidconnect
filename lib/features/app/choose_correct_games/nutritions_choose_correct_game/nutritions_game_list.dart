@@ -120,7 +120,7 @@ class _NutritionChooseCorrectGameLevelListState extends ConsumerState<NutritionC
                         child: Text('MEYVELER', style: GoogleFonts.comfortaa(
                           textStyle:  const TextStyle(
                               color: Colors.black,
-                              fontSize: 34,
+                              fontSize: 24,
                               fontWeight: FontWeight.bold
                           ),
                         ),),

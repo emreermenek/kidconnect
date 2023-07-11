@@ -6,7 +6,7 @@ import 'package:just_audio/just_audio.dart';
 
 import '../../../../constants/colors.dart';
 import '../../biger_or_lower_game/data/numbers.dart';
-import '../../shape_match_game/data/offset.dart';
+import 'data/correct_level_data.dart';
 import 'data/marks.dart';
 import 'services/data_service.dart';
 
@@ -50,11 +50,8 @@ class _NumberChooseCorrectGameState extends ConsumerState<NumberChooseCorrectGam
         backgroundColor: Colors.blue,
         body: Stack(
           children: [
-            const Padding(
-              padding: EdgeInsets.symmetric(vertical: 10,horizontal: 85),
-              child: Center(
-                child: Image(image: AssetImage('assets/images/choose_correct_games/number_choose_correct_images/background.png'),),
-              ),
+            const Center(
+              child: Image(image: AssetImage('assets/images/choose_correct_games/number_choose_correct_images/background.png'),),
             ),
             ValueListenableBuilder(
               valueListenable: levels,
@@ -113,7 +110,9 @@ class _NumberChooseCorrectGameState extends ConsumerState<NumberChooseCorrectGam
                                 if(data.currentLevel == 10){
                                   Navigator.of(context).pop();
                                 }
-                              data.levelLock();
+                                if(data.currentLevel != 10){
+                                  data.levelLock();
+                                }
                             }else{
                             _player.setAsset(
                                 'assets/sounds/incorrect_answer.mp3');
@@ -239,7 +238,9 @@ class _NumberChooseCorrectGameState extends ConsumerState<NumberChooseCorrectGam
                             if(data.currentLevel == 10){
                               Navigator.of(context).pop();
                             }
-                            data.levelLock();
+                            if(data.currentLevel != 10){
+                              data.levelLock();
+                            }
                           }else{
                             _player.setAsset(
                                 'assets/sounds/incorrect_answer.mp3');
@@ -363,7 +364,9 @@ class _NumberChooseCorrectGameState extends ConsumerState<NumberChooseCorrectGam
                             if(data.currentLevel == 10){
                               Navigator.of(context).pop();
                             }
-                            data.levelLock();
+                            if(data.currentLevel != 10){
+                              data.levelLock();
+                            }
 
                           }else{
                             _player.setAsset(

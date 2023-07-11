@@ -1,4 +1,6 @@
 import 'package:bootcamp_f32/constants/colors.dart';
+import 'package:bootcamp_f32/features/app/choose_correct_games/shapes_choose_correct_game/easy_shapes_choose_correct_game.dart';
+import 'package:bootcamp_f32/features/app/choose_correct_games/shapes_choose_correct_game/services/services.dart';
 import 'package:bootcamp_f32/features/app/choose_correct_games/things_choose_correct_game/easy_things_choose_correct_game.dart';
 import 'package:bootcamp_f32/features/app/choose_correct_games/things_choose_correct_game/services/services.dart';
 import 'package:flutter/material.dart';
@@ -20,7 +22,7 @@ class _EasyShapesChooseCorrectGameLevelListState extends ConsumerState<EasyShape
 
   @override
   Widget build(BuildContext context) {
-    final data = ref.watch(thingsChooseCorrectGameServiceProvider);
+    final data = ref.watch(shapesChooseCorrectGameServiceProvider);
     return SafeArea(
       child: Scaffold(
         appBar: AppBar(
@@ -73,7 +75,7 @@ class _EasyShapesChooseCorrectGameLevelListState extends ConsumerState<EasyShape
                     onTap: () {
                       if(data.lockEasy[index] == 'assets/images/level_list/open_lock.png'){
                         data.currentLevelEasy = index;
-                        Navigator.of(context).push(MaterialPageRoute(builder: (context) => const EasyThingsChooseCorrectGame(),));
+                        Navigator.of(context).push(MaterialPageRoute(builder: (context) => const EasyShapesChooseCorrectGame(),));
                       }else{
                         Utils.showSnackBar('Bölüm kitli!!!');
                       }

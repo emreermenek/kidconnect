@@ -35,19 +35,13 @@ class _LetterShadowGameState extends ConsumerState<LetterShadowGame> {
         body: ValueListenableBuilder(
             valueListenable: levels,
             builder: (BuildContext context, value, Widget? child) {
-              if(data.imageIndexList.length == 0){
-                data.currentLevel = 0;
-                data.imageIndexList = List.generate(28, (index) => index);
-                data.correctAnswerNumber = 0;
-                Navigator.of(context).pop();
-              }else{
+              if(data.imageIndexList.isNotEmpty){
                 data.imageIndexList.shuffle();
                 firstIndex = data.imageIndexList[1];
                 secondIndex = data.imageIndexList[0];
                 data.imageIndexList.removeAt(1);
                 data.imageIndexList.removeAt(0);
               }
-
               Color color1 = Colors.grey;
               Color color2 = Colors.grey;
 
@@ -212,12 +206,16 @@ class _LetterShadowGameState extends ConsumerState<LetterShadowGame> {
                                               'assets/sounds/correct_answer.mp3'
                                           );
                                           _player.play();
-                                          setState(() {
                                             data.currentLevel += 1;
                                             data.correctAnswerNumber = 0;
-                                          });
                                           if(data.currentLevel != 14){
                                             data.levelLock();
+                                          }
+                                          if(data.imageIndexList.isEmpty){
+                                            data.currentLevel = 0;
+                                            data.imageIndexList = List.generate(28, (index) => index);
+                                            data.correctAnswerNumber = 0;
+                                            Navigator.of(context).pop();
                                           }
                                         }
                                       }
@@ -256,12 +254,16 @@ class _LetterShadowGameState extends ConsumerState<LetterShadowGame> {
                                               'assets/sounds/correct_answer.mp3'
                                           );
                                           _player.play();
-                                          setState(() {
                                             data.currentLevel += 1;
                                             data.correctAnswerNumber = 0;
-                                          });
                                           if(data.currentLevel != 14){
                                             data.levelLock();
+                                          }
+                                          if(data.imageIndexList.isEmpty){
+                                            data.currentLevel = 0;
+                                            data.imageIndexList = List.generate(28, (index) => index);
+                                            data.correctAnswerNumber = 0;
+                                            Navigator.of(context).pop();
                                           }
                                         }
                                       }

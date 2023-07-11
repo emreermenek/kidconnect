@@ -1,8 +1,9 @@
 import 'dart:ui';
 
-import 'package:bootcamp_f32/features/app/shape_match_game/shape_match_game/shape_match_game.dart';
 import 'package:flutter/material.dart';
+
 import '../features/app/shape_match_game/services/data_change_notifier.dart';
+import '../features/app/shape_match_game/shape_match_game/shape_match_game.dart';
 
 class AlertDialogFail extends StatelessWidget {
   const AlertDialogFail({
@@ -15,7 +16,7 @@ class AlertDialogFail extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return BackdropFilter(
-      filter: ImageFilter.blur(sigmaY: 10,sigmaX: 10),
+      filter: ImageFilter.blur(sigmaX: 10,sigmaY: 10),
       child: AlertDialog(
         contentPadding: EdgeInsets.zero,
         shape: RoundedRectangleBorder(
@@ -28,46 +29,46 @@ class AlertDialogFail extends StatelessWidget {
             children:
             [
               Positioned(
+                  left: 0,
                   top: 0,
-                  left: 45,
-                  child: Image.asset('assets/images/alert_dialog/success/image 91.png',width: 200,)
-              ),
-              Positioned(
-                  top: 180,
-
-                  child: Image.asset('assets/images/alert_dialog/success/harika gidiyorsun.png',width: 300,)
+                  child: Image.asset('assets/images/alert_dialog/fail/üst kutucuklar.png',width: 150,)
               ),
               Positioned(
                   right: 0,
                   bottom: 0,
-                  child: Image.asset('assets/images/alert_dialog/success/Group 52.png',width: 150,)
+                  child: Image.asset('assets/images/alert_dialog/fail/alt kutular.png',width: 150,)
+              ),
+              Positioned(
+                  top: 40,
+                  right: 10,
+                  child: Image.asset('assets/images/alert_dialog/fail/Group 44.png',width:250,)
               ),
               Positioned(
                 left: 10,
-                bottom: 110,
+                bottom: 80,
                 child: InkWell(
                   onTap: () {
                     dataRepo.resetGame();
                     isFirstTrue = false;
                     isSecondTrue = false;
                     isThirdTrue = false;
-                    dataRepo.levelUp();
+                    dataRepo.currentLevel = dataRepo.currentLevel;
                   },
-                  child: Image.asset('assets/images/alert_dialog/success/Group 50.png',width: 160,),
+                  child: Image.asset('assets/images/alert_dialog/fail/Group 46.png',width: 160,),
                 ),
               ),
               Positioned(
                 left: 30,
-                bottom: 70,
+                bottom: 40,
                 child: InkWell(
                   onTap: () {
-                    Navigator.of(context).pop();
                     dataRepo.resetGame();
                     isFirstTrue = false;
                     isSecondTrue = false;
                     isThirdTrue = false;
+                    Navigator.of(context).pop();
                   },
-                  child: Image.asset('assets/images/alert_dialog/success/Group 51.png',width: 150,),
+                  child: Image.asset('assets/images/alert_dialog/fail/Group 47.png',width: 150,),
                 ),
               ),
 

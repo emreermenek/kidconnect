@@ -1,4 +1,6 @@
 import 'package:bootcamp_f32/constants/colors.dart';
+import 'package:bootcamp_f32/features/app/choose_correct_games/shapes_choose_correct_game/hard_shapes_choose_correct_game.dart';
+import 'package:bootcamp_f32/features/app/choose_correct_games/shapes_choose_correct_game/services/services.dart';
 import 'package:bootcamp_f32/features/app/choose_correct_games/things_choose_correct_game/hard_things_choose_correct_game.dart';
 import 'package:bootcamp_f32/features/app/choose_correct_games/things_choose_correct_game/services/services.dart';
 import 'package:flutter/material.dart';
@@ -22,7 +24,7 @@ class _HardShapesChooseCorrectGameLevelListState extends ConsumerState<HardShape
 
   @override
   Widget build(BuildContext context) {
-    final data = ref.watch(thingsChooseCorrectGameServiceProvider);
+    final data = ref.watch(shapesChooseCorrectGameServiceProvider);
     return SafeArea(
       child: Scaffold(
         appBar: AppBar(
@@ -75,7 +77,7 @@ class _HardShapesChooseCorrectGameLevelListState extends ConsumerState<HardShape
                     onTap: () {
                       if(data.lockHard[index] == 'assets/images/level_list/open_lock.png'){
                         data.currentLevelHard = index;
-                        Navigator.of(context).push(MaterialPageRoute(builder: (context) => const HardThingsChooseCorrectGame(),));
+                        Navigator.of(context).push(MaterialPageRoute(builder: (context) => const HardShapesChooseCorrectGame(),));
                       }else{
                         Utils.showSnackBar('Bölüm kitli!!!');
                       }

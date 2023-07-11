@@ -14,7 +14,6 @@ import 'package:bootcamp_f32/features/app/story/pages/page_6.dart';
 import 'package:bootcamp_f32/features/app/story/pages/page_7.dart';
 import 'package:bootcamp_f32/features/app/story/pages/page_8.dart';
 import 'package:bootcamp_f32/features/app/story/pages/page_9.dart';
-import 'package:bootcamp_f32/features/app/story/start_page.dart';
 import 'package:flutter/material.dart';
 import 'package:page_flip/page_flip.dart';
 
@@ -32,7 +31,7 @@ class _PageFlipState extends State<PageFlip> {
     return const Scaffold(
       body: Center(
         child: PageFlipWidget(
-          duration: Duration(milliseconds: 500),
+          duration: Duration(milliseconds: 1500),
           children: [
             StoryPage1(),
             StoryPage2(),

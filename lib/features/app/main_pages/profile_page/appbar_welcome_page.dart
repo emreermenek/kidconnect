@@ -20,7 +20,7 @@ class AppBarUser extends StatelessWidget implements PreferredSizeWidget{
             padding: const EdgeInsets.only(top: 20),
             child: Image.asset("assets/images/profile_page/windmill 1.png", ),
           ),
-          SizedBox(width: 30,),
+          const SizedBox(width: 30,),
           Text('PROFİL',style: GoogleFonts.quicksand(
             textStyle: const TextStyle(
               color: Colors.black,
@@ -28,7 +28,7 @@ class AppBarUser extends StatelessWidget implements PreferredSizeWidget{
               fontWeight: FontWeight.bold,
             ),
           )),
-          SizedBox(width: 30,),
+          const SizedBox(width: 30,),
           const Image(image: AssetImage("assets/images/profile_page/balloons (1).png"),width: 58, height: 62,),
         ],
       ),

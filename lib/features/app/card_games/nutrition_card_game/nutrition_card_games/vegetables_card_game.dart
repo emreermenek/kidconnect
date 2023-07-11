@@ -49,17 +49,16 @@ class _VegetablesCardGameState extends ConsumerState<VegetablesCardGame> {
                   SingleChildScrollView(
                     child: Column(
                       children: [
-                        Row(
-                          children: [
-                            Padding(
-                              padding: const EdgeInsets.symmetric(vertical: 10,horizontal: 85),
-                              child: InkWell(
-                                  onTap: () {
-                                    Navigator.of(context).pop();
-                                  },
-                                  child: const Image(image: AssetImage('assets/images/card_games/nutrition_card_game/background/exit.png'))),
-                            ),
-                          ],
+                        Padding(
+                          padding: const EdgeInsets.all(8),
+                          child: Align(
+                            alignment: Alignment.topLeft,
+                            child: InkWell(
+                                onTap: () {
+                                  Navigator.of(context).pop();
+                                },
+                                child: const Image(image: AssetImage('assets/images/card_games/nutrition_card_game/background/exit.png'))),
+                          ),
                         ),
 
                         InkWell(

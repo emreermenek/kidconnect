@@ -83,10 +83,11 @@ class _WhoseSoundGameState extends ConsumerState<WhoseSoundGame> {
                                         'assets/sounds/correct_answer.mp3'
                                     );
                                     _player.play();
+                                    data.levelLock();
                                   }else if(data.currentLevel == 19){
                                     Navigator.of(context).pop();
                                   }
-                                  data.levelLock();
+
                                 },
                                 child: Image.asset(
                                     whoseSoundImages[data.currentLevel],width: 150,),
@@ -140,10 +141,11 @@ class _WhoseSoundGameState extends ConsumerState<WhoseSoundGame> {
                                         'assets/sounds/correct_answer.mp3'
                                     );
                                     _player.play();
+                                    data.levelLock();
                                   }else if(data.currentLevel == 19){
                                     Navigator.of(context).pop();
                                   }
-                                  data.levelLock();
+
                                 },
                                 child: Image.asset(
                                     whoseSoundImages[data.currentLevel],width: 150),
