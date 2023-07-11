@@ -114,11 +114,11 @@ class _CleaningPouchGameState extends ConsumerState<CleaningPouchGame> {
                                   'assets/sounds/correct_answer.mp3'
                               );
                               _player.play();
-                              setState(() {
+                              if(data.currentLevel != 6){
                                 data.currentLevel += 1;
-                              });
-                              if(data.currentLevel != 7){
                                 data.levelLock();
+                              }else{
+                                Navigator.of(context).pop();
                               }
                             },
                           )

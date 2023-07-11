@@ -6,6 +6,7 @@ import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'features/app/main_pages/home_page/home_page.dart';
+import 'features/authentication/screens/auth_gate/auth_gate.dart';
 import 'firebase_options.dart';
 import 'package:flutter/services.dart';
 
@@ -29,7 +30,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       navigatorKey: navigatorKey,
       debugShowCheckedModeBanner: false,
-      home: const FirstPage()
+      home: const AuthGate()
     );
   }
 }

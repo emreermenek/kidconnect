@@ -124,11 +124,11 @@ class _NumbersPouchGameState extends ConsumerState<NumbersPouchGame> {
                                 'assets/sounds/correct_answer.mp3'
                             );
                             _player.play();
-                            setState(() {
+                            if(data.currentLevel != 3){
                               data.currentLevel += 1;
-                            });
-                            if(data.currentLevel != 4){
                               data.levelLock();
+                            }else{
+                              Navigator.of(context).pop();
                             }
                           },
                         )

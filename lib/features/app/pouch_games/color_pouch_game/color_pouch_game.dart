@@ -123,11 +123,11 @@ class _ColorPouchGameState extends ConsumerState<ColorPouchGame> {
                                   'assets/sounds/correct_answer.mp3'
                               );
                               _player.play();
-                              setState(() {
+                              if(data.currentLevel != 2){
                                 data.currentLevel += 1;
-                              });
-                              if(data.currentLevel != 3){
                                 data.levelLock();
+                              }else{
+                                Navigator.of(context).pop();
                               }
                             },
                           )

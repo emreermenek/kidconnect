@@ -1,3 +1,5 @@
+import 'dart:async';
+
 import 'package:bootcamp_f32/common_widgets/bottom_navigation_bar_widget.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
@@ -15,9 +17,25 @@ class ProfilePage extends StatefulWidget {
 }
 
 class _ProfilePageState extends State<ProfilePage> {
+  String userName = '';
+  Future userData() async {
+    var user = FirebaseAuth.instance.currentUser;
+    String uid = user!.uid;
+    DocumentSnapshot snapshot  =
+    await FirebaseFirestore.instance.collection('users').doc(uid).get();
+    Map<String, dynamic> userData = snapshot.data() as Map<String, dynamic>;
+    userName = userData['name'];
+  }
+
+  @override
+  void initState() {
+    // TODO: implement initState
+    super.initState();
+  }
 
   @override
   Widget build(BuildContext context) {
+
     return SafeArea(
       child: Scaffold(
         backgroundColor: const Color(0xFFF07E74),
@@ -54,7 +72,21 @@ class _ProfilePageState extends State<ProfilePage> {
                       }else if(snapshot.hasError){
                         return const Center(child: Text("Bir şeyler yanlış gitti!"),);
                       }else if(snapshot.hasData){
-                        return const Profile2();
+                        return StreamBuilder(
+                          stream: FirebaseFirestore.instance.collection('users').doc(FirebaseAuth.instance.currentUser!.uid).snapshots(),
+                            builder: (BuildContext context, AsyncSnapshot<DocumentSnapshot<Map<String, dynamic>>> snapshot) {
+                              if(snapshot.hasData){
+                                Map<String, dynamic> userData = snapshot.data!.data() as Map<String, dynamic>;
+                                String userName = userData['name'];
+                                return Profile2(userName: userName,);
+                              } else if(snapshot.hasError){
+                                return const Text('Bilinmeyen hata oluştu!');
+                              }else{
+                                return const Center(child: CircularProgressIndicator());
+                              }
+
+                            },
+                        );
                       }else {
                         return const WelcomePage();
                       }
@@ -71,8 +103,11 @@ class _ProfilePageState extends State<ProfilePage> {
 
 class Profile2 extends StatelessWidget {
   const Profile2({
+    required this.userName,
     super.key,
   });
+
+  final String userName;
 
   @override
   Widget build(BuildContext context) {
@@ -99,13 +134,13 @@ class Profile2 extends StatelessWidget {
                         Column(
                           mainAxisAlignment: MainAxisAlignment.center,
                           children: [
-                            buildText("AD SOYAD :"),
+                            buildText("AD SOYAD : "),
                           ],
                         ),
                         Column(
                           mainAxisAlignment: MainAxisAlignment.center,
                           children: [
-                            buildText("AD SOYADI"),
+                            buildText(userName),
                           ],
                         ),
                       ],

@@ -115,11 +115,11 @@ class _AnimalsPouchGameState extends ConsumerState<AnimalsPouchGame> {
                                   'assets/sounds/correct_answer.mp3'
                               );
                               _player.play();
-                              setState(() {
+                              if(data.currentLevel != 12){
                                 data.currentLevel += 1;
-                              });
-                              if(data.currentLevel != 13){
                                 data.levelLock();
+                              }else{
+                                Navigator.of(context).pop();
                               }
                             },
                           )

@@ -56,8 +56,9 @@ class AuthRepository{
           email: email.text.trim(),
           password: password.text.trim()
       );
-
-      final docUser = FirebaseFirestore.instance.collection('users').doc();
+      var user = FirebaseAuth.instance.currentUser!;
+      String uid = user.uid;
+      final docUser = FirebaseFirestore.instance.collection('users').doc(uid);
       final json = {
 
         'id': docUser.id,
@@ -120,10 +121,10 @@ class AuthRepository{
       );
 
       await FirebaseAuth.instance.signInWithCredential(credential);
-
-      final docUser = FirebaseFirestore.instance.collection('users').doc();
+      var user = FirebaseAuth.instance.currentUser!;
+      String uid = user.uid;
+      final docUser = FirebaseFirestore.instance.collection('users').doc(uid);
       final json = {
-
         'id': docUser.id,
         'imageUrl': googleUser.photoUrl,
         'name': googleUser.displayName,
@@ -175,8 +176,9 @@ class AuthRepository{
       if(accessToken != null){
         final OAuthCredential facebookAuthCredential = FacebookAuthProvider.credential(loginResult.accessToken!.token);
         await FirebaseAuth.instance.signInWithCredential(facebookAuthCredential);
-
-        final docUser = FirebaseFirestore.instance.collection('users').doc();
+        var user = FirebaseAuth.instance.currentUser!;
+        String uid = user.uid;
+        final docUser = FirebaseFirestore.instance.collection('users').doc(uid);
         final json = {
 
           'id': docUser.id,
@@ -236,12 +238,6 @@ class AuthRepository{
   Future signOut() async {
     await FirebaseAuth.instance.signOut();
 }
-
-/*
----------------------------------------------------------------------------------------------
-        Sign Out
----------------------------------------------------------------------------------------------
-*/
 
 
 }
