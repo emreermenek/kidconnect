@@ -12,7 +12,6 @@ import 'package:google_fonts/google_fonts.dart';
 import '../../../../common_widgets/app_bar_dialog_clip.dart';
 import '../../do_together_game/level_lists/do_together_level_list.dart';
 
-
 class HomePage extends StatefulWidget {
   const HomePage({Key? key}) : super(key: key);
 
@@ -68,22 +67,22 @@ class _HomePageState extends State<HomePage> {
                       padding: const EdgeInsets.symmetric(vertical: 10),
                       color: tPrimaryColor,
                       child: Center(
-                          child: Text(
-                        'Hoşgeldin',
-                              style: GoogleFonts.quicksand(
-                                  textStyle: const TextStyle(
-                                    fontWeight: FontWeight.bold,
-                                    color: Colors.black,
-                                    fontSize: 18,
-                                  )
-                              )
-                          ),
+                        child: Text('Hoşgeldin',
+                            style: GoogleFonts.quicksand(
+                                textStyle: const TextStyle(
+                              fontWeight: FontWeight.bold,
+                              color: Colors.black,
+                              fontSize: 18,
+                            ))),
                       ),
                     )),
               ),
-              const SizedBox(width: 10,),
+              const SizedBox(
+                width: 10,
+              ),
               const Image(
-                image: AssetImage('assets/images/home_page_image/cute-tiger.png'),
+                image:
+                    AssetImage('assets/images/home_page_image/cute-tiger.png'),
                 width: 75,
               ),
             ],
@@ -139,8 +138,9 @@ class _HomePageState extends State<HomePage> {
               itemCount: 6,
               gridDelegate: const SliverGridDelegateWithMaxCrossAxisExtent(
                 maxCrossAxisExtent:
-                    300, //if you have a device with 300px width only one category is shown in a row if you have 500px then two categories are lied side by side in a row
-                childAspectRatio: 1,// for 200px width, I need 300px height (for extra spacing)
+                    350, //if you have a device with 300px width only one category is shown in a row if you have 500px then two categories are lied side by side in a row
+                childAspectRatio:
+                    1, // for 200px width, I need 300px height (for extra spacing)
               ),
               itemBuilder: (context, index) {
                 return InkWell(
@@ -195,5 +195,3 @@ class _HomePageState extends State<HomePage> {
     );
   }
 }
-
-
