@@ -423,9 +423,19 @@ class _MatchImageState extends ConsumerState<MatchImage> {
               'assets/sounds/confetti_sound.mp3');
           player.play();
         }
-        dataRepo.finished = true;
-        dataRepo.lockLevel +=1;
-        dataRepo.levelLock();
+        if(dataRepo.currentLevel != 9){
+          dataRepo.finished = true;
+          dataRepo.lockLevel +=1;
+          dataRepo.levelLock();
+        }
+
+        if(dataRepo.currentLevel == 9){
+          Navigator.of(context).pop();
+          dataRepo.resetGame();
+          isFirstTrue = false;
+          isSecondTrue = false;
+          isThirdTrue = false;
+        }
       }else{
         if(isVolumeOn == true) {
           player.setAsset(

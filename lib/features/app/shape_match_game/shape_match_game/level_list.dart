@@ -72,6 +72,7 @@ class _ShapeMatchGameLevelListState extends ConsumerState<ShapeMatchGameLevelLis
                     onTap: () {
                       if(data.lock[index] == 'assets/images/level_list/open_lock.png'){
                         data.currentLevel = index;
+                        data.resetGame();
                         Navigator.of(context).push(MaterialPageRoute(builder: (context) => const MatchImage(),));
                       }else{
                         Utils.showSnackBar('Bölüm kitli!!!');
