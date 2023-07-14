@@ -305,9 +305,8 @@ class _SignupPageState extends ConsumerState<SignupPage> {
             ),
             Padding(
               padding: const EdgeInsets.all(16.0),
-              child: Positioned(
-                top: 0,
-                right: 0,
+              child: Align(
+                alignment: Alignment.topLeft,
                 child: InkWell(
                     onTap: () {
                       Navigator.of(context).pop();
