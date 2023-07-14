@@ -6,17 +6,16 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:google_fonts/google_fonts.dart';
 
-
-
 class FoodsCardGameLevelList extends ConsumerStatefulWidget {
   const FoodsCardGameLevelList({Key? key}) : super(key: key);
 
   @override
-  ConsumerState<FoodsCardGameLevelList> createState() => _FoodsCardGameLevelListState();
+  ConsumerState<FoodsCardGameLevelList> createState() =>
+      _FoodsCardGameLevelListState();
 }
 
-class _FoodsCardGameLevelListState extends ConsumerState<FoodsCardGameLevelList> {
-
+class _FoodsCardGameLevelListState
+    extends ConsumerState<FoodsCardGameLevelList> {
   @override
   Widget build(BuildContext context) {
     final data = ref.watch(nutritionCardGameDataServiceProvider);
@@ -27,28 +26,29 @@ class _FoodsCardGameLevelListState extends ConsumerState<FoodsCardGameLevelList>
           toolbarHeight: 75,
           elevation: 0,
           leading: InkWell(
-              onTap: ()
-              {
+              onTap: () {
                 Navigator.of(context).pop();
               },
-              child: const Image(image: AssetImage('assets/images/level_list/exit.png'),width: 100,)
-          ),
+              child: const Image(
+                image: AssetImage('assets/images/level_list/exit.png'),
+                width: 100,
+              )),
           title: Row(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              Text(
-                  'YEMEKLER',
+              Text('YEMEKLER',
                   style: GoogleFonts.quicksand(
                       textStyle: const TextStyle(
-                        fontWeight: FontWeight.bold,
-                        color: Colors.black,
-                        fontSize: 24,
-                      )
-                  )
+                    fontWeight: FontWeight.bold,
+                    color: Colors.black,
+                    fontSize: 24,
+                  ))),
+              const SizedBox(
+                width: 20,
               ),
-              const SizedBox(width: 20,),
               const Image(
-                image: AssetImage('assets/images/home_page_image/cute-tiger.png'),
+                image:
+                    AssetImage('assets/images/home_page_image/cute-tiger.png'),
                 width: 75,
               ),
             ],
@@ -63,9 +63,8 @@ class _FoodsCardGameLevelListState extends ConsumerState<FoodsCardGameLevelList>
               child: GridView.builder(
                 gridDelegate: const SliverGridDelegateWithMaxCrossAxisExtent(
                     maxCrossAxisExtent: 600,
-                    childAspectRatio: 14/3,
-                    crossAxisSpacing: 8
-                ),
+                    childAspectRatio: 14 / 3,
+                    crossAxisSpacing: 8),
                 itemCount: foodNames.length,
                 itemBuilder: (BuildContext context, int index) {
                   return InkWell(
@@ -73,10 +72,13 @@ class _FoodsCardGameLevelListState extends ConsumerState<FoodsCardGameLevelList>
                       setState(() {
                         data.currentFoods = index;
                       });
-                      Navigator.of(context).push(MaterialPageRoute(builder: (context) => const FoodsCardGame(),));
+                      Navigator.of(context).push(MaterialPageRoute(
+                        builder: (context) => const FoodsCardGame(),
+                      ));
                     },
                     child: Container(
-                      margin: const EdgeInsets.symmetric(horizontal: 30,vertical: 10),
+                      margin: const EdgeInsets.symmetric(
+                          horizontal: 30, vertical: 10),
                       alignment: Alignment.center,
                       decoration: BoxDecoration(
                           color: tPrimaryColor,
@@ -84,21 +86,18 @@ class _FoodsCardGameLevelListState extends ConsumerState<FoodsCardGameLevelList>
                           boxShadow: [
                             BoxShadow(
                                 color: Colors.black.withOpacity(0.2),
-                                offset: const Offset(
-                                    3,
-                                    4
-                                )
-                            )
-                          ]
-                      ),
+                                offset: const Offset(3, 4))
+                          ]),
                       child: Center(
-                        child: Text(foodNames[index], style: GoogleFonts.comfortaa(
-                          textStyle:  const TextStyle(
-                              color: Colors.black,
-                              fontSize: 24,
-                              fontWeight: FontWeight.bold
+                        child: Text(
+                          foodNames[index],
+                          style: GoogleFonts.comfortaa(
+                            textStyle: const TextStyle(
+                                color: Colors.black,
+                                fontSize: 20,
+                                fontWeight: FontWeight.bold),
                           ),
-                        ),),
+                        ),
                       ),
                     ),
                   );

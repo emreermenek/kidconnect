@@ -16,10 +16,11 @@ class _WeatherCardGameState extends ConsumerState<WeatherCardGame> {
   @override
   Widget build(BuildContext context) {
     final data = ref.watch(seasonCardGameDataServiceProvider);
-    final ValueNotifier<int> chooseWeather = ValueNotifier<int>(data.currentWeather);
+    final ValueNotifier<int> chooseWeather =
+        ValueNotifier<int>(data.currentWeather);
     return SafeArea(
       child: Scaffold(
-        backgroundColor: const Color(0xFFF2AB27),
+        backgroundColor: const Color(0xFFF9F3D6),
         body: ValueListenableBuilder(
             valueListenable: chooseWeather,
             builder: (BuildContext context, value, Widget? child) {
@@ -30,15 +31,17 @@ class _WeatherCardGameState extends ConsumerState<WeatherCardGame> {
                         image: DecorationImage(
                             alignment: Alignment.bottomCenter,
                             fit: BoxFit.fitWidth,
-                            image: AssetImage('assets/images/card_games/seasons_card_game/down background.png')
-                        )
-                    ),
+                            image: AssetImage(
+                                'assets/images/card_games/seasons_card_game/down background.png'))),
                   ),
                   const Align(
                     alignment: Alignment.topRight,
                     child: Padding(
-                      padding: EdgeInsets.symmetric(vertical: 10,horizontal: 85),
-                      child: Image(image: AssetImage('assets/images/card_games/seasons_card_game/up background.png')),
+                      padding:
+                          EdgeInsets.symmetric(vertical: 10, horizontal: 85),
+                      child: Image(
+                          image: AssetImage(
+                              'assets/images/card_games/seasons_card_game/up background.png')),
                     ),
                   ),
                   SingleChildScrollView(
@@ -52,7 +55,9 @@ class _WeatherCardGameState extends ConsumerState<WeatherCardGame> {
                                 onTap: () {
                                   Navigator.of(context).pop();
                                 },
-                                child: const Image(image: AssetImage('assets/images/card_games/seasons_card_game/exit.png'))),
+                                child: const Image(
+                                    image: AssetImage(
+                                        'assets/images/card_games/seasons_card_game/exit.png'))),
                           ),
                         ),
                         InkWell(
@@ -63,7 +68,7 @@ class _WeatherCardGameState extends ConsumerState<WeatherCardGame> {
                             width: 320,
                             height: 430,
                             decoration: BoxDecoration(
-                              color: const Color(0xFFFF948A),
+                              color: const Color(0xFFF2AB27),
                               borderRadius: BorderRadius.circular(32),
                             ),
                             child: Padding(
@@ -76,48 +81,59 @@ class _WeatherCardGameState extends ConsumerState<WeatherCardGame> {
                                     decoration: const BoxDecoration(
                                         color: Colors.white,
                                         borderRadius: BorderRadius.vertical(
-                                            top: Radius.circular(24)
-                                        )
+                                            top: Radius.circular(24))),
+                                    child: Image(
+                                      image: AssetImage(
+                                          weatherImages[data.currentWeather]),
                                     ),
-                                    child: Image(image: AssetImage(weatherImages[data.currentWeather]),),
                                   ),
-                                  const SizedBox(height: 30,),
-                                  Text(weatherNames[data.currentWeather], style: GoogleFonts.comfortaa(
-                                      textStyle: const TextStyle(
-                                          fontSize: 25,
-                                          fontWeight: FontWeight.bold
-                                      )
-                                  ),)
+                                  const SizedBox(
+                                    height: 30,
+                                  ),
+                                  Text(
+                                    weatherNames[data.currentWeather],
+                                    style: GoogleFonts.comfortaa(
+                                        textStyle: const TextStyle(
+                                            fontSize: 25,
+                                            fontWeight: FontWeight.bold)),
+                                  )
                                 ],
                               ),
                             ),
                           ),
                         ),
-                        const SizedBox(height: 30,),
+                        const SizedBox(
+                          height: 30,
+                        ),
                         Row(
                           mainAxisAlignment: MainAxisAlignment.center,
                           children: [
                             InkWell(
                                 onTap: () {
-                                  if(data.currentWeather != 0){
+                                  if (data.currentWeather != 0) {
                                     setState(() {
-                                      data.currentWeather -=1;
+                                      data.currentWeather -= 1;
                                     });
                                   }
                                 },
-                                child: const Image(image: AssetImage('assets/images/card_games/seasons_card_game/back.png'))
+                                child: const Image(
+                                    image: AssetImage(
+                                        'assets/images/card_games/seasons_card_game/back.png'))),
+                            const SizedBox(
+                              width: 30,
                             ),
-                            const SizedBox(width: 30,),
                             InkWell(
                                 onTap: () {
-                                  if(data.currentWeather < weatherNames.length-1) {
+                                  if (data.currentWeather <
+                                      weatherNames.length - 1) {
                                     setState(() {
                                       data.currentWeather += 1;
                                     });
                                   }
                                 },
-                                child: const Image(image: AssetImage('assets/images/card_games/seasons_card_game/next.png'))
-                            ),
+                                child: const Image(
+                                    image: AssetImage(
+                                        'assets/images/card_games/seasons_card_game/next.png'))),
                           ],
                         ),
                       ],
@@ -125,8 +141,7 @@ class _WeatherCardGameState extends ConsumerState<WeatherCardGame> {
                   )
                 ],
               );
-            }
-        ),
+            }),
       ),
     );
   }

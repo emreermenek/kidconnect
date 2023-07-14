@@ -17,10 +17,11 @@ class _ThingsCardGameState extends ConsumerState<ThingsCardGame> {
   @override
   Widget build(BuildContext context) {
     final data = ref.watch(thingsCardGameDataServiceProvider);
-    final ValueNotifier<int> chooseThing = ValueNotifier<int>(data.currentThing);
+    final ValueNotifier<int> chooseThing =
+        ValueNotifier<int>(data.currentThing);
     return SafeArea(
       child: Scaffold(
-        backgroundColor: const Color.fromARGB(255, 234, 233,211),
+        backgroundColor: const Color.fromARGB(255, 234, 233, 211),
         body: ValueListenableBuilder(
             valueListenable: chooseThing,
             builder: (BuildContext context, value, Widget? child) {
@@ -28,21 +29,19 @@ class _ThingsCardGameState extends ConsumerState<ThingsCardGame> {
                 children: [
                   Container(
                     decoration: const BoxDecoration(
-                      image: DecorationImage(
-                        alignment: Alignment.topCenter,
-                        fit: BoxFit.fitWidth,
-                        image: AssetImage('assets/images/card_games/things_card_game/background_top.png')
-                      )
-                    ),
+                        image: DecorationImage(
+                            alignment: Alignment.topCenter,
+                            fit: BoxFit.fitWidth,
+                            image: AssetImage(
+                                'assets/images/card_games/things_card_game/background_top.png'))),
                   ),
                   Container(
                     decoration: const BoxDecoration(
                         image: DecorationImage(
                             alignment: Alignment.bottomCenter,
                             fit: BoxFit.fitWidth,
-                            image: AssetImage('assets/images/card_games/things_card_game/background_bottom.png')
-                        )
-                    ),
+                            image: AssetImage(
+                                'assets/images/card_games/things_card_game/background_bottom.png'))),
                   ),
                   SingleChildScrollView(
                     child: Column(
@@ -55,10 +54,11 @@ class _ThingsCardGameState extends ConsumerState<ThingsCardGame> {
                                 onTap: () {
                                   Navigator.of(context).pop();
                                 },
-                                child: const Image(image: AssetImage('assets/images/card_games/shapes_card_game/exit.png'))),
+                                child: const Image(
+                                    image: AssetImage(
+                                        'assets/images/card_games/things_card_game/exit.png'))),
                           ),
                         ),
-
                         InkWell(
                           onTap: () {
                             textToSpeech(thingNames[data.currentThing]);
@@ -80,48 +80,59 @@ class _ThingsCardGameState extends ConsumerState<ThingsCardGame> {
                                     decoration: const BoxDecoration(
                                         color: Color(0xFFE8EAE3),
                                         borderRadius: BorderRadius.vertical(
-                                            top: Radius.circular(24)
-                                        )
+                                            top: Radius.circular(24))),
+                                    child: Image(
+                                      image: AssetImage(
+                                          thingImages[data.currentThing]),
                                     ),
-                                    child: Image(image: AssetImage(thingImages[data.currentThing]),),
                                   ),
-                                  const SizedBox(height: 30,),
-                                  Text(thingNames[data.currentThing], style: GoogleFonts.comfortaa(
-                                      textStyle: const TextStyle(
-                                          fontSize: 24,
-                                          fontWeight: FontWeight.bold
-                                      )
-                                  ),)
+                                  const SizedBox(
+                                    height: 30,
+                                  ),
+                                  Text(
+                                    thingNames[data.currentThing],
+                                    style: GoogleFonts.comfortaa(
+                                        textStyle: const TextStyle(
+                                            fontSize: 24,
+                                            fontWeight: FontWeight.bold)),
+                                  )
                                 ],
                               ),
                             ),
                           ),
                         ),
-                        const SizedBox(height: 30,),
+                        const SizedBox(
+                          height: 30,
+                        ),
                         Row(
                           mainAxisAlignment: MainAxisAlignment.center,
                           children: [
                             InkWell(
                                 onTap: () {
-                                  if(data.currentThing != 0){
+                                  if (data.currentThing != 0) {
                                     setState(() {
-                                      data.currentThing -=1;
+                                      data.currentThing -= 1;
                                     });
                                   }
                                 },
-                                child: const Image(image: AssetImage('assets/images/card_games/things_card_game/back.png'))
+                                child: const Image(
+                                    image: AssetImage(
+                                        'assets/images/card_games/things_card_game/back.png'))),
+                            const SizedBox(
+                              width: 30,
                             ),
-                            const SizedBox(width: 30,),
                             InkWell(
                                 onTap: () {
-                                  if(data.currentThing < thingNames.length-1) {
+                                  if (data.currentThing <
+                                      thingNames.length - 1) {
                                     setState(() {
                                       data.currentThing += 1;
                                     });
                                   }
                                 },
-                                child: const Image(image: AssetImage('assets/images/card_games/things_card_game/next.png'))
-                            ),
+                                child: const Image(
+                                    image: AssetImage(
+                                        'assets/images/card_games/things_card_game/next.png'))),
                           ],
                         ),
                       ],
@@ -129,8 +140,7 @@ class _ThingsCardGameState extends ConsumerState<ThingsCardGame> {
                   )
                 ],
               );
-            }
-        ),
+            }),
       ),
     );
   }

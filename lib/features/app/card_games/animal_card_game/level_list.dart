@@ -6,16 +6,16 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:google_fonts/google_fonts.dart';
 
-
 class AnimalCardGameLevelList extends ConsumerStatefulWidget {
   const AnimalCardGameLevelList({Key? key}) : super(key: key);
 
   @override
-  ConsumerState<AnimalCardGameLevelList> createState() => _AnimalCardGameLevelListState();
+  ConsumerState<AnimalCardGameLevelList> createState() =>
+      _AnimalCardGameLevelListState();
 }
 
-class _AnimalCardGameLevelListState extends ConsumerState<AnimalCardGameLevelList> {
-
+class _AnimalCardGameLevelListState
+    extends ConsumerState<AnimalCardGameLevelList> {
   @override
   Widget build(BuildContext context) {
     final data = ref.watch(animalCardGameDataServiceProvider);
@@ -26,28 +26,29 @@ class _AnimalCardGameLevelListState extends ConsumerState<AnimalCardGameLevelLis
           toolbarHeight: 75,
           elevation: 0,
           leading: InkWell(
-              onTap: ()
-              {
+              onTap: () {
                 Navigator.of(context).pop();
               },
-              child: const Image(image: AssetImage('assets/images/level_list/exit.png'),width: 100,)
-          ),
+              child: const Image(
+                image: AssetImage('assets/images/level_list/exit.png'),
+                width: 100,
+              )),
           title: Row(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              Text(
-                  'HAYVANLAR',
+              Text('HAYVANLAR',
                   style: GoogleFonts.quicksand(
                       textStyle: const TextStyle(
-                        fontWeight: FontWeight.bold,
-                        color: Colors.black,
-                        fontSize: 24,
-                      )
-                  )
+                    fontWeight: FontWeight.bold,
+                    color: Colors.black,
+                    fontSize: 24,
+                  ))),
+              const SizedBox(
+                width: 20,
               ),
-              const SizedBox(width: 20,),
               const Image(
-                image: AssetImage('assets/images/home_page_image/cute-tiger.png'),
+                image:
+                    AssetImage('assets/images/home_page_image/cute-tiger.png'),
                 width: 75,
               ),
             ],
@@ -62,9 +63,8 @@ class _AnimalCardGameLevelListState extends ConsumerState<AnimalCardGameLevelLis
               child: GridView.builder(
                 gridDelegate: const SliverGridDelegateWithMaxCrossAxisExtent(
                     maxCrossAxisExtent: 600,
-                    childAspectRatio: 14/3,
-                    crossAxisSpacing: 8
-                ),
+                    childAspectRatio: 14 / 3,
+                    crossAxisSpacing: 8),
                 itemCount: animalNames.length,
                 itemBuilder: (BuildContext context, int index) {
                   return InkWell(
@@ -72,10 +72,13 @@ class _AnimalCardGameLevelListState extends ConsumerState<AnimalCardGameLevelLis
                       setState(() {
                         data.currentAnimal = index;
                       });
-                      Navigator.of(context).push(MaterialPageRoute(builder: (context) => const AnimalCardGame(),));
+                      Navigator.of(context).push(MaterialPageRoute(
+                        builder: (context) => const AnimalCardGame(),
+                      ));
                     },
                     child: Container(
-                      margin: const EdgeInsets.symmetric(horizontal: 30,vertical: 10),
+                      margin: const EdgeInsets.symmetric(
+                          horizontal: 30, vertical: 10),
                       alignment: Alignment.center,
                       decoration: BoxDecoration(
                           color: tPrimaryColor,
@@ -83,21 +86,19 @@ class _AnimalCardGameLevelListState extends ConsumerState<AnimalCardGameLevelLis
                           boxShadow: [
                             BoxShadow(
                                 color: Colors.black.withOpacity(0.2),
-                                offset: const Offset(
-                                    3,
-                                    4
-                                )
-                            )
-                          ]
-                      ),
+                                offset: const Offset(3, 4))
+                          ]),
                       child: Center(
-                        child: Text(animalNames[index], style: GoogleFonts.comfortaa(
-                          textStyle:  const TextStyle(
+                        child: Text(
+                          animalNames[index],
+                          style: GoogleFonts.comfortaa(
+                            textStyle: const TextStyle(
                               color: Colors.black,
-                              fontSize: 24,
-                              fontWeight: FontWeight.bold
+                              fontSize: 20,
+                              fontWeight: FontWeight.bold,
+                            ),
                           ),
-                        ),),
+                        ),
                       ),
                     ),
                   );

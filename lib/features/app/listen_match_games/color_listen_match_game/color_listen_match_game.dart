@@ -1,6 +1,5 @@
 import 'dart:math';
 import 'package:bootcamp_f32/common_features/text_to_speech.dart';
-import 'package:bootcamp_f32/features/app/listen_match_games/cleaning_listen_match_game/services/services.dart';
 import 'package:bootcamp_f32/features/app/listen_match_games/color_listen_match_game/services/services.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
@@ -9,17 +8,15 @@ import 'package:just_audio/just_audio.dart';
 
 import 'data/data.dart';
 
-
-
 class ColorListenMatchGame extends ConsumerStatefulWidget {
   const ColorListenMatchGame({super.key});
 
   @override
-  ConsumerState<ColorListenMatchGame> createState() => _ColorListenMatchGameState();
+  ConsumerState<ColorListenMatchGame> createState() =>
+      _ColorListenMatchGameState();
 }
 
 class _ColorListenMatchGameState extends ConsumerState<ColorListenMatchGame> {
-
   final _player = AudioPlayer();
   int? a;
   int? whichImage;
@@ -30,6 +27,7 @@ class _ColorListenMatchGameState extends ConsumerState<ColorListenMatchGame> {
     super.dispose();
     _player.dispose();
   }
+
   @override
   Widget build(BuildContext context) {
     final data = ref.watch(colorListenMatchGameServiceProvider);
@@ -54,18 +52,20 @@ class _ColorListenMatchGameState extends ConsumerState<ColorListenMatchGame> {
                   padding: const EdgeInsets.only(top: 30),
                   child: ValueListenableBuilder(
                       valueListenable: levels,
-                      builder: (BuildContext context, int value, Widget? child) {
+                      builder:
+                          (BuildContext context, int value, Widget? child) {
                         a = Random().nextInt(2);
                         imageIndexList = List.generate(9, (index) => index);
                         imageIndexList!.removeAt(data.currentLevel);
                         whichImage = Random().nextInt(8);
-                        if(a == 0){
+                        if (a == 0) {
                           return Column(
                             mainAxisSize: MainAxisSize.min,
                             children: [
                               InkWell(
                                 onTap: () {
-                                  textToSpeech(colorListenMatchNames[data.currentLevel]);
+                                  textToSpeech(
+                                      colorListenMatchNames[data.currentLevel]);
                                 },
                                 child: Image.asset(
                                     'assets/images/listen_match_game_images/dinleme.png'),
@@ -75,9 +75,9 @@ class _ColorListenMatchGameState extends ConsumerState<ColorListenMatchGame> {
                                 'DİNLE VE EŞLEŞTİR',
                                 style: GoogleFonts.comfortaa(
                                     textStyle: const TextStyle(
-                                      color: Colors.black,
-                                      fontSize: 30,
-                                    )),
+                                  color: Colors.black,
+                                  fontSize: 30,
+                                )),
                               ),
                               const SizedBox(height: 30),
                               Container(
@@ -94,21 +94,20 @@ class _ColorListenMatchGameState extends ConsumerState<ColorListenMatchGame> {
                                 ),
                                 child: InkWell(
                                   onTap: () {
-                                    if(data.currentLevel != 8){
+                                    if (data.currentLevel != 8) {
                                       setState(() {
-                                        data.currentLevel +=1;
+                                        data.currentLevel += 1;
                                       });
                                       _player.setAsset(
-                                          'assets/sounds/correct_answer.mp3'
-                                      );
+                                          'assets/sounds/correct_answer.mp3');
                                       _player.play();
-                                    }else if(data.currentLevel == 8){
+                                    } else if (data.currentLevel == 8) {
                                       Navigator.of(context).pop();
                                     }
                                     data.levelLock();
                                   },
-                                  child: Image.asset(
-                                      colorListenMatchImages[data.currentLevel]),
+                                  child: Image.asset(colorListenMatchImages[
+                                      data.currentLevel]),
                                 ),
                               ),
                               const SizedBox(height: 25),
@@ -130,19 +129,20 @@ class _ColorListenMatchGameState extends ConsumerState<ColorListenMatchGame> {
                                         'assets/sounds/incorrect_answer.mp3');
                                     _player.play();
                                   },
-                                  child: Image.asset(
-                                      colorListenMatchImages[imageIndexList![whichImage!]]),
+                                  child: Image.asset(colorListenMatchImages[
+                                      imageIndexList![whichImage!]]),
                                 ),
                               ),
                             ],
                           );
-                        }else{
+                        } else {
                           return Column(
                             mainAxisSize: MainAxisSize.min,
                             children: [
                               InkWell(
                                 onTap: () {
-                                  textToSpeech(colorListenMatchNames[data.currentLevel]);
+                                  textToSpeech(
+                                      colorListenMatchNames[data.currentLevel]);
                                 },
                                 child: Image.asset(
                                     'assets/images/listen_match_game_images/dinleme.png'),
@@ -152,9 +152,9 @@ class _ColorListenMatchGameState extends ConsumerState<ColorListenMatchGame> {
                                 'DİNLE VE EŞLEŞTİR',
                                 style: GoogleFonts.comfortaa(
                                     textStyle: const TextStyle(
-                                      color: Colors.black,
-                                      fontSize: 30,
-                                    )),
+                                  color: Colors.black,
+                                  fontSize: 30,
+                                )),
                               ),
                               const SizedBox(height: 30),
                               Container(
@@ -175,8 +175,8 @@ class _ColorListenMatchGameState extends ConsumerState<ColorListenMatchGame> {
                                         'assets/sounds/incorrect_answer.mp3');
                                     _player.play();
                                   },
-                                  child: Image.asset(
-                                      colorListenMatchImages[imageIndexList![whichImage!]]),
+                                  child: Image.asset(colorListenMatchImages[
+                                      imageIndexList![whichImage!]]),
                                 ),
                               ),
                               const SizedBox(height: 25),
@@ -194,28 +194,26 @@ class _ColorListenMatchGameState extends ConsumerState<ColorListenMatchGame> {
                                 ),
                                 child: InkWell(
                                   onTap: () {
-                                    if(data.currentLevel != 8){
+                                    if (data.currentLevel != 8) {
                                       setState(() {
-                                        data.currentLevel +=1;
+                                        data.currentLevel += 1;
                                       });
                                       _player.setAsset(
-                                          'assets/sounds/correct_answer.mp3'
-                                      );
+                                          'assets/sounds/correct_answer.mp3');
                                       _player.play();
-                                    }else if(data.currentLevel == 8){
+                                    } else if (data.currentLevel == 8) {
                                       Navigator.of(context).pop();
                                     }
                                     data.levelLock();
                                   },
-                                  child: Image.asset(
-                                      colorListenMatchImages[data.currentLevel]),
+                                  child: Image.asset(colorListenMatchImages[
+                                      data.currentLevel]),
                                 ),
                               ),
                             ],
                           );
                         }
-                      }
-                  ),
+                      }),
                 ),
               ),
             ),
@@ -234,13 +232,13 @@ class _ColorListenMatchGameState extends ConsumerState<ColorListenMatchGame> {
                   ),
                   Align(
                     alignment: Alignment.topRight,
-                    child: Text('${data.currentLevel+1}/9',
+                    child: Text(
+                      '${data.currentLevel + 1}/9',
                       style: GoogleFonts.montserratAlternates(
                         textStyle: const TextStyle(
                             color: Colors.black,
                             fontWeight: FontWeight.bold,
-                            fontSize: 34
-                        ),
+                            fontSize: 34),
                       ),
                     ),
                   )

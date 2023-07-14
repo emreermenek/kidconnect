@@ -1,13 +1,13 @@
 const List<String> sportsNames = [
-  'KOLLARIMIZI\nKALDIRALIM',
-  'ZIPLAYALIM',
-  'KOŞALIM',
-  ' YÜRÜYELİM VE\nSONRA DURALIM',
-  'OTURALIM SONRA\n AYAĞA KALKALIM',
-  'YÜRÜYELİM',
-  'İP ATLAYALIM',
-  'BACAKLARIMIZI\n  KALDIRALIM',
-  '   KOLLARIMIZI\nKALDIRIP İNDİRELİM'
+  'Kollarımızı\nKaldıralım',
+  'Zıplayalım',
+  'Koşalım',
+  '  Yürüyelim ve\nSonra Duralım',
+  'Oturalım ve Sonra\n  Ayağa Kalkalım',
+  'Yürüyelim',
+  'İp Atlayalım',
+  'Bacaklarımızı\n   Kaldıralım',
+  '     Kollarımızı\nKaldırıp İndirelim'
 ];
 const List<String> sportsImages = [
   'assets/images/do_together_images/sports/kolları kaldırmak.gif',

@@ -18,7 +18,8 @@ class _ShapeCardGameState extends ConsumerState<ShapeCardGame> {
   @override
   Widget build(BuildContext context) {
     final data = ref.watch(shapeCardGameDataServiceProvider);
-    final ValueNotifier<int> chooseShape = ValueNotifier<int>(data.currentShape);
+    final ValueNotifier<int> chooseShape =
+        ValueNotifier<int>(data.currentShape);
     return SafeArea(
       child: Scaffold(
         backgroundColor: Colors.white,
@@ -29,19 +30,31 @@ class _ShapeCardGameState extends ConsumerState<ShapeCardGame> {
                 children: [
                   const Align(
                     alignment: Alignment.topRight,
-                    child: Image(image: AssetImage('assets/images/card_games/shapes_card_game/up_background.png'),),
+                    child: Image(
+                      image: AssetImage(
+                          'assets/images/card_games/shapes_card_game/up_background.png'),
+                    ),
                   ),
                   const Align(
                     alignment: Alignment.bottomLeft,
-                    child: Image(image: AssetImage('assets/images/card_games/shapes_card_game/down_left_background.png'),),
+                    child: Image(
+                      image: AssetImage(
+                          'assets/images/card_games/shapes_card_game/down_left_background.png'),
+                    ),
                   ),
                   const Align(
                     alignment: Alignment.bottomCenter,
-                    child: Image(image: AssetImage('assets/images/card_games/shapes_card_game/down_center_background.png'),),
+                    child: Image(
+                      image: AssetImage(
+                          'assets/images/card_games/shapes_card_game/down_center_background.png'),
+                    ),
                   ),
                   const Align(
                     alignment: Alignment.bottomRight,
-                    child: Image(image: AssetImage('assets/images/card_games/shapes_card_game/down_right_background.png'),),
+                    child: Image(
+                      image: AssetImage(
+                          'assets/images/card_games/shapes_card_game/down_right_background.png'),
+                    ),
                   ),
                   SingleChildScrollView(
                     child: Column(
@@ -54,10 +67,11 @@ class _ShapeCardGameState extends ConsumerState<ShapeCardGame> {
                                 onTap: () {
                                   Navigator.of(context).pop();
                                 },
-                                child: const Image(image: AssetImage('assets/images/card_games/seasons_card_game/exit.png'))),
+                                child: const Image(
+                                    image: AssetImage(
+                                        'assets/images/card_games/shapes_card_game/exit.png'))),
                           ),
                         ),
-
                         InkWell(
                           onTap: () {
                             textToSpeech(shapeNames[data.currentShape]);
@@ -66,7 +80,7 @@ class _ShapeCardGameState extends ConsumerState<ShapeCardGame> {
                             width: 320,
                             height: 430,
                             decoration: BoxDecoration(
-                              color: const Color(0xFFDF2E38),
+                              color: const Color(0xFF9BBFBE),
                               borderRadius: BorderRadius.circular(32),
                             ),
                             child: Padding(
@@ -77,50 +91,62 @@ class _ShapeCardGameState extends ConsumerState<ShapeCardGame> {
                                     width: 300,
                                     height: 303,
                                     decoration: const BoxDecoration(
-                                        color: Color(0xFFDDF7E3),
+                                        color:
+                                            Color.fromARGB(255, 255, 255, 255),
                                         borderRadius: BorderRadius.vertical(
-                                            top: Radius.circular(24)
-                                        )
+                                            top: Radius.circular(24))),
+                                    child: Image(
+                                      image: AssetImage(
+                                          shapeImages[data.currentShape]),
                                     ),
-                                    child: Image(image: AssetImage(shapeImages[data.currentShape]),),
                                   ),
-                                  const SizedBox(height: 30,),
-                                  Text(shapeNames[data.currentShape], style: GoogleFonts.comfortaa(
-                                      textStyle: const TextStyle(
-                                          fontSize: 30,
-                                          fontWeight: FontWeight.bold
-                                      )
-                                  ),)
+                                  const SizedBox(
+                                    height: 30,
+                                  ),
+                                  Text(
+                                    shapeNames[data.currentShape],
+                                    style: GoogleFonts.comfortaa(
+                                        textStyle: const TextStyle(
+                                            fontSize: 30,
+                                            fontWeight: FontWeight.bold)),
+                                  )
                                 ],
                               ),
                             ),
                           ),
                         ),
-                        const SizedBox(height: 30,),
+                        const SizedBox(
+                          height: 30,
+                        ),
                         Row(
                           mainAxisAlignment: MainAxisAlignment.center,
                           children: [
                             InkWell(
                                 onTap: () {
-                                  if(data.currentShape != 0){
+                                  if (data.currentShape != 0) {
                                     setState(() {
-                                      data.currentShape -=1;
+                                      data.currentShape -= 1;
                                     });
                                   }
                                 },
-                                child: const Image(image: AssetImage('assets/images/card_games/shapes_card_game/back.png'))
+                                child: const Image(
+                                    image: AssetImage(
+                                        'assets/images/card_games/shapes_card_game/back.png'))),
+                            const SizedBox(
+                              width: 30,
                             ),
-                            const SizedBox(width: 30,),
                             InkWell(
                                 onTap: () {
-                                  if(data.currentShape < shapeNames.length-1) {
+                                  if (data.currentShape <
+                                      shapeNames.length - 1) {
                                     setState(() {
                                       data.currentShape += 1;
                                     });
                                   }
                                 },
-                                child: const Image(image: AssetImage('assets/images/card_games/shapes_card_game/next.png'))
-                            ),
+                                child: const Image(
+                                    image: AssetImage(
+                                        'assets/images/card_games/shapes_card_game/next.png'))),
                           ],
                         ),
                       ],
@@ -128,8 +154,7 @@ class _ShapeCardGameState extends ConsumerState<ShapeCardGame> {
                   )
                 ],
               );
-            }
-        ),
+            }),
       ),
     );
   }

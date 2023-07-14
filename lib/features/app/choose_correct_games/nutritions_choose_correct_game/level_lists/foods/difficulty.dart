@@ -1,5 +1,3 @@
-import 'package:bootcamp_f32/features/app/choose_correct_games/nutritions_choose_correct_game/games/foods/easy_food_choose_correct_game.dart';
-import 'package:bootcamp_f32/features/app/choose_correct_games/nutritions_choose_correct_game/games/foods/hard_food_choose_correct_game.dart';
 import 'package:bootcamp_f32/features/app/choose_correct_games/nutritions_choose_correct_game/level_lists/foods/easy_level_list.dart';
 import 'package:bootcamp_f32/features/app/choose_correct_games/nutritions_choose_correct_game/level_lists/foods/hard_level_list.dart';
 import 'package:flutter/material.dart';
@@ -8,10 +6,12 @@ class FoodsChooseCorrectGameDifficulty extends StatefulWidget {
   const FoodsChooseCorrectGameDifficulty({super.key});
 
   @override
-  State<FoodsChooseCorrectGameDifficulty> createState() => _FoodsChooseCorrectGameDifficultyState();
+  State<FoodsChooseCorrectGameDifficulty> createState() =>
+      _FoodsChooseCorrectGameDifficultyState();
 }
 
-class _FoodsChooseCorrectGameDifficultyState extends State<FoodsChooseCorrectGameDifficulty> {
+class _FoodsChooseCorrectGameDifficultyState
+    extends State<FoodsChooseCorrectGameDifficulty> {
   @override
   Widget build(BuildContext context) {
     return SafeArea(
@@ -23,15 +23,16 @@ class _FoodsChooseCorrectGameDifficultyState extends State<FoodsChooseCorrectGam
               child: Container(
                 decoration: const BoxDecoration(
                     image: DecorationImage(
-                        image: AssetImage('assets/images/difficulty/background.png'),
-                        fit: BoxFit.fill
-                    )
-                ),
+                        image: AssetImage(
+                            'assets/images/difficulty/background.png'),
+                        fit: BoxFit.fill)),
               ),
             ),
             const Align(
               alignment: Alignment.bottomCenter,
-              child: Image(image: AssetImage('assets/images/difficulty/maskot.png'),),
+              child: Image(
+                image: AssetImage('assets/images/difficulty/maskot.png'),
+              ),
             ),
             SingleChildScrollView(
               child: Column(
@@ -42,7 +43,10 @@ class _FoodsChooseCorrectGameDifficultyState extends State<FoodsChooseCorrectGam
                       padding: const EdgeInsets.all(10),
                       child: InkWell(
                         onTap: () => Navigator.of(context).pop(),
-                        child: const Image(image: AssetImage('assets/images/choose_correct_games/color_choose_correct_game_images/exit.png'),),
+                        child: const Image(
+                          image: AssetImage(
+                              'assets/images/choose_correct_games/color_choose_correct_game_images/exit.png'),
+                        ),
                       ),
                     ),
                   ),
@@ -52,18 +56,31 @@ class _FoodsChooseCorrectGameDifficultyState extends State<FoodsChooseCorrectGam
                       Column(
                         crossAxisAlignment: CrossAxisAlignment.center,
                         children: [
-                          const SizedBox(height: 120,),
+                          const SizedBox(
+                            height: 120,
+                          ),
                           InkWell(
                               onTap: () {
-                                Navigator.of(context).push(MaterialPageRoute(builder: (context) => const EasyFoodsChooseCorrectGameLevelList(),));
+                                Navigator.of(context).push(MaterialPageRoute(
+                                  builder: (context) =>
+                                      const EasyFoodsChooseCorrectGameLevelList(),
+                                ));
                               },
-                              child: const Image(image: AssetImage('assets/images/difficulty/kolay.png'))),
-                          const SizedBox(height: 30,),
+                              child: const Image(
+                                  image: AssetImage(
+                                      'assets/images/difficulty/kolay.png'))),
+                          const SizedBox(
+                            height: 30,
+                          ),
                           InkWell(
                               onTap: () {
-                                Navigator.of(context).push(MaterialPageRoute(builder: (context) => const HardFoodsChooseCorrectGameLevelList()));
+                                Navigator.of(context).push(MaterialPageRoute(
+                                    builder: (context) =>
+                                        const HardFoodsChooseCorrectGameLevelList()));
                               },
-                              child: const Image(image: AssetImage('assets/images/difficulty/zor.png'))),
+                              child: const Image(
+                                  image: AssetImage(
+                                      'assets/images/difficulty/zor.png'))),
                         ],
                       ),
                     ],

@@ -1,15 +1,11 @@
 import 'dart:math';
-
-import 'package:bootcamp_f32/features/app/choose_correct_games/animals_choose_correct_game/services/services.dart';
 import 'package:bootcamp_f32/features/app/choose_correct_games/cleaning_choose_correct_game/services/services.dart';
-import 'package:bootcamp_f32/features/app/choose_correct_games/color_choose_correct_game/data/easy.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:just_audio/just_audio.dart';
 
 import 'data/data.dart';
-
 
 class EasyCleaningChooseCorrectGame extends ConsumerStatefulWidget {
   const EasyCleaningChooseCorrectGame({Key? key}) : super(key: key);
@@ -21,7 +17,6 @@ class EasyCleaningChooseCorrectGame extends ConsumerStatefulWidget {
 
 class _EasyCleaningChooseCorrectGameState
     extends ConsumerState<EasyCleaningChooseCorrectGame> {
-
   final _player = AudioPlayer();
   int? a;
   int? whichImage;
@@ -59,22 +54,27 @@ class _EasyCleaningChooseCorrectGameState
                         height: 300,
                         decoration: const BoxDecoration(
                           image: DecorationImage(
-                              image: AssetImage('assets/images/choose_correct_games/color_choose_correct_game_images/background_bottom_full.png'),
-                              fit: BoxFit.fill
-                          ),
+                              image: AssetImage(
+                                  'assets/images/choose_correct_games/color_choose_correct_game_images/background_bottom_full.png'),
+                              fit: BoxFit.fill),
                         ),
                         child: Column(
                           children: [
-                            const SizedBox(height: 30,),
+                            const SizedBox(
+                              height: 30,
+                            ),
                             Row(
                               children: [
-                                SizedBox(width:size.width*0.3),
-                                Text('${cleaningNamesList[data.currentLevelEasy]}\n  bulalım', style: GoogleFonts.comfortaa(
-                                  textStyle: const TextStyle(
-                                    fontWeight: FontWeight.w600,
+                                SizedBox(width: size.width * 0.3),
+                                Text(
+                                  '${cleaningNamesList[data.currentLevelEasy]}\n  bulalım',
+                                  style: GoogleFonts.comfortaa(
+                                    textStyle: const TextStyle(
+                                      fontWeight: FontWeight.w600,
+                                    ),
                                   ),
-                                ), textScaleFactor: 1.2,)
-
+                                  textScaleFactor: 1.2,
+                                )
                               ],
                             ),
                           ],
@@ -96,15 +96,16 @@ class _EasyCleaningChooseCorrectGameState
                                         data.currentLevelEasy = 0;
                                       });
                                     },
-                                    child: const Image(image: AssetImage('assets/images/choose_correct_games/color_choose_correct_game_images/exit.png'))
-                                ),
-                                Text('${data.currentLevelEasy+1}/14',
+                                    child: const Image(
+                                        image: AssetImage(
+                                            'assets/images/choose_correct_games/color_choose_correct_game_images/exit.png'))),
+                                Text(
+                                  '${data.currentLevelEasy + 1}/14',
                                   style: GoogleFonts.montserratAlternates(
                                     textStyle: const TextStyle(
                                         color: Colors.black,
                                         fontWeight: FontWeight.bold,
-                                        fontSize: 34
-                                    ),
+                                        fontSize: 34),
                                   ),
                                 )
                               ],
@@ -112,141 +113,190 @@ class _EasyCleaningChooseCorrectGameState
                           ),
                           Column(
                             children: [
-                              const SizedBox(height: 40,),
+                              const SizedBox(
+                                height: 40,
+                              ),
                               ValueListenableBuilder(
                                 valueListenable: levels,
                                 builder: (context, value, child) {
-                                  if(a == 0){
+                                  if (a == 0) {
                                     return SizedBox(
                                       height: 400,
                                       child: Row(
-                                        crossAxisAlignment: CrossAxisAlignment.center,
-                                        mainAxisAlignment: MainAxisAlignment.center,
+                                        crossAxisAlignment:
+                                            CrossAxisAlignment.center,
+                                        mainAxisAlignment:
+                                            MainAxisAlignment.center,
                                         children: [
                                           Column(
                                             children: [
                                               InkWell(
-                                                  onTap: (){
-
-                                                    if(data.currentLevelEasy != 13){
+                                                  onTap: () {
+                                                    if (data.currentLevelEasy !=
+                                                        13) {
                                                       setState(() {
-                                                        data.currentLevelEasy +=1;
+                                                        data.currentLevelEasy +=
+                                                            1;
                                                       });
                                                       _player.setAsset(
-                                                          'assets/sounds/correct_answer.mp3'
-                                                      );
+                                                          'assets/sounds/correct_answer.mp3');
                                                       _player.play();
-                                                    }else if(data.currentLevelEasy == 13){
-                                                      Navigator.of(context).pop();
+                                                    } else if (data
+                                                            .currentLevelEasy ==
+                                                        13) {
+                                                      Navigator.of(context)
+                                                          .pop();
                                                     }
                                                     data.levelLockEasy();
                                                   },
-                                                  child: Image(image: AssetImage(cleaningImagesList[data.currentLevelEasy]),width: 120)),
+                                                  child: Image(
+                                                      image: AssetImage(
+                                                          cleaningImagesList[data
+                                                              .currentLevelEasy]),
+                                                      width: 120)),
                                             ],
                                           ),
                                           Column(
                                             children: [
-                                              const SizedBox(height: 100,),
+                                              const SizedBox(
+                                                height: 100,
+                                              ),
                                               InkWell(
-                                                  onTap: (){
+                                                  onTap: () {
                                                     _player.setAsset(
                                                         'assets/sounds/incorrect_answer.mp3');
                                                     _player.play();
                                                   },
-                                                  child: Image(image: AssetImage(cleaningImagesList[imageIndexList![whichImage!]]),width: 120)),
+                                                  child: Image(
+                                                      image: AssetImage(
+                                                          cleaningImagesList[
+                                                              imageIndexList![
+                                                                  whichImage!]]),
+                                                      width: 120)),
                                             ],
                                           ),
                                         ],
                                       ),
                                     );
-                                  }else if(a==1){
+                                  } else if (a == 1) {
                                     return SizedBox(
                                       height: 400,
                                       child: Row(
-                                        crossAxisAlignment: CrossAxisAlignment.center,
-                                        mainAxisAlignment: MainAxisAlignment.center,
+                                        crossAxisAlignment:
+                                            CrossAxisAlignment.center,
+                                        mainAxisAlignment:
+                                            MainAxisAlignment.center,
                                         children: [
                                           Column(
                                             children: [
                                               InkWell(
-                                                  onTap: (){
+                                                  onTap: () {
                                                     _player.setAsset(
                                                         'assets/sounds/incorrect_answer.mp3');
                                                     _player.play();
                                                   },
-                                                  child: Image(image: AssetImage(cleaningImagesList[imageIndexList![whichImage!]]),width: 120)),
+                                                  child: Image(
+                                                      image: AssetImage(
+                                                          cleaningImagesList[
+                                                              imageIndexList![
+                                                                  whichImage!]]),
+                                                      width: 120)),
                                             ],
                                           ),
                                           Column(
                                             children: [
-                                              const SizedBox(height: 100,),
+                                              const SizedBox(
+                                                height: 100,
+                                              ),
                                               InkWell(
-                                                  onTap: (){
-
-                                                    if(data.currentLevelEasy != 13){
+                                                  onTap: () {
+                                                    if (data.currentLevelEasy !=
+                                                        13) {
                                                       setState(() {
-                                                        data.currentLevelEasy +=1;
+                                                        data.currentLevelEasy +=
+                                                            1;
                                                       });
                                                       _player.setAsset(
-                                                          'assets/sounds/correct_answer.mp3'
-                                                      );
+                                                          'assets/sounds/correct_answer.mp3');
                                                       _player.play();
-                                                    }else if(data.currentLevelEasy == 13){
-                                                      Navigator.of(context).pop();
+                                                    } else if (data
+                                                            .currentLevelEasy ==
+                                                        13) {
+                                                      Navigator.of(context)
+                                                          .pop();
                                                     }
                                                     data.levelLockEasy();
                                                   },
-                                                  child: Image(image: AssetImage(cleaningImagesList[data.currentLevelEasy]),width: 120)),
+                                                  child: Image(
+                                                      image: AssetImage(
+                                                          cleaningImagesList[data
+                                                              .currentLevelEasy]),
+                                                      width: 120)),
                                             ],
                                           ),
                                         ],
                                       ),
                                     );
-                                  }else{
+                                  } else {
                                     return SizedBox(
                                       height: 400,
                                       child: Row(
-                                        crossAxisAlignment: CrossAxisAlignment.center,
-                                        mainAxisAlignment: MainAxisAlignment.center,
+                                        crossAxisAlignment:
+                                            CrossAxisAlignment.center,
+                                        mainAxisAlignment:
+                                            MainAxisAlignment.center,
                                         children: [
                                           Column(
                                             children: [
-                                              const SizedBox(height: 100,),
+                                              const SizedBox(
+                                                height: 100,
+                                              ),
                                               InkWell(
-                                                  onTap: (){
+                                                  onTap: () {
                                                     _player.setAsset(
                                                         'assets/sounds/incorrect_answer.mp3');
                                                     _player.play();
                                                   },
-                                                  child: Image(image: AssetImage(cleaningImagesList[imageIndexList![whichImage!]]),width: 120)),
+                                                  child: Image(
+                                                      image: AssetImage(
+                                                          cleaningImagesList[
+                                                              imageIndexList![
+                                                                  whichImage!]]),
+                                                      width: 120)),
                                             ],
                                           ),
                                           Column(
                                             children: [
                                               InkWell(
-                                                  onTap: (){
-
-                                                    if(data.currentLevelEasy != 13){
+                                                  onTap: () {
+                                                    if (data.currentLevelEasy !=
+                                                        13) {
                                                       setState(() {
-                                                        data.currentLevelEasy +=1;
+                                                        data.currentLevelEasy +=
+                                                            1;
                                                       });
                                                       _player.setAsset(
-                                                          'assets/sounds/correct_answer.mp3'
-                                                      );
+                                                          'assets/sounds/correct_answer.mp3');
                                                       _player.play();
-                                                    }else if(data.currentLevelEasy == 13){
-                                                      Navigator.of(context).pop();
+                                                    } else if (data
+                                                            .currentLevelEasy ==
+                                                        13) {
+                                                      Navigator.of(context)
+                                                          .pop();
                                                     }
                                                     data.levelLockEasy();
                                                   },
-                                                  child: Image(image: AssetImage(cleaningImagesList[data.currentLevelEasy]),width: 120)),
+                                                  child: Image(
+                                                      image: AssetImage(
+                                                          cleaningImagesList[data
+                                                              .currentLevelEasy]),
+                                                      width: 120)),
                                             ],
                                           ),
                                         ],
                                       ),
                                     );
                                   }
-
                                 },
                               ),
                             ],
@@ -254,11 +304,9 @@ class _EasyCleaningChooseCorrectGameState
                         ],
                       ),
                     )
-
                   ],
                 );
-              }
-          ),
+              }),
         ),
       ),
     );

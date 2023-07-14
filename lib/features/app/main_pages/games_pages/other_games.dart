@@ -1,6 +1,5 @@
 import 'package:bootcamp_f32/constants/colors.dart';
 import 'package:bootcamp_f32/features/app/make_word_game/level_list.dart';
-import 'package:bootcamp_f32/features/app/shape_match_game/shape_match_game/shape_match_game.dart';
 import 'package:flutter/material.dart';
 import '../../../../common_widgets/app_bar_widget.dart';
 import '../../../../common_widgets/bottom_navigation_bar_widget.dart';
@@ -36,16 +35,22 @@ class _OtherGamesPageState extends State<OtherGamesPage> {
     return SafeArea(
       child: Scaffold(
         backgroundColor: tWhiteColor,
-        appBar: const AppBarWidget(title: 'DİĞER OYUNLAR',),
-        bottomNavigationBar: botNavBar(currentIndex: 0,context: context),
+        appBar: const AppBarWidget(
+          title: 'DİĞER OYUNLAR',
+        ),
+        bottomNavigationBar: botNavBar(currentIndex: 0, context: context),
         body: Stack(
           children: [
             const MainPagesBackground(),
-            GridViewWidget(context: context,texts: texts,cards: cards, routes: routes,),
+            GridViewWidget(
+              context: context,
+              texts: texts,
+              cards: cards,
+              routes: routes,
+            ),
           ],
         ),
       ),
     );
   }
 }
-

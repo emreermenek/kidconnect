@@ -2,7 +2,6 @@ import 'package:bootcamp_f32/constants/colors.dart';
 import 'package:bootcamp_f32/features/app/listen_match_games/nutritions_listen_match_game/level_list.dart';
 import 'package:bootcamp_f32/features/app/make_logic_game/nutrition_make_logic_game/level_list.dart';
 import 'package:bootcamp_f32/features/app/shadow_games/nutritions_shadow_game/level_list.dart';
-import 'package:bootcamp_f32/features/app/shadow_games/nutritions_shadow_game/nutritions_shadow_game.dart';
 import 'package:flutter/material.dart';
 import '../../../../common_widgets/app_bar_widget.dart';
 import '../../../../common_widgets/bottom_navigation_bar_widget.dart';
@@ -48,17 +47,22 @@ class _NutritionGamesPageState extends State<NutritionGamesPage> {
     return SafeArea(
       child: Scaffold(
         backgroundColor: tWhiteColor,
-        appBar: const AppBarWidget(title: 'BESLENME',),
-        bottomNavigationBar: botNavBar(currentIndex: 0,context: context),
+        appBar: const AppBarWidget(
+          title: 'BESLENME',
+        ),
+        bottomNavigationBar: botNavBar(currentIndex: 0, context: context),
         body: Stack(
           children: [
             const MainPagesBackground(),
-            GridViewWidget(context: context,texts: texts,cards: cards, routes: routes,),
+            GridViewWidget(
+              context: context,
+              texts: texts,
+              cards: cards,
+              routes: routes,
+            ),
           ],
         ),
       ),
     );
   }
 }
-
-

@@ -95,7 +95,7 @@ class _FruitsCardGameLevelListState
                           style: GoogleFonts.comfortaa(
                             textStyle: const TextStyle(
                                 color: Colors.black,
-                                fontSize: 40,
+                                fontSize: 20,
                                 fontWeight: FontWeight.bold),
                           ),
                         ),

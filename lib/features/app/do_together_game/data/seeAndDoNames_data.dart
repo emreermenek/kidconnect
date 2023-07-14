@@ -1,20 +1,20 @@
 const List<String> seeAndDoNames = [
-  ' KAPIYI ÇALMAK',
-  '    ELLERİMİZİ\nBELİMİZE KOYALIM',
-  'PARMAĞIMIZI\n KALDIRALIM',
-  ' KARNIMIZI\nGÖSTERELİM',
-  'ELLERİMİZİ\nYIKAYALIM',
-  'ALKIŞ YAPALIM',
-  '   BİRLİKTE\nGÜLÜMSEYELİM',
-  ' KAFAMIZA\nDOKUNALIM',
-  'KOLLARIMIZI\nBAĞLAYALIM',
-  'AYAKKABIMIZA\n DOKUNALIM',
-  'SARILALIM',
-  ' KAFAMIZI EVET\nDİYE SAĞLAYALIM',
-  'EL SALLAYALIM',
-  ' BABAMIZIN\nELİNİ SIKALIM',
-  'KAPIYI AÇALIM',
-  '     ELİMİZLE\n1, 2 VE 3YAPALIM'
+  'Kapıyı Çalmak',
+  'Ellerimizi Belimize\n         Koyalım',
+  'Parmağımızı\n Kaldıralım',
+  ' Karnımızı\nGösterelim',
+  'Ellerimizi\nYıkayalım',
+  'Alkış Yapalım',
+  '     Birlikte\nGülümseyelim',
+  ' Kafamıza\nDokunalım',
+  'Kollarımızı\nBağlayalım',
+  'Ayakkabımıza\n  Dokunalım',
+  'Sarılalım',
+  '  Kafamızı Evet\nDiye Sağlayalım',
+  'El Sallayalım',
+  ' Babamızın\nElini Sıkalım',
+  'Kapıyı Açalım',
+  '     Elimizle\n1, 2, 3 Yapalım'
 ];
 
 const List<String> seeAndDoImages = [

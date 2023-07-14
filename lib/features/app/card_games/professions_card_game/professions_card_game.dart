@@ -53,7 +53,9 @@ class _ProfessionCardGameState extends ConsumerState<ProfessionsCardGame> {
                                   onTap: () {
                                     Navigator.of(context).pop();
                                   },
-                                  child: const Image(image: AssetImage('assets/images/card_games/professions_image_game/exit.png'))),
+                                  child: const Image(
+                                      image: AssetImage(
+                                          'assets/images/card_games/professions_image_game/exit.png'))),
                             ),
                           ),
                           InkWell(

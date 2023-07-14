@@ -16,7 +16,6 @@ class HardEmotionsChooseCorrectGame extends ConsumerStatefulWidget {
 
 class _HardEmotionsChooseCorrectGameState
     extends ConsumerState<HardEmotionsChooseCorrectGame> {
-
   final _player = AudioPlayer();
   int? a;
   int? whichImage;
@@ -58,22 +57,27 @@ class _HardEmotionsChooseCorrectGameState
                         height: 300,
                         decoration: const BoxDecoration(
                           image: DecorationImage(
-                              image: AssetImage('assets/images/choose_correct_games/color_choose_correct_game_images/background_bottom_full.png'),
-                              fit: BoxFit.fill
-                          ),
+                              image: AssetImage(
+                                  'assets/images/choose_correct_games/color_choose_correct_game_images/background_bottom_full.png'),
+                              fit: BoxFit.fill),
                         ),
                         child: Column(
                           children: [
-                            const SizedBox(height: 30,),
+                            const SizedBox(
+                              height: 30,
+                            ),
                             Row(
                               children: [
-                                SizedBox(width:size.width*0.35),
-                                Text('${emotionNamesList[data.currentLevelHard]}\n bulalım', style: GoogleFonts.comfortaa(
-                                  textStyle: const TextStyle(
-                                    fontWeight: FontWeight.w600,
+                                SizedBox(width: size.width * 0.35),
+                                Text(
+                                  '${emotionNamesList[data.currentLevelHard]}\n bulalım',
+                                  style: GoogleFonts.comfortaa(
+                                    textStyle: const TextStyle(
+                                      fontWeight: FontWeight.w600,
+                                    ),
                                   ),
-                                ), textScaleFactor: 1.5,)
-
+                                  textScaleFactor: 1.5,
+                                )
                               ],
                             ),
                           ],
@@ -95,15 +99,16 @@ class _HardEmotionsChooseCorrectGameState
                                         data.currentLevelHard = 0;
                                       });
                                     },
-                                    child: const Image(image: AssetImage('assets/images/choose_correct_games/color_choose_correct_game_images/exit.png'))
-                                ),
-                                Text('${data.currentLevelHard+1}/12',
+                                    child: const Image(
+                                        image: AssetImage(
+                                            'assets/images/choose_correct_games/color_choose_correct_game_images/exit.png'))),
+                                Text(
+                                  '${data.currentLevelHard + 1}/12',
                                   style: GoogleFonts.montserratAlternates(
                                     textStyle: const TextStyle(
                                         color: Colors.black,
                                         fontWeight: FontWeight.bold,
-                                        fontSize: 34
-                                    ),
+                                        fontSize: 34),
                                   ),
                                 )
                               ],
@@ -111,173 +116,250 @@ class _HardEmotionsChooseCorrectGameState
                           ),
                           Column(
                             children: [
-                              const SizedBox(height: 30,),
+                              const SizedBox(
+                                height: 30,
+                              ),
                               ValueListenableBuilder(
                                 valueListenable: levels,
                                 builder: (context, value, child) {
-                                  if(a == 0){
+                                  if (a == 0) {
                                     return SizedBox(
                                       height: 400,
                                       child: Row(
-                                        crossAxisAlignment: CrossAxisAlignment.center,
-                                        mainAxisAlignment: MainAxisAlignment.center,
+                                        crossAxisAlignment:
+                                            CrossAxisAlignment.center,
+                                        mainAxisAlignment:
+                                            MainAxisAlignment.center,
                                         children: [
                                           Column(
                                             children: [
-                                              const SizedBox(height: 100,),
+                                              const SizedBox(
+                                                height: 100,
+                                              ),
                                               InkWell(
-                                                  onTap: (){
+                                                  onTap: () {
                                                     _player.setAsset(
                                                         'assets/sounds/incorrect_answer.mp3');
                                                     _player.play();
                                                   },
-                                                  child: Image(image: AssetImage(emotionImagesList[imageIndexList![whichImage!]]),width: 120,)),
+                                                  child: Image(
+                                                    image: AssetImage(
+                                                        emotionImagesList[
+                                                            imageIndexList![
+                                                                whichImage!]]),
+                                                    width: 120,
+                                                  )),
                                             ],
                                           ),
                                           Column(
                                             children: [
                                               InkWell(
-                                                  onTap: (){
+                                                  onTap: () {
                                                     _player.setAsset(
-                                                        'assets/sounds/correct_answer.mp3'
-                                                    );
+                                                        'assets/sounds/correct_answer.mp3');
                                                     _player.play();
-                                                    if(data.currentLevelHard != 11){
+                                                    if (data.currentLevelHard !=
+                                                        11) {
                                                       setState(() {
-                                                        data.currentLevelHard +=1;
+                                                        data.currentLevelHard +=
+                                                            1;
                                                       });
-                                                    }else if(data.currentLevelHard == 11){
-                                                      Navigator.of(context).pop();
+                                                    } else if (data
+                                                            .currentLevelHard ==
+                                                        11) {
+                                                      Navigator.of(context)
+                                                          .pop();
                                                     }
                                                     data.levelLockHard();
                                                   },
-                                                  child: Image(image: AssetImage(emotionImagesList[data.currentLevelHard]),width: 120,)),
+                                                  child: Image(
+                                                    image: AssetImage(
+                                                        emotionImagesList[data
+                                                            .currentLevelHard]),
+                                                    width: 120,
+                                                  )),
                                             ],
                                           ),
                                           Column(
                                             children: [
-                                              const SizedBox(height: 100,),
+                                              const SizedBox(
+                                                height: 100,
+                                              ),
                                               InkWell(
-                                                  onTap: (){
+                                                  onTap: () {
                                                     _player.setAsset(
                                                         'assets/sounds/incorrect_answer.mp3');
                                                     _player.play();
                                                   },
-                                                  child: Image(image: AssetImage(emotionImagesList[imageIndexList![whichImage2!]]),width: 120,)),
+                                                  child: Image(
+                                                    image: AssetImage(
+                                                        emotionImagesList[
+                                                            imageIndexList![
+                                                                whichImage2!]]),
+                                                    width: 120,
+                                                  )),
                                             ],
                                           ),
                                         ],
                                       ),
                                     );
-                                  }else if(a==1){
+                                  } else if (a == 1) {
                                     return SizedBox(
                                       height: 400,
                                       child: Row(
-                                        crossAxisAlignment: CrossAxisAlignment.center,
-                                        mainAxisAlignment: MainAxisAlignment.center,
+                                        crossAxisAlignment:
+                                            CrossAxisAlignment.center,
+                                        mainAxisAlignment:
+                                            MainAxisAlignment.center,
                                         children: [
-
                                           Column(
                                             children: [
                                               InkWell(
-                                                  onTap: (){
+                                                  onTap: () {
                                                     _player.setAsset(
-                                                        'assets/sounds/correct_answer.mp3'
-                                                    );
+                                                        'assets/sounds/correct_answer.mp3');
                                                     _player.play();
-                                                    if(data.currentLevelHard != 11){
+                                                    if (data.currentLevelHard !=
+                                                        11) {
                                                       setState(() {
-                                                        data.currentLevelHard +=1;
+                                                        data.currentLevelHard +=
+                                                            1;
                                                       });
-                                                    }else if(data.currentLevelHard == 11){
-                                                      Navigator.of(context).pop();
+                                                    } else if (data
+                                                            .currentLevelHard ==
+                                                        11) {
+                                                      Navigator.of(context)
+                                                          .pop();
                                                     }
                                                     data.levelLockHard();
                                                   },
-                                                  child: Image(image: AssetImage(emotionImagesList[data.currentLevelHard]),width: 120,)),
+                                                  child: Image(
+                                                    image: AssetImage(
+                                                        emotionImagesList[data
+                                                            .currentLevelHard]),
+                                                    width: 120,
+                                                  )),
                                             ],
                                           ),
                                           Column(
                                             children: [
-                                              const SizedBox(height: 100,),
+                                              const SizedBox(
+                                                height: 100,
+                                              ),
                                               InkWell(
-                                                  onTap: (){
+                                                  onTap: () {
                                                     _player.setAsset(
                                                         'assets/sounds/incorrect_answer.mp3');
                                                     _player.play();
                                                   },
-                                                  child: Image(image: AssetImage(emotionImagesList[imageIndexList![whichImage2!]]),width: 120,)),
+                                                  child: Image(
+                                                    image: AssetImage(
+                                                        emotionImagesList[
+                                                            imageIndexList![
+                                                                whichImage2!]]),
+                                                    width: 120,
+                                                  )),
                                             ],
                                           ),
                                           Column(
                                             children: [
                                               InkWell(
-                                                  onTap: (){
+                                                  onTap: () {
                                                     _player.setAsset(
                                                         'assets/sounds/incorrect_answer.mp3');
                                                     _player.play();
                                                   },
-                                                  child: Image(image: AssetImage(emotionImagesList[imageIndexList![whichImage!]]),width: 120,)),
+                                                  child: Image(
+                                                    image: AssetImage(
+                                                        emotionImagesList[
+                                                            imageIndexList![
+                                                                whichImage!]]),
+                                                    width: 120,
+                                                  )),
                                             ],
                                           ),
                                         ],
                                       ),
                                     );
-                                  }else{
+                                  } else {
                                     return SizedBox(
                                       height: 400,
                                       child: Row(
-                                        crossAxisAlignment: CrossAxisAlignment.center,
-                                        mainAxisAlignment: MainAxisAlignment.center,
+                                        crossAxisAlignment:
+                                            CrossAxisAlignment.center,
+                                        mainAxisAlignment:
+                                            MainAxisAlignment.center,
                                         children: [
                                           Column(
                                             children: [
                                               InkWell(
-                                                  onTap: (){
+                                                  onTap: () {
                                                     _player.setAsset(
                                                         'assets/sounds/incorrect_answer.mp3');
                                                     _player.play();
                                                   },
-                                                  child: Image(image: AssetImage(emotionImagesList[imageIndexList![whichImage!]]),width: 120,)),
+                                                  child: Image(
+                                                    image: AssetImage(
+                                                        emotionImagesList[
+                                                            imageIndexList![
+                                                                whichImage!]]),
+                                                    width: 120,
+                                                  )),
                                             ],
                                           ),
                                           Column(
                                             children: [
-                                              const SizedBox(height: 100,),
+                                              const SizedBox(
+                                                height: 100,
+                                              ),
                                               InkWell(
-                                                  onTap: (){
+                                                  onTap: () {
                                                     _player.setAsset(
                                                         'assets/sounds/incorrect_answer.mp3');
                                                     _player.play();
                                                   },
-                                                  child: Image(image: AssetImage(emotionImagesList[imageIndexList![whichImage2!]]),width: 120,)),
+                                                  child: Image(
+                                                    image: AssetImage(
+                                                        emotionImagesList[
+                                                            imageIndexList![
+                                                                whichImage2!]]),
+                                                    width: 120,
+                                                  )),
                                             ],
                                           ),
                                           Column(
                                             children: [
                                               InkWell(
-                                                  onTap: (){
+                                                  onTap: () {
                                                     _player.setAsset(
-                                                        'assets/sounds/correct_answer.mp3'
-                                                    );
+                                                        'assets/sounds/correct_answer.mp3');
                                                     _player.play();
-                                                    if(data.currentLevelHard != 11){
+                                                    if (data.currentLevelHard !=
+                                                        11) {
                                                       setState(() {
-                                                        data.currentLevelHard +=1;
+                                                        data.currentLevelHard +=
+                                                            1;
                                                       });
-                                                    }else if(data.currentLevelHard == 11){
-                                                      Navigator.of(context).pop();
+                                                    } else if (data
+                                                            .currentLevelHard ==
+                                                        11) {
+                                                      Navigator.of(context)
+                                                          .pop();
                                                     }
                                                     data.levelLockHard();
                                                   },
-                                                  child: Image(image: AssetImage(emotionImagesList[data.currentLevelHard]),width: 120,)),
+                                                  child: Image(
+                                                    image: AssetImage(
+                                                        emotionImagesList[data
+                                                            .currentLevelHard]),
+                                                    width: 120,
+                                                  )),
                                             ],
                                           ),
                                         ],
                                       ),
                                     );
                                   }
-
                                 },
                               ),
                             ],
@@ -285,11 +367,9 @@ class _HardEmotionsChooseCorrectGameState
                         ],
                       ),
                     )
-
                   ],
                 );
-              }
-          ),
+              }),
         ),
       ),
     );
