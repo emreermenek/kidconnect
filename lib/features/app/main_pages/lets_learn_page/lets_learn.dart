@@ -51,7 +51,7 @@ final List texts = [
   'TEMİZLİK',
   'SAYILAR',
   'EŞYALAR',
-  'DUYGU VE DAVRANIŞ',
+  'DUYGULAR',
   'SAATLER',
   'HAVA DURUMU',
   'RENKLER',
@@ -83,16 +83,22 @@ class _LetsLearnPageState extends State<LetsLearnPage> {
     return SafeArea(
       child: Scaffold(
         backgroundColor: tWhiteColor,
-        appBar: const AppBarWidget(title: 'ÖĞRENELİM',),
-        bottomNavigationBar: botNavBar(currentIndex: 0,context: context),
+        appBar: const AppBarWidget(
+          title: 'ÖĞRENELİM',
+        ),
+        bottomNavigationBar: botNavBar(currentIndex: 0, context: context),
         body: Stack(
           children: [
             const MainPagesBackground(),
-            GridViewWidget(context: context,texts: texts,cards: cards, routes: routes,),
+            GridViewWidget(
+              context: context,
+              texts: texts,
+              cards: cards,
+              routes: routes,
+            ),
           ],
         ),
       ),
     );
   }
 }
-

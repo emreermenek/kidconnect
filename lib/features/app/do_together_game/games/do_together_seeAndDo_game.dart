@@ -55,7 +55,9 @@ class _DoTogetherSeeAndDoGameState
                               onTap: () {
                                 Navigator.of(context).pop();
                               },
-                              child: const Image(image: AssetImage('assets/images/card_games/animal_card_game_image/exit.png'))),
+                              child: const Image(
+                                  image: AssetImage(
+                                      'assets/images/card_games/animal_card_game_image/exit.png'))),
                         ),
                       ),
                       Padding(
@@ -97,13 +99,17 @@ class _DoTogetherSeeAndDoGameState
                                           const SizedBox(
                                             height: 30,
                                           ),
-                                          Text(
-                                            seeAndDoNames[data.currentCard],
-                                            style: GoogleFonts.comfortaa(
-                                                textStyle: const TextStyle(
-                                                    fontSize: 20,
-                                                    fontWeight:
-                                                        FontWeight.bold)),
+                                          Padding(
+                                            padding:
+                                                const EdgeInsets.only(top: 35),
+                                            child: Text(
+                                              seeAndDoNames[data.currentCard],
+                                              style: GoogleFonts.comfortaa(
+                                                  textStyle: const TextStyle(
+                                                      fontSize: 20,
+                                                      fontWeight:
+                                                          FontWeight.bold)),
+                                            ),
                                           )
                                         ],
                                       ),

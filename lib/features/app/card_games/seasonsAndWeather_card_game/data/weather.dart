@@ -4,7 +4,7 @@ const List<String> weatherNames = [
   'Karlı',
   'Rüzgarlı',
   'Sisli',
-  ' Parçalı\nBulutlu',
+  'Parçalı Bulutlu',
   'Bulutlu',
   'Fırtınalı',
   'Gökkuşağı'

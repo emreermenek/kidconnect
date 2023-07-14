@@ -14,8 +14,7 @@ class DoTogetherSportsGame extends ConsumerStatefulWidget {
       _DoTogetherSportsGameState();
 }
 
-class _DoTogetherSportsGameState
-    extends ConsumerState<DoTogetherSportsGame> {
+class _DoTogetherSportsGameState extends ConsumerState<DoTogetherSportsGame> {
   final _player = AudioPlayer();
   @override
   void dispose() {
@@ -55,7 +54,9 @@ class _DoTogetherSportsGameState
                               onTap: () {
                                 Navigator.of(context).pop();
                               },
-                              child: const Image(image: AssetImage('assets/images/card_games/animal_card_game_image/exit.png'))),
+                              child: const Image(
+                                  image: AssetImage(
+                                      'assets/images/card_games/animal_card_game_image/exit.png'))),
                         ),
                       ),
                       Padding(
@@ -97,13 +98,18 @@ class _DoTogetherSportsGameState
                                           const SizedBox(
                                             height: 30,
                                           ),
-                                          Text(
-                                            sportsNames[data.sportsCurrentCard],
-                                            style: GoogleFonts.comfortaa(
-                                                textStyle: const TextStyle(
-                                                    fontSize: 20,
-                                                    fontWeight:
-                                                        FontWeight.bold)),
+                                          Padding(
+                                            padding:
+                                                const EdgeInsets.only(top: 35),
+                                            child: Text(
+                                              sportsNames[
+                                                  data.sportsCurrentCard],
+                                              style: GoogleFonts.comfortaa(
+                                                  textStyle: const TextStyle(
+                                                      fontSize: 20,
+                                                      fontWeight:
+                                                          FontWeight.bold)),
+                                            ),
                                           )
                                         ],
                                       ),
