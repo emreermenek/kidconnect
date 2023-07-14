@@ -1,14 +1,14 @@
 const List<String> foodNames = [
-  'MAKARNA',
-  'YUMURTA',
-  'TAVUK',
-  'SALATA',
-  '   PATATES\nKIZARTMASI',
-  'SANDVİÇ',
-  'BALIK',
-  'HAMBURGER',
-  'PİZZA',
-  'ÇORBA'
+  'Makarna',
+  'Yumurta',
+  'Tavuk',
+  'Salata',
+  '   Patates\nKızartması',
+  'Sandviç',
+  'Balık',
+  'Hamburger',
+  'Pizza',
+  'Çorba'
 ];
 
 const List<String> foodImages = [
