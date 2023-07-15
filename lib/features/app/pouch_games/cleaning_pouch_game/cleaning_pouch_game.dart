@@ -143,7 +143,7 @@ class _CleaningPouchGameState extends ConsumerState<CleaningPouchGame> {
                                 child: Center(
                                   child: Text(cleaningPouchGameNames[b], style: GoogleFonts.quicksand(
                                       textStyle: const TextStyle(
-                                          fontSize: 30,
+                                          fontSize: 20,
                                           color: Color(0xFF014388),
                                           fontWeight: FontWeight.bold
                                       )

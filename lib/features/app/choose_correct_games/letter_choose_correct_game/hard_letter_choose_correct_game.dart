@@ -74,7 +74,7 @@ class _HardLetterChooseCorrectGameState
                                   textStyle: const TextStyle(
                                     fontWeight: FontWeight.w600,
                                   ),
-                                ), textScaleFactor: 1.5,)
+                                ), textScaleFactor: 1.2,)
 
                               ],
                             ),
@@ -123,14 +123,14 @@ class _HardLetterChooseCorrectGameState
                                     children: [
                                       Column(
                                         children: [
-                                          const SizedBox(height: 100,),
+                                          const SizedBox(height: 80,),
                                           InkWell(
                                               onTap: (){
                                                 _player.setAsset(
                                                     'assets/sounds/incorrect_answer.mp3');
                                                 _player.play();
                                               },
-                                              child: Image(image: AssetImage(letterImagesList[imageIndexList![whichImage!]]),width: 100,)),
+                                              child: Image(image: AssetImage(letterImagesList[imageIndexList![whichImage!]]),width: 80,)),
                                         ],
                                       ),
                                       Column(
@@ -150,19 +150,19 @@ class _HardLetterChooseCorrectGameState
                                                 }
                                                 data.levelLockHard();
                                               },
-                                              child: Image(image: AssetImage(letterImagesList[data.currentLevelHard]),width: 100,)),
+                                              child: Image(image: AssetImage(letterImagesList[data.currentLevelHard]),width: 80,)),
                                         ],
                                       ),
                                       Column(
                                         children: [
-                                          const SizedBox(height: 100,),
+                                          const SizedBox(height: 80,),
                                           InkWell(
                                               onTap: (){
                                                 _player.setAsset(
                                                     'assets/sounds/incorrect_answer.mp3');
                                                 _player.play();
                                               },
-                                              child: Image(image: AssetImage(letterImagesList[imageIndexList![whichImage2!]]),width: 100,)),
+                                              child: Image(image: AssetImage(letterImagesList[imageIndexList![whichImage2!]]),width: 80,)),
                                         ],
                                       ),
                                     ],
@@ -193,19 +193,19 @@ class _HardLetterChooseCorrectGameState
                                                 }
                                                 data.levelLockHard();
                                               },
-                                              child: Image(image: AssetImage(letterImagesList[data.currentLevelHard]),width: 100,)),
+                                              child: Image(image: AssetImage(letterImagesList[data.currentLevelHard]),width: 80,)),
                                         ],
                                       ),
                                       Column(
                                         children: [
-                                          const SizedBox(height: 100,),
+                                          const SizedBox(height: 80,),
                                           InkWell(
                                               onTap: (){
                                                 _player.setAsset(
                                                     'assets/sounds/incorrect_answer.mp3');
                                                 _player.play();
                                               },
-                                              child: Image(image: AssetImage(letterImagesList[imageIndexList![whichImage2!]]),width: 100,)),
+                                              child: Image(image: AssetImage(letterImagesList[imageIndexList![whichImage2!]]),width: 80,)),
                                         ],
                                       ),
                                       Column(
@@ -216,7 +216,7 @@ class _HardLetterChooseCorrectGameState
                                                     'assets/sounds/incorrect_answer.mp3');
                                                 _player.play();
                                               },
-                                              child: Image(image: AssetImage(letterImagesList[imageIndexList![whichImage!]]),width: 100,)),
+                                              child: Image(image: AssetImage(letterImagesList[imageIndexList![whichImage!]]),width: 80,)),
                                         ],
                                       ),
                                     ],
@@ -237,19 +237,19 @@ class _HardLetterChooseCorrectGameState
                                                     'assets/sounds/incorrect_answer.mp3');
                                                 _player.play();
                                               },
-                                              child: Image(image: AssetImage(letterImagesList[imageIndexList![whichImage!]]),width: 100,)),
+                                              child: Image(image: AssetImage(letterImagesList[imageIndexList![whichImage!]]),width: 80,)),
                                         ],
                                       ),
                                       Column(
                                         children: [
-                                          const SizedBox(height: 100,),
+                                          const SizedBox(height: 80,),
                                           InkWell(
                                               onTap: (){
                                                 _player.setAsset(
                                                     'assets/sounds/incorrect_answer.mp3');
                                                 _player.play();
                                               },
-                                              child: Image(image: AssetImage(letterImagesList[imageIndexList![whichImage2!]]),width: 100,)),
+                                              child: Image(image: AssetImage(letterImagesList[imageIndexList![whichImage2!]]),width: 80,)),
                                         ],
                                       ),
                                       Column(
@@ -269,7 +269,7 @@ class _HardLetterChooseCorrectGameState
                                                 }
                                                 data.levelLockHard();
                                               },
-                                              child: Image(image: AssetImage(letterImagesList[data.currentLevelHard]),width: 100,)),
+                                              child: Image(image: AssetImage(letterImagesList[data.currentLevelHard]),width: 80,)),
                                         ],
                                       ),
                                     ],

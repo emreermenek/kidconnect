@@ -74,7 +74,7 @@ class _HardFoodChooseCorrectGameState
                                   textStyle: const TextStyle(
                                     fontWeight: FontWeight.w600,
                                   ),
-                                ), textScaleFactor: 1.5,)
+                                ), textScaleFactor: 1.2,)
 
                               ],
                             ),

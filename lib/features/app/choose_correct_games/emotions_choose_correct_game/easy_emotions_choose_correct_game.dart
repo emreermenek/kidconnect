@@ -63,12 +63,12 @@ class _EasyEmotionsChooseCorrectGameState
                             const SizedBox(height: 30,),
                             Row(
                               children: [
-                                SizedBox(width:size.width*0.35),
+                                SizedBox(width:size.width*0.3),
                                 Text('${emotionNamesList[data.currentLevelEasy]}\n bulalım', style: GoogleFonts.comfortaa(
                                   textStyle: const TextStyle(
                                     fontWeight: FontWeight.w600,
                                   ),
-                                ), textScaleFactor: 1.5,)
+                                ), textScaleFactor: 1.2,)
 
                               ],
                             ),

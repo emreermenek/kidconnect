@@ -65,7 +65,7 @@ class _EasyCleaningChooseCorrectGameState
                             ),
                             Row(
                               children: [
-                                SizedBox(width: size.width * 0.3),
+                                SizedBox(width: size.width * 0.25),
                                 Text(
                                   '${cleaningNamesList[data.currentLevelEasy]}\n  bulalım',
                                   style: GoogleFonts.comfortaa(

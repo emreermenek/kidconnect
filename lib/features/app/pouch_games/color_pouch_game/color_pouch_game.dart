@@ -152,7 +152,7 @@ class _ColorPouchGameState extends ConsumerState<ColorPouchGame> {
                                 child: Center(
                                   child: Text(colorPouchGameNames[b], style: GoogleFonts.quicksand(
                                       textStyle: const TextStyle(
-                                          fontSize: 40,
+                                          fontSize: 30,
                                           color: Color(0xFF014388),
                                           fontWeight: FontWeight.bold
                                       )

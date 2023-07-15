@@ -106,7 +106,7 @@ class _ProfessionPouchGameLevelListState extends ConsumerState<ProfessionPouchGa
                           Text(levels[index], style: GoogleFonts.comfortaa(
                             textStyle:  const TextStyle(
                                 color: Colors.black,
-                                fontSize: 48,
+                                fontSize: 24,
                                 fontWeight: FontWeight.bold
                             ),
                           ),),

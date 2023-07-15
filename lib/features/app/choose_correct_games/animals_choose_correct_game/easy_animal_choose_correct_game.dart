@@ -66,7 +66,7 @@ class _EasyAnimalChooseCorrectGameState
                             const SizedBox(height: 30,),
                             Row(
                               children: [
-                                SizedBox(width:size.width*0.35),
+                                SizedBox(width:size.width*0.30),
                                 Text('${animalNamesList[data.currentLevelEasy]}\nbulalım', style: GoogleFonts.comfortaa(
                                   textStyle: const TextStyle(
                                     fontWeight: FontWeight.w600,

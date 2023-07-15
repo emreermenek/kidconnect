@@ -68,7 +68,7 @@ class _HardEmotionsChooseCorrectGameState
                             ),
                             Row(
                               children: [
-                                SizedBox(width: size.width * 0.35),
+                                SizedBox(width: size.width * 0.3),
                                 Text(
                                   '${emotionNamesList[data.currentLevelHard]}\n bulalım',
                                   style: GoogleFonts.comfortaa(
@@ -76,7 +76,7 @@ class _HardEmotionsChooseCorrectGameState
                                       fontWeight: FontWeight.w600,
                                     ),
                                   ),
-                                  textScaleFactor: 1.5,
+                                  textScaleFactor: 1.2,
                                 )
                               ],
                             ),
