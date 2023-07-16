@@ -29,14 +29,13 @@ class _ProfilePageState extends State<ProfilePage> {
   }
   File? _image;
 
-  Future _pickImage(ImageSource source) async {
+  Future _pickImage() async {
     try{
-      final image = await ImagePicker().pickImage(source: source);
+      final image = await ImagePicker().pickImage(source: ImageSource.gallery);
       if(image == null) return;
-      File? img = File(image.path);
+      File? imageTemporary = File(image.path);
       setState(() {
-        _image = img;
-        Navigator.of(context).pop();
+        _image = imageTemporary;
       });
     } on PlatformException{
       Navigator.of(context).pop();
@@ -120,7 +119,7 @@ class Profile2 extends StatelessWidget {
   final BuildContext context;
   final String userName;
   final File? image;
-  final Future Function(ImageSource) pickImage;
+  final Future Function() pickImage;
 
   @override
   Widget build(BuildContext context) {
@@ -130,7 +129,7 @@ class Profile2 extends StatelessWidget {
           const SizedBox(height: 25),
          image == null ? InkWell(
             onTap: () {
-              pickImage(ImageSource.gallery);
+              pickImage();
             },
               child: const CircleAvatar(
                 radius: 65,
@@ -138,11 +137,12 @@ class Profile2 extends StatelessWidget {
          )
           : InkWell(
              onTap: () {
-               pickImage(ImageSource.gallery);
+               pickImage();
              },
              child: CircleAvatar(
                radius: 65,
-                 backgroundImage: FileImage(image!))),
+                 backgroundImage: FileImage(image!)
+             )),
           const SizedBox(height: 25),
           Container(
             height: 160,
