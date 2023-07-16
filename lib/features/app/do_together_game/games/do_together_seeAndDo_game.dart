@@ -1,3 +1,5 @@
+// ignore_for_file: file_names
+
 import 'package:bootcamp_f32/common_features/text_to_speech.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';

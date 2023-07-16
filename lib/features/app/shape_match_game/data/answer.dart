@@ -1,4 +1,4 @@
-Future<bool?> isCorrect(isAnswerCorrect) async
+Future isCorrect(isAnswerCorrect) async
 {
   switch (isAnswerCorrect){
     case true:

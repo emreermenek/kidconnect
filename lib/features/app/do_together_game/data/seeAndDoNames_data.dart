@@ -1,3 +1,5 @@
+// ignore_for_file: file_names
+
 const List<String> seeAndDoNames = [
   'Kapıyı Çalmak',
   'Ellerimizi Belimize\n         Koyalım',

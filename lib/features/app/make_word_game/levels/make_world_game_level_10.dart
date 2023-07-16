@@ -1,6 +1,5 @@
 import 'package:bootcamp_f32/common_features/text_to_speech.dart';
 import 'package:bootcamp_f32/features/app/make_word_game/levels/make_word_game_level_9.dart';
-import 'package:bootcamp_f32/features/app/make_word_game/services/services.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -25,7 +24,6 @@ class _MakeWordGameLevel10State extends ConsumerState<MakeWordGameLevel10> {
 
   @override
   Widget build(BuildContext context) {
-    final data = ref.watch(makeWordGameServiceProvider);
     return SafeArea(
       child: Scaffold(
         backgroundColor: Colors.white,

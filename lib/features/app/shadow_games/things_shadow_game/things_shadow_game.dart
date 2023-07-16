@@ -34,7 +34,7 @@ class _ThingsShadowGameState extends ConsumerState<ThingsShadowGame> {
         body: ValueListenableBuilder(
             valueListenable: levels,
             builder: (BuildContext context, value, Widget? child) {
-              if(data.imageIndexList.length == 0){
+              if(data.imageIndexList.isEmpty){
                 data.currentLevel = 0;
                 data.imageIndexList = List.generate(30, (index) => index);
                 data.correctAnswerNumber = 0;

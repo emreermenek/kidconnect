@@ -1,3 +1,5 @@
+// ignore_for_file: file_names
+
 import 'dart:math';
 import 'package:bootcamp_f32/features/app/pouch_games/seasonWeather_pouch_game/services/services.dart';
 import 'package:flutter/material.dart';

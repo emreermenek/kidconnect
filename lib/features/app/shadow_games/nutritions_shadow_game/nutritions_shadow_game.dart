@@ -35,7 +35,7 @@ class _NutritionsShadowGameState extends ConsumerState<NutritionsShadowGame> {
         body: ValueListenableBuilder(
             valueListenable: levels,
             builder: (BuildContext context, value, Widget? child) {
-              if (data.imageIndexList.length == 0) {
+              if (data.imageIndexList.isEmpty) {
                 data.currentLevel = 0;
                 data.imageIndexList = List.generate(34, (index) => index);
                 data.correctAnswerNumber = 0;

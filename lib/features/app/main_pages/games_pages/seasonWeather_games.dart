@@ -1,3 +1,5 @@
+// ignore_for_file: file_names
+
 import 'package:bootcamp_f32/constants/colors.dart';
 import 'package:bootcamp_f32/features/app/choose_correct_games/seasonWeather_choose_correct_game/difficulty.dart';
 import 'package:bootcamp_f32/features/app/listen_match_games/season_weather_listen_match_game/level_list.dart';

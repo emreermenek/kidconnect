@@ -34,7 +34,7 @@ class _ProfessionsShadowGameState extends ConsumerState<ProfessionsShadowGame> {
         body: ValueListenableBuilder(
             valueListenable: levels,
             builder: (BuildContext context, value, Widget? child) {
-              if(data.imageIndexList.length == 0){
+              if(data.imageIndexList.isEmpty){
                 data.currentLevel = 0;
                 data.imageIndexList = List.generate(14, (index) => index);
                 data.correctAnswerNumber = 0;

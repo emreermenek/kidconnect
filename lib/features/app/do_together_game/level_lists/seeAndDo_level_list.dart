@@ -1,4 +1,6 @@
 
+// ignore_for_file: file_names
+
 import 'package:bootcamp_f32/constants/colors.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';

@@ -1,3 +1,5 @@
+// ignore_for_file: file_names
+
 import 'package:bootcamp_f32/constants/colors.dart';
 import 'package:bootcamp_f32/features/app/pouch_games/color_pouch_game/color_pouch_game.dart';
 import 'package:bootcamp_f32/features/app/pouch_games/color_pouch_game/services/services.dart';

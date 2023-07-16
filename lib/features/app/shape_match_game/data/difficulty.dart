@@ -1,7 +1,7 @@
 
 
 
-Future<String?> difficulty(int level) async {
+Future difficulty(int level) async {
 
   switch (level){
     case 0:

@@ -38,8 +38,7 @@ class _ProfilePageState extends State<ProfilePage> {
         _image = img;
         Navigator.of(context).pop();
       });
-    } on PlatformException catch (e){
-      print(e);
+    } on PlatformException{
       Navigator.of(context).pop();
     }
   }
