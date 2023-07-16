@@ -15,7 +15,7 @@ SizedBox botNavBar({required int currentIndex, required BuildContext context}) {
       showSelectedLabels: true,
       backgroundColor: Colors.white,
       onTap: (value) {
-        if (value != currentIndex) {
+
           switch (value) {
             case 0:
               Navigator.of(context).pushReplacement(MaterialPageRoute(
@@ -30,7 +30,6 @@ SizedBox botNavBar({required int currentIndex, required BuildContext context}) {
                 builder: (context) => const SettingsPage(),
               ));
           }
-        }
         currentIndex = value;
       },
       items: const [
