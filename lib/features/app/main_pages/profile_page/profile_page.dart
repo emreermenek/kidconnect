@@ -2,6 +2,7 @@ import 'dart:async';
 import 'dart:io';
 
 import 'package:bootcamp_f32/common_widgets/bottom_navigation_bar_widget.dart';
+import 'package:bootcamp_f32/features/authentication/screens/signup_page/signup_page.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
@@ -190,7 +191,7 @@ class Profile2 extends StatelessWidget {
 
 
                     ), onPressed: () {
-
+                  FirebaseAuth.instance.currentUser!.reload();
                 }, child: Text(
                   "GÜNCELLE",
                   style: GoogleFonts.quicksand(
@@ -229,8 +230,8 @@ class WelcomePage extends StatelessWidget {
               )),
 
           const Text(
-            "WELCOME TO\nYOUR PROFILE",
-            style: TextStyle(color: tBlackColor, fontWeight: FontWeight.bold, fontSize: 30),
+            "PROFİL SAYFASINA\n       HOŞGELDİN",
+            style: TextStyle(color: tBlackColor, fontWeight: FontWeight.bold, fontSize: 25),
           ),
 
           SizedBox(
@@ -252,7 +253,7 @@ class WelcomePage extends StatelessWidget {
                       child:
                       Text(
                         "KAYIT OLUŞTURARAK ETKİNLİKLERDEKİ İLERLEMEYİ GÖREBİLİRSİN",
-                        style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold, fontSize: 15),
+                        style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold, fontSize: 14),
                         textAlign: TextAlign.center,
                       ),
                     ),
@@ -265,7 +266,7 @@ class WelcomePage extends StatelessWidget {
           ),
           const SizedBox(height: 5,),
           TextButton(onPressed: () {
-
+            Navigator.of(context).push(MaterialPageRoute(builder: (context) => const SignupPage(),));
           }, child: buildText("KAYIT OLMAK İÇİN DOKUN!",),),
 
          SizedBox(
