@@ -30,17 +30,44 @@ KidConnect çocuklar için öğrenmeyi, eğlenceli bir hale getirir. Çocukları
 - Uygulama, çocukların temel becerilerini geliştirmelerine yardımcı olacak eğitici içerikler sunar. Sayılar, harfler, renkler, hayvanlar, meslekler gibi çeşitli konularla ilgili interaktif öğrenme kartları çocukların bilgi dağarcığını genişletir.
 - Uygulama içinde yer alan oyunlar, çocukları eğlendirirken öğrenmelerini sağlar. Oyunlar; otizmli çocukları rahatsız etmeyen renklerden ve doğru telaffuz için seslendirilme ile desteklenerek çocukların dikkatini çeker ve motivasyonlarını arttırır.
 - Uygulama, çocukların el becerilerini geliştirmek için bir çizim sayfasına sahiptir. Bu da çocukların el-göz koordinasyonunu destekleyerek çocukların motor becerilerini geliştirir.
-- Uygulama, ailelere çocuğun ilerlemesini takip etme imkanı sunar ve ailelerin çocuğun hangi konularda yanlış yaptığını göstererek o konularda çocuğu daha fazla eğitmesine imkan sağlar.
-- KidConnect, çocuklara benzersiz bir özellik sunarak herhangi bir yerdeki görselli yazıları veya sadece yazıların kolayca fotoğrafını çekerek, yazıya dökme ve otomatik olarak seslendirme imkanı sağlar.
 
 
 ## Hedef Kitle
 
 - Otizmli çcocuklar
-- Disleksi olan 4-10 yaş arası çocuklar
-- Öğrenme bozukluğu olan 4-10 yaş arası çocuklar
+- Disleksi olan 6-12 yaş arası çocuklar
+- Öğrenme bozukluğu olan 6-12 yaş arası çocuklar
 
 ## [F32 - Product Backlog URL](https://morteza24.atlassian.net/jira/software/projects/F32/boards/3/backlog)
+## [F32 - Figma](https://www.figma.com/file/wRPfbP6JqeXikJZzMgqLLB/f32-bootcamp?type=design&node-id=0-1&mode=design&t=NhepZKGfXmBYQbWi-0)
+## [Kullanılan assetler (Contribute)](https://docs.google.com/document/d/1kwQK4kBc5lAl19yDS9JWcxHAzIpUCqG3osAEosb48Io/edit?usp=sharing)
+
+## Kullanılan Teknolojiler
+
+`email_validator`
+`flutter_riverpod`
+`firebase_core`
+`firebase_auth`
+`google_sign_in`
+`lottie`
+`google_fonts`
+`flutter_facebook_auth`
+`cloud_firestore`
+`flutter_tts`
+`just_audio`
+`flutter_rating_bar`
+`confetti`
+`tutorial_coach_mark`
+`flutter_switch`
+`flip_card`
+`analog_clock`
+`page_transition`
+`page_flip`
+`flutter_lyric`
+`youtube_player_flutter`
+`image_picker`
+`animated_splash_screen`
+
 ---
 
 # Sprint 1
@@ -116,5 +143,38 @@ KidConnect çocuklar için öğrenmeyi, eğlenceli bir hale getirir. Çocukları
 ---
 
 # Sprint 3
+
+- **Sprint İçinde Tamamlanması Gereken Puan:** 79 puan
+-  **Puan Tamamlama Mantığı:** Projede backlog listesinde kalan tüm görevler. 
+
+- **Daily Scrum:** Daily Scrum toplantıları her gün sesli konuşma olarak yapılmaya karar verilmiştir ve bunun için bir grup odası kurulmuştur. Daily Scrum sonlarında alınan notlar verilecek olan linkte mevcuttur.  [Daily Scrum Notes](https://morteza24.atlassian.net/wiki/spaces/notlar/pages/295196/Melike)
+
+- **Sprint Board Update**: Screenshots
+  
+![Screenshot 1](https://github.com/melikeciydem/kodluyoruzilkrepo/blob/main/ProjectManagement/Sprint3Documents/backlog1.png)
+
+- **Ürün Durumu Ekran Görüntüleri:**
+
+![Screenshot 2](https://github.com/melikeciydem/kodluyoruzilkrepo/blob/main/ProjectManagement/Sprint3Documents/product1.jpeg)
+![Screenshot 3](https://github.com/melikeciydem/kodluyoruzilkrepo/blob/main/ProjectManagement/Sprint3Documents/product2.jpeg)
+![Screenshot 4](https://github.com/melikeciydem/kodluyoruzilkrepo/blob/main/ProjectManagement/Sprint3Documents/product3.jpeg)
+![Screenshot 5](https://github.com/melikeciydem/kodluyoruzilkrepo/blob/main/ProjectManagement/Sprint3Documents/product4.jpeg)
+![Screenshot 6](https://github.com/melikeciydem/kodluyoruzilkrepo/blob/main/ProjectManagement/Sprint3Documents/product5.jpeg)
+![Screenshot 7](https://github.com/melikeciydem/kodluyoruzilkrepo/blob/main/ProjectManagement/Sprint3Documents/product6.jpeg)
+![Screenshot 8](https://github.com/melikeciydem/kodluyoruzilkrepo/blob/main/ProjectManagement/Sprint3Documents/product7.jpeg)
+
+
+- **Sprint Review:** Alınan kararlar: Uygulama için gerekli olan bütün oyunlar bitti. Uygulamanın eksiklikleri ve test süreci başarı ile tamamlandı. Sprint Review katılımcıları: Melike Çiydem, Emine Betül Erdoğan, Emre Ermenek, Morteza Rezaeı, Nil Sezer Şenaylar.
+
+- **Sprint Retrospective:**
+  
+  - Yapılan oyunların kontrooleri yapıldı.
+  - Bütün ekranlar responsive edildi.
+  - Backend tarafı için firebase autentication, firestore düzeltmeleri başarı ile yapıldı
+
+- **Sprint Notları:**
+
+  - Test aşaması başarılı bir şekilde yapıldı ve bütün ekranlar kontrol edildi.
+  - Bu sprint için tamamlanan toplam puan 74. Sprint 3'ün hedeflerine genel olarak ulaştığımızı düşünüyorum. Uygulama play store'da yayınlanmaya hazır hale getirildi.
 
 ---
