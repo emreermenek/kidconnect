@@ -151,24 +151,24 @@ KidConnect çocuklar için öğrenmeyi, eğlenceli bir hale getirir. Çocukları
 
 - **Sprint Board Update**: Screenshots
   
-![Screenshot 1](https://github.com/melikeciydem/kodluyoruzilkrepo/blob/main/ProjectManagement/Sprint3Documents/backlog1.png)
+![Screenshot 1](https://github.com/Bootcampf32/bootcampf32/blob/main/ProjectManagement/Sprint3Documents/backlog1.png)
 
 - **Ürün Durumu Ekran Görüntüleri:**
 
-![Screenshot 2](https://github.com/melikeciydem/kodluyoruzilkrepo/blob/main/ProjectManagement/Sprint3Documents/product1.jpeg)
-![Screenshot 3](https://github.com/melikeciydem/kodluyoruzilkrepo/blob/main/ProjectManagement/Sprint3Documents/product2.jpeg)
-![Screenshot 4](https://github.com/melikeciydem/kodluyoruzilkrepo/blob/main/ProjectManagement/Sprint3Documents/product3.jpeg)
-![Screenshot 5](https://github.com/melikeciydem/kodluyoruzilkrepo/blob/main/ProjectManagement/Sprint3Documents/product4.jpeg)
-![Screenshot 6](https://github.com/melikeciydem/kodluyoruzilkrepo/blob/main/ProjectManagement/Sprint3Documents/product5.jpeg)
-![Screenshot 7](https://github.com/melikeciydem/kodluyoruzilkrepo/blob/main/ProjectManagement/Sprint3Documents/product6.jpeg)
-![Screenshot 8](https://github.com/melikeciydem/kodluyoruzilkrepo/blob/main/ProjectManagement/Sprint3Documents/product7.jpeg)
+![Screenshot 2](https://github.com/Bootcampf32/bootcampf32/blob/main/ProjectManagement/Sprint3Documents/product1.jpeg)
+![Screenshot 3](https://github.com/Bootcampf32/bootcampf32/blob/main/ProjectManagement/Sprint3Documents/product2.jpeg)
+![Screenshot 4](https://github.com/Bootcampf32/bootcampf32/blob/main/ProjectManagement/Sprint3Documents/product3.jpeg)
+![Screenshot 5](https://github.com/Bootcampf32/bootcampf32/blob/main/ProjectManagement/Sprint3Documents/product4.jpeg)
+![Screenshot 6](https://github.com/Bootcampf32/bootcampf32/blob/main/ProjectManagement/Sprint3Documents/product5.jpeg)
+![Screenshot 7](https://github.com/Bootcampf32/bootcampf32/blob/main/ProjectManagement/Sprint3Documents/product6.jpeg)
+![Screenshot 8](https://github.com/Bootcampf32/bootcampf32/blob/main/ProjectManagement/Sprint3Documents/product7.jpeg)
 
 
 - **Sprint Review:** Alınan kararlar: Uygulama için gerekli olan bütün oyunlar bitti. Uygulamanın eksiklikleri ve test süreci başarı ile tamamlandı. Sprint Review katılımcıları: Melike Çiydem, Emine Betül Erdoğan, Emre Ermenek, Morteza Rezaeı, Nil Sezer Şenaylar.
 
 - **Sprint Retrospective:**
   
-  - Yapılan oyunların kontrooleri yapıldı.
+  - Yapılan oyunların kontrolleri yapıldı.
   - Bütün ekranlar responsive edildi.
   - Backend tarafı için firebase autentication, firestore düzeltmeleri başarı ile yapıldı
 
