@@ -40,7 +40,9 @@ KidConnect çocuklar için öğrenmeyi, eğlenceli bir hale getirir. Çocukları
 
 ## [F32 - Product Backlog URL](https://morteza24.atlassian.net/jira/software/projects/F32/boards/3/backlog)
 ## [F32 - Figma](https://www.figma.com/file/wRPfbP6JqeXikJZzMgqLLB/f32-bootcamp?type=design&node-id=0-1&mode=design&t=NhepZKGfXmBYQbWi-0)
-## [Kullanılan assetler (Contribute)](https://docs.google.com/document/d/1kwQK4kBc5lAl19yDS9JWcxHAzIpUCqG3osAEosb48Io/edit?usp=sharing)
+## [Kullanılan Assetler (Contribute)](https://docs.google.com/document/d/1kwQK4kBc5lAl19yDS9JWcxHAzIpUCqG3osAEosb48Io/edit?usp=sharing)
+## [Youtube](https://www.youtube.com/watch?v=Pk3yQFya_mg)
+## [İnstagram](https://instagram.com/__kidconnect__?igshid=MzRlODBiNWFlZA==)
 
 ## Kullanılan Teknolojiler
 
